@@ -2,7 +2,7 @@ name: Atualizador de IPTV Automático
 
 on:
   schedule:
-    - cron: '0 * * * *' # Roda no minuto zero de toda hora (ex: 12:00, 13:00)
+    - cron: '12 * * * *' # Roda no minuto zero de toda hora (ex: 12:00, 13:00)
   workflow_dispatch: # Cria um botão para você rodar manualmente quando quiser
 
 permissions:
