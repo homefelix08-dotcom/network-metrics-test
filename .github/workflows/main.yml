@@ -1,8 +1,6 @@
 name: Atualizador de IPTV Automático
 
 on:
-  schedule:
-    - cron: '22 * * * *'
   workflow_dispatch: # Cria um botão para você rodar manualmente quando quiser
 
 permissions:
