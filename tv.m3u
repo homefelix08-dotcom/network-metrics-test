@@ -4,13 +4,13 @@ https://0305.cdn10embed.xyz/globomg/index.m3u8|Referer=https://4embeddecanais.xy
 #EXTINF:-1 tvg-id="BAND HD" tvg-name="Band" group-title="Abertos", Band
 https://0305.cdn10embed.xyz/bandsp/index.m3u8|Referer=https://4embeddecanais.xyz/bandsp/
 #EXTINF:-1 tvg-id="SBT" tvg-name="SBT" group-title="Abertos", SBT
-https://0305.cdn6embed.xyz/sbtsp/index.m3u8|Referer=https://4embeddecanais.xyz/sbtsp/
+https://0305.cdn10embed.xyz/sbtsp/index.m3u8|Referer=https://4embeddecanais.xyz/sbtsp/
 #EXTINF:-1 tvg-id="REDE TV! HD" tvg-name="Rede TV" group-title="Abertos", Rede TV
 https://0305.cdn10embed.xyz/redetv/index.m3u8|Referer=https://4embeddecanais.xyz/redetv/
 #EXTINF:-1 tvg-id="RECORD HD" tvg-name="Record MG" group-title="Abertos", Record MG
 https://0305.cdn10embed.xyz/recordmg/index.m3u8|Referer=https://4embeddecanais.xyz/recordmg/
 #EXTINF:-1 tvg-id="CULTURA HD" tvg-name="TV Cultura" group-title="Abertos", TV Cultura
-https://0305.cdn6embed.xyz/tvcultura/index.m3u8|Referer=https://4embeddecanais.xyz/tvcultura/
+https://0305.cdn10embed.xyz/tvcultura/index.m3u8|Referer=https://4embeddecanais.xyz/tvcultura/
 #EXTINF:-1 tvg-id="A&E" tvg-name="A&E" group-title="Filmes e Séries", A&E
 https://0305.cdn10embed.xyz/aee/index.m3u8|Referer=https://4embeddecanais.xyz/aee/
 #EXTINF:-1 tvg-id="AMC HD" tvg-name="AMC" group-title="Filmes e Séries", AMC
