@@ -102,12 +102,15 @@ def gerar_lista():
             nome_canal = canal.get('nome')
             id_epg = canal.get('tvg_id', '')
             url_origem = canal.get('url')
+            # NOVO: Extraindo a logo de forma segura
+            url_logo = canal.get('logo', '')
 
             print(f"Buscando: {nome_canal}...")
             link_video = extrair_m3u8(sessao, url_origem)
             
             if link_video:
-                linhas_m3u.append(f'#EXTINF:-1 tvg-id="{id_epg}" tvg-name="{nome_canal}" group-title="{nome_categoria}", {nome_canal}\n')
+                # NOVO: Injetando a tag tvg-logo na formatação da string
+                linhas_m3u.append(f'#EXTINF:-1 tvg-id="{id_epg}" tvg-logo="{url_logo}" tvg-name="{nome_canal}" group-title="{nome_categoria}", {nome_canal}\n')
                 linhas_m3u.append(f'{link_video}|Referer={url_origem}\n')
             else:
                 print(f"  -> Falha ao encontrar o link final de {nome_canal}.")
