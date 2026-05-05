@@ -3,12 +3,16 @@ name: Atualizador de IPTV Automático
 on:
   workflow_dispatch: # Cria um botão para você rodar manualmente quando quiser
 
+concurrency:
+  group: atualizacao-iptv
+  cancel-in-progress: true
+  
 permissions:
   contents: write # Dá permissão para o bot salvar a lista nova
 
 jobs:
   gerar-lista:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Clonar o repositório
