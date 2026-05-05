@@ -90,7 +90,9 @@ def gerar_lista():
         return
 
     print("Iniciando extração de canais...")
-    linhas_m3u = ["#EXTM3U\n"]
+    url_epg = "https://raw.githubusercontent.com/limaalef/BrazilTVEPG/refs/heads/main/claro.xml"
+    
+    linhas_m3u = [f'#EXTM3U x-tvg-url="{url_epg}"\n']
     
     # Instancia o scraper blindado
     sessao = criar_sessao_resiliente()
