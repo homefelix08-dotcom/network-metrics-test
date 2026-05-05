@@ -36,6 +36,6 @@ jobs:
         git config --global user.name "Robô IPTV"
         git config --global user.email "robo@tv.local"
         git add tv.m3u
-        # O "|| echo" evita que a automação dê erro se os links não tiverem mudado
         git commit -m "Atualizando links M3U8 [Automático]" || echo "Nenhuma mudança necessária"
+        git pull --rebase origin main
         git push
