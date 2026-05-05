@@ -1,4 +1,4 @@
-#EXTM3U
+#EXTM3U x-tvg-url="https://raw.githubusercontent.com/limaalef/BrazilTVEPG/refs/heads/main/claro.xml"
 #EXTINF:-1 tvg-id="GLOBO SÃO PAULO" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/tv/main/logos/globomg.png" tvg-name="Globo MG" group-title="Abertos", Globo MG
 https://0505.cdn10embed.xyz/globomg/index.m3u8|Referer=https://4embeddecanais.xyz/globomg/
 #EXTINF:-1 tvg-id="BAND HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/tv/main/logos/bandsp.png" tvg-name="Band" group-title="Abertos", Band
