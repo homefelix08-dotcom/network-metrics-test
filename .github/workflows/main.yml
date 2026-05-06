@@ -1,24 +1,24 @@
-name: Atualizador de IPTV Automático
+name: Updater
 
 on:
-  workflow_dispatch: # Cria um botão para você rodar manualmente quando quiser
+  workflow_dispatch:
 
 concurrency:
-  group: atualizacao-iptv
+  group: updates
   cancel-in-progress: true
   
 permissions:
-  contents: write # Dá permissão para o bot salvar a lista nova
+  contents: write
 
 jobs:
-  gerar-lista:
+  sync:
     runs-on: ubuntu-22.04
 
     steps:
-    - name: Clonar o repositório
+    - name: Checkout do repositório
       uses: actions/checkout@v3
 
-    - name: Preparar o ambiente Python
+    - name: Configurar o Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.10'
@@ -26,16 +26,16 @@ jobs:
     - name: Instalar dependências
       run: |
         python -m pip install --upgrade pip
-        pip install requests cloudscraper
+        pip install cloudscraper requests urllib3
 
-    - name: Extrair links e gerar M3U
-      run: python iptv.py
+    - name: Rodar o sync
+      run: sync_worker.py
 
     - name: Fazer o commit da nova lista
       run: |
-        git config --global user.name "Robô IPTV"
-        git config --global user.email "robo@tv.local"
-        git add tv.m3u
-        git commit -m "Atualizando links M3U8 [Automático]" || echo "Nenhuma mudança necessária"
+        git config --global user.name "Data Sync Bot"
+        git config --global user.email "bot@pipeline.local"
+        git add export_data.txt
+        git commit -m "chore: auto-sync data nodes" || echo "Nenhuma mudança necessária"
         git pull --rebase origin main
         git push
