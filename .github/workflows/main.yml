@@ -29,7 +29,7 @@ jobs:
         pip install cloudscraper requests urllib3
 
     - name: Rodar o sync
-      run: sync_worker.py
+      run: python sync_worker.py
 
     - name: Fazer o commit da nova lista
       run: |
