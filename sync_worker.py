@@ -2,14 +2,23 @@ import cloudscraper
 import re
 import time
 import json
+import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+from bs4 import BeautifulSoup
+from datetime import datetime
+import pytz
 
 # Network configs
 HEADERS = {
     "X-Forwarded-For": "177.129.1.1",
     "Referer": "https://4embeddecanais.xyz/"
 }
+
+# Configurações do nó local (Telemetria/EPG)
+SOURCE_TELEMETRY = "https://www.claro.com.br/tv-por-assinatura/programacao/grade/programa/globo-hd/23-2068"
+META_NODE_ID = "GloboMinas"
+META_NODE_NAME = "Globo MG"
 
 def build_session():
     """Cria uma sessão HTTP resiliente para extração de dados."""
@@ -42,27 +51,77 @@ def load_config(caminho_arquivo="config.json"):
         print(f"Erro ao carregar o arquivo {caminho_arquivo}: {e}")
         return {}
 
+def build_local_manifest():
+    """Gera o arquivo de metadados locais de forma camuflada."""
+    print("Processando telemetria local...")
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+    }
+    
+    try:
+        resposta = requests.get(SOURCE_TELEMETRY, headers=headers, timeout=15)
+        resposta.raise_for_status()
+    except Exception as e:
+        print(f"Erro ao buscar telemetria de origem: {e}")
+        return
+
+    parsed_dom = BeautifulSoup(resposta.text, 'html.parser')
+    meta_nodes = []
+    fuso_br = pytz.timezone('America/Sao_Paulo')
+
+    blocos = parsed_dom.find_all('div', class_='cell-item')
+
+    for bloco in blocos:
+        try:
+            start_sec = int(bloco['data-start']) / 1000.0
+            end_sec = int(bloco['data-end']) / 1000.0
+            titulo = bloco.find('p', class_='channel-program-item-title').text.strip()
+            
+            dt_inicio = datetime.fromtimestamp(start_sec, fuso_br)
+            dt_fim = datetime.fromtimestamp(end_sec, fuso_br)
+            
+            str_inicio = dt_inicio.strftime('%Y%m%d%H%M%S %z')
+            str_fim = dt_fim.strftime('%Y%m%d%H%M%S %z')
+            
+            xml_item = f'  <programme start="{str_inicio}" stop="{str_fim}" channel="{META_NODE_ID}">\n'
+            xml_item += f'    <title lang="pt">{titulo}</title>\n'
+            xml_item += '  </programme>\n'
+            
+            meta_nodes.append(xml_item)
+        except:
+            continue
+            
+    if meta_nodes:
+        linhas_xml = [
+            '<?xml version="1.0" encoding="UTF-8"?>\n',
+            '<tv>\n',
+            f'  <channel id="{META_NODE_ID}">\n',
+            f'    <display-name>{META_NODE_NAME}</display-name>\n',
+            '  </channel>\n'
+        ]
+        linhas_xml.extend(meta_nodes)
+        linhas_xml.append('</tv>\n')
+        
+        with open('local_meta.xml', 'w', encoding='utf-8') as arquivo:
+            arquivo.writelines(linhas_xml)
+        print(f"Telemetria local gerada com sucesso: {len(meta_nodes)} blocos registrados.")
+
 def extract_payload(sessao, url_destino):
     """Extração: Busca o payload principal no source."""
     try:
         resposta = sessao.get(url_destino, headers=HEADERS, timeout=15)
         
-        # TENTATIVA 1: Busca o bloco na página root
         payload_busca = re.search(r'(https?://[^\s"\'<>]+?\.m3u8[^"\'<>]*)', resposta.text)
         if payload_busca:
             return payload_busca.group(1)
         
-        # TENTATIVA 2: Varre iframes aninhados
         iframes = re.findall(r'<iframe[^>]+src=["\']([^"\']+)["\']', resposta.text, re.IGNORECASE)
-        
         for url_iframe in iframes:
             if url_iframe.startswith('//'):
                 url_iframe = 'https:' + url_iframe
-            
             try:
                 resposta_frame = sessao.get(url_iframe, headers=HEADERS, timeout=10)
                 payload_busca_iframe = re.search(r'(https?://[^\s"\'<>]+?\.m3u8[^"\'<>]*)', resposta_frame.text)
-                
                 if payload_busca_iframe:
                     return payload_busca_iframe.group(1)
             except:
@@ -70,7 +129,6 @@ def extract_payload(sessao, url_destino):
                 
     except Exception as e:
         print(f"  -> Erro de conexão com o nó {url_destino}: {e}")
-        
     return None
 
 def run_sync():
@@ -81,10 +139,16 @@ def run_sync():
         print("Nenhum nó encontrado. Verifique o arquivo config.json.")
         return
 
-    print("Iniciando sincronização de dados...")
-    manifest_meta = "https://raw.githubusercontent.com/limaalef/BrazilTVEPG/refs/heads/main/claro.xml"
+    print("Iniciando sincronização global...")
     
-    linhas_manifest = [f'#EXTM3U x-tvg-url="{manifest_meta}"\n']
+    # 1. Executa a extração da telemetria local (EPG)
+    build_local_manifest()
+
+    # 2. Configura os cabeçalhos com múltiplos manifestos de metadados
+    manifest_meta_global = "https://raw.githubusercontent.com/limaalef/BrazilTVEPG/refs/heads/main/claro.xml"
+    manifest_meta_local = "https://raw.githubusercontent.com/homefelix08-dotcom/SEU_NOME_DE_REPOSITORIO/main/local_meta.xml"
+    
+    linhas_manifest = [f'#EXTM3U x-tvg-url="{manifest_meta_global},{manifest_meta_local}"\n']
     sessao = build_session()
     
     for nome_grupo, lista_nos in nodes.items():
