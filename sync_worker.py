@@ -5,20 +5,14 @@ import json
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-# Cabeçalhos (O cloudscraper já injeta um User-Agent real por padrão, 
-# então só precisamos manter o Referer e o IP falso para enganar o painel)
+# Network configs
 HEADERS = {
     "X-Forwarded-For": "177.129.1.1",
     "Referer": "https://4embeddecanais.xyz/"
 }
 
-def criar_sessao_resiliente():
-    """
-    Cria uma sessão HTTP blindada usando o Cloudscraper para contornar o WAF. 
-    Se o site pirata der erro 502 ou falhar, o script tenta de novo automaticamente 
-    até 3 vezes antes de desistir.
-    """
-    # Cria o scraper imitando um navegador Chrome desktop no Windows
+def build_session():
+    """Cria uma sessão HTTP resiliente para extração de dados."""
     scraper = cloudscraper.create_scraper(
         browser={
             'browser': 'chrome',
@@ -34,14 +28,13 @@ def criar_sessao_resiliente():
     )
     adaptador = HTTPAdapter(max_retries=retentativas)
     
-    # Montamos as regras de resiliência diretamente no scraper
     scraper.mount('http://', adaptador)
     scraper.mount('https://', adaptador)
     
     return scraper
 
-def carregar_canais(caminho_arquivo="canais.json"):
-    """Lê o arquivo JSON com a grade de canais."""
+def load_config(caminho_arquivo="config.json"):
+    """Lê o arquivo JSON com as definições dos nós."""
     try:
         with open(caminho_arquivo, "r", encoding="utf-8") as arquivo:
             return json.load(arquivo)
@@ -49,18 +42,17 @@ def carregar_canais(caminho_arquivo="canais.json"):
         print(f"Erro ao carregar o arquivo {caminho_arquivo}: {e}")
         return {}
 
-def extrair_m3u8(sessao, url_do_site):
-    """Extração: Tenta a página principal primeiro, depois tenta os iframes."""
+def extract_payload(sessao, url_destino):
+    """Extração: Busca o payload principal no source."""
     try:
-        # Usando a 'sessao' que agora é o nosso cloudscraper
-        resposta = sessao.get(url_do_site, headers=HEADERS, timeout=15)
+        resposta = sessao.get(url_destino, headers=HEADERS, timeout=15)
         
-        # TENTATIVA 1: Busca o link direto na página principal
-        m3u8_busca = re.search(r'(https?://[^\s"\'<>]+?\.m3u8[^"\'<>]*)', resposta.text)
-        if m3u8_busca:
-            return m3u8_busca.group(1)
+        # TENTATIVA 1: Busca o bloco na página root
+        payload_busca = re.search(r'(https?://[^\s"\'<>]+?\.m3u8[^"\'<>]*)', resposta.text)
+        if payload_busca:
+            return payload_busca.group(1)
         
-        # TENTATIVA 2: Varre todos os iframes da página
+        # TENTATIVA 2: Varre iframes aninhados
         iframes = re.findall(r'<iframe[^>]+src=["\']([^"\']+)["\']', resposta.text, re.IGNORECASE)
         
         for url_iframe in iframes:
@@ -68,61 +60,57 @@ def extrair_m3u8(sessao, url_do_site):
                 url_iframe = 'https:' + url_iframe
             
             try:
-                resposta_player = sessao.get(url_iframe, headers=HEADERS, timeout=10)
-                m3u8_busca_iframe = re.search(r'(https?://[^\s"\'<>]+?\.m3u8[^"\'<>]*)', resposta_player.text)
+                resposta_frame = sessao.get(url_iframe, headers=HEADERS, timeout=10)
+                payload_busca_iframe = re.search(r'(https?://[^\s"\'<>]+?\.m3u8[^"\'<>]*)', resposta_frame.text)
                 
-                if m3u8_busca_iframe:
-                    return m3u8_busca_iframe.group(1)
+                if payload_busca_iframe:
+                    return payload_busca_iframe.group(1)
             except:
                 continue
                 
     except Exception as e:
-        print(f"  -> Erro de conexão com {url_do_site}: {e}")
+        print(f"  -> Erro de conexão com o nó {url_destino}: {e}")
         
     return None
 
-def gerar_lista():
-    """Função mestre que orquestra todo o processo."""
-    categorias = carregar_canais("canais.json")
+def run_sync():
+    """Função mestre que orquestra o pipeline."""
+    nodes = load_config("config.json")
     
-    if not categorias:
-        print("Nenhum canal encontrado. Verifique o arquivo canais.json.")
+    if not nodes:
+        print("Nenhum nó encontrado. Verifique o arquivo config.json.")
         return
 
-    print("Iniciando extração de canais...")
-    url_epg = "https://raw.githubusercontent.com/limaalef/BrazilTVEPG/refs/heads/main/claro.xml"
+    print("Iniciando sincronização de dados...")
+    manifest_meta = "https://raw.githubusercontent.com/limaalef/BrazilTVEPG/refs/heads/main/claro.xml"
     
-    linhas_m3u = [f'#EXTM3U x-tvg-url="{url_epg}"\n']
+    linhas_manifest = [f'#EXTM3U x-tvg-url="{manifest_meta}"\n']
+    sessao = build_session()
     
-    # Instancia o scraper blindado
-    sessao = criar_sessao_resiliente()
-    
-    for nome_categoria, lista_canais in categorias.items():
-        print(f"\n--- Processando categoria: {nome_categoria} ---")
+    for nome_grupo, lista_nos in nodes.items():
+        print(f"\n--- Sincronizando grupo: {nome_grupo} ---")
         
-        for canal in lista_canais:
-            nome_canal = canal.get('nome')
-            id_epg = canal.get('tvg_id', '')
-            url_origem = canal.get('url')
-            # NOVO: Extraindo a logo de forma segura
-            url_logo = canal.get('logo', '')
+        for no in lista_nos:
+            nome_no = no.get('nome')
+            id_meta = no.get('tvg_id', '')
+            url_origem = no.get('url')
+            url_asset = no.get('logo', '')
 
-            print(f"Buscando: {nome_canal}...")
-            link_video = extrair_m3u8(sessao, url_origem)
+            print(f"Buscando: {nome_no}...")
+            link_payload = extract_payload(sessao, url_origem)
             
-            if link_video:
-                # NOVO: Injetando a tag tvg-logo na formatação da string
-                linhas_m3u.append(f'#EXTINF:-1 tvg-id="{id_epg}" tvg-logo="{url_logo}" tvg-name="{nome_canal}" group-title="{nome_categoria}", {nome_canal}\n')
-                linhas_m3u.append(f'{link_video}|Referer={url_origem}\n')
+            if link_payload:
+                linhas_manifest.append(f'#EXTINF:-1 tvg-id="{id_meta}" tvg-logo="{url_asset}" tvg-name="{nome_no}" group-title="{nome_grupo}", {nome_no}\n')
+                linhas_manifest.append(f'{link_payload}|Referer={url_origem}\n')
             else:
-                print(f"  -> Falha ao encontrar o link final de {nome_canal}.")
+                print(f"  -> Falha ao resolver o nó {nome_no}.")
                 
             time.sleep(2) 
         
-    with open("tv.m3u", "w", encoding="utf-8") as arquivo:
-        arquivo.writelines(linhas_m3u)
+    with open("export_data.txt", "w", encoding="utf-8") as arquivo:
+        arquivo.writelines(linhas_manifest)
         
-    print("\nSucesso! Arquivo 'tv.m3u' atualizado.")
+    print("\nSincronização concluída! Arquivo de exportação atualizado.")
 
 if __name__ == "__main__":
-    gerar_lista()
+    run_sync()
