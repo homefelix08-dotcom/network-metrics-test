@@ -17,7 +17,7 @@ HEADERS = {
 
 # Configurações do nó local (Telemetria/EPG)
 SOURCE_TELEMETRY = "https://www.claro.com.br/tv-por-assinatura/programacao/grade/programa/globo-hd/23-2068"
-META_NODE_ID = "GloboMinas"
+META_NODE_ID = "Globo MG"
 META_NODE_NAME = "Globo MG"
 
 def build_session():
