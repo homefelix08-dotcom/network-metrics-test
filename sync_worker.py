@@ -146,7 +146,7 @@ def run_sync():
 
     # 2. Configura os cabeçalhos com múltiplos manifestos de metadados
     manifest_meta_global = "https://raw.githubusercontent.com/limaalef/BrazilTVEPG/refs/heads/main/claro.xml"
-    manifest_meta_local = "https://raw.githubusercontent.com/homefelix08-dotcom/SEU_NOME_DE_REPOSITORIO/main/local_meta.xml"
+    manifest_meta_local = "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/local_meta.xml"
     
     linhas_manifest = [f'#EXTM3U x-tvg-url="{manifest_meta_global},{manifest_meta_local}"\n']
     sessao = build_session()
