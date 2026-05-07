@@ -137,18 +137,41 @@ def recuperar_link_cache(id_meta, nome_no):
     return None
 
 def verificar_sinal_ativo(sessao, url_m3u8, url_origem):
-    """Faz um 'ping' no link do vídeo usando a sessão blindada."""
+    """Faz um 'ping' no link do vídeo e retorna o status na tela."""
     try:
+        # Armadura completa de navegador
         headers = {
-            "Referer": url_origem,
+            "Accept": "*/*",
+            "Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
             "Origin": "https://4embeddecanais.xyz",
+            "Referer": url_origem,
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
         }
-        # Agora usamos a "sessao" do cloudscraper, e aumentamos o timeout pra 10s
-        r = sessao.get(url_m3u8, headers=headers, timeout=10, stream=True)
-        return r.status_code == 200
-    except:
+        
+        # Fazemos a requisição (timeout um pouco maior para CDNs lentas)
+        r = sessao.get(url_m3u8, headers=headers, timeout=12)
+        
+        # Verifica se o arquivo é realmente uma lista M3U8 válida
+        if r.status_code == 200 and "#EXTM3U" in r.text:
+            print(f" [Ping: OK] ", end="")
+            return True
+        elif r.status_code == 200:
+            # Retornou 200, mas o conteúdo não é de vídeo (provável página de bloqueio do Cloudflare)
+            print(f" [Ping: Falso 200 - Conteúdo Bloqueado] ", end="")
+            return False
+        else:
+            # Retornou erro HTTP (403, 404, 503, etc)
+            print(f" [Ping Erro: HTTP {r.status_code}] ", end="")
+            return False
+            
+    except requests.exceptions.Timeout:
+        print(" [Ping Erro: Timeout] ", end="")
         return False
+    except Exception as e:
+        # Mostra qual foi o erro de rede (Ex: ConnectionError)
+        print(f" [Ping Erro: {type(e).__name__}] ", end="")
+        return False
+        
 
 def extract_payload(sessao, url_destino):
     """Lógica robusta de extração, buscando inclusive nos iframes."""
