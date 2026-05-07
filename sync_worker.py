@@ -136,13 +136,16 @@ def recuperar_link_cache(id_meta, nome_no):
         print(f"  [X] Erro ao ler cache: {e}")
     return None
 
-def verificar_sinal_ativo(url_m3u8, url_origem):
-    """Faz um 'ping' no link do vídeo para saber se ele ainda está vivo."""
+def verificar_sinal_ativo(sessao, url_m3u8, url_origem):
+    """Faz um 'ping' no link do vídeo usando a sessão blindada."""
     try:
-        # Precisamos mandar o Referer, senão o servidor do vídeo recusa a conexão
-        headers = {"Referer": url_origem, "User-Agent": "okhttp/4.9.2"}
-        # Usamos stream=True para não baixar o vídeo, apenas ler o status da conexão
-        r = requests.get(url_m3u8, headers=headers, timeout=5, stream=True)
+        headers = {
+            "Referer": url_origem,
+            "Origin": "https://4embeddecanais.xyz",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        }
+        # Agora usamos a "sessao" do cloudscraper, e aumentamos o timeout pra 10s
+        r = sessao.get(url_m3u8, headers=headers, timeout=10, stream=True)
         return r.status_code == 200
     except:
         return False
@@ -225,7 +228,8 @@ def run_sync():
             link_antigo = recuperar_link_cache(id_meta, nome_no)
             
             # Passo 2: Testa se a Globo ainda está no ar com esse link
-            if link_antigo and verificar_sinal_ativo(link_antigo, url_origem):
+            if link_antigo and verificar_sinal_ativo(sessao, link_antigo, url_origem):
+                            
                 link_payload = link_antigo
                 print("[SITE OK - SINAL ANTIGO AINDA ATIVO. SCRAPING IGNORADO!]")
             
