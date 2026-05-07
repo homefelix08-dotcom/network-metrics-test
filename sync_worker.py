@@ -122,6 +122,7 @@ def extract_payload(sessao, url_destino):
     """Sua lógica robusta de extração, buscando inclusive nos iframes."""
     try:
         resposta = sessao.get(url_destino, headers=HEADERS_SITE, timeout=15)
+        print(f"  -> Status do site {url_destino}: {resposta.status_code}")
         
         # 1. Tenta achar na página principal
         payload_busca = re.search(r'(https?://[^\s"\'<>]+?\.m3u8[^"\'<>]*)', resposta.text)
