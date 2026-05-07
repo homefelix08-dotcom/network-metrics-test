@@ -170,6 +170,8 @@ def run_sync():
 
     for canal in meus_canais:
         nome_no = canal['nome']
+        nome_busca_api = canal.get('nome_api', nome_no)
+        
         id_meta = canal.get('tvg_id', '')
         url_asset = canal.get('logo', '')
         link_payload = None
@@ -197,7 +199,7 @@ def run_sync():
         # ROTA 2: EXTRAÇÃO VIA API
         # ==========================================
         else:
-            dados_api = next((c for c in api_cache if c['name'] == nome_no), None)
+            dados_api = next((c for c in api_cache if c['name'] == nome_busca_api), None)
             
             if dados_api and "sources" in dados_api:
                 filtro_regional = canal.get('filtro_cdn')
