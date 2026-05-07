@@ -42,7 +42,7 @@ http://dns.explouddev.com/live/292330036/5179425/18767.m3u8|User-Agent=okhttp/4.
 #EXTINF:-1 tvg-id="HBO Xtreme" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hboxtreme.png" tvg-name="HBO Xtreme" group-title="Filmes e Séries", HBO Xtreme
 https://0705.cdn10embed.xyz/hboxtreme/index.m3u8|Referer=https://4embeddecanais.xyz/hboxtreme/
 #EXTINF:-1 tvg-id="MEGAPIX HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_megapix0001.png" tvg-name="Megapix" group-title="Filmes e Séries", Megapix
-http://dns.explouddev.com/live/292330036/5179425/692.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/529778152/b759U1776T/692.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SONY CHANNEL" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_sony0001.png" tvg-name="Sony Channel" group-title="Filmes e Séries", Sony Channel
 http://dns.explouddev.com/live/292330036/5179425/702.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SPACE HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_space0001.png" tvg-name="Space" group-title="Filmes e Séries", Space
