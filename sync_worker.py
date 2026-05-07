@@ -183,7 +183,7 @@ def run_sync():
             else:
                 print("[API FALHA]")
 
-    with open("lista.m3u8", "w", encoding="utf-8") as arquivo:
+    with open("export_data.txt", "w", encoding="utf-8") as arquivo:
         arquivo.writelines(linhas_manifest)
         
     print("\nSincronização concluída! Arquivo de exportação atualizado.")
