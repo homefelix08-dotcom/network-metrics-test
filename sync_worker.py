@@ -241,4 +241,30 @@ def run_sync():
                 
                 if filtro_regional:
                     for fonte in dados_api['sources']:
-                        if filtro_regional.lower() in fonte['
+                        if filtro_regional.lower() in fonte['name'].lower():
+                            link_payload = fonte['link']
+                            break
+                            
+                if not link_payload:
+                    for fonte in dados_api['sources']:
+                        if "sinal.cc" not in fonte['link']:
+                            link_payload = fonte['link']
+                            break
+
+            if link_payload:
+                categoria_nome = canal.get("categoria_api", "Diversos")
+                tvg_name_final = id_meta if id_meta else nome_no
+                
+                linhas_manifest.append(f'#EXTINF:-1 tvg-id="{id_meta}" tvg-logo="{url_asset}" tvg-name="{tvg_name_final}" group-title="{categoria_nome}", {nome_no}\n')
+                linhas_manifest.append(f'{link_payload}|User-Agent=okhttp/4.9.2\n')
+                print("[API OK]")
+            else:
+                print("[API FALHA]")
+
+    with open("export_data.txt", "w", encoding="utf-8") as arquivo:
+        arquivo.writelines(linhas_manifest)
+        
+    print("\nSincronização concluída! Arquivo de exportação atualizado.")
+
+if __name__ == "__main__":
+    run_sync()
