@@ -3,6 +3,8 @@
 https://0705.cdn10embed.xyz/globomg/index.m3u8|Referer=https://4embeddecanais.xyz/globomg/
 #EXTINF:-1 tvg-id="Band MG" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_band0001.png" tvg-name="Band" group-title="Abertos", Band
 http://dns.explouddev.com/live/529778152/b759U1776T/255482.m3u8|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="SBT MG" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_sbt0001.png" tvg-name="TV Alterosa" group-title="Abertos", TV Alterosa
+http://dns.explouddev.com/live/529778152/b759U1776T/244184.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="REDE TV! HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_redetv0001.png" tvg-name="Rede TV" group-title="Abertos", Rede TV
 https://0705.cdn10embed.xyz/redetv/index.m3u8|Referer=https://4embeddecanais.xyz/redetv/
 #EXTINF:-1 tvg-id="Record MG" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_record0001.png" tvg-name="Record MG" group-title="Abertos", Record MG
