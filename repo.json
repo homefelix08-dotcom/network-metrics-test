@@ -13,13 +13,14 @@
         "categoria_api": "Abertos",
         "filtro_cdn": "Band MG"
     },
-    {
+{
         "nome": "TV Alterosa",
+        "nome_api": "SBT",
         "tvg_id": "SBT MG",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_sbt0001.png",
         "categoria_api": "Abertos",
         "filtro_cdn": "SBT MG"
-    },
+    }
     {
         "nome": "Rede TV",
         "tvg_id": "REDE TV! HD",
