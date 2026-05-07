@@ -3,6 +3,7 @@ import re
 import time
 import json
 import requests
+import os
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from bs4 import BeautifulSoup
@@ -72,10 +73,8 @@ def build_local_manifest():
     for config in LOCAL_EPG_CONFIGS:
         print(f"  -> Coletando grade: {config['name']}...")
         
-        # 1. Cria o bloco do canal
         xml_channels.append(f'  <channel id="{config["id"]}">\n    <display-name>{config["name"]}</display-name>\n  </channel>\n')
         
-        # 2. Busca a página da Claro
         try:
             resposta = requests.get(config["url"], headers=headers, timeout=15)
             resposta.raise_for_status()
@@ -85,7 +84,6 @@ def build_local_manifest():
 
         parsed_dom = BeautifulSoup(resposta.text, 'html.parser')
         
-        # 3. Processa a grade de programação
         blocos_canal = 0
         for bloco in parsed_dom.find_all('div', class_='cell-item'):
             try:
@@ -104,7 +102,6 @@ def build_local_manifest():
         total_blocos += blocos_canal
         print(f"     [OK] {blocos_canal} programas adicionados.")
 
-    # 4. Monta o arquivo XML final
     if xml_channels and xml_programmes:
         linhas_xml = ['<?xml version="1.0" encoding="UTF-8"?>\n<tv>\n']
         linhas_xml.extend(xml_channels)
@@ -114,22 +111,47 @@ def build_local_manifest():
         with open('local_meta.xml', 'w', encoding='utf-8') as arquivo:
             arquivo.writelines(linhas_xml)
             
-        print(f"Telemetria local consolidada com sucesso: {total_blocos} blocos totais registrados.")
+        print(f"Telemetria local consolidada: {total_blocos} blocos registrados.\n")
     else:
-        print("Aviso: Nenhum dado de EPG pôde ser extraído.")
+        print("Aviso: Nenhum dado de EPG pôde ser extraído.\n")
+
+def recuperar_link_cache(id_meta, nome_no):
+    """Vasculha o arquivo export_data.txt atual em busca do último link funcional."""
+    if not os.path.exists("export_data.txt"):
+        return None
+    
+    try:
+        with open("export_data.txt", "r", encoding="utf-8") as f:
+            conteudo = f.read()
+            # Se tiver ID de EPG, busca por ele. Se não tiver (como os da Amazon/Disney), busca pelo nome.
+            if id_meta:
+                regex = rf'tvg-id="{re.escape(id_meta)}".*?\n(http[^\s|]+)'
+            else:
+                regex = rf', {re.escape(nome_no)}\n(http[^\s|]+)'
+                
+            match = re.search(regex, conteudo)
+            if match:
+                return match.group(1)
+    except Exception as e:
+        print(f"  [X] Erro ao ler cache: {e}")
+    return None
 
 def extract_payload(sessao, url_destino):
-    """Sua lógica robusta de extração, buscando inclusive nos iframes."""
+    """Lógica robusta de extração, buscando inclusive nos iframes."""
     try:
         resposta = sessao.get(url_destino, headers=HEADERS_SITE, timeout=15)
-        print(f"  -> Status do site {url_destino}: {resposta.status_code}")
         
+        # O site bloqueou a conexão (ex: Cloudflare 403)
+        if resposta.status_code != 200:
+            print(f"  -> Erro HTTP {resposta.status_code} no nó {url_destino}")
+            return None
+
         # 1. Tenta achar na página principal
         payload_busca = re.search(r'(https?://[^\s"\'<>]+?\.m3u8[^"\'<>]*)', resposta.text)
         if payload_busca:
             return payload_busca.group(1)
         
-        # 2. Mergulha nos iframes se não achar na principal
+        # 2. Mergulha nos iframes
         iframes = re.findall(r'<iframe[^>]+src=["\']([^"\']+)["\']', resposta.text, re.IGNORECASE)
         for url_iframe in iframes:
             if url_iframe.startswith('//'):
@@ -143,11 +165,11 @@ def extract_payload(sessao, url_destino):
                 continue
                 
     except Exception as e:
-        print(f"  -> Erro de conexão no nó {url_destino}: {e}")
+        print(f"  -> Falha de conexão/timeout no nó {url_destino}")
     return None
 
 def run_sync():
-    """Motor Híbrido: Junta a API com o Scraping."""
+    """Motor Híbrido: Junta API, Scraping e Camada de Persistência."""
     try:
         with open("repo.json", "r", encoding="utf-8") as f:
             meus_canais = json.load(f)
@@ -155,10 +177,10 @@ def run_sync():
         print(f"Erro ao carregar repo.json: {e}")
         return
 
-    print("Iniciando sincronização global...")
+    print("=== INICIANDO MOTOR COM PROTEÇÃO DE CACHE ===")
     build_local_manifest()
 
-    print("Baixando cache da API Central...")
+    print("Baixando banco de dados central da API...")
     try:
         req_api = requests.get("https://explouddev.com.br/api/canais/todos?search=", headers=HEADERS_API, timeout=15)
         api_cache = req_api.json()
@@ -167,7 +189,9 @@ def run_sync():
         return
 
     sessao = build_session()
-    linhas_manifest = [f'#EXTM3U x-tvg-url="{EPG_GLOBAL},{EPG_LOCAL}"\n']
+    
+    # IMPORTANTE: EPG_LOCAL primeiro para forçar prioridade na TV
+    linhas_manifest = [f'#EXTM3U x-tvg-url="{EPG_LOCAL},{EPG_GLOBAL}"\n']
 
     for canal in meus_canais:
         nome_no = canal['nome']
@@ -180,24 +204,34 @@ def run_sync():
         print(f"Processando: {nome_no}...", end=" ", flush=True)
 
         # ==========================================
-        # ROTA 1: EXTRAÇÃO VIA SITE (Se tiver "url")
+        # ROTA 1: EXTRAÇÃO VIA SITE (COM CACHE DE FALHA)
         # ==========================================
         if "url" in canal:
             url_origem = canal["url"]
             link_payload = extract_payload(sessao, url_origem)
             
             if link_payload:
-                categoria_nome = canal.get("categoria_api", "Diversos")
-                linhas_manifest.append(f'#EXTINF:-1 tvg-id="{id_meta}" tvg-logo="{url_asset}" tvg-name="{nome_no}" group-title="{categoria_nome}", {nome_no}\n')
-                # A chave mágica que faltava para os sites: o Referer!
-                linhas_manifest.append(f'{link_payload}|Referer={url_origem}\n')
-                print("[SITE OK]")
+                print("[SITE OK - NOVO]")
             else:
-                print("[SITE FALHA]")
+                # O scraping falhou, aciona o mecanismo de defesa
+                link_payload = recuperar_link_cache(id_meta, nome_no)
+                if link_payload:
+                    print("[SITE OK - RECUPERADO]")
+                else:
+                    print("[SITE FALHA TOTAL]")
+            
+            if link_payload:
+                categoria_nome = canal.get("categoria_api", "Diversos")
+                # Usa o id_meta como tvg-name se ele existir, para evitar Fuzzy Match no TiviMate
+                tvg_name_final = id_meta if id_meta else nome_no 
+                
+                linhas_manifest.append(f'#EXTINF:-1 tvg-id="{id_meta}" tvg-logo="{url_asset}" tvg-name="{tvg_name_final}" group-title="{categoria_nome}", {nome_no}\n')
+                linhas_manifest.append(f'{link_payload}|Referer={url_origem}\n')
+            
             time.sleep(1.5)
 
         # ==========================================
-        # ROTA 2: EXTRAÇÃO VIA API
+        # ROTA 2: EXTRAÇÃO VIA API (PADRÃO)
         # ==========================================
         else:
             dados_api = next((c for c in api_cache if c['name'] == nome_busca_api), None)
@@ -205,32 +239,6 @@ def run_sync():
             if dados_api and "sources" in dados_api:
                 filtro_regional = canal.get('filtro_cdn')
                 
-                # Procura com filtro regional
                 if filtro_regional:
                     for fonte in dados_api['sources']:
-                        if filtro_regional.lower() in fonte['name'].lower():
-                            link_payload = fonte['link']
-                            break
-                            
-                # Fallback para o CDN direto
-                if not link_payload:
-                    for fonte in dados_api['sources']:
-                        if "sinal.cc" not in fonte['link']:
-                            link_payload = fonte['link']
-                            break
-
-            if link_payload:
-                categoria_nome = canal.get("categoria_api", "Diversos")
-                linhas_manifest.append(f'#EXTINF:-1 tvg-id="{id_meta}" tvg-logo="{url_asset}" tvg-name="{nome_no}" group-title="{categoria_nome}", {nome_no}\n')
-                linhas_manifest.append(f'{link_payload}|User-Agent=okhttp/4.9.2\n')
-                print("[API OK]")
-            else:
-                print("[API FALHA]")
-
-    with open("export_data.txt", "w", encoding="utf-8") as arquivo:
-        arquivo.writelines(linhas_manifest)
-        
-    print("\nSincronização concluída! Arquivo de exportação atualizado.")
-
-if __name__ == "__main__":
-    run_sync()
+                        if filtro_regional.lower() in fonte['
