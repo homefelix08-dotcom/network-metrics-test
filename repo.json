@@ -241,13 +241,6 @@
         "categoria_api": "Variedades"
     },
     {
-        "nome": "Comedy Central",
-        "tvg_id": "",
-        "url": "https://4embeddecanais.xyz/comedycentral/",
-        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/comedycentral.png",
-        "categoria_api": "Variedades"
-    },
-    {
         "nome": "Curta!",
         "tvg_id": "CURTA",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_curta0001.png",
