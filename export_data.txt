@@ -1,14 +1,8 @@
 #EXTM3U x-tvg-url="https://raw.githubusercontent.com/limaalef/BrazilTVEPG/refs/heads/main/claro.xml,https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/local_meta.xml"
-#EXTINF:-1 tvg-id="Globo MG" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_globo0001.png" tvg-name="Globo MG" group-title="Abertos", Globo MG
-https://0705.cdn10embed.xyz/globomg/index.m3u8|Referer=https://4embeddecanais.xyz/globomg/
 #EXTINF:-1 tvg-id="Band MG" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_band0001.png" tvg-name="Band" group-title="Abertos", Band
 http://dns.explouddev.com/live/292330036/5179425/255482.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SBT MG" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_sbt0001.png" tvg-name="TV Alterosa" group-title="Abertos", TV Alterosa
 http://dns.explouddev.com/live/292330036/5179425/244184.m3u8|User-Agent=okhttp/4.9.2
-#EXTINF:-1 tvg-id="REDE TV! HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_redetv0001.png" tvg-name="Rede TV" group-title="Abertos", Rede TV
-https://0705.cdn10embed.xyz/redetv/index.m3u8|Referer=https://4embeddecanais.xyz/redetv/
-#EXTINF:-1 tvg-id="Record MG" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_record0001.png" tvg-name="Record MG" group-title="Abertos", Record MG
-https://0705.cdn10embed.xyz/recordmg/index.m3u8|Referer=https://4embeddecanais.xyz/recordmg/
 #EXTINF:-1 tvg-id="FUTURA HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_futura0001.png" tvg-name="Futura" group-title="Abertos", Futura
 http://dns.explouddev.com/live/292330036/5179425/159.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TV BRASIL" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_tvbrasil0001.png" tvg-name="TV Brasil" group-title="Abertos", TV Brasil
@@ -31,16 +25,12 @@ http://dns.explouddev.com/live/292330036/5179425/18751.m3u8|User-Agent=okhttp/4.
 http://dns.explouddev.com/live/292330036/5179425/18755.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HBO Family" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_hbofamily0001.png" tvg-name="HBO Family" group-title="Filmes e Séries", HBO Family
 http://dns.explouddev.com/live/292330036/5179425/18759.m3u8|User-Agent=okhttp/4.9.2
-#EXTINF:-1 tvg-id="HBO Mundi" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbomundi.png" tvg-name="HBO Mundi" group-title="Filmes e Séries", HBO Mundi
-https://0705.cdn10embed.xyz/hbomundi/index.m3u8|Referer=https://4embeddecanais.xyz/hbomundi/
 #EXTINF:-1 tvg-id="HBO+" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_hboplus0001.png" tvg-name="HBO Plus" group-title="Filmes e Séries", HBO Plus
 http://dns.explouddev.com/live/292330036/5179425/18764.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HBO Pop" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_hbopop0001.png" tvg-name="HBO Pop" group-title="Filmes e Séries", HBO Pop
 http://dns.explouddev.com/live/292330036/5179425/18779.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HBO Signature" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_hbosignature0001.png" tvg-name="HBO Signature" group-title="Filmes e Séries", HBO Signature
 http://dns.explouddev.com/live/292330036/5179425/18767.m3u8|User-Agent=okhttp/4.9.2
-#EXTINF:-1 tvg-id="HBO Xtreme" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hboxtreme.png" tvg-name="HBO Xtreme" group-title="Filmes e Séries", HBO Xtreme
-https://0705.cdn10embed.xyz/hboxtreme/index.m3u8|Referer=https://4embeddecanais.xyz/hboxtreme/
 #EXTINF:-1 tvg-id="MEGAPIX HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_megapix0001.png" tvg-name="Megapix" group-title="Filmes e Séries", Megapix
 http://dns.explouddev.com/live/292330036/5179425/692.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SONY CHANNEL" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_sony0001.png" tvg-name="Sony Channel" group-title="Filmes e Séries", Sony Channel
@@ -141,24 +131,12 @@ http://dns.explouddev.com/live/292330036/5179425/377228.m3u8|User-Agent=okhttp/4
 http://dns.explouddev.com/live/292330036/5179425/377232.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_tooncast0001.png" tvg-name="Tooncast" group-title="Infantis", Tooncast
 http://38.247.134.19/live/92370341211/30082393260/17212|User-Agent=okhttp/4.9.2
-#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/U5OE999.png" tvg-name="Amazon Prime Video 1" group-title="Filmes e Séries", Amazon Prime Video 1
-https://0705.cdn10embed.xyz/amazonprime/index.m3u8|Referer=https://4embeddecanais.xyz/amazonprimevideo/
-#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/U5OE999.png" tvg-name="Amazon Prime Video 2" group-title="Filmes e Séries", Amazon Prime Video 2
-https://0705.cdn10embed.xyz/amazonprime02/index.m3u8|Referer=https://4embeddecanais.xyz/amazonprimevideo02/
-#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/U5OE999.png" tvg-name="Amazon Prime Video 3" group-title="Filmes e Séries", Amazon Prime Video 3
-https://0705.cdn10embed.xyz/amazonprime03/index.m3u8|Referer=https://4embeddecanais.xyz/amazonprimevideo03/
-#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/U5OE999.png" tvg-name="Amazon Prime Video 4" group-title="Filmes e Séries", Amazon Prime Video 4
-https://0705.cdn10embed.xyz/amazonprime04/index.m3u8|Referer=https://4embeddecanais.xyz/amazonprimevideo04/
-#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/U5OE999.png" tvg-name="Amazon Prime Video 5" group-title="Filmes e Séries", Amazon Prime Video 5
-https://0705.cdn10embed.xyz/amazonprime05/index.m3u8|Referer=https://4embeddecanais.xyz/amazonprimevideo05/
 #EXTINF:-1 tvg-id="" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_appletv0001.png" tvg-name="Apple TV" group-title="Esportes", Apple TV
 http://dns.explouddev.com/live/292330036/5179425/274650.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="BAND SPORTS HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_bandsports0001.png" tvg-name="Band Sports" group-title="Esportes", Band Sports
 http://dns.explouddev.com/live/292330036/5179425/235.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_canalgoat0002.png" tvg-name="Canal Goat" group-title="Esportes", Canal Goat
 http://dns.explouddev.com/live/292330036/5179425/274647.m3u8|User-Agent=okhttp/4.9.2
-#EXTINF:-1 tvg-id="OFF HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canaloff.png" tvg-name="Canal Off" group-title="Esportes", Canal Off
-https://0705.cdn10embed.xyz/canaloff/index.m3u8|Referer=https://4embeddecanais.xyz/canaloff/
 #EXTINF:-1 tvg-id="COMBATE HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_combate0001.png" tvg-name="Combate" group-title="Esportes", Combate
 http://dns.explouddev.com/live/292330036/5179425/240.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_dazn0001.png" tvg-name="Dazn" group-title="Esportes", Dazn
@@ -193,22 +171,6 @@ http://dns.explouddev.com/live/292330036/5179425/368440.m3u8|User-Agent=okhttp/4
 http://dns.explouddev.com/live/292330036/5179425/250571.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Paramount+ 4" tvg-logo="https://i.imgur.com/YlKpabZ.png" tvg-name="Paramount+ 4" group-title="Esportes", Paramount+ 4
 http://dns.explouddev.com/live/292330036/5179425/368448.m3u8|User-Agent=okhttp/4.9.2
-#EXTINF:-1 tvg-id="PREMIERE 2 HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" tvg-name="Premiere 2" group-title="Esportes", Premiere 2
-https://0705.cdn10embed.xyz/premiere2/index.m3u8|Referer=https://4embeddecanais.xyz/premiere2/
-#EXTINF:-1 tvg-id="PREMIERE 3 HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" tvg-name="Premiere 3" group-title="Esportes", Premiere 3
-https://0705.cdn10embed.xyz/premiere3/index.m3u8|Referer=https://4embeddecanais.xyz/premiere3/
-#EXTINF:-1 tvg-id="PREMIERE 4 HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" tvg-name="Premiere 4" group-title="Esportes", Premiere 4
-https://0705.cdn10embed.xyz/premiere4/index.m3u8|Referer=https://4embeddecanais.xyz/premiere4/
-#EXTINF:-1 tvg-id="PREMIERE 5 HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" tvg-name="Premiere 5" group-title="Esportes", Premiere 5
-https://0705.cdn10embed.xyz/premiere5/index.m3u8|Referer=https://4embeddecanais.xyz/premiere5/
-#EXTINF:-1 tvg-id="PREMIERE 6 HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" tvg-name="Premiere 6" group-title="Esportes", Premiere 6
-https://0705.cdn10embed.xyz/premiere6/index.m3u8|Referer=https://4embeddecanais.xyz/premiere6/
-#EXTINF:-1 tvg-id="PREMIERE 7 HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" tvg-name="Premiere 7" group-title="Esportes", Premiere 7
-https://0705.cdn10embed.xyz/premiere7/index.m3u8|Referer=https://4embeddecanais.xyz/premiere7/
-#EXTINF:-1 tvg-id="" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" tvg-name="Premiere 8" group-title="Esportes", Premiere 8
-https://0705.cdn10embed.xyz/premiere8/index.m3u8|Referer=https://4embeddecanais.xyz/premiere8/
-#EXTINF:-1 tvg-id="PREMIERE CLUBES HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" tvg-name="Premiere Clubes" group-title="Esportes", Premiere Clubes
-https://0705.cdn10embed.xyz/premiereclubes/index.m3u8|Referer=https://4embeddecanais.xyz/premiereclubes/
 #EXTINF:-1 tvg-id="SPORTV" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_sportv0001.png" tvg-name="SporTV" group-title="Esportes", SporTV
 http://dns.explouddev.com/live/292330036/5179425/118881.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SPORTV 2" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_sportvtwo0001.png" tvg-name="SporTV 2" group-title="Esportes", SporTV 2
