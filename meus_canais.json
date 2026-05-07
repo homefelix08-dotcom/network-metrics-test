@@ -1,0 +1,700 @@
+[
+    {
+        "nome": "Globo MG",
+        "tvg_id": "Globo MG",
+        "url": "https://4embeddecanais.xyz/globomg/",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_globo0001.png"
+    },
+    {
+        "nome": "Band",
+        "tvg_id": "Band MG",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_band0001.png",
+        "categoria_api": "Abertos",
+        "filtro_cdn": "Band MG"
+    },
+    {
+        "nome": "SBT",
+        "tvg_id": "SBT MG",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_sbt0001.png",
+        "categoria_api": "Abertos",
+        "filtro_cdn": "SBT MG"
+    },
+    {
+      "nome": "Rede TV",
+      "tvg_id": "REDE TV! HD",
+      "url": "https://4embeddecanais.xyz/redetv/",
+      "logo": "https://explouddev.com/maxnettv/logos/mntv_redetv0001.png"
+    },
+    {
+      "nome": "Record MG",
+      "tvg_id": "Record MG",
+      "url": "https://4embeddecanais.xyz/recordmg/",
+      "logo": "https://explouddev.com/maxnettv/logos/mntv_recordmg0001.png"
+    },
+    {
+        "nome": "Futura",
+        "tvg_id": "FUTURA HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_futura0001.png",
+        "categoria_api": "Abertos"
+    },
+    {
+        "nome": "TV Brasil",
+        "tvg_id": "TV BRASIL",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_tvbrasil0001.png",
+        "categoria_api": "Abertos"
+    },
+    {
+        "nome": "TV Cultura",
+        "tvg_id": "CULTURA HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_tvcultura0001.png",
+        "categoria_api": "Abertos"
+    },
+    {
+        "nome": "SporTV",
+        "tvg_id": "SPORTV",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_sportv0001.png",
+        "categoria_api": "Esportes"
+    },
+    {
+        "nome": "SporTV 2",
+        "tvg_id": "SPORTV 2",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_sportvtwo0001.png",
+        "categoria_api": "Esportes"
+    },
+    {
+        "nome": "SporTV 3",
+        "tvg_id": "SPORTV 3",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_sportvthree0001.png",
+        "categoria_api": "Esportes"
+    },
+    {
+        "nome": "ESPN",
+        "tvg_id": "ESPN",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_espn0001.png",
+        "categoria_api": "Esportes"
+    },
+    {
+        "nome": "ESPN 2",
+        "tvg_id": "ESPN 2",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_espntwo0001.png",
+        "categoria_api": "Esportes"
+    },
+    {
+        "nome": "ESPN 3",
+        "tvg_id": "ESPN 3",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_espn0001.png",
+        "categoria_api": "Esportes"
+    },
+    {
+        "nome": "ESPN 4",
+        "tvg_id": "ESPN 4",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_espn0001.png",
+        "categoria_api": "Esportes"
+    },
+    {
+        "nome": "ESPN 5",
+        "tvg_id": "ESPN 5",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_espn0001.png",
+        "categoria_api": "Esportes"
+    },
+    {
+        "nome": "ESPN 6",
+        "tvg_id": "ESPN 6",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_espn0001.png",
+        "categoria_api": "Esportes"
+    },
+    {
+      "nome": "Canal Off",
+      "tvg_id": "OFF HD",
+      "url": "https://4embeddecanais.xyz/canaloff/",
+      "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canaloff.png"
+    },
+    {
+        "nome": "Band Sports",
+        "tvg_id": "BAND SPORTS HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_bandsports0001.png",
+        "categoria_api": "Esportes"
+    },
+    {
+        "nome": "Combate",
+        "tvg_id": "COMBATE HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_combate0001.png",
+        "categoria_api": "Esportes"
+    },
+    {
+        "nome": "Paramount+",
+        "tvg_id": "",
+        "logo": "https://i.imgur.com/YlKpabZ.png",
+        "categoria_api": "Esportes"
+    },
+    {
+        "nome": "Paramount+ 2",
+        "tvg_id": "Paramount+ 2",
+        "logo": "https://i.imgur.com/YlKpabZ.png",
+        "categoria_api": "Esportes"
+    },
+    {
+        "nome": "HBO Max",
+        "tvg_id": "",
+        "logo": "https://i.imgur.com/GZSYVVf.png",
+        "categoria_api": "Esportes"
+    },
+    {
+        "nome": "HBO Max 2",
+        "tvg_id": "",
+        "logo": "https://i.imgur.com/GZSYVVf.png",
+        "categoria_api": "Esportes"
+    },
+    {
+        "nome": "HBO Max 3",
+        "tvg_id": "",
+        "logo": "https://i.imgur.com/GZSYVVf.png",
+        "categoria_api": "Esportes"
+    },
+    {
+        "nome": "HBO Max 4",
+        "tvg_id": "",
+        "logo": "https://i.imgur.com/GZSYVVf.png",
+        "categoria_api": "Esportes"
+    },
+    {
+      "nome": "Premiere Clubes",
+      "tvg_id": "PREMIERE CLUBES HD",
+      "url": "https://4embeddecanais.xyz/premiereclubes/",
+      "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png"
+    },
+    {
+      "nome": "Premiere 2",
+      "tvg_id": "PREMIERE 2 HD",
+      "url": "https://4embeddecanais.xyz/premiere2/",
+      "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png"
+    },
+    {
+      "nome": "Premiere 3",
+      "tvg_id": "PREMIERE 3 HD",
+      "url": "https://4embeddecanais.xyz/premiere3/",
+      "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png"
+    },
+    {
+      "nome": "Premiere 4",
+      "tvg_id": "PREMIERE 4 HD",
+      "url": "https://4embeddecanais.xyz/premiere4/",
+      "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png"
+    },
+    {
+      "nome": "Premiere 5",
+      "tvg_id": "PREMIERE 5 HD",
+      "url": "https://4embeddecanais.xyz/premiere5/",
+      "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png"
+    },
+    {
+      "nome": "Premiere 6",
+      "tvg_id": "PREMIERE 6 HD",
+      "url": "https://4embeddecanais.xyz/premiere6/",
+      "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png"
+    },
+    {
+      "nome": "Premiere 7",
+      "tvg_id": "PREMIERE 7 HD",
+      "url": "https://4embeddecanais.xyz/premiere7/",
+      "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png"
+    },
+    {
+      "nome": "Premiere 8",
+      "tvg_id": "",
+      "url": "https://4embeddecanais.xyz/premiere8/",
+      "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png"
+    },
+    {
+        "nome": "Paramount+ 3",
+        "tvg_id": "Paramount+ 3",
+        "logo": "https://i.imgur.com/YlKpabZ.png",
+        "categoria_api": "Esportes"
+    },
+    {
+        "nome": "Paramount+ 4",
+        "tvg_id": "Paramount+ 4",
+        "logo": "https://i.imgur.com/YlKpabZ.png",
+        "categoria_api": "Esportes"
+    },
+    {
+      "nome": "Amazon Prime Video 1",
+      "tvg_id": "",
+      "url": "https://4embeddecanais.xyz/amazonprimevideo/",
+      "logo": "https://i.imgur.com/U5OE999.png"
+    },
+    {
+      "nome": "Amazon Prime Video 2",
+      "tvg_id": "",
+      "url": "https://4embeddecanais.xyz/amazonprimevideo02/",
+      "logo": "https://i.imgur.com/U5OE999.png"
+    },
+    {
+      "nome": "Amazon Prime Video 3",
+      "tvg_id": "",
+      "url": "https://4embeddecanais.xyz/amazonprimevideo03/",
+      "logo": "https://i.imgur.com/U5OE999.png"
+    },
+    {
+      "nome": "Amazon Prime Video 4",
+      "tvg_id": "",
+      "url": "https://4embeddecanais.xyz/amazonprimevideo04/",
+      "logo": "https://i.imgur.com/U5OE999.png"
+    },
+    {
+      "nome": "Amazon Prime Video 5",
+      "tvg_id": "",
+      "url": "https://4embeddecanais.xyz/amazonprimevideo05/",
+      "logo": "https://i.imgur.com/U5OE999.png"
+    },
+    {
+        "nome": "Canal Goat",
+        "tvg_id": "",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_canalgoat0002.png",
+        "categoria_api": "Esportes"
+    },
+    {
+        "nome": "Apple TV",
+        "tvg_id": "",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_appletv0001.png",
+        "categoria_api": "Esportes"
+    },
+    {
+        "nome": "Dazn",
+        "tvg_id": "",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_dazn0001.png",
+        "categoria_api": "Esportes"
+    },
+    {
+        "nome": "XSports",
+        "tvg_id": "Xsports HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_xsports0001.png",
+        "categoria_api": "Esportes"
+    },
+    {
+        "nome": "GE TV",
+        "tvg_id": "GE",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_getv0001.png",
+        "categoria_api": "Esportes"
+    },
+    {
+        "nome": "Animal Planet",
+        "tvg_id": "ANIMAL PLANET HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_animplanet0001.png",
+        "categoria_api": "Documentarios"
+    },
+    {
+        "nome": "Arte1",
+        "tvg_id": "ARTE 1 HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_arteum0001.png",
+        "categoria_api": "Documentarios"
+    },
+    {
+        "nome": "Discovery Channel",
+        "tvg_id": "DISCOVERY HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_discoverychannel0001.png",
+        "categoria_api": "Documentarios"
+    },
+    {
+        "nome": "Discovery Home & Health",
+        "tvg_id": "DISCOVERY HOME&HEALTH HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_discoveryh&h0001.png",
+        "categoria_api": "Documentarios"
+    },
+    {
+        "nome": "Discovery Science",
+        "tvg_id": "DISCOVERY SCIENCE HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_science0001.png",
+        "categoria_api": "Documentarios"
+    },
+    {
+        "nome": "Discovery Theater",
+        "tvg_id": "DISCOVERY THEATER HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_discoverytheater0001.png",
+        "categoria_api": "Documentarios"
+    },
+    {
+        "nome": "Discovery Turbo",
+        "tvg_id": "DISCOVERY TURBO HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_discoveryturbo0001.png",
+        "categoria_api": "Documentarios"
+    },
+    {
+        "nome": "Discovery World",
+        "tvg_id": "DISCOVERY WORLD HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_discoveryworld0001.png",
+        "categoria_api": "Documentarios"
+    },
+    {
+        "nome": "E! Entertainment",
+        "tvg_id": "E!",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_entertainment0001.png",
+        "categoria_api": "Documentarios"
+    },
+    {
+        "nome": "HGTV",
+        "tvg_id": "HGTV HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_hgtv0001.png",
+        "categoria_api": "Documentarios"
+    },
+    {
+        "nome": "History",
+        "tvg_id": "HISTORY",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_history0001.png",
+        "categoria_api": "Documentarios"
+    },
+    {
+        "nome": "History 2",
+        "tvg_id": "HISTORY 2",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_historytwo0001.png",
+        "categoria_api": "Documentarios"
+    },
+    {
+        "nome": "Investigação Discovery",
+        "tvg_id": "ID HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_idchannel0001.png",
+        "categoria_api": "Documentarios"
+    },
+    {
+        "nome": "National Geographic",
+        "tvg_id": "",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_natgeo0001.png",
+        "categoria_api": "Documentarios"
+    },
+    {
+        "nome": "A&E",
+        "tvg_id": "A&E",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_a&e0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "AMC",
+        "tvg_id": "AMC HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_amc0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "AXN",
+        "tvg_id": "AXN",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_axn0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "Canal Brasil",
+        "tvg_id": "CANAL BRASIL HD",
+        "logo": "https://i.imgur.com/8PuNxoS.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "Cinemax",
+        "tvg_id": "CINEMAX HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_cinemax0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "HBO",
+        "tvg_id": "HBO",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_hbo0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "HBO 2",
+        "tvg_id": "HBO2",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_hbotwo0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "HBO Family",
+        "tvg_id": "HBO Family",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_hbofamily0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+      "nome": "HBO Mundi",
+      "tvg_id": "HBO Mundi",
+      "url": "https://4embeddecanais.xyz/hbomundi/",
+      "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbomundi.png"
+    },
+    {
+        "nome": "HBO Plus",
+        "tvg_id": "HBO+",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_hboplus0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "HBO Pop",
+        "tvg_id": "HBO Pop",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_hbopop0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "HBO Signature",
+        "tvg_id": "HBO Signature",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_hbosignature0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+      "nome": "HBO Xtreme",
+      "tvg_id": "HBO Xtreme",
+      "url": "https://4embeddecanais.xyz/hboxtreme/",
+      "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hboxtreme.png"
+    },
+    {
+        "nome": "Megapix",
+        "tvg_id": "MEGAPIX HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_megapix0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "Sony Channel",
+        "tvg_id": "SONY CHANNEL",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_sony0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "Space",
+        "tvg_id": "SPACE HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_space0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "Studio Universal",
+        "tvg_id": "STUDIO UNIVERSAL HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_studiochannel0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "TCM",
+        "tvg_id": "TCM BR",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_tcm0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "Telecine Action",
+        "tvg_id": "TELECINE ACTION",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_telecineaction0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "Telecine Cult",
+        "tvg_id": "TELECINE CULT",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_telecinecult0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "Telecine Fun",
+        "tvg_id": "TELECINE FUN",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_telecinefun0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "Telecine Pipoca",
+        "tvg_id": "TELECINE PIPOCA",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_telecinepipoca0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "Telecine Premium",
+        "tvg_id": "TELECINE PREMIUM",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_telecinepremium0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "Telecine Touch",
+        "tvg_id": "TELECINE TOUCH",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_telecinetouch0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "TNT",
+        "tvg_id": "TNT HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_tnt0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "TNT Novelas",
+        "tvg_id": "TNT NOVELAS",
+        "logo": "https://i.imgur.com/bzOhQNq.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "TNT Séries",
+        "tvg_id": "TNT SERIES HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_tntseries0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "Universal TV",
+        "tvg_id": "UNIVERSAL TV HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_universaltv0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "USA",
+        "tvg_id": "USA HD",
+        "logo": "https://i.imgur.com/sdoR43Z.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "Warner",
+        "tvg_id": "WARNER CHANNEL",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_warner0001.png",
+        "categoria_api": "Filmes"
+    },
+    {
+        "nome": "Bis",
+        "tvg_id": "BIS HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_bis0001.png",
+        "categoria_api": "Variedades"
+    },
+    {
+      "nome": "Comedy Central",
+      "tvg_id": "",
+      "url": "https://4embeddecanais.xyz/comedycentral/",
+      "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/comedycentral.png"
+    },
+    {
+        "nome": "Curta!",
+        "tvg_id": "CURTA",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_curta0001.png",
+        "categoria_api": "Variedades"
+    },
+    {
+        "nome": "Fish TV",
+        "tvg_id": "FISH TV",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_fishtv0001.png",
+        "categoria_api": "Variedades"
+    },
+    {
+        "nome": "Food Network",
+        "tvg_id": "FOOD NETWORK HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_foodnetwork0001.png",
+        "categoria_api": "Variedades"
+    },
+    {
+        "nome": "Globoplay Novelas",
+        "tvg_id": "Globoplay Novelas",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_gplaynovelas0001.png",
+        "categoria_api": "Variedades"
+    },
+    {
+        "nome": "GNT",
+        "tvg_id": "GNT HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_gnt0001.png",
+        "categoria_api": "Variedades"
+    },
+    {
+        "nome": "Lifetime",
+        "tvg_id": "LIFETIME",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_lifetime0001.png",
+        "categoria_api": "Variedades"
+    },
+    {
+        "nome": "Modo Viagem",
+        "tvg_id": "Modo Viagem",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_maisglobosat0001.png",
+        "categoria_api": "Variedades"
+    },
+    {
+        "nome": "Multishow",
+        "tvg_id": "MULTISHOW HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_multishow0001.png",
+        "categoria_api": "Variedades"
+    },
+    {
+        "nome": "Music Box Brazil",
+        "tvg_id": "MUSIC BOX BRAZIL",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_musicboxbr0001.png",
+        "categoria_api": "Variedades"
+    },
+    {
+        "nome": "PRIME BOX BRAZIL",
+        "tvg_id": "PRIME BOX BRAZIL",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_primeboxbrazil0001.png",
+        "categoria_api": "Variedades"
+    },
+    {
+        "nome": "TLC",
+        "tvg_id": "TLC HD",
+        "logo": "https://i.imgur.com/BOznDVO.png",
+        "categoria_api": "Variedades"
+    },
+    {
+        "nome": "Travel Box Brazil",
+        "tvg_id": "TRAVEL BOX",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_travelboxbrazil0001.png",
+        "categoria_api": "Variedades"
+    },
+    {
+        "nome": "Adult Swim",
+        "tvg_id": "Adult Swim HD",
+        "logo": "https://i.imgur.com/4TEXo8R.png",
+        "categoria_api": "Infantil"
+    },
+    {
+        "nome": "Cartoon Network",
+        "tvg_id": "CARTOON HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_cartoon0001.png",
+        "categoria_api": "Infantil"
+    },
+    {
+        "nome": "Cartoonito",
+        "tvg_id": "CARTOONITO",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_cartoonito0001.png",
+        "categoria_api": "Infantil"
+    },
+    {
+        "nome": "Discovery Kids",
+        "tvg_id": "DISCOVERY KIDS HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_discoverykids0001.png",
+        "categoria_api": "Infantil"
+    },
+    {
+        "nome": "Disney Channel",
+        "tvg_id": "",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_disneychannel0001.png",
+        "categoria_api": "Infantil"
+    },
+    {
+        "nome": "Gloob",
+        "tvg_id": "GLOOB HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_gloob0001.png",
+        "categoria_api": "Infantil"
+    },
+    {
+        "nome": "Gloobinho",
+        "tvg_id": "GLOOBINHO HD",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_gloobinho0001.png",
+        "categoria_api": "Infantil"
+    },
+    {
+        "nome": "Tooncast",
+        "tvg_id": "",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_tooncast0001.png",
+        "categoria_api": "Infantil"
+    },
+    {
+        "nome": "Band News",
+        "tvg_id": "BAND NEWS",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_bandnews0001.png",
+        "categoria_api": "Noticias"
+    },
+    {
+        "nome": "CNN Brasil",
+        "tvg_id": "CNN BRASIL",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_cnnbrasil0001.png",
+        "categoria_api": "Noticias"
+    },
+    {
+        "nome": "Globo News",
+        "tvg_id": "GLOBONEWS",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_globonews0001.png",
+        "categoria_api": "Noticias"
+    },
+    {
+        "nome": "Record News",
+        "tvg_id": "RECORD NEWS",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_recordnews0001.png",
+        "categoria_api": "Noticias"
+    }
+]
