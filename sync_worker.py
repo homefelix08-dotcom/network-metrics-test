@@ -18,9 +18,31 @@ HEADERS_SITE = {
 }
 HEADERS_API = {'User-Agent': 'okhttp/4.9.2'}
 
-SOURCE_TELEMETRY = "https://www.claro.com.br/tv-por-assinatura/programacao/grade/programa/globo-hd/23-2068"
-META_NODE_ID = "Globo MG"
-META_NODE_NAME = "Globo MG"
+# ==========================================
+# CONFIGURAÇÕES DO EPG LOCAL
+# ==========================================
+LOCAL_EPG_CONFIGS = [
+    {
+        "id": "Globo MG",
+        "name": "Globo MG",
+        "url": "https://www.claro.com.br/tv-por-assinatura/programacao/grade/programa/globo-hd/23-2068"
+    },
+    {
+        "id": "Record MG",
+        "name": "Record MG",
+        "url": "https://www.claro.com.br/tv-por-assinatura/programacao/grade/programa/record-hd/23-2084"
+    },
+    {
+        "id": "SBT MG",
+        "name": "SBT",
+        "url": "https://www.claro.com.br/tv-por-assinatura/programacao/grade/programa/sbt-tv-alterosa/23-1949"
+    },
+    {
+        "id": "Band MG",
+        "name": "Band",
+        "url": "https://www.claro.com.br/tv-por-assinatura/programacao/grade/programa/band/23-408"
+    }
+]
 
 # Links dos Guias (EPG)
 EPG_GLOBAL = "https://raw.githubusercontent.com/limaalef/BrazilTVEPG/refs/heads/main/claro.xml"
@@ -38,45 +60,63 @@ def build_session():
     return scraper
 
 def build_local_manifest():
-    """Gera o arquivo de metadados locais (Guia da Globo MG)."""
-    print("Processando telemetria local...")
+    """Gera o arquivo de metadados locais (Guia regional) para múltiplos canais."""
+    print("Processando telemetria local para canais regionais...")
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
-    
-    try:
-        resposta = requests.get(SOURCE_TELEMETRY, headers=headers, timeout=15)
-        resposta.raise_for_status()
-    except Exception as e:
-        print(f"Erro ao buscar telemetria de origem: {e}")
-        return
-
-    parsed_dom = BeautifulSoup(resposta.text, 'html.parser')
-    meta_nodes = []
     fuso_br = pytz.timezone('America/Sao_Paulo')
+    
+    xml_channels = []
+    xml_programmes = []
+    total_blocos = 0
 
-    for bloco in parsed_dom.find_all('div', class_='cell-item'):
+    for config in LOCAL_EPG_CONFIGS:
+        print(f"  -> Coletando grade: {config['name']}...")
+        
+        # 1. Cria o bloco do canal
+        xml_channels.append(f'  <channel id="{config["id"]}">\n    <display-name>{config["name"]}</display-name>\n  </channel>\n')
+        
+        # 2. Busca a página da Claro
         try:
-            start_sec = int(bloco['data-start']) / 1000.0
-            end_sec = int(bloco['data-end']) / 1000.0
-            titulo = bloco.find('p', class_='channel-program-item-title').text.strip()
-            
-            str_inicio = datetime.fromtimestamp(start_sec, fuso_br).strftime('%Y%m%d%H%M%S %z')
-            str_fim = datetime.fromtimestamp(end_sec, fuso_br).strftime('%Y%m%d%H%M%S %z')
-            
-            meta_nodes.append(f'  <programme start="{str_inicio}" stop="{str_fim}" channel="{META_NODE_ID}">\n    <title lang="pt">{titulo}</title>\n  </programme>\n')
-        except:
+            resposta = requests.get(config["url"], headers=headers, timeout=15)
+            resposta.raise_for_status()
+        except Exception as e:
+            print(f"     [X] Erro ao buscar telemetria de {config['name']}: {e}")
             continue
-            
-    if meta_nodes:
-        linhas_xml = [
-            '<?xml version="1.0" encoding="UTF-8"?>\n<tv>\n',
-            f'  <channel id="{META_NODE_ID}">\n    <display-name>{META_NODE_NAME}</display-name>\n  </channel>\n'
-        ]
-        linhas_xml.extend(meta_nodes)
+
+        parsed_dom = BeautifulSoup(resposta.text, 'html.parser')
+        
+        # 3. Processa a grade de programação
+        blocos_canal = 0
+        for bloco in parsed_dom.find_all('div', class_='cell-item'):
+            try:
+                start_sec = int(bloco['data-start']) / 1000.0
+                end_sec = int(bloco['data-end']) / 1000.0
+                titulo = bloco.find('p', class_='channel-program-item-title').text.strip()
+                
+                str_inicio = datetime.fromtimestamp(start_sec, fuso_br).strftime('%Y%m%d%H%M%S %z')
+                str_fim = datetime.fromtimestamp(end_sec, fuso_br).strftime('%Y%m%d%H%M%S %z')
+                
+                xml_programmes.append(f'  <programme start="{str_inicio}" stop="{str_fim}" channel="{config["id"]}">\n    <title lang="pt">{titulo}</title>\n  </programme>\n')
+                blocos_canal += 1
+            except:
+                continue
+                
+        total_blocos += blocos_canal
+        print(f"     [OK] {blocos_canal} programas adicionados.")
+
+    # 4. Monta o arquivo XML final
+    if xml_channels and xml_programmes:
+        linhas_xml = ['<?xml version="1.0" encoding="UTF-8"?>\n<tv>\n']
+        linhas_xml.extend(xml_channels)
+        linhas_xml.extend(xml_programmes)
         linhas_xml.append('</tv>\n')
         
         with open('local_meta.xml', 'w', encoding='utf-8') as arquivo:
             arquivo.writelines(linhas_xml)
-        print(f"Telemetria local gerada: {len(meta_nodes)} blocos registrados.")
+            
+        print(f"Telemetria local consolidada com sucesso: {total_blocos} blocos totais registrados.")
+    else:
+        print("Aviso: Nenhum dado de EPG pôde ser extraído.")
 
 def extract_payload(sessao, url_destino):
     """Sua lógica robusta de extração, buscando inclusive nos iframes."""
@@ -108,10 +148,10 @@ def extract_payload(sessao, url_destino):
 def run_sync():
     """Motor Híbrido: Junta a API com o Scraping."""
     try:
-        with open("meus_canais.json", "r", encoding="utf-8") as f:
+        with open("repo.json", "r", encoding="utf-8") as f:
             meus_canais = json.load(f)
     except Exception as e:
-        print(f"Erro ao carregar meus_canais.json: {e}")
+        print(f"Erro ao carregar repo.json: {e}")
         return
 
     print("Iniciando sincronização global...")
