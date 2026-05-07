@@ -136,6 +136,17 @@ def recuperar_link_cache(id_meta, nome_no):
         print(f"  [X] Erro ao ler cache: {e}")
     return None
 
+def verificar_sinal_ativo(url_m3u8, url_origem):
+    """Faz um 'ping' no link do vídeo para saber se ele ainda está vivo."""
+    try:
+        # Precisamos mandar o Referer, senão o servidor do vídeo recusa a conexão
+        headers = {"Referer": url_origem, "User-Agent": "okhttp/4.9.2"}
+        # Usamos stream=True para não baixar o vídeo, apenas ler o status da conexão
+        r = requests.get(url_m3u8, headers=headers, timeout=5, stream=True)
+        return r.status_code == 200
+    except:
+        return False
+
 def extract_payload(sessao, url_destino):
     """Lógica robusta de extração, buscando inclusive nos iframes."""
     try:
@@ -191,7 +202,7 @@ def run_sync():
     sessao = build_session()
     
     # IMPORTANTE: EPG_LOCAL primeiro para forçar prioridade na TV
-    linhas_manifest = [f'#EXTM3U x-tvg-url="{EPG_LOCAL},{EPG_GLOBAL}"\n']
+    linhas_manifest = [f'#EXTM3U x-tvg-url="{EPG_GLOBAL},{EPG_LOCAL}"\n']
 
     for canal in meus_canais:
         nome_no = canal['nome']
@@ -204,25 +215,40 @@ def run_sync():
         print(f"Processando: {nome_no}...", end=" ", flush=True)
 
         # ==========================================
-        # ROTA 1: EXTRAÇÃO VIA SITE (COM CACHE DE FALHA)
+        # ROTA 1: EXTRAÇÃO VIA SITE (ESTRATÉGIA ANTIBAN)
         # ==========================================
         if "url" in canal:
             url_origem = canal["url"]
-            link_payload = extract_payload(sessao, url_origem)
+            link_payload = None
             
-            if link_payload:
-                print("[SITE OK - NOVO]")
+            # Passo 1: Pega o link do commit passado (se existir)
+            link_antigo = recuperar_link_cache(id_meta, nome_no)
+            
+            # Passo 2: Testa se a Globo ainda está no ar com esse link
+            if link_antigo and verificar_sinal_ativo(link_antigo, url_origem):
+                link_payload = link_antigo
+                print("[SITE OK - SINAL ANTIGO AINDA ATIVO. SCRAPING IGNORADO!]")
+            
+            # Passo 3: Se não tem link antigo ou o sinal morreu, aciona o Scraper
             else:
-                # O scraping falhou, aciona o mecanismo de defesa
-                link_payload = recuperar_link_cache(id_meta, nome_no)
+                if link_antigo:
+                    print("[SINAL MORTO] ->", end=" ")
+                
+                link_payload = extract_payload(sessao, url_origem)
+                
                 if link_payload:
-                    print("[SITE OK - RECUPERADO]")
+                    print("[SITE OK - NOVO LINK EXTRAÍDO]")
                 else:
-                    print("[SITE FALHA TOTAL]")
+                    # Passo 4: Falha no scraping (Cloudflare bloqueou de novo)
+                    if link_antigo:
+                        link_payload = link_antigo
+                        print("[SITE FALHA - MANTENDO CACHE MORTO POR SEGURANÇA]")
+                    else:
+                        print("[SITE FALHA TOTAL]")
             
+            # Monta a linha se achou algum link válido
             if link_payload:
                 categoria_nome = canal.get("categoria_api", "Diversos")
-                # Usa o id_meta como tvg-name se ele existir, para evitar Fuzzy Match no TiviMate
                 tvg_name_final = id_meta if id_meta else nome_no 
                 
                 linhas_manifest.append(f'#EXTINF:-1 tvg-id="{id_meta}" tvg-logo="{url_asset}" tvg-name="{tvg_name_final}" group-title="{categoria_nome}", {nome_no}\n')
