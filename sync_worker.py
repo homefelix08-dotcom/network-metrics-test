@@ -144,7 +144,7 @@ def run_sync():
             link_payload = extract_payload(sessao, url_origem)
             
             if link_payload:
-                linhas_manifest.append(f'#EXTINF:-1 tvg-id="{id_meta}" tvg-logo="{url_asset}" tvg-name="{nome_no}" group-title="Exclusivos / Regionais", {nome_no}\n')
+                linhas_manifest.append(f'#EXTINF:-1 tvg-id="{id_meta}" tvg-logo="{url_asset}" tvg-name="{nome_no}" group-title="{categoria_nome}", {nome_no}\n')
                 # A chave mágica que faltava para os sites: o Referer!
                 linhas_manifest.append(f'{link_payload}|Referer={url_origem}\n')
                 print("[SITE OK]")
