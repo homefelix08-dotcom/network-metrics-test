@@ -34,7 +34,7 @@ LOCAL_EPG_CONFIGS = [
     },
     {
         "id": "SBT MG",
-        "name": "SBT",
+        "name": "TV Alterosa",
         "url": "https://www.claro.com.br/tv-por-assinatura/programacao/grade/programa/sbt-tv-alterosa/23-1949"
     },
     {
