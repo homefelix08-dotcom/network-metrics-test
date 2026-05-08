@@ -42,7 +42,7 @@ LOCAL_EPG_CONFIGS = [
         "id": "Band MG",
         "name": "Band",
         "url": "https://www.claro.com.br/tv-por-assinatura/programacao/grade/programa/band/23-408"
-    }
+    }*/
 ]
 
 # Links dos Guias (EPG)
@@ -136,43 +136,6 @@ def recuperar_link_cache(id_meta, nome_no):
         print(f"  [X] Erro ao ler cache: {e}")
     return None
 
-def verificar_sinal_ativo(sessao, url_m3u8, url_origem):
-    """Faz um 'ping' no link do vídeo e retorna o status na tela."""
-    try:
-        # Armadura completa de navegador
-        headers = {
-            "Accept": "*/*",
-            "Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
-            "Origin": "https://4embeddecanais.xyz",
-            "Referer": url_origem,
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-        }
-        
-        # Fazemos a requisição (timeout um pouco maior para CDNs lentas)
-        r = sessao.get(url_m3u8, headers=headers, timeout=12)
-        
-        # Verifica se o arquivo é realmente uma lista M3U8 válida
-        if r.status_code == 200 and "#EXTM3U" in r.text:
-            print(f" [Ping: OK] ", end="")
-            return True
-        elif r.status_code == 200:
-            # Retornou 200, mas o conteúdo não é de vídeo (provável página de bloqueio do Cloudflare)
-            print(f" [Ping: Falso 200 - Conteúdo Bloqueado] ", end="")
-            return False
-        else:
-            # Retornou erro HTTP (403, 404, 503, etc)
-            print(f" [Ping Erro: HTTP {r.status_code}] ", end="")
-            return False
-            
-    except requests.exceptions.Timeout:
-        print(" [Ping Erro: Timeout] ", end="")
-        return False
-    except Exception as e:
-        # Mostra qual foi o erro de rede (Ex: ConnectionError)
-        print(f" [Ping Erro: {type(e).__name__}] ", end="")
-        return False
-        
-
 def extract_payload(sessao, url_destino):
     """Lógica robusta de extração, buscando inclusive nos iframes."""
     try:
@@ -208,10 +171,10 @@ def extract_payload(sessao, url_destino):
 def run_sync():
     """Motor Híbrido: Junta API, Scraping e Camada de Persistência."""
     try:
-        with open("repo.json", "r", encoding="utf-8") as f:
+        with open("config.json", "r", encoding="utf-8") as f:
             meus_canais = json.load(f)
     except Exception as e:
-        print(f"Erro ao carregar repo.json: {e}")
+        print(f"Erro ao carregar config.json: {e}")
         return
 
     print("=== INICIANDO MOTOR COM PROTEÇÃO DE CACHE ===")
@@ -241,41 +204,25 @@ def run_sync():
         print(f"Processando: {nome_no}...", end=" ", flush=True)
 
         # ==========================================
-        # ROTA 1: EXTRAÇÃO VIA SITE (ESTRATÉGIA ANTIBAN)
+        # ROTA 1: EXTRAÇÃO VIA SITE (COM CACHE DE FALHA)
         # ==========================================
         if "url" in canal:
             url_origem = canal["url"]
-            link_payload = None
+            link_payload = extract_payload(sessao, url_origem)
             
-            # Passo 1: Pega o link do commit passado (se existir)
-            link_antigo = recuperar_link_cache(id_meta, nome_no)
-            
-            # Passo 2: Testa se a Globo ainda está no ar com esse link
-            if link_antigo and verificar_sinal_ativo(sessao, link_antigo, url_origem):
-                            
-                link_payload = link_antigo
-                print("[SITE OK - SINAL ANTIGO AINDA ATIVO. SCRAPING IGNORADO!]")
-            
-            # Passo 3: Se não tem link antigo ou o sinal morreu, aciona o Scraper
+            if link_payload:
+                print("[SITE OK - NOVO]")
             else:
-                if link_antigo:
-                    print("[SINAL MORTO] ->", end=" ")
-                
-                link_payload = extract_payload(sessao, url_origem)
-                
+                # O scraping falhou, aciona o mecanismo de defesa
+                link_payload = recuperar_link_cache(id_meta, nome_no)
                 if link_payload:
-                    print("[SITE OK - NOVO LINK EXTRAÍDO]")
+                    print("[SITE OK - RECUPERADO]")
                 else:
-                    # Passo 4: Falha no scraping (Cloudflare bloqueou de novo)
-                    if link_antigo:
-                        link_payload = link_antigo
-                        print("[SITE FALHA - MANTENDO CACHE MORTO POR SEGURANÇA]")
-                    else:
-                        print("[SITE FALHA TOTAL]")
+                    print("[SITE FALHA TOTAL]")
             
-            # Monta a linha se achou algum link válido
             if link_payload:
                 categoria_nome = canal.get("categoria_api", "Diversos")
+                # Usa o id_meta como tvg-name se ele existir, para evitar Fuzzy Match no TiviMate
                 tvg_name_final = id_meta if id_meta else nome_no 
                 
                 linhas_manifest.append(f'#EXTINF:-1 tvg-id="{id_meta}" tvg-logo="{url_asset}" tvg-name="{tvg_name_final}" group-title="{categoria_nome}", {nome_no}\n')
