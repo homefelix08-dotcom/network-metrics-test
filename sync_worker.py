@@ -171,11 +171,31 @@ def extract_payload(sessao, url_destino):
 def run_sync():
     """Motor Híbrido: Junta API, Scraping e Camada de Persistência."""
     try:
+        # Coloque o nome do arquivo que você quer usar aqui (repo.json, meus_canais.json, etc)
         with open("repo.json", "r", encoding="utf-8") as f:
-            meus_canais = json.load(f)
+            dados_brutos = json.load(f)
     except Exception as e:
-        print(f"Erro ao carregar repo.json: {e}")
+        print(f"Erro ao carregar o arquivo JSON: {e}")
         return
+
+    # ==========================================
+    # NORMALIZADOR DE ESTRUTURA DE DADOS
+    # ==========================================
+    meus_canais = {}
+    
+    if isinstance(dados_brutos, list):
+        # Se for o JSON da API (Lista Plana com "categoria_api" dentro)
+        print("-> Formato de Lista detectado. Normalizando categorias...")
+        for canal in dados_brutos:
+            categoria = canal.get("categoria_api", "Diversos")
+            if categoria not in meus_canais:
+                meus_canais[categoria] = []
+            meus_canais[categoria].append(canal)
+            
+    elif isinstance(dados_brutos, dict):
+        # Se for o JSON do Site (Já agrupado em Dicionário)
+        print("-> Formato de Dicionário detectado.")
+        meus_canais = dados_brutos
 
     print("=== INICIANDO MOTOR COM PROTEÇÃO DE CACHE ===")
     build_local_manifest()
