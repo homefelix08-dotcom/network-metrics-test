@@ -15,7 +15,7 @@ import pytz
 # ==========================================
 HEADERS_SITE = {
     "X-Forwarded-For": "177.129.1.1",
-    "Referer": "https://4embeddecanais.xyz/"
+    "Referer": "https://6embeddecanais.xyz/"
 }
 HEADERS_API = {'User-Agent': 'okhttp/4.9.2'}
 
