@@ -180,86 +180,85 @@ def run_sync():
     print("=== INICIANDO MOTOR COM PROTEÇÃO DE CACHE ===")
     build_local_manifest()
 
-    print("Baixando banco de dados central da API...")
-    try:
-        req_api = requests.get("https://explouddev.com.br/api/canais/todos?search=", headers=HEADERS_API, timeout=15)
-        api_cache = req_api.json()
-    except Exception as e:
-        print(f"Falha ao conectar na API: {e}")
-        return
+    # Omitindo o download da API, já que você desistiu dela por ora
+    # print("Baixando banco de dados central da API...")
+    # try:
+    #     req_api = requests.get("https://explouddev.com.br/api/canais/todos?search=", headers=HEADERS_API, timeout=15)
+    #     api_cache = req_api.json()
+    # except Exception as e:
+    #     print(f"Falha ao conectar na API: {e}")
+    #     return
+    
+    # Criando uma lista vazia pro api_cache pra não quebrar a lógica de fallback
+    api_cache = []
 
     sessao = build_session()
     
-    # IMPORTANTE: EPG_LOCAL primeiro para forçar prioridade na TV
-    linhas_manifest = [f'#EXTM3U x-tvg-url="{EPG_GLOBAL},{EPG_LOCAL}"\n']
+    linhas_manifest = [f'#EXTM3U x-tvg-url="{EPG_LOCAL},{EPG_GLOBAL}"\n']
 
-    for canal in meus_canais:
-        nome_no = canal['nome']
-        nome_busca_api = canal.get('nome_api', nome_no)
-        
-        id_meta = canal.get('tvg_id', '')
-        url_asset = canal.get('logo', '')
-        link_payload = None
-        
-        print(f"Processando: {nome_no}...", end=" ", flush=True)
-
-        # ==========================================
-        # ROTA 1: EXTRAÇÃO VIA SITE (COM CACHE DE FALHA)
-        # ==========================================
-        if "url" in canal:
-            url_origem = canal["url"]
-            link_payload = extract_payload(sessao, url_origem)
+    # LOOP DUPLO PARA LER O JSON AGRUPADO
+    for categoria_nome, lista_canais in meus_canais.items():
+        for canal in lista_canais:
+            nome_no = canal['nome']
+            nome_busca_api = canal.get('nome_api', nome_no)
             
-            if link_payload:
-                print("[SITE OK - NOVO]")
-            else:
-                # O scraping falhou, aciona o mecanismo de defesa
-                link_payload = recuperar_link_cache(id_meta, nome_no)
+            id_meta = canal.get('tvg_id', '')
+            url_asset = canal.get('logo', '')
+            link_payload = None
+            
+            print(f"Processando: {nome_no}...", end=" ", flush=True)
+
+            # ==========================================
+            # ROTA 1: EXTRAÇÃO VIA SITE (COM CACHE DE FALHA)
+            # ==========================================
+            if "url" in canal:
+                url_origem = canal["url"]
+                link_payload = extract_payload(sessao, url_origem)
+                
                 if link_payload:
-                    print("[SITE OK - RECUPERADO]")
+                    print("[SITE OK - NOVO]")
                 else:
-                    print("[SITE FALHA TOTAL]")
-            
-            if link_payload:
-                categoria_nome = canal.get("categoria_api", "Diversos")
-                # Usa o id_meta como tvg-name se ele existir, para evitar Fuzzy Match no TiviMate
-                tvg_name_final = id_meta if id_meta else nome_no 
+                    link_payload = recuperar_link_cache(id_meta, nome_no)
+                    if link_payload:
+                        print("[SITE OK - RECUPERADO]")
+                    else:
+                        print("[SITE FALHA TOTAL]")
                 
-                linhas_manifest.append(f'#EXTINF:-1 tvg-id="{id_meta}" tvg-logo="{url_asset}" tvg-name="{tvg_name_final}" group-title="{categoria_nome}", {nome_no}\n')
-                linhas_manifest.append(f'{link_payload}|Referer={url_origem}\n')
-            
-            time.sleep(1.5)
+                if link_payload:
+                    tvg_name_final = id_meta if id_meta else nome_no 
+                    linhas_manifest.append(f'#EXTINF:-1 tvg-id="{id_meta}" tvg-logo="{url_asset}" tvg-name="{tvg_name_final}" group-title="{categoria_nome}", {nome_no}\n')
+                    linhas_manifest.append(f'{link_payload}|Referer={url_origem}\n')
+                
+                time.sleep(1.5)
 
-        # ==========================================
-        # ROTA 2: EXTRAÇÃO VIA API (PADRÃO)
-        # ==========================================
-        else:
-            dados_api = next((c for c in api_cache if c['name'] == nome_busca_api), None)
-            
-            if dados_api and "sources" in dados_api:
-                filtro_regional = canal.get('filtro_cdn')
-                
-                if filtro_regional:
-                    for fonte in dados_api['sources']:
-                        if filtro_regional.lower() in fonte['name'].lower():
-                            link_payload = fonte['link']
-                            break
-                            
-                if not link_payload:
-                    for fonte in dados_api['sources']:
-                        if "sinal.cc" not in fonte['link']:
-                            link_payload = fonte['link']
-                            break
-
-            if link_payload:
-                categoria_nome = canal.get("categoria_api", "Diversos")
-                tvg_name_final = id_meta if id_meta else nome_no
-                
-                linhas_manifest.append(f'#EXTINF:-1 tvg-id="{id_meta}" tvg-logo="{url_asset}" tvg-name="{tvg_name_final}" group-title="{categoria_nome}", {nome_no}\n')
-                linhas_manifest.append(f'{link_payload}|User-Agent=okhttp/4.9.2\n')
-                print("[API OK]")
+            # ==========================================
+            # ROTA 2: EXTRAÇÃO VIA API (PADRÃO)
+            # ==========================================
             else:
-                print("[API FALHA]")
+                dados_api = next((c for c in api_cache if c['name'] == nome_busca_api), None)
+                
+                if dados_api and "sources" in dados_api:
+                    filtro_regional = canal.get('filtro_cdn')
+                    
+                    if filtro_regional:
+                        for fonte in dados_api['sources']:
+                            if filtro_regional.lower() in fonte['name'].lower():
+                                link_payload = fonte['link']
+                                break
+                                
+                    if not link_payload:
+                        for fonte in dados_api['sources']:
+                            if "sinal.cc" not in fonte['link']:
+                                link_payload = fonte['link']
+                                break
+
+                if link_payload:
+                    tvg_name_final = id_meta if id_meta else nome_no
+                    linhas_manifest.append(f'#EXTINF:-1 tvg-id="{id_meta}" tvg-logo="{url_asset}" tvg-name="{tvg_name_final}" group-title="{categoria_nome}", {nome_no}\n')
+                    linhas_manifest.append(f'{link_payload}|User-Agent=okhttp/4.9.2\n')
+                    print("[API OK]")
+                else:
+                    print("[API FALHA]")
 
     with open("export_data.txt", "w", encoding="utf-8") as arquivo:
         arquivo.writelines(linhas_manifest)
