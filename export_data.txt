@@ -155,7 +155,7 @@ http://dns.explouddev.com/live/292330036/5179425/274650.m3u8|User-Agent=okhttp/4
 http://dns.explouddev.com/live/292330036/5179425/235.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_canalgoat0002.png" tvg-name="Canal Goat" group-title="Esportes", Canal Goat
 http://dns.explouddev.com/live/292330036/5179425/274647.m3u8|User-Agent=okhttp/4.9.2
-#EXTINF:-1 tvg-id="OFF HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canaloff.png" tvg-name="Canal Off" group-title="Esportes", Canal Off
+#EXTINF:-1 tvg-id="OFF HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canaloff.png" tvg-name="OFF HD" group-title="Esportes", Canal Off
 https://0505.cdn10embed.xyz/canaloff/index.m3u8|Referer=https://4embeddecanais.xyz/canaloff/
 #EXTINF:-1 tvg-id="COMBATE HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_combate0001.png" tvg-name="COMBATE HD" group-title="Esportes", Combate
 http://dns.explouddev.com/live/292330036/5179425/240.m3u8|User-Agent=okhttp/4.9.2
@@ -191,19 +191,18 @@ http://dns.explouddev.com/live/292330036/5179425/368440.m3u8|User-Agent=okhttp/4
 http://dns.explouddev.com/live/292330036/5179425/250571.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Paramount+ 4" tvg-logo="https://i.imgur.com/YlKpabZ.png" tvg-name="Paramount+ 4" group-title="Esportes", Paramount+ 4
 http://dns.explouddev.com/live/292330036/5179425/368448.m3u8|User-Agent=okhttp/4.9.2
-#EXTINF:-1 tvg-id="PREMIERE CLUBES HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere.png" tvg-name="Premiere Clubes" group-title="Esportes", Premiere Clubes
-https://0505.cdn10embed.xyz/premiereclubes/index.m3u8|Referer=https://4embeddecanais.xyz/premiereclubes/
-#EXTINF:-1 tvg-id="PREMIERE 2 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere.png" tvg-name="Premiere 2" group-title="Esportes", Premiere 2
+#EXTINF:-1 tvg-id="PREMIERE 2 HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" tvg-name="PREMIERE 2 HD" group-title="Esportes", Premiere 2
 https://0505.cdn10embed.xyz/premiere2/index.m3u8|Referer=https://4embeddecanais.xyz/premiere2/
-#EXTINF:-1 tvg-id="PREMIERE 3 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere.png" tvg-name="Premiere 3" group-title="Esportes", Premiere 3
+#EXTINF:-1 tvg-id="PREMIERE 3 HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" tvg-name="PREMIERE 3 HD" group-title="Esportes", Premiere 3
 https://0505.cdn10embed.xyz/premiere3/index.m3u8|Referer=https://4embeddecanais.xyz/premiere3/
-#EXTINF:-1 tvg-id="PREMIERE 4 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere.png" tvg-name="Premiere 4" group-title="Esportes", Premiere 4
+#EXTINF:-1 tvg-id="PREMIERE 4 HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" tvg-name="PREMIERE 4 HD" group-title="Esportes", Premiere 4
 https://0505.cdn10embed.xyz/premiere4/index.m3u8|Referer=https://4embeddecanais.xyz/premiere4/
-#EXTINF:-1 tvg-id="PREMIERE 5 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere.png" tvg-name="Premiere 5" group-title="Esportes", Premiere 5
+#EXTINF:-1 tvg-id="PREMIERE 5 HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" tvg-name="PREMIERE 5 HD" group-title="Esportes", Premiere 5
 https://0505.cdn10embed.xyz/premiere5/index.m3u8|Referer=https://4embeddecanais.xyz/premiere5/
-#EXTINF:-1 tvg-id="PREMIERE 6 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere.png" tvg-name="Premiere 6" group-title="Esportes", Premiere 6
+#EXTINF:-1 tvg-id="PREMIERE 6 HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" tvg-name="PREMIERE 6 HD" group-title="Esportes", Premiere 6
 https://0505.cdn10embed.xyz/premiere6/index.m3u8|Referer=https://4embeddecanais.xyz/premiere6/
-#EXTINF:-1 tvg-id="PREMIERE 7 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere.png" tvg-name="Premiere 7" group-title="Esportes", Premiere 7
+#EXTINF:-1 tvg-id="PREMIERE CLUBES HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" tvg-name="PREMIERE CLUBES HD" group-title="Esportes", Premiere Clubes
+https://0505.cdn10embed.xyz/premiereclubes/index.m3u8|Referer=https://4embeddecanais.xyz/premiereclubes/
 #EXTINF:-1 tvg-id="SPORTV" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_sportv0001.png" tvg-name="SPORTV" group-title="Esportes", SporTV
 http://dns.explouddev.com/live/292330036/5179425/118881.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SPORTV 2" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_sportvtwo0001.png" tvg-name="SPORTV 2" group-title="Esportes", SporTV 2
