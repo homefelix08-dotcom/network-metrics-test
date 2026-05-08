@@ -171,26 +171,24 @@ def extract_payload(sessao, url_destino):
 def run_sync():
     """Motor Híbrido: Junta API, Scraping e Camada de Persistência."""
     try:
-        with open("config.json", "r", encoding="utf-8") as f:
+        with open("repo.json", "r", encoding="utf-8") as f:
             meus_canais = json.load(f)
     except Exception as e:
-        print(f"Erro ao carregar config.json: {e}")
+        print(f"Erro ao carregar repo.json: {e}")
         return
 
     print("=== INICIANDO MOTOR COM PROTEÇÃO DE CACHE ===")
     build_local_manifest()
 
-    # Omitindo o download da API, já que você desistiu dela por ora
-    # print("Baixando banco de dados central da API...")
-    # try:
-    #     req_api = requests.get("https://explouddev.com.br/api/canais/todos?search=", headers=HEADERS_API, timeout=15)
-    #     api_cache = req_api.json()
-    # except Exception as e:
-    #     print(f"Falha ao conectar na API: {e}")
-    #     return
-    
-    # Criando uma lista vazia pro api_cache pra não quebrar a lógica de fallback
-    api_cache = []
+    print("Baixando banco de dados central da API...")
+    try:
+        req_api = requests.get("https://explouddev.com.br/api/canais/todos?search=", headers=HEADERS_API, timeout=15)
+        api_cache = req_api.json()
+    except Exception as e:
+        print(f"  [X] Falha ao conectar na API: {e}")
+        # Se a API cair de novo, não matamos o script. 
+        # Ele cria uma lista vazia e continua rodando para tentar salvar os canais do Site!
+        api_cache = [] 
 
     sessao = build_session()
     
