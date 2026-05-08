@@ -7,6 +7,8 @@ http://dns.explouddev.com/live/292330036/5179425/255482.m3u8|User-Agent=okhttp/4
 http://dns.explouddev.com/live/292330036/5179425/244184.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="REDE TV! HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_redetv0001.png" tvg-name="REDE TV! HD" group-title="Abertos", Rede TV
 https://0505.cdn10embed.xyz/redetv/index.m3u8|Referer=https://4embeddecanais.xyz/redetv/
+#EXTINF:-1 tvg-id="Record MG" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_record0001.png" tvg-name="Record MG" group-title="Abertos", Record MG
+https://0705.cdn10embed.xyz/recordmg/index.m3u8|Referer=https://4embeddecanais.xyz/recordmg/
 #EXTINF:-1 tvg-id="FUTURA HD" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_futura0001.png" tvg-name="FUTURA HD" group-title="Abertos", Futura
 http://dns.explouddev.com/live/292330036/5179425/159.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TV BRASIL" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_tvbrasil0001.png" tvg-name="TV BRASIL" group-title="Abertos", TV Brasil
