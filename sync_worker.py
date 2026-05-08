@@ -194,7 +194,7 @@ def run_sync():
 
     sessao = build_session()
     
-    linhas_manifest = [f'#EXTM3U x-tvg-url="{EPG_LOCAL},{EPG_GLOBAL}"\n']
+    linhas_manifest = [f'#EXTM3U x-tvg-url="{EPG_GLOBAL},{EPG_LOCAL}"\n']
 
     # LOOP DUPLO PARA LER O JSON AGRUPADO
     for categoria_nome, lista_canais in meus_canais.items():
