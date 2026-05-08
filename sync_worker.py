@@ -42,7 +42,7 @@ LOCAL_EPG_CONFIGS = [
         "id": "Band MG",
         "name": "Band",
         "url": "https://www.claro.com.br/tv-por-assinatura/programacao/grade/programa/band/23-408"
-    }*/
+    }
 ]
 
 # Links dos Guias (EPG)
