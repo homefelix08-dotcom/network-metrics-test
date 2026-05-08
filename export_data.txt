@@ -1,35 +1,35 @@
-#EXTM3U x-tvg-url="https://raw.githubusercontent.com/limaalef/BrazilTVEPG/refs/heads/main/claro.xml,https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/local_meta.xml"
+#EXTM3U x-tvg-url="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/local_meta.xml,https://raw.githubusercontent.com/limaalef/BrazilTVEPG/refs/heads/main/claro.xml"
 #EXTINF:-1 tvg-id="Globo MG" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globomg.png" tvg-name="Globo MG" group-title="Abertos", Globo MG
 https://0705.cdn10embed.xyz/globomg/index.m3u8|Referer=https://4embeddecanais.xyz/globomg/
-#EXTINF:-1 tvg-id="BAND HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/bandsp.png" tvg-name="Band" group-title="Abertos", Band
+#EXTINF:-1 tvg-id="BAND HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/bandsp.png" tvg-name="BAND HD" group-title="Abertos", Band
 https://0705.cdn10embed.xyz/bandsp/index.m3u8|Referer=https://4embeddecanais.xyz/bandsp/
 #EXTINF:-1 tvg-id="SBT" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sbtsp.png" tvg-name="SBT" group-title="Abertos", SBT
 https://0705.cdn10embed.xyz/sbtsp/index.m3u8|Referer=https://4embeddecanais.xyz/sbtsp/
-#EXTINF:-1 tvg-id="REDE TV! HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/redetv.png" tvg-name="Rede TV" group-title="Abertos", Rede TV
+#EXTINF:-1 tvg-id="REDE TV! HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/redetv.png" tvg-name="REDE TV! HD" group-title="Abertos", Rede TV
 https://0705.cdn10embed.xyz/redetv/index.m3u8|Referer=https://4embeddecanais.xyz/redetv/
-#EXTINF:-1 tvg-id="RECORD HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/recordmg.png" tvg-name="Record MG" group-title="Abertos", Record MG
+#EXTINF:-1 tvg-id="RECORD HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/recordmg.png" tvg-name="RECORD HD" group-title="Abertos", Record MG
 https://0705.cdn10embed.xyz/recordmg/index.m3u8|Referer=https://4embeddecanais.xyz/recordmg/
-#EXTINF:-1 tvg-id="CULTURA HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tvcultura.png" tvg-name="TV Cultura" group-title="Abertos", TV Cultura
+#EXTINF:-1 tvg-id="CULTURA HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tvcultura.png" tvg-name="CULTURA HD" group-title="Abertos", TV Cultura
 https://0705.cdn10embed.xyz/tvcultura/index.m3u8|Referer=https://4embeddecanais.xyz/tvcultura/
 #EXTINF:-1 tvg-id="A&E" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/aee.png" tvg-name="A&E" group-title="Filmes e Séries", A&E
 https://0705.cdn10embed.xyz/aee/index.m3u8|Referer=https://4embeddecanais.xyz/aee/
-#EXTINF:-1 tvg-id="AMC HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amc.png" tvg-name="AMC" group-title="Filmes e Séries", AMC
+#EXTINF:-1 tvg-id="AMC HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amc.png" tvg-name="AMC HD" group-title="Filmes e Séries", AMC
 https://0705.cdn10embed.xyz/amc/index.m3u8|Referer=https://4embeddecanais.xyz/amc/
 #EXTINF:-1 tvg-id="AXN" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/axn.png" tvg-name="AXN" group-title="Filmes e Séries", AXN
 https://0705.cdn10embed.xyz/axn/index.m3u8|Referer=https://4embeddecanais.xyz/axn/
-#EXTINF:-1 tvg-id="CINEMAX HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cinemax.png" tvg-name="Cinemax" group-title="Filmes e Séries", Cinemax
+#EXTINF:-1 tvg-id="CINEMAX HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cinemax.png" tvg-name="CINEMAX HD" group-title="Filmes e Séries", Cinemax
 https://0705.cdn10embed.xyz/cinemax/index.m3u8|Referer=https://4embeddecanais.xyz/cinemax/
 #EXTINF:-1 tvg-id="Globoplay Novelas" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globoplaynovelas.png" tvg-name="Globoplay Novelas" group-title="Filmes e Séries", Globoplay Novelas
 https://0705.cdn10embed.xyz/globoplaynovelas/index.m3u8|Referer=https://4embeddecanais.xyz/globoplaynovelas/
 #EXTINF:-1 tvg-id="HBO" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo.png" tvg-name="HBO" group-title="Filmes e Séries", HBO
 https://0705.cdn10embed.xyz/hbo/index.m3u8|Referer=https://4embeddecanais.xyz/hbo/
-#EXTINF:-1 tvg-id="HBO2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo2.png" tvg-name="HBO 2" group-title="Filmes e Séries", HBO 2
+#EXTINF:-1 tvg-id="HBO2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo2.png" tvg-name="HBO2" group-title="Filmes e Séries", HBO 2
 https://0705.cdn10embed.xyz/hbo2/index.m3u8|Referer=https://4embeddecanais.xyz/hbo2/
 #EXTINF:-1 tvg-id="HBO Family" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbofamily.png" tvg-name="HBO Family" group-title="Filmes e Séries", HBO Family
 https://0705.cdn10embed.xyz/hbofamily/index.m3u8|Referer=https://4embeddecanais.xyz/hbofamily/
 #EXTINF:-1 tvg-id="HBO Mundi" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbomundi.png" tvg-name="HBO Mundi" group-title="Filmes e Séries", HBO Mundi
 https://0705.cdn10embed.xyz/hbomundi/index.m3u8|Referer=https://4embeddecanais.xyz/hbomundi/
-#EXTINF:-1 tvg-id="HBO+" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hboplus.png" tvg-name="HBO Plus" group-title="Filmes e Séries", HBO Plus
+#EXTINF:-1 tvg-id="HBO+" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hboplus.png" tvg-name="HBO+" group-title="Filmes e Séries", HBO Plus
 https://0705.cdn10embed.xyz/hboplus/index.m3u8|Referer=https://4embeddecanais.xyz/hboplus/
 #EXTINF:-1 tvg-id="HBO Pop" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbopop.png" tvg-name="HBO Pop" group-title="Filmes e Séries", HBO Pop
 https://0705.cdn10embed.xyz/hbopop/index.m3u8|Referer=https://4embeddecanais.xyz/hbopop/
@@ -37,79 +37,79 @@ https://0705.cdn10embed.xyz/hbopop/index.m3u8|Referer=https://4embeddecanais.xyz
 https://0705.cdn10embed.xyz/hbosignature/index.m3u8|Referer=https://4embeddecanais.xyz/hbosignature/
 #EXTINF:-1 tvg-id="HBO Xtreme" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hboxtreme.png" tvg-name="HBO Xtreme" group-title="Filmes e Séries", HBO Xtreme
 https://0705.cdn10embed.xyz/hboxtreme/index.m3u8|Referer=https://4embeddecanais.xyz/hboxtreme/
-#EXTINF:-1 tvg-id="MEGAPIX HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/megapix.png" tvg-name="Megapix" group-title="Filmes e Séries", Megapix
+#EXTINF:-1 tvg-id="MEGAPIX HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/megapix.png" tvg-name="MEGAPIX HD" group-title="Filmes e Séries", Megapix
 https://0705.cdn10embed.xyz/megapix/index.m3u8|Referer=https://4embeddecanais.xyz/megapix/
-#EXTINF:-1 tvg-id="USA HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramountnetwork.png" tvg-name="Paramount Network" group-title="Filmes e Séries", Paramount Network
+#EXTINF:-1 tvg-id="USA HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramountnetwork.png" tvg-name="USA HD" group-title="Filmes e Séries", Paramount Network
 https://0705.cdn10embed.xyz/paramountnetwork/index.m3u8|Referer=https://4embeddecanais.xyz/paramountnetwork/
-#EXTINF:-1 tvg-id="SONY CHANNEL" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sonychannel.png" tvg-name="Sony Channel" group-title="Filmes e Séries", Sony Channel
+#EXTINF:-1 tvg-id="SONY CHANNEL" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sonychannel.png" tvg-name="SONY CHANNEL" group-title="Filmes e Séries", Sony Channel
 https://0705.cdn10embed.xyz/sonychannel/index.m3u8|Referer=https://4embeddecanais.xyz/sonychannel/
-#EXTINF:-1 tvg-id="SPACE HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/space.png" tvg-name="Space" group-title="Filmes e Séries", Space
+#EXTINF:-1 tvg-id="SPACE HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/space.png" tvg-name="SPACE HD" group-title="Filmes e Séries", Space
 https://0705.cdn10embed.xyz/space/index.m3u8|Referer=https://4embeddecanais.xyz/space/
-#EXTINF:-1 tvg-id="STUDIO UNIVERSAL HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/studiouniversal.png" tvg-name="Studio Universal" group-title="Filmes e Séries", Studio Universal
+#EXTINF:-1 tvg-id="STUDIO UNIVERSAL HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/studiouniversal.png" tvg-name="STUDIO UNIVERSAL HD" group-title="Filmes e Séries", Studio Universal
 https://0705.cdn10embed.xyz/studiouniversal/index.m3u8|Referer=https://4embeddecanais.xyz/studiouniversal/
-#EXTINF:-1 tvg-id="TELECINE ACTION" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tcaction.png" tvg-name="Telecine Action" group-title="Filmes e Séries", Telecine Action
+#EXTINF:-1 tvg-id="TELECINE ACTION" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tcaction.png" tvg-name="TELECINE ACTION" group-title="Filmes e Séries", Telecine Action
 https://0705.cdn10embed.xyz/tcaction/index.m3u8|Referer=https://4embeddecanais.xyz/tcaction/
-#EXTINF:-1 tvg-id="TELECINE CULT" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tccult.png" tvg-name="Telecine Cult" group-title="Filmes e Séries", Telecine Cult
+#EXTINF:-1 tvg-id="TELECINE CULT" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tccult.png" tvg-name="TELECINE CULT" group-title="Filmes e Séries", Telecine Cult
 https://0705.cdn10embed.xyz/tccult/index.m3u8|Referer=https://4embeddecanais.xyz/tccult/
-#EXTINF:-1 tvg-id="TELECINE FUN" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tcfun.png" tvg-name="Telecine Fun" group-title="Filmes e Séries", Telecine Fun
+#EXTINF:-1 tvg-id="TELECINE FUN" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tcfun.png" tvg-name="TELECINE FUN" group-title="Filmes e Séries", Telecine Fun
 https://0705.cdn10embed.xyz/tcfun/index.m3u8|Referer=https://4embeddecanais.xyz/tcfun/
-#EXTINF:-1 tvg-id="TELECINE PIPOCA" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tcpipoca.png" tvg-name="Telecine Pipoca" group-title="Filmes e Séries", Telecine Pipoca
+#EXTINF:-1 tvg-id="TELECINE PIPOCA" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tcpipoca.png" tvg-name="TELECINE PIPOCA" group-title="Filmes e Séries", Telecine Pipoca
 https://0705.cdn10embed.xyz/tcpipoca/index.m3u8|Referer=https://4embeddecanais.xyz/tcpipoca/
-#EXTINF:-1 tvg-id="TELECINE PREMIUM" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tcpremium.png" tvg-name="Telecine Premium" group-title="Filmes e Séries", Telecine Premium
+#EXTINF:-1 tvg-id="TELECINE PREMIUM" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tcpremium.png" tvg-name="TELECINE PREMIUM" group-title="Filmes e Séries", Telecine Premium
 https://0705.cdn10embed.xyz/tcpremium/index.m3u8|Referer=https://4embeddecanais.xyz/tcpremium/
-#EXTINF:-1 tvg-id="TELECINE TOUCH" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tctouch.png" tvg-name="Telecine Touch" group-title="Filmes e Séries", Telecine Touch
+#EXTINF:-1 tvg-id="TELECINE TOUCH" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tctouch.png" tvg-name="TELECINE TOUCH" group-title="Filmes e Séries", Telecine Touch
 https://0705.cdn10embed.xyz/tcpremium/index.m3u8|Referer=https://4embeddecanais.xyz/tctouch/
-#EXTINF:-1 tvg-id="TNT HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tnt.png" tvg-name="TNT" group-title="Filmes e Séries", TNT
+#EXTINF:-1 tvg-id="TNT HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tnt.png" tvg-name="TNT HD" group-title="Filmes e Séries", TNT
 https://0705.cdn10embed.xyz/tnt/index.m3u8|Referer=https://4embeddecanais.xyz/tnt/
-#EXTINF:-1 tvg-id="TNT NOVELAS" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tntnovelas.png" tvg-name="TNT Novelas" group-title="Filmes e Séries", TNT Novelas
+#EXTINF:-1 tvg-id="TNT NOVELAS" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tntnovelas.png" tvg-name="TNT NOVELAS" group-title="Filmes e Séries", TNT Novelas
 https://0705.cdn10embed.xyz/tntnovelas/index.m3u8|Referer=https://4embeddecanais.xyz/tntnovelas/
-#EXTINF:-1 tvg-id="TNT SERIES HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tntseries.png" tvg-name="TNT Séries" group-title="Filmes e Séries", TNT Séries
+#EXTINF:-1 tvg-id="TNT SERIES HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tntseries.png" tvg-name="TNT SERIES HD" group-title="Filmes e Séries", TNT Séries
 https://0705.cdn10embed.xyz/tntseries/index.m3u8|Referer=https://4embeddecanais.xyz/tntseries/
-#EXTINF:-1 tvg-id="UNIVERSAL TV HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/universaltv.png" tvg-name="Universal TV" group-title="Filmes e Séries", Universal TV
+#EXTINF:-1 tvg-id="UNIVERSAL TV HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/universaltv.png" tvg-name="UNIVERSAL TV HD" group-title="Filmes e Séries", Universal TV
 https://0705.cdn10embed.xyz/universaltv/index.m3u8|Referer=https://4embeddecanais.xyz/universaltv/
-#EXTINF:-1 tvg-id="WARNER CHANNEL" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/warner.png" tvg-name="Warner Channel" group-title="Filmes e Séries", Warner Channel
+#EXTINF:-1 tvg-id="WARNER CHANNEL" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/warner.png" tvg-name="WARNER CHANNEL" group-title="Filmes e Séries", Warner Channel
 https://0705.cdn10embed.xyz/warner/index.m3u8|Referer=https://4embeddecanais.xyz/warner/
-#EXTINF:-1 tvg-id="ANIMAL PLANET HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/animalplanet.png" tvg-name="Animal Planet" group-title="Variedades", Animal Planet
+#EXTINF:-1 tvg-id="ANIMAL PLANET HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/animalplanet.png" tvg-name="ANIMAL PLANET HD" group-title="Variedades", Animal Planet
 https://0705.cdn10embed.xyz/animalplanet/index.m3u8|Referer=https://4embeddecanais.xyz/animalplanet/
 #EXTINF:-1 tvg-id="" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/comedycentral.png" tvg-name="Comedy Central" group-title="Variedades", Comedy Central
 https://0705.cdn10embed.xyz/comedycentral/index.m3u8|Referer=https://4embeddecanais.xyz/comedycentral/
-#EXTINF:-1 tvg-id="DISCOVERY HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discoverychannel.png" tvg-name="Discovery Channel" group-title="Variedades", Discovery Channel
+#EXTINF:-1 tvg-id="DISCOVERY HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discoverychannel.png" tvg-name="DISCOVERY HD" group-title="Variedades", Discovery Channel
 https://0705.cdn10embed.xyz/discoverychannel/index.m3u8|Referer=https://4embeddecanais.xyz/discoverychannel/
-#EXTINF:-1 tvg-id="DISCOVERY HOME&HEALTH HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discoveryhh.png" tvg-name="Discovery Home & Health" group-title="Variedades", Discovery Home & Health
+#EXTINF:-1 tvg-id="DISCOVERY HOME&HEALTH HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discoveryhh.png" tvg-name="DISCOVERY HOME&HEALTH HD" group-title="Variedades", Discovery Home & Health
 https://0705.cdn10embed.xyz/discoveryhh/index.m3u8|Referer=https://4embeddecanais.xyz/discoveryhh/
-#EXTINF:-1 tvg-id="ID HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discoveryid.png" tvg-name="Discovery ID" group-title="Variedades", Discovery ID
+#EXTINF:-1 tvg-id="ID HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discoveryid.png" tvg-name="ID HD" group-title="Variedades", Discovery ID
 https://0705.cdn10embed.xyz/discoveryid/index.m3u8|Referer=https://4embeddecanais.xyz/discoveryid/
-#EXTINF:-1 tvg-id="DISCOVERY SCIENCE HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discoveryscience.png" tvg-name="Discovery Science" group-title="Variedades", Discovery Science
+#EXTINF:-1 tvg-id="DISCOVERY SCIENCE HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discoveryscience.png" tvg-name="DISCOVERY SCIENCE HD" group-title="Variedades", Discovery Science
 https://0705.cdn10embed.xyz/discoveryscience/index.m3u8|Referer=https://4embeddecanais.xyz/discoveryscience/
-#EXTINF:-1 tvg-id="DISCOVERY THEATER HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discoverytheater.png" tvg-name="Discovery Theater" group-title="Variedades", Discovery Theater
+#EXTINF:-1 tvg-id="DISCOVERY THEATER HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discoverytheater.png" tvg-name="DISCOVERY THEATER HD" group-title="Variedades", Discovery Theater
 https://0705.cdn10embed.xyz/discoverytheater/index.m3u8|Referer=https://4embeddecanais.xyz/discoverytheater/
-#EXTINF:-1 tvg-id="DISCOVERY TURBO HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discoveryturbo.png" tvg-name="Discovery Turbo" group-title="Variedades", Discovery Turbo
+#EXTINF:-1 tvg-id="DISCOVERY TURBO HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discoveryturbo.png" tvg-name="DISCOVERY TURBO HD" group-title="Variedades", Discovery Turbo
 https://0705.cdn10embed.xyz/discoveryturbo/index.m3u8|Referer=https://4embeddecanais.xyz/discoveryturbo/
-#EXTINF:-1 tvg-id="DISCOVERY WORLD HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discoveryworld.png" tvg-name="Discovery World" group-title="Variedades", Discovery World
+#EXTINF:-1 tvg-id="DISCOVERY WORLD HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discoveryworld.png" tvg-name="DISCOVERY WORLD HD" group-title="Variedades", Discovery World
 https://0705.cdn10embed.xyz/discoveryworld/index.m3u8|Referer=https://4embeddecanais.xyz/discoveryworld/
-#EXTINF:-1 tvg-id="FOOD NETWORK HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/foodnetwork.png" tvg-name="Food Network" group-title="Variedades", Food Network
+#EXTINF:-1 tvg-id="FOOD NETWORK HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/foodnetwork.png" tvg-name="FOOD NETWORK HD" group-title="Variedades", Food Network
 https://0705.cdn10embed.xyz/foodnetwork/index.m3u8|Referer=https://4embeddecanais.xyz/foodnetwork/
-#EXTINF:-1 tvg-id="GNT HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/gnt.png" tvg-name="GNT" group-title="Variedades", GNT
+#EXTINF:-1 tvg-id="GNT HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/gnt.png" tvg-name="GNT HD" group-title="Variedades", GNT
 https://0705.cdn10embed.xyz/gnt/index.m3u8|Referer=https://4embeddecanais.xyz/gnt/
-#EXTINF:-1 tvg-id="HISTORY" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/history.png" tvg-name="History" group-title="Variedades", History
+#EXTINF:-1 tvg-id="HISTORY" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/history.png" tvg-name="HISTORY" group-title="Variedades", History
 https://0705.cdn10embed.xyz/history/index.m3u8|Referer=https://4embeddecanais.xyz/history/
-#EXTINF:-1 tvg-id="HISTORY 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/history2.png" tvg-name="History 2" group-title="Variedades", History 2
+#EXTINF:-1 tvg-id="HISTORY 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/history2.png" tvg-name="HISTORY 2" group-title="Variedades", History 2
 https://0705.cdn10embed.xyz/history2/index.m3u8|Referer=https://4embeddecanais.xyz/history2/
 #EXTINF:-1 tvg-id="" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/mtv.png" tvg-name="MTV" group-title="Variedades", MTV
 https://0705.cdn10embed.xyz/mtv/index.m3u8|Referer=https://4embeddecanais.xyz/mtv/
-#EXTINF:-1 tvg-id="MULTISHOW HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/multishow.png" tvg-name="Multishow" group-title="Variedades", Multishow
+#EXTINF:-1 tvg-id="MULTISHOW HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/multishow.png" tvg-name="MULTISHOW HD" group-title="Variedades", Multishow
 https://0705.cdn10embed.xyz/multishow/index.m3u8|Referer=https://4embeddecanais.xyz/multishow/
-#EXTINF:-1 tvg-id="Adult Swim HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/adultswim.png" tvg-name="Adult Swim" group-title="Infantis", Adult Swim
+#EXTINF:-1 tvg-id="Adult Swim HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/adultswim.png" tvg-name="Adult Swim HD" group-title="Infantis", Adult Swim
 https://0705.cdn10embed.xyz/adultswim/index.m3u8|Referer=https://4embeddecanais.xyz/adultswim/
-#EXTINF:-1 tvg-id="CARTOONITO" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cartoonito.png" tvg-name="Cartoonito" group-title="Infantis", Cartoonito
+#EXTINF:-1 tvg-id="CARTOONITO" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cartoonito.png" tvg-name="CARTOONITO" group-title="Infantis", Cartoonito
 https://0705.cdn10embed.xyz/cartoonito/index.m3u8|Referer=https://4embeddecanais.xyz/cartoonito/
-#EXTINF:-1 tvg-id="CARTOON HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cartoonnetwork.png" tvg-name="Cartoon Network" group-title="Infantis", Cartoon Network
+#EXTINF:-1 tvg-id="CARTOON HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cartoonnetwork.png" tvg-name="CARTOON HD" group-title="Infantis", Cartoon Network
 https://0705.cdn10embed.xyz/cartoonnetwork/index.m3u8|Referer=https://4embeddecanais.xyz/cartoonnetwork/
-#EXTINF:-1 tvg-id="DISCOVERY KIDS HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discoverykids.png" tvg-name="Discovery Kids" group-title="Infantis", Discovery Kids
+#EXTINF:-1 tvg-id="DISCOVERY KIDS HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discoverykids.png" tvg-name="DISCOVERY KIDS HD" group-title="Infantis", Discovery Kids
 https://0705.cdn10embed.xyz/discoverykids/index.m3u8|Referer=https://4embeddecanais.xyz/discoverykids/
-#EXTINF:-1 tvg-id="GLOOB HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/gloob.png" tvg-name="Gloob" group-title="Infantis", Gloob
+#EXTINF:-1 tvg-id="GLOOB HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/gloob.png" tvg-name="GLOOB HD" group-title="Infantis", Gloob
 https://0705.cdn10embed.xyz/gloob/index.m3u8|Referer=https://4embeddecanais.xyz/gloob/
-#EXTINF:-1 tvg-id="GLOOBINHO HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/gloobinho.png" tvg-name="Gloobinho" group-title="Infantis", Gloobinho
+#EXTINF:-1 tvg-id="GLOOBINHO HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/gloobinho.png" tvg-name="GLOOBINHO HD" group-title="Infantis", Gloobinho
 https://0705.cdn10embed.xyz/gloobinho/index.m3u8|Referer=https://4embeddecanais.xyz/gloobinho/
 #EXTINF:-1 tvg-id="" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/nickelodeon.png" tvg-name="Nickelodeon" group-title="Infantis", Nickelodeon
 https://0705.cdn10embed.xyz/nickelodeon/index.m3u8|Referer=https://4embeddecanais.xyz/nickelodeon/
@@ -131,4 +131,5 @@ https://0705.cdn10embed.xyz/amazonprime05/index.m3u8|Referer=https://4embeddecan
 https://0705.cdn10embed.xyz/appletv01/index.m3u8|Referer=https://4embeddecanais.xyz/appletv01/
 #EXTINF:-1 tvg-id="" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/appletv.png" tvg-name="Apple TV 2" group-title="Esportes", Apple TV 2
 https://0705.cdn10embed.xyz/appletv02/index.m3u8|Referer=https://4embeddecanais.xyz/appletv02/
-#EXTINF:-1 tvg-id="BAND SPORTS HD" tvg-logo="https://
+#EXTINF:-1 tvg-id="TNT HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tnt.png" tvg-name="TNT HD" group-title="Esportes", TNT Esportes
+https://0705.cdn10embed.xyz/tnt/index.m3u8|Referer=https://4embeddecanais.xyz/tnt/
