@@ -2,7 +2,7 @@
     {
         "nome": "Globo MG",
         "tvg_id": "Globo MG",
-        "url": "https://4embeddecanais.xyz/globomg/",
+        "url": "https://6embeddecanais.xyz/globomg/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_globo0001.png",
         "categoria_api": "Abertos"
     },
@@ -24,14 +24,14 @@
     {
         "nome": "Rede TV",
         "tvg_id": "REDE TV! HD",
-        "url": "https://4embeddecanais.xyz/redetv/",
+        "url": "https://6embeddecanais.xyz/redetv/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_redetv0001.png",
         "categoria_api": "Abertos"
     },
     {
         "nome": "Record MG",
         "tvg_id": "Record MG",
-        "url": "https://4embeddecanais.xyz/recordmg/",
+        "url": "https://6embeddecanais.xyz/recordmg/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_record0001.png",
         "categoria_api": "Abertos"
     },
@@ -104,7 +104,7 @@
     {
         "nome": "HBO Mundi",
         "tvg_id": "HBO Mundi",
-        "url": "https://4embeddecanais.xyz/hbomundi/",
+        "url": "https://6embeddecanais.xyz/hbomundi/",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbomundi.png",
         "categoria_api": "Filmes e Séries"
     },
@@ -129,7 +129,7 @@
     {
         "nome": "HBO Xtreme",
         "tvg_id": "HBO Xtreme",
-        "url": "https://4embeddecanais.xyz/hboxtreme/",
+        "url": "https://6embeddecanais.xyz/hboxtreme/",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hboxtreme.png",
         "categoria_api": "Filmes e Séries"
     },
@@ -442,35 +442,35 @@
     {
         "nome": "Amazon Prime Video 1",
         "tvg_id": "",
-        "url": "https://4embeddecanais.xyz/amazonprimevideo/",
+        "url": "https://6embeddecanais.xyz/amazonprimevideo/",
         "logo": "https://i.imgur.com/U5OE999.png",
         "categoria_api": "Filmes e Séries"
     },
     {
         "nome": "Amazon Prime Video 2",
         "tvg_id": "",
-        "url": "https://4embeddecanais.xyz/amazonprimevideo02/",
+        "url": "https://6embeddecanais.xyz/amazonprimevideo02/",
         "logo": "https://i.imgur.com/U5OE999.png",
         "categoria_api": "Filmes e Séries"
     },
     {
         "nome": "Amazon Prime Video 3",
         "tvg_id": "",
-        "url": "https://4embeddecanais.xyz/amazonprimevideo03/",
+        "url": "https://6embeddecanais.xyz/amazonprimevideo03/",
         "logo": "https://i.imgur.com/U5OE999.png",
         "categoria_api": "Filmes e Séries"
     },
     {
         "nome": "Amazon Prime Video 4",
         "tvg_id": "",
-        "url": "https://4embeddecanais.xyz/amazonprimevideo04/",
+        "url": "https://6embeddecanais.xyz/amazonprimevideo04/",
         "logo": "https://i.imgur.com/U5OE999.png",
         "categoria_api": "Filmes e Séries"
     },
     {
         "nome": "Amazon Prime Video 5",
         "tvg_id": "",
-        "url": "https://4embeddecanais.xyz/amazonprimevideo05/",
+        "url": "https://6embeddecanais.xyz/amazonprimevideo05/",
         "logo": "https://i.imgur.com/U5OE999.png",
         "categoria_api": "Filmes e Séries"
     },
@@ -495,7 +495,7 @@
     {
         "nome": "Canal Off",
         "tvg_id": "OFF HD",
-        "url": "https://4embeddecanais.xyz/canaloff/",
+        "url": "https://6embeddecanais.xyz/canaloff/",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canaloff.png",
         "categoria_api": "Esportes"
     },
@@ -604,56 +604,56 @@
     {
         "nome": "Premiere 2",
         "tvg_id": "PREMIERE 2 HD",
-        "url": "https://4embeddecanais.xyz/premiere2/",
+        "url": "https://6embeddecanais.xyz/premiere2/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png",
         "categoria_api": "Esportes"
     },
     {
         "nome": "Premiere 3",
         "tvg_id": "PREMIERE 3 HD",
-        "url": "https://4embeddecanais.xyz/premiere3/",
+        "url": "https://6embeddecanais.xyz/premiere3/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png",
         "categoria_api": "Esportes"
     },
     {
         "nome": "Premiere 4",
         "tvg_id": "PREMIERE 4 HD",
-        "url": "https://4embeddecanais.xyz/premiere4/",
+        "url": "https://6embeddecanais.xyz/premiere4/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png",
         "categoria_api": "Esportes"
     },
     {
         "nome": "Premiere 5",
         "tvg_id": "PREMIERE 5 HD",
-        "url": "https://4embeddecanais.xyz/premiere5/",
+        "url": "https://6embeddecanais.xyz/premiere5/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png",
         "categoria_api": "Esportes"
     },
     {
         "nome": "Premiere 6",
         "tvg_id": "PREMIERE 6 HD",
-        "url": "https://4embeddecanais.xyz/premiere6/",
+        "url": "https://6embeddecanais.xyz/premiere6/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png",
         "categoria_api": "Esportes"
     },
     {
         "nome": "Premiere 7",
         "tvg_id": "PREMIERE 7 HD",
-        "url": "https://4embeddecanais.xyz/premiere7/",
+        "url": "https://6embeddecanais.xyz/premiere7/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png",
         "categoria_api": "Esportes"
     },
     {
         "nome": "Premiere 8",
         "tvg_id": "",
-        "url": "https://4embeddecanais.xyz/premiere8/",
+        "url": "https://6embeddecanais.xyz/premiere8/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png",
         "categoria_api": "Esportes"
     },
     {
         "nome": "Premiere Clubes",
         "tvg_id": "PREMIERE CLUBES HD",
-        "url": "https://4embeddecanais.xyz/premiereclubes/",
+        "url": "https://6embeddecanais.xyz/premiereclubes/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png",
         "categoria_api": "Esportes"
     },
