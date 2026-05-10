@@ -184,7 +184,6 @@ def run_sync():
     meus_canais = {}
     
     if isinstance(dados_brutos, list):
-        # Se for o JSON da API (Lista Plana com "categoria_api" dentro)
         print("-> Formato de Lista detectado. Normalizando categorias...")
         for canal in dados_brutos:
             categoria = canal.get("categoria_api", "Diversos")
@@ -193,7 +192,6 @@ def run_sync():
             meus_canais[categoria].append(canal)
             
     elif isinstance(dados_brutos, dict):
-        # Se for o JSON do Site (Já agrupado em Dicionário)
         print("-> Formato de Dicionário detectado.")
         meus_canais = dados_brutos
 
@@ -206,20 +204,16 @@ def run_sync():
         api_cache = req_api.json()
     except Exception as e:
         print(f"  [X] Falha ao conectar na API: {e}")
-        # Se a API cair de novo, não matamos o script. 
-        # Ele cria uma lista vazia e continua rodando para tentar salvar os canais do Site!
         api_cache = [] 
 
     sessao = build_session()
     
     linhas_manifest = [f'#EXTM3U x-tvg-url="{EPG_GLOBAL},{EPG_LOCAL}"\n']
 
-    # LOOP DUPLO PARA LER O JSON AGRUPADO
     for categoria_nome, lista_canais in meus_canais.items():
         for canal in lista_canais:
             nome_no = canal['nome']
             nome_busca_api = canal.get('nome_api', nome_no)
-            
             id_meta = canal.get('tvg_id', '')
             url_asset = canal.get('logo', '')
             link_payload = None
@@ -227,7 +221,7 @@ def run_sync():
             print(f"Processando: {nome_no}...", end=" ", flush=True)
 
             # ==========================================
-            # ROTA 1: EXTRAÇÃO VIA SITE (COM CACHE DE FALHA)
+            # ROTA 1: EXTRAÇÃO VIA SITE
             # ==========================================
             if "url" in canal:
                 url_origem = canal["url"]
@@ -235,22 +229,17 @@ def run_sync():
                 
                 if link_payload:
                     print("[SITE OK - NOVO]")
+                    header_final = f"|Referer={url_origem}"
                 else:
                     link_payload = recuperar_link_cache(id_meta, nome_no)
                     if link_payload:
                         print("[SITE OK - RECUPERADO]")
+                        header_final = f"|Referer={url_origem}"
                     else:
                         print("[SITE FALHA TOTAL]")
-                
-                if link_payload:
-                    tvg_name_final = id_meta if id_meta else nome_no 
-                    linhas_manifest.append(f'#EXTINF:-1 tvg-id="{id_meta}" tvg-logo="{url_asset}" tvg-name="{tvg_name_final}" group-title="{categoria_nome}", {nome_no}\n')
-                    linhas_manifest.append(f'{link_payload}|Referer={url_origem}\n')
-                
-                time.sleep(1.5)
-
+            
             # ==========================================
-            # ROTA 2: EXTRAÇÃO VIA API (PADRÃO)
+            # ROTA 2: EXTRAÇÃO VIA API
             # ==========================================
             else:
                 dados_api = next((c for c in api_cache if c['name'] == nome_busca_api), None)
@@ -269,20 +258,24 @@ def run_sync():
                             if "sinal.cc" not in fonte['link']:
                                 link_payload = fonte['link']
                                 break
-
+                
                 if link_payload:
-                    print("[API OK]")
+                    print("[API OK - NOVO]")
+                    header_final = "|User-Agent=okhttp/4.9.2"
                 else:
                     link_payload = recuperar_link_cache(id_meta, nome_no)
                     if link_payload:
                         print("[API OK - RECUPERADO]")
+                        header_final = "|User-Agent=okhttp/4.9.2"
                     else:
                         print("[API FALHA TOTAL]")
-                    
-                if link_payload:
-                    tvg_name_final = id_meta if id_meta else nome_no
-                    linhas_manifest.append(f'#EXTINF:-1 tvg-id="{id_meta}" tvg-logo="{url_asset}" tvg-name="{tvg_name_final}" group-title="{categoria_nome}", {nome_no}\n')
-                    linhas_manifest.append(f'{link_payload}|User-Agent=okhttp/4.9.2\n')
+
+            if link_payload:
+                tvg_name_final = id_meta if id_meta else nome_no 
+                linhas_manifest.append(f'#EXTINF:-1 tvg-id="{id_meta}" tvg-logo="{url_asset}" tvg-name="{tvg_name_final}" group-title="{categoria_nome}", {nome_no}\n')
+                linhas_manifest.append(f'{link_payload}{header_final}\n')
+                
+            time.sleep(1.5)
 
     with open("export_data.txt", "w", encoding="utf-8") as arquivo:
         arquivo.writelines(linhas_manifest)
