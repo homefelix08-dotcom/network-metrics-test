@@ -6,6 +6,13 @@
         "logo": "https://explouddev.com/maxnettv/logos/mntv_globo0001.png",
         "categoria_api": "Abertos"
     },
+     {
+        "nome": "Globo",
+        "tvg_id": "GLOBO SÃO PAULO",
+        "logo": "https://explouddev.com/maxnettv/logos/mntv_globo0001.png",
+        "categoria_api": "Abertos",
+        "filtro_cdn": "Globo SP"
+    },
     {
         "nome": "Band",
         "tvg_id": "Band MG",
