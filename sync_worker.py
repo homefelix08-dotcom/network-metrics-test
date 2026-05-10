@@ -271,12 +271,18 @@ def run_sync():
                                 break
 
                 if link_payload:
+                    print("[API OK]")
+                else:
+                    link_payload = recuperar_link_cache(id_meta, nome_no)
+                    if link_payload:
+                        print("[API OK - RECUPERADO]")
+                    else:
+                        print("[API FALHA TOTAL]")
+                    
+                if link_payload:
                     tvg_name_final = id_meta if id_meta else nome_no
                     linhas_manifest.append(f'#EXTINF:-1 tvg-id="{id_meta}" tvg-logo="{url_asset}" tvg-name="{tvg_name_final}" group-title="{categoria_nome}", {nome_no}\n')
                     linhas_manifest.append(f'{link_payload}|User-Agent=okhttp/4.9.2\n')
-                    print("[API OK]")
-                else:
-                    print("[API FALHA]")
 
     with open("export_data.txt", "w", encoding="utf-8") as arquivo:
         arquivo.writelines(linhas_manifest)
