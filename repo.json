@@ -6,12 +6,12 @@
         "logo": "https://explouddev.com/maxnettv/logos/mntv_globo0001.png",
         "categoria_api": "Abertos"
     },
-     {
+    {
         "nome": "Globo",
         "tvg_id": "GLOBO SÃO PAULO",
+        "url": "https://6embeddecanais.xyz/globosp/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_globo0001.png",
-        "categoria_api": "Abertos",
-        "filtro_cdn": "Globo SP"
+        "categoria_api": "Abertos"
     },
     {
         "nome": "Band",
