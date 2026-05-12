@@ -116,12 +116,12 @@ def build_local_manifest():
         print("Aviso: Nenhum dado de EPG pôde ser extraído.\n")
 
 def recuperar_link_cache(id_meta, nome_no):
-    """Vasculha o arquivo export_data.txt atual em busca do último link funcional."""
-    if not os.path.exists("export_data.txt"):
+    """Vasculha o arquivo backup.txt atual em busca do último link funcional."""
+    if not os.path.exists("backup.txt"):
         return None
     
     try:
-        with open("export_data.txt", "r", encoding="utf-8") as f:
+        with open("backup.txt", "r", encoding="utf-8") as f:
             conteudo = f.read()
             # Se tiver ID de EPG, busca por ele. Se não tiver (como os da Amazon/Disney), busca pelo nome.
             if id_meta:
@@ -277,7 +277,7 @@ def run_sync():
                 
             time.sleep(1.5)
 
-    with open("export_data.txt", "w", encoding="utf-8") as arquivo:
+    with open("backup.txt", "w", encoding="utf-8") as arquivo:
         arquivo.writelines(linhas_manifest)
         
     print("\nSincronização concluída! Arquivo de exportação atualizado.")
