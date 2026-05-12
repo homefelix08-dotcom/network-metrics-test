@@ -31,11 +31,18 @@ jobs:
     - name: Rodar o sync
       run: python sync_worker.py
 
-    - name: Fazer o commit da nova lista
+    - name: Commit and Push
       run: |
         git config --global user.name "Data Sync Bot"
-        git config --global user.email "bot@pipeline.local"
-        git add export_data.txt local_meta.xml
-        git commit -m "chore: auto-sync data nodes" || echo "Nenhuma mudança necessária"
-        git pull --rebase origin main
+        git config --global user.email "bot@github.com"
+        
+        # 1. Adiciona as mudanças e faz o commit
+        git add .
+        git commit -m "chore: auto-sync data nodes" || echo "No changes to commit"
+        
+        # 2. Sincroniza com o remoto usando rebase e guardando mudanças locais temporárias
+        # O parâmetro --autostash resolve o erro de 'unstaged changes'
+        git pull --rebase --autostash
+        
+        # 3. Faz o push final
         git push
