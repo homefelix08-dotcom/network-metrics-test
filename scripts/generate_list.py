@@ -25,8 +25,15 @@ def main():
         tvg_id = c.get('tvg_id', nome)
         logo = c.get('logo', '')
         cat = c.get('categoria', 'Diversos')
+        provedor = c.get('provedor', 'api')
+        url_site = c.get('url', '')
         
         worker_endpoint = f"{BASE_WORKER_URL}/{nome.replace(' ', '%20')}"
+        
+        if provedor == 'site' and url_site:
+            worker_endpoint = f"{worker_endpoint}|Referer={url_site}"
+        else:
+            worker_endpoint = f"{worker_endpoint}|User-Agent=okhttp/4.9.2"
         
         lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome}" tvg-logo="{logo}" group-title="{cat}", {nome}\n')
         lines.append(f"{worker_endpoint}\n")
@@ -34,7 +41,7 @@ def main():
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         f.writelines(lines)
         
-    print(f"Lista de exportação gerada com sucesso: {len(channels)} canais com EPG configurado.")
+    print(f"Lista de exportação gerada com sucesso: {len(channels)} canais com EPG e Headers configurados.")
 
 if __name__ == "__main__":
     main()
