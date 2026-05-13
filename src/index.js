@@ -8,24 +8,21 @@ export default {
     const channelName = decodeURIComponent(url.pathname.replace('/play/', ''));
 
     if (!channelName || url.pathname === '/') {
-      return new Response("Informe o canal.", { status: 400 });
+      return new Response("Informe o canal no endpoint /play/{nome}", { status: 400 });
     }
 
     const config = REPO_CONFIG.find(c => c.nome.toLowerCase() === channelName.toLowerCase());
-    if (!config) return new Response("Canal não mapeado.", { status: 404 });
+    if (!config) return new Response("Canal não mapeado no repo.js", { status: 404 });
 
-    // Funções de busca encapsuladas
     const tentarAPI = async () => {
       const nomeBusca = config.nome_api || config.nome;
       try {
         const apiRes = await fetch(`https://explouddev.com.br/api/canais/todos?search=${encodeURIComponent(nomeBusca)}`, {
           headers: { 'User-Agent': 'okhttp/4.9.2' },
-          cf: { cacheTtl: 300, cacheEverything: true }
+          cf: { cacheTtl: 300 }
         });
-
         if (apiRes.ok) {
           const apiData = await apiRes.json();
-          // Match de precisão
           let canalApi = apiData.find(c => c.name.toLowerCase() === nomeBusca.toLowerCase()) ||
                          apiData.find(c => c.name.toLowerCase().includes(nomeBusca.toLowerCase()));
 
@@ -45,12 +42,11 @@ export default {
         const siteRes = await fetch(config.url, {
           headers: { 
             "Referer": "https://6embeddecanais.xyz/", 
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" 
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36..." 
           }
         });
         if (siteRes.ok) {
-          const html = await siteRes.text();
-          const m3u8Match = html.match(/(https?:\/\/[^\s"\'<>]+?\.m3u8[^"\'<>]*)/);
+          const m3u8Match = (await siteRes.text()).match(/(https?:\/\/[^\s"\'<>]+?\.m3u8[^"\'<>]*)/);
           return m3u8Match ? m3u8Match[1] : null;
         }
       } catch (e) { return null; }
@@ -58,35 +54,22 @@ export default {
     };
 
     try {
-      let linkFinal = null;
-      
-      // REGRA DE OURO: Se for da categoria Esportes, o site manda.
-      const ehEsporte = config.categoria_api && config.categoria_api.toLowerCase() === "esportes";
+      let linkFinal = (config.provedor === "site") 
+        ? (await tentarScraping() || await tentarAPI())
+        : (await tentarAPI() || await tentarScraping());
 
-      if (ehEsporte) {
-        console.log(`[PRIORIDADE] Esportes detectado. Tentando site primeiro para: ${channelName}`);
-        linkFinal = await tentarScraping();
-        if (!linkFinal) linkFinal = await tentarAPI(); // Fallback para API se o site falhar
-      } else {
-        // Para as outras categorias, mantém a API como preferência
-        linkFinal = await tentarAPI();
-        if (!linkFinal) linkFinal = await tentarScraping();
-      }
+      if (linkFinal) return Response.redirect(linkFinal.split('|')[0], 302);
 
-      // Redirecionamento Final
-      if (linkFinal) {
-        return Response.redirect(linkFinal.split('|')[0], 302);
-      }
-
-      // --- ROTA DE ÚLTIMA INSTÂNCIA: CACHE GITHUB ---
+      // ÚLTIMO RECURSO: Tenta o link direto salvo no backup.txt
       const githubRes = await fetch(`${GITHUB_RAW_BASE}/backup.txt`);
-      const match = (await githubRes.text()).match(new RegExp(`tvg-name="${config.nome}".*?\\n(http[^\\s\\|\\n]+)`, "i"));
+      const backupText = await githubRes.text();
+      const match = backupText.match(new RegExp(`tvg-name="${config.nome}".*?\\n(http[^\\s\\|\\n]+)`, "i"));
+      
       if (match) return Response.redirect(match[1], 302);
 
-      return new Response("Nenhuma fonte funcional encontrada.", { status: 404 });
-
+      return new Response("Nenhuma fonte encontrada.", { status: 404 });
     } catch (e) {
-      return new Response("Erro interno.", { status: 500 });
+      return new Response("Erro Interno", { status: 500 });
     }
   }
 }
