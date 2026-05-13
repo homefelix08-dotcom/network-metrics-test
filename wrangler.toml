@@ -1,0 +1,6 @@
+name = "network-metrics-test"
+main = "src/index.js"
+compatibility_date = "2024-05-12"
+
+[build]
+command = ""
