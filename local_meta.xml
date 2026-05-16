@@ -169,7 +169,7 @@
     <title lang="pt">Clube do Chaves</title>
   </programme>
   <programme start="20260516144500 -0300" stop="20260516161500 -0300" channel="SBT MG">
-    <title lang="pt">Cinema em Casa</title>
+    <title lang="pt">Cinema em Casa: Um Tira Muito Suspeito</title>
   </programme>
   <programme start="20260516161500 -0300" stop="20260516171500 -0300" channel="SBT MG">
     <title lang="pt">Eita Lucas!</title>
@@ -243,7 +243,10 @@
   <programme start="20260516130000 -0300" stop="20260516133000 -0300" channel="Band MG">
     <title lang="pt">Igreja Maranata</title>
   </programme>
-  <programme start="20260516133000 -0300" stop="20260516160000 -0300" channel="Band MG">
+  <programme start="20260516133000 -0300" stop="20260516142000 -0300" channel="Band MG">
+    <title lang="pt">Stock Car: Etapa Goiânia (GO) - Corrida Sprint - Ao Vivo</title>
+  </programme>
+  <programme start="20260516142000 -0300" stop="20260516160000 -0300" channel="Band MG">
     <title lang="pt">Band Esporte Clube</title>
   </programme>
   <programme start="20260516160000 -0300" stop="20260516184000 -0300" channel="Band MG">
