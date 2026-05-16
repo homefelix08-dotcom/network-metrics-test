@@ -13,7 +13,8 @@ export default [
         "url": "https://6embeddecanais.xyz/globosp/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_globo0001.png",
         "categoria": "Abertos",
-        "provedor": "site"
+        "filtro_cdn": "Globo SP",
+        "provedor": "api"
     },
     {
         "nome": "Band",
