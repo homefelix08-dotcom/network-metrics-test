@@ -42,7 +42,7 @@ export default {
         const siteRes = await fetch(config.url, {
           headers: {
             // Em vez de link fixo, usamos a própria URL do canal como origem
-            "Referer": config.url,
+            "Referer": "https://ww2.embedtv.lat/",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
           }
         });
