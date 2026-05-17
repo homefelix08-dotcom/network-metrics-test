@@ -41,7 +41,7 @@ export default [
         "url": "https://6embeddecanais.xyz/redetv/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_redetv0001.png",
         "categoria": "Abertos",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Record MG",
@@ -49,7 +49,7 @@ export default [
         "url": "https://6embeddecanais.xyz/recordmg/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_record0001.png",
         "categoria": "Abertos",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Futura",
@@ -143,7 +143,7 @@ export default [
         "url": "https://6embeddecanais.xyz/hbomundi/",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbomundi.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "HBO Plus",
@@ -581,7 +581,7 @@ export default [
         "url": "https://6embeddecanais.xyz/amazonprimevideo/",
         "logo": "https://i.imgur.com/U5OE999.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Amazon Prime Video 2",
@@ -589,7 +589,7 @@ export default [
         "url": "https://6embeddecanais.xyz/amazonprimevideo02/",
         "logo": "https://i.imgur.com/U5OE999.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Amazon Prime Video 3",
@@ -597,7 +597,7 @@ export default [
         "url": "https://6embeddecanais.xyz/amazonprimevideo03/",
         "logo": "https://i.imgur.com/U5OE999.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Amazon Prime Video 4",
@@ -605,7 +605,7 @@ export default [
         "url": "https://6embeddecanais.xyz/amazonprimevideo04/",
         "logo": "https://i.imgur.com/U5OE999.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Amazon Prime Video 5",
@@ -613,7 +613,7 @@ export default [
         "url": "https://6embeddecanais.xyz/amazonprimevideo05/",
         "logo": "https://i.imgur.com/U5OE999.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Apple TV",
@@ -621,7 +621,7 @@ export default [
         "url": "https://6embeddecanais.xyz/appletv01/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_appletv0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Band Sports",
@@ -629,14 +629,14 @@ export default [
         "url": "https://6embeddecanais.xyz/bandsports/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_bandsports0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Canal Goat",
         "tvg_id": "",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_canalgoat0002.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Canal Off",
@@ -644,7 +644,7 @@ export default [
         "url": "https://6embeddecanais.xyz/canaloff/",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canaloff.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Combate",
@@ -652,7 +652,7 @@ export default [
         "url": "https://6embeddecanais.xyz/combate/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_combate0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Dazn",
@@ -660,7 +660,7 @@ export default [
         "url": "https://6embeddecanais.xyz/dazn/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_dazn0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "ESPN",
@@ -668,7 +668,7 @@ export default [
         "url": "https://6embeddecanais.xyz/espn/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_espn0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "ESPN 2",
@@ -676,7 +676,7 @@ export default [
         "url": "https://6embeddecanais.xyz/espn2/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_espntwo0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "ESPN 3",
@@ -684,7 +684,7 @@ export default [
         "url": "https://6embeddecanais.xyz/espn3/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_espn0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "ESPN 4",
@@ -692,7 +692,7 @@ export default [
         "url": "https://6embeddecanais.xyz/espn4/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_espn0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "ESPN 5",
@@ -700,7 +700,7 @@ export default [
         "url": "https://6embeddecanais.xyz/espn5/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_espn0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "ESPN 6",
@@ -708,7 +708,7 @@ export default [
         "url": "https://6embeddecanais.xyz/espn6/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_espn0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "GE TV",
@@ -716,35 +716,35 @@ export default [
         "url": "https://6embeddecanais.xyz/getv/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_getv0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "HBO Max",
         "tvg_id": "",
         "logo": "https://i.imgur.com/GZSYVVf.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "HBO Max 2",
         "tvg_id": "",
         "logo": "https://i.imgur.com/GZSYVVf.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "HBO Max 3",
         "tvg_id": "",
         "logo": "https://i.imgur.com/GZSYVVf.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "HBO Max 4",
         "tvg_id": "",
         "logo": "https://i.imgur.com/GZSYVVf.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Paramount+",
@@ -752,7 +752,7 @@ export default [
         "url": "https://6embeddecanais.xyz/paramountplus/",
         "logo": "https://i.imgur.com/YlKpabZ.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Paramount+ 2",
@@ -760,21 +760,21 @@ export default [
         "url": "https://6embeddecanais.xyz/paramountplus02/",
         "logo": "https://i.imgur.com/YlKpabZ.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Paramount+ 3",
         "tvg_id": "Paramount+ 3",
         "logo": "https://i.imgur.com/YlKpabZ.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Paramount+ 4",
         "tvg_id": "Paramount+ 4",
         "logo": "https://i.imgur.com/YlKpabZ.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Premiere 2",
@@ -782,7 +782,7 @@ export default [
         "url": "https://6embeddecanais.xyz/premiere2/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Premiere 3",
@@ -790,7 +790,7 @@ export default [
         "url": "https://6embeddecanais.xyz/premiere3/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Premiere 4",
@@ -798,7 +798,7 @@ export default [
         "url": "https://6embeddecanais.xyz/premiere4/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Premiere 5",
@@ -806,7 +806,7 @@ export default [
         "url": "https://6embeddecanais.xyz/premiere5/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Premiere 6",
@@ -814,7 +814,7 @@ export default [
         "url": "https://6embeddecanais.xyz/premiere6/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Premiere 7",
@@ -822,7 +822,7 @@ export default [
         "url": "https://6embeddecanais.xyz/premiere7/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Premiere 8",
@@ -830,7 +830,7 @@ export default [
         "url": "https://6embeddecanais.xyz/premiere8/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Premiere Clubes",
@@ -838,7 +838,7 @@ export default [
         "url": "https://6embeddecanais.xyz/premiereclubes/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_premiere0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "SporTV",
@@ -846,7 +846,7 @@ export default [
         "url": "https://6embeddecanais.xyz/sportv/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_sportv0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "SporTV 2",
@@ -854,7 +854,7 @@ export default [
         "url": "https://6embeddecanais.xyz/sportv2/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_sportvtwo0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "SporTV 3",
@@ -862,7 +862,7 @@ export default [
         "url": "https://6embeddecanais.xyz/sportv3/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_sportvthree0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "XSports",
@@ -870,7 +870,7 @@ export default [
         "url": "https://6embeddecanais.xyz/xsports/",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_xsports0001.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Band News",
