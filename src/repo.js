@@ -2,10 +2,10 @@ export default [
     {
         "nome": "Globo MG",
         "tvg_id": "Globo MG",
-        "url": "https://6embeddecanais.xyz/globomg/",
+        "url": "https://ww2.embedtv.lat/globomg",
         "logo": "https://explouddev.com/maxnettv/logos/mntv_globo0001.png",
         "categoria": "Abertos",
-        "provedor": "api"
+        "provedor": "site"
     },
     {
         "nome": "Globo",

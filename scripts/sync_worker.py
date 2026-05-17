@@ -13,10 +13,6 @@ import pytz
 # ==========================================
 # CONFIGURAÇÕES GERAIS
 # ==========================================
-HEADERS_SITE = {
-    "X-Forwarded-For": "177.129.1.1",
-    "Referer": "https://6embeddecanais.xyz/"
-}
 HEADERS_API = {'User-Agent': 'okhttp/4.9.2'}
 REPO_PATH = "src/repo.js"
 
@@ -76,7 +72,11 @@ def extract_payload(sessao, url_destino):
     """Realiza o scraping da página."""
     if not url_destino: return None
     try:
-        resposta = sessao.get(url_destino, headers=HEADERS_SITE, timeout=15)
+        headers_dinamicos = {
+            "X-Forwarded-For": "177.129.1.1",
+            "Referer": url_destino
+        }
+        resposta = sessao.get(url_destino, headers=headers_dinamicos, timeout=15)
         if resposta.status_code != 200: return None
         
         # Página Principal
@@ -88,7 +88,7 @@ def extract_payload(sessao, url_destino):
         for url_iframe in iframes:
             if url_iframe.startswith('//'): url_iframe = 'https:' + url_iframe
             try:
-                resp_frame = sessao.get(url_iframe, headers=HEADERS_SITE, timeout=10)
+                resp_frame = sessao.get(url_iframe, headers=headers_dinamicos, timeout=10)
                 busca_frame = re.search(r'(https?://[^\s"\'<>]+?\.m3u8[^"\'<>]*)', resp_frame.text)
                 if busca_frame: return busca_frame.group(1)
             except: continue

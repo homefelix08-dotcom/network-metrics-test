@@ -24,7 +24,7 @@ export default {
         if (apiRes.ok) {
           const apiData = await apiRes.json();
           let canalApi = apiData.find(c => c.name.toLowerCase() === nomeBusca.toLowerCase()) ||
-                         apiData.find(c => c.name.toLowerCase().includes(nomeBusca.toLowerCase()));
+            apiData.find(c => c.name.toLowerCase().includes(nomeBusca.toLowerCase()));
 
           if (canalApi && canalApi.sources?.length > 0) {
             return config.filtro_cdn
@@ -40,13 +40,15 @@ export default {
       if (!config.url) return null;
       try {
         const siteRes = await fetch(config.url, {
-          headers: { 
-            "Referer": "https://6embeddecanais.xyz/", 
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36..." 
+          headers: {
+            // Em vez de link fixo, usamos a própria URL do canal como origem
+            "Referer": config.url,
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
           }
         });
         if (siteRes.ok) {
-          const m3u8Match = (await siteRes.text()).match(/(https?:\/\/[^\s"\'<>]+?\.m3u8[^"\'<>]*)/);
+          const html = await siteRes.text();
+          const m3u8Match = html.match(/(https?:\/\/[^\s"\'<>]+?\.m3u8[^"\'<>]*)/);
           return m3u8Match ? m3u8Match[1] : null;
         }
       } catch (e) { return null; }
@@ -54,7 +56,7 @@ export default {
     };
 
     try {
-      let linkFinal = (config.provedor === "site") 
+      let linkFinal = (config.provedor === "site")
         ? (await tentarScraping() || await tentarAPI())
         : (await tentarAPI() || await tentarScraping());
 
@@ -64,7 +66,7 @@ export default {
       const githubRes = await fetch(`${GITHUB_RAW_BASE}/backup.txt`);
       const backupText = await githubRes.text();
       const match = backupText.match(new RegExp(`tvg-name="${config.nome}".*?\\n(http[^\\s\\|\\n]+)`, "i"));
-      
+
       if (match) return Response.redirect(match[1], 302);
 
       return new Response("Nenhuma fonte encontrada.", { status: 404 });
