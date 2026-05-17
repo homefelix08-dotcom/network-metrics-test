@@ -74,7 +74,7 @@ def extract_payload(sessao, url_destino):
     try:
         headers_dinamicos = {
             "X-Forwarded-For": "177.129.1.1",
-            "Referer": url_destino
+            "Referer": "https://ww2.embedtv.lat/"
         }
         resposta = sessao.get(url_destino, headers=headers_dinamicos, timeout=15)
         if resposta.status_code != 200: return None
