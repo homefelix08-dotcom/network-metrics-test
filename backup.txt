@@ -4,145 +4,145 @@ https://1305.cdn10embed.xyz/globomg/index.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="GLOBO SÃO PAULO" tvg-name="Globo" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_globo0001.png" group-title="Abertos", Globo
 https://agropesca.live/live/globosp/index.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Band MG" tvg-name="Band" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_band0001.png" group-title="Abertos", Band
-http://dns.explouddev.com/live/501212992/G1Dw4f/255482.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/255482.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SBT MG" tvg-name="TV Alterosa" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_sbt0001.png" group-title="Abertos", TV Alterosa
-http://dns.explouddev.com/live/501212992/G1Dw4f/244184.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/244184.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="REDE TV! HD" tvg-name="Rede TV" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_redetv0001.png" group-title="Abertos", Rede TV
 https://1305.cdn10embed.xyz/redetv/index.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Record MG" tvg-name="Record MG" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_record0001.png" group-title="Abertos", Record MG
 https://1305.cdn10embed.xyz/recordmg/index.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="FUTURA HD" tvg-name="Futura" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_futura0001.png" group-title="Abertos", Futura
-http://dns.explouddev.com/live/501212992/G1Dw4f/159.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/159.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TV BRASIL" tvg-name="TV Brasil" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_tvbrasil0001.png" group-title="Abertos", TV Brasil
 https://tvbrasil-stream.ebc.com.br/index.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="CULTURA HD" tvg-name="TV Cultura" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_tvcultura0001.png" group-title="Abertos", TV Cultura
 https://5b33b873179a2.streamlock.net:1443/live/livestream/chunklist_w884249386.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="A&E" tvg-name="A&E" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_a&e0001.png" group-title="Filmes e Séries", A&E
-http://dns.explouddev.com/live/501212992/G1Dw4f/666.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/666.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="AMC HD" tvg-name="AMC" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_amc0001.png" group-title="Filmes e Séries", AMC
-http://dns.explouddev.com/live/501212992/G1Dw4f/671.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/671.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="AXN" tvg-name="AXN" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_axn0001.png" group-title="Filmes e Séries", AXN
-http://dns.explouddev.com/live/501212992/G1Dw4f/676.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/676.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="CANAL BRASIL HD" tvg-name="Canal Brasil" tvg-logo="https://i.imgur.com/8PuNxoS.png" group-title="Filmes e Séries", Canal Brasil
-http://dns.explouddev.com/live/501212992/G1Dw4f/146.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/146.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="CINEMAX HD" tvg-name="Cinemax" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_cinemax0001.png" group-title="Filmes e Séries", Cinemax
-http://dns.explouddev.com/live/501212992/G1Dw4f/682.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/682.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HBO" tvg-name="HBO" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_hbo0001.png" group-title="Filmes e Séries", HBO
-http://dns.explouddev.com/live/501212992/G1Dw4f/18751.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/18751.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HBO2" tvg-name="HBO 2" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_hbotwo0001.png" group-title="Filmes e Séries", HBO 2
-http://dns.explouddev.com/live/501212992/G1Dw4f/18755.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/18755.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HBO Family" tvg-name="HBO Family" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_hbofamily0001.png" group-title="Filmes e Séries", HBO Family
-http://dns.explouddev.com/live/501212992/G1Dw4f/18760.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/18760.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HBO Mundi" tvg-name="HBO Mundi" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbomundi.png" group-title="Filmes e Séries", HBO Mundi
 https://1305.cdn10embed.xyz/hbomundi/index.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HBO+" tvg-name="HBO Plus" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_hboplus0001.png" group-title="Filmes e Séries", HBO Plus
-http://dns.explouddev.com/live/501212992/G1Dw4f/18764.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/18764.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HBO Pop" tvg-name="HBO Pop" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_hbopop0001.png" group-title="Filmes e Séries", HBO Pop
-http://dns.explouddev.com/live/501212992/G1Dw4f/18779.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/18779.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HBO Signature" tvg-name="HBO Signature" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_hbosignature0001.png" group-title="Filmes e Séries", HBO Signature
-http://dns.explouddev.com/live/501212992/G1Dw4f/18767.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/18767.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HBO Xtreme" tvg-name="HBO Xtreme" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hboxtreme.png" group-title="Filmes e Séries", HBO Xtreme
-http://dns.explouddev.com/live/501212992/G1Dw4f/18775.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/18775.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="MEGAPIX HD" tvg-name="Megapix" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_megapix0001.png" group-title="Filmes e Séries", Megapix
-http://dns.explouddev.com/live/501212992/G1Dw4f/692.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/692.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SONY CHANNEL" tvg-name="Sony Channel" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_sony0001.png" group-title="Filmes e Séries", Sony Channel
-http://dns.explouddev.com/live/501212992/G1Dw4f/702.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/702.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SPACE HD" tvg-name="Space" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_space0001.png" group-title="Filmes e Séries", Space
-http://dns.explouddev.com/live/501212992/G1Dw4f/707.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/707.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="STUDIO UNIVERSAL HD" tvg-name="Studio Universal" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_studiochannel0001.png" group-title="Filmes e Séries", Studio Universal
-http://dns.explouddev.com/live/501212992/G1Dw4f/713.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/713.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TCM BR" tvg-name="TCM" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_tcm0001.png" group-title="Filmes e Séries", TCM
-http://dns.explouddev.com/live/501212992/G1Dw4f/740.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/740.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TELECINE ACTION" tvg-name="Telecine Action" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_telecineaction0001.png" group-title="Filmes e Séries", Telecine Action
-http://dns.explouddev.com/live/501212992/G1Dw4f/615.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/615.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TELECINE CULT" tvg-name="Telecine Cult" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_telecinecult0001.png" group-title="Filmes e Séries", Telecine Cult
-http://dns.explouddev.com/live/501212992/G1Dw4f/620.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/620.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TELECINE FUN" tvg-name="Telecine Fun" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_telecinefun0001.png" group-title="Filmes e Séries", Telecine Fun
-http://dns.explouddev.com/live/501212992/G1Dw4f/625.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/625.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TELECINE PIPOCA" tvg-name="Telecine Pipoca" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_telecinepipoca0001.png" group-title="Filmes e Séries", Telecine Pipoca
-http://dns.explouddev.com/live/501212992/G1Dw4f/630.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/630.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TELECINE PREMIUM" tvg-name="Telecine Premium" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_telecinepremium0001.png" group-title="Filmes e Séries", Telecine Premium
-http://dns.explouddev.com/live/501212992/G1Dw4f/635.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/635.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TELECINE TOUCH" tvg-name="Telecine Touch" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_telecinetouch0001.png" group-title="Filmes e Séries", Telecine Touch
-http://dns.explouddev.com/live/501212992/G1Dw4f/589.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/589.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TNT HD" tvg-name="TNT" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_tnt0001.png" group-title="Filmes e Séries", TNT
-http://dns.explouddev.com/live/501212992/G1Dw4f/733.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/733.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TNT NOVELAS" tvg-name="TNT Novelas" tvg-logo="https://i.imgur.com/bzOhQNq.png" group-title="Filmes e Séries", TNT Novelas
-http://dns.explouddev.com/live/501212992/G1Dw4f/264555.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/264555.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TNT SERIES HD" tvg-name="TNT Séries" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_tntseries0001.png" group-title="Filmes e Séries", TNT Séries
-http://dns.explouddev.com/live/501212992/G1Dw4f/738.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/738.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="UNIVERSAL TV HD" tvg-name="Universal TV" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_universaltv0001.png" group-title="Filmes e Séries", Universal TV
-http://dns.explouddev.com/live/501212992/G1Dw4f/743.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/743.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="USA HD" tvg-name="USA" tvg-logo="https://i.imgur.com/sdoR43Z.png" group-title="Filmes e Séries", USA
-http://dns.explouddev.com/live/501212992/G1Dw4f/718.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/718.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="WARNER CHANNEL" tvg-name="Warner" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_warner0001.png" group-title="Filmes e Séries", Warner
-http://dns.explouddev.com/live/501212992/G1Dw4f/749.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/749.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="BIS HD" tvg-name="Bis" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_bis0001.png" group-title="Variedades", Bis
-http://dns.explouddev.com/live/501212992/G1Dw4f/376504.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/376504.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="CURTA" tvg-name="Curta!" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_curta0001.png" group-title="Variedades", Curta!
-http://dns.explouddev.com/live/501212992/G1Dw4f/2612.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/2612.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="FISH TV" tvg-name="Fish TV" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_fishtv0001.png" group-title="Variedades", Fish TV
-http://dns.explouddev.com/live/501212992/G1Dw4f/248.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/248.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="FOOD NETWORK HD" tvg-name="Food Network" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_foodnetwork0001.png" group-title="Variedades", Food Network
-http://dns.explouddev.com/live/501212992/G1Dw4f/2480.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/2480.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Globoplay Novelas" tvg-name="Globoplay Novelas" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_gplaynovelas0001.png" group-title="Variedades", Globoplay Novelas
 http://79.127.238.228:14455|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="GNT HD" tvg-name="GNT" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_gnt0001.png" group-title="Variedades", GNT
-http://dns.explouddev.com/live/501212992/G1Dw4f/377238.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/377238.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="LIFETIME" tvg-name="Lifetime" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_lifetime0001.png" group-title="Variedades", Lifetime
-http://dns.explouddev.com/live/501212992/G1Dw4f/2488.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/2488.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Modo Viagem" tvg-name="Modo Viagem" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_maisglobosat0001.png" group-title="Variedades", Modo Viagem
-http://dns.explouddev.com/live/501212992/G1Dw4f/89181.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/89181.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="MULTISHOW HD" tvg-name="Multishow" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_multishow0001.png" group-title="Variedades", Multishow
-http://dns.explouddev.com/live/501212992/G1Dw4f/377241.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/377241.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="MUSIC BOX BRAZIL" tvg-name="Music Box Brazil" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_musicboxbr0001.png" group-title="Variedades", Music Box Brazil
-http://dns.explouddev.com/live/501212992/G1Dw4f/2520.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/2520.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="PRIME BOX BRAZIL" tvg-name="Prime Box Brazil" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_primeboxbrazil0001.png" group-title="Variedades", Prime Box Brazil
-http://dns.explouddev.com/live/501212992/G1Dw4f/537632.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/537632.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TLC HD" tvg-name="TLC" tvg-logo="https://i.imgur.com/BOznDVO.png" group-title="Variedades", TLC
-http://dns.explouddev.com/live/501212992/G1Dw4f/728.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/728.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TRAVEL BOX" tvg-name="Travel Box Brazil" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_travelboxbrazil0001.png" group-title="Variedades", Travel Box Brazil
-http://dns.explouddev.com/live/501212992/G1Dw4f/376353.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/376353.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="ANIMAL PLANET HD" tvg-name="Animal Planet" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_animplanet0001.png" group-title="Documentários", Animal Planet
-http://dns.explouddev.com/live/501212992/G1Dw4f/2602.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/2602.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="ARTE 1 HD" tvg-name="Arte1" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_arteum0001.png" group-title="Documentários", Arte1
-http://dns.explouddev.com/live/501212992/G1Dw4f/2607.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/2607.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="DISCOVERY HD" tvg-name="Discovery Channel" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_discoverychannel0001.png" group-title="Documentários", Discovery Channel
-http://dns.explouddev.com/live/501212992/G1Dw4f/2577.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/2577.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="DISCOVERY HOME&HEALTH HD" tvg-name="Discovery Home & Health" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_discoveryh&h0001.png" group-title="Documentários", Discovery Home & Health
-http://dns.explouddev.com/live/501212992/G1Dw4f/2572.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/2572.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="DISCOVERY SCIENCE HD" tvg-name="Discovery Science" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_science0001.png" group-title="Documentários", Discovery Science
-http://dns.explouddev.com/live/501212992/G1Dw4f/2582.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/2582.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="DISCOVERY THEATER HD" tvg-name="Discovery Theater" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_discoverytheater0001.png" group-title="Documentários", Discovery Theater
-http://dns.explouddev.com/live/501212992/G1Dw4f/2587.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/2587.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="DISCOVERY TURBO HD" tvg-name="Discovery Turbo" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_discoveryturbo0001.png" group-title="Documentários", Discovery Turbo
-http://dns.explouddev.com/live/501212992/G1Dw4f/2592.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/2592.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="DISCOVERY WORLD HD" tvg-name="Discovery World" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_discoveryworld0001.png" group-title="Documentários", Discovery World
-http://dns.explouddev.com/live/501212992/G1Dw4f/2597.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/2597.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="E!" tvg-name="E! Entertainment" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_entertainment0001.png" group-title="Documentários", E! Entertainment
-http://dns.explouddev.com/live/501212992/G1Dw4f/2472.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/2472.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HGTV HD" tvg-name="HGTV" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_hgtv0001.png" group-title="Documentários", HGTV
-http://dns.explouddev.com/live/501212992/G1Dw4f/2627.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/2627.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HISTORY" tvg-name="History" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_history0001.png" group-title="Documentários", History
-http://dns.explouddev.com/live/501212992/G1Dw4f/2617.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/2617.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HISTORY 2" tvg-name="History 2" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_historytwo0001.png" group-title="Documentários", History 2
-http://dns.explouddev.com/live/501212992/G1Dw4f/2622.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/2622.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="ID HD" tvg-name="Investigação Discovery" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_idchannel0001.png" group-title="Documentários", Investigação Discovery
-http://dns.explouddev.com/live/501212992/G1Dw4f/2632.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/2632.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Adult Swim HD" tvg-name="Adult Swim" tvg-logo="https://i.imgur.com/4TEXo8R.png" group-title="Infantis", Adult Swim
-http://dns.explouddev.com/live/501212992/G1Dw4f/376344.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/376344.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="CARTOON HD" tvg-name="Cartoon Network" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_cartoon0001.png" group-title="Infantis", Cartoon Network
-http://dns.explouddev.com/live/501212992/G1Dw4f/352.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/352.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="CARTOONITO" tvg-name="Cartoonito" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_cartoonito0001.png" group-title="Infantis", Cartoonito
-http://dns.explouddev.com/live/501212992/G1Dw4f/110683.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/110683.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="DISCOVERY KIDS HD" tvg-name="Discovery Kids" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_discoverykids0001.png" group-title="Infantis", Discovery Kids
-http://dns.explouddev.com/live/501212992/G1Dw4f/364.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/364.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="Disney Channel" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_disneychannel0001.png" group-title="Infantis", Disney Channel
 https://98.olaiptv.xyz:8443/streams/N9CgRRne9f/a3xJy36TST/129_.m3u8?crypt=|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="GLOOB HD" tvg-name="Gloob" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_gloob0001.png" group-title="Infantis", Gloob
-http://dns.explouddev.com/live/501212992/G1Dw4f/377228.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/377228.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="GLOOBINHO HD" tvg-name="Gloobinho" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_gloobinho0001.png" group-title="Infantis", Gloobinho
-http://dns.explouddev.com/live/501212992/G1Dw4f/377232.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/377232.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="Tooncast" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_tooncast0001.png" group-title="Infantis", Tooncast
 http://38.247.134.19/live/92370341211/30082393260/17212|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="Amazon Prime Video 1" tvg-logo="https://i.imgur.com/U5OE999.png" group-title="Esportes", Amazon Prime Video 1
@@ -156,76 +156,76 @@ https://1305.cdn10embed.xyz/amazonprime04/index.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="Amazon Prime Video 5" tvg-logo="https://i.imgur.com/U5OE999.png" group-title="Esportes", Amazon Prime Video 5
 https://1305.cdn10embed.xyz/amazonprime05/index.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="Apple TV" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_appletv0001.png" group-title="Esportes", Apple TV
-http://dns.explouddev.com/live/501212992/G1Dw4f/274650.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/274650.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="BAND SPORTS HD" tvg-name="Band Sports" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_bandsports0001.png" group-title="Esportes", Band Sports
-http://dns.explouddev.com/live/501212992/G1Dw4f/235.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/235.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="Canal Goat" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_canalgoat0002.png" group-title="Esportes", Canal Goat
-http://dns.explouddev.com/live/501212992/G1Dw4f/274647.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/274647.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="OFF HD" tvg-name="Canal Off" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canaloff.png" group-title="Esportes", Canal Off
 https://1305.cdn10embed.xyz/canaloff/index.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="COMBATE HD" tvg-name="Combate" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_combate0001.png" group-title="Esportes", Combate
-http://dns.explouddev.com/live/501212992/G1Dw4f/240.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/240.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="Dazn" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_dazn0001.png" group-title="Esportes", Dazn
-http://dns.explouddev.com/live/501212992/G1Dw4f/229982.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/229982.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="ESPN" tvg-name="ESPN" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_espn0001.png" group-title="Esportes", ESPN
-http://dns.explouddev.com/live/501212992/G1Dw4f/309458.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/309458.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="ESPN 2" tvg-name="ESPN 2" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_espntwo0001.png" group-title="Esportes", ESPN 2
-http://dns.explouddev.com/live/501212992/G1Dw4f/215.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/215.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="ESPN 3" tvg-name="ESPN 3" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_espn0001.png" group-title="Esportes", ESPN 3
-http://dns.explouddev.com/live/501212992/G1Dw4f/220.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/220.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="ESPN 4" tvg-name="ESPN 4" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_espn0001.png" group-title="Esportes", ESPN 4
-http://dns.explouddev.com/live/501212992/G1Dw4f/225.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/225.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="ESPN 5" tvg-name="ESPN 5" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_espn0001.png" group-title="Esportes", ESPN 5
-http://dns.explouddev.com/live/501212992/G1Dw4f/563030.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/563030.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="ESPN 6" tvg-name="ESPN 6" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_espn0001.png" group-title="Esportes", ESPN 6
-http://dns.explouddev.com/live/501212992/G1Dw4f/563035.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/563035.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="GE" tvg-name="GE TV" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_getv0001.png" group-title="Esportes", GE TV
 https://dfr80qz435crc.cloudfront.net/EFGH/Amagi/Globo/GE_Fast_BR/GE_Fast.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="HBO Max" tvg-logo="https://i.imgur.com/GZSYVVf.png" group-title="Esportes", HBO Max
-http://dns.explouddev.com/live/501212992/G1Dw4f/121598.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/121598.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="HBO Max 2" tvg-logo="https://i.imgur.com/GZSYVVf.png" group-title="Esportes", HBO Max 2
-http://dns.explouddev.com/live/501212992/G1Dw4f/121600.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/121600.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="HBO Max 3" tvg-logo="https://i.imgur.com/GZSYVVf.png" group-title="Esportes", HBO Max 3
-http://dns.explouddev.com/live/501212992/G1Dw4f/121604.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/121604.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="HBO Max 4" tvg-logo="https://i.imgur.com/GZSYVVf.png" group-title="Esportes", HBO Max 4
-http://dns.explouddev.com/live/501212992/G1Dw4f/121610.ts|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/121610.ts|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="Paramount+" tvg-logo="https://i.imgur.com/YlKpabZ.png" group-title="Esportes", Paramount+
-http://dns.explouddev.com/live/501212992/G1Dw4f/250563.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/250563.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Paramount+ 2" tvg-name="Paramount+ 2" tvg-logo="https://i.imgur.com/YlKpabZ.png" group-title="Esportes", Paramount+ 2
-http://dns.explouddev.com/live/501212992/G1Dw4f/368440.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/368440.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Paramount+ 3" tvg-name="Paramount+ 3" tvg-logo="https://i.imgur.com/YlKpabZ.png" group-title="Esportes", Paramount+ 3
-http://dns.explouddev.com/live/501212992/G1Dw4f/250571.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/250571.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Paramount+ 4" tvg-name="Paramount+ 4" tvg-logo="https://i.imgur.com/YlKpabZ.png" group-title="Esportes", Paramount+ 4
-http://dns.explouddev.com/live/501212992/G1Dw4f/368448.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/368448.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="PREMIERE 2 HD" tvg-name="Premiere 2" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" group-title="Esportes", Premiere 2
-http://dns.explouddev.com/live/501212992/G1Dw4f/499.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/499.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="PREMIERE 3 HD" tvg-name="Premiere 3" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" group-title="Esportes", Premiere 3
-http://dns.explouddev.com/live/501212992/G1Dw4f/504.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/504.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="PREMIERE 4 HD" tvg-name="Premiere 4" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" group-title="Esportes", Premiere 4
-http://dns.explouddev.com/live/501212992/G1Dw4f/509.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/509.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="PREMIERE 5 HD" tvg-name="Premiere 5" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" group-title="Esportes", Premiere 5
-http://dns.explouddev.com/live/501212992/G1Dw4f/514.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/514.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="PREMIERE 6 HD" tvg-name="Premiere 6" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" group-title="Esportes", Premiere 6
-http://dns.explouddev.com/live/501212992/G1Dw4f/519.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/519.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="PREMIERE 7 HD" tvg-name="Premiere 7" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" group-title="Esportes", Premiere 7
-http://dns.explouddev.com/live/501212992/G1Dw4f/524.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/524.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="Premiere 8" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" group-title="Esportes", Premiere 8
-http://dns.explouddev.com/live/501212992/G1Dw4f/380749.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/380749.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="PREMIERE CLUBES HD" tvg-name="Premiere Clubes" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_premiere0001.png" group-title="Esportes", Premiere Clubes
 https://1305.cdn10embed.xyz/premiereclubes/index.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SPORTV" tvg-name="SporTV" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_sportv0001.png" group-title="Esportes", SporTV
-http://dns.explouddev.com/live/501212992/G1Dw4f/118881.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/118881.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SPORTV 2" tvg-name="SporTV 2" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_sportvtwo0001.png" group-title="Esportes", SporTV 2
-http://dns.explouddev.com/live/501212992/G1Dw4f/554.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/554.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SPORTV 3" tvg-name="SporTV 3" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_sportvthree0001.png" group-title="Esportes", SporTV 3
-http://dns.explouddev.com/live/501212992/G1Dw4f/559.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/559.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Xsports HD" tvg-name="XSports" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_xsports0001.png" group-title="Esportes", XSports
-http://dns.explouddev.com:80/live/501212992/G1Dw4f/580835.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com:80/live/c683B3095j/5873513/580835.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="BAND NEWS" tvg-name="Band News" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_bandnews0001.png" group-title="Notícias", Band News
-http://dns.explouddev.com/live/501212992/G1Dw4f/469.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/469.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="CNN BRASIL" tvg-name="CNN Brasil" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_cnnbrasil0001.png" group-title="Notícias", CNN Brasil
-http://dns.explouddev.com/live/501212992/G1Dw4f/474.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/474.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="GLOBONEWS" tvg-name="Globo News" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_globonews0001.png" group-title="Notícias", Globo News
-http://dns.explouddev.com/live/501212992/G1Dw4f/479.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/479.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="RECORD NEWS" tvg-name="Record News" tvg-logo="https://explouddev.com/maxnettv/logos/mntv_recordnews0001.png" group-title="Notícias", Record News
-http://dns.explouddev.com/live/501212992/G1Dw4f/488.m3u8|User-Agent=okhttp/4.9.2
+http://dns.explouddev.com/live/c683B3095j/5873513/488.m3u8|User-Agent=okhttp/4.9.2
