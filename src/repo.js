@@ -5,10 +5,10 @@ export default [
     {
         "nome": "Globo MG",
         "tvg_id": "Globo MG",
-        "url": `http://hls1.sua.tv/live/globominashd/s.m3u8`,
-        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo.png",
+        "url": "http://hls1.sua.tv/live/globominashd/s.m3u8",
+        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png",
         "categoria": "Abertos",
-        "provedor": "api",
+        "provedor": "site",
         "provedor_fixo": true
     },
     {
