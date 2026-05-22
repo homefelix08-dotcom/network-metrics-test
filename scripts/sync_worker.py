@@ -4,6 +4,7 @@ import time
 import json
 import requests
 import os
+import subprocess
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from bs4 import BeautifulSoup
@@ -42,18 +43,38 @@ def build_session():
     return scraper
 
 def load_repo_js():
-    """Lê o arquivo repo.js e extrai o array JSON."""
+    """Lê o arquivo repo.js compilando as variáveis via Node.js."""
     try:
         with open(REPO_PATH, "r", encoding="utf-8") as f:
-            content = f.read()
-            match = re.search(r'\[.*\]', content, re.DOTALL)
-            if match:
-                return json.loads(match.group(0))
-            else:
-                print("Erro: Array não encontrado no repo.js")
-                return []
+            repo_content = f.read()
+
+        # Transforma o export default em uma constante executável pelo Node
+        execution_code = repo_content.replace("export default", "const data =")
+        execution_code += "\nconsole.log(JSON.stringify(data));"
+
+        temp_filename = "temp_bridge_sync.cjs"
+        with open(temp_filename, "w", encoding="utf-8") as f:
+            f.write(execution_code)
+
+        result = subprocess.run(
+            ["node", temp_filename],
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            shell=True
+        )
+
+        if os.path.exists(temp_filename):
+            os.remove(temp_filename)
+
+        if result.returncode != 0:
+            print(f"Erro no motor do Node dentro do Sync: {result.stderr}")
+            return []
+
+        return json.loads(result.stdout.strip())
+
     except Exception as e:
-        print(f"Erro ao ler {REPO_PATH}: {e}")
+        print(f"Erro crítico ao interpretar o repo.js no Sync com Node: {e}")
         return []
 
 def recuperar_link_cache(id_meta, nome_no):
@@ -69,8 +90,12 @@ def recuperar_link_cache(id_meta, nome_no):
     return None
 
 def extract_payload(sessao, url_destino):
-    """Realiza o scraping da página."""
+    """Realiza o scraping da página ou ignora se for link direto m3u8."""
     if not url_destino: return None
+    
+    if "sua.tv" in url_destino or url_destino.endswith(".m3u8"):
+        return url_destino
+        
     try:
         headers_dinamicos = {
             "X-Forwarded-For": "177.129.1.1",
@@ -120,7 +145,7 @@ def buscar_na_api(api_cache, canal):
 # ==========================================
 def build_local_manifest():
     print("Processando telemetria local para canais regionais...")
-    headers = {'User-Agent': 'Mozilla/5.0...'}
+    headers = {'User-Agent': 'Mozilla/5.0'}
     fuso_br = pytz.timezone('America/Sao_Paulo')
     xml_channels, xml_programmes = [], []
     total_blocos = 0
@@ -192,7 +217,8 @@ def run_sync():
             link_payload = extract_payload(sessao, url_site)
             if link_payload:
                 print("[SITE OK]")
-                header_final = f"|Referer={url_site}"
+                # Correção do Header se for do sua.tv
+                header_final = "|User-Agent=okhttp/4.9.2" if "sua.tv" in url_site else f"|Referer={url_site}"
             else:
                 link_payload = buscar_na_api(api_cache, canal)
                 if link_payload:
@@ -209,14 +235,13 @@ def run_sync():
                 link_payload = extract_payload(sessao, url_site)
                 if link_payload:
                     print("[SITE FALLBACK OK]")
-                    header_final = f"|Referer={url_site}"
+                    header_final = "|User-Agent=okhttp/4.9.2" if "sua.tv" in url_site else f"|Referer={url_site}"
 
         # 3. Cache se tudo falhar
         if not link_payload:
             link_payload = recuperar_link_cache(id_meta, nome)
             if link_payload:
                 print("[CACHE RECUPERADO]")
-                # Tentamos manter um User-Agent padrão para links do cache
                 header_final = "|User-Agent=okhttp/4.9.2"
             else:
                 print("[FALHA TOTAL]")
@@ -231,7 +256,7 @@ def run_sync():
     with open("backup.txt", "w", encoding="utf-8") as arquivo:
         arquivo.writelines(linhas_manifest)
         
-    print("\nSincronização concluída! Arquivo backup.txt atualizado.")
+    print("\nSincronização concluída! Arquivo backup.txt updated.")
 
 if __name__ == "__main__":
     run_sync()
