@@ -8,7 +8,8 @@ export default [
         "url": `${siteBaseUrl}/globomg/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png",
         "categoria": "Abertos",
-        "provedor": "site"
+        "provedor": "site",
+        "provedor_fixo": true
     },
     {
         "nome": "Globo",
@@ -17,7 +18,8 @@ export default [
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo.png",
         "categoria": "Abertos",
         "filtro_cdn": "Globo SP",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Band",
@@ -26,7 +28,8 @@ export default [
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band.png",
         "categoria": "Abertos",
         "filtro_cdn": "Band MG",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": true
     },
     {
         "nome": "TV Alterosa",
@@ -36,7 +39,8 @@ export default [
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png",
         "categoria": "Abertos",
         "filtro_cdn": "SBT MG",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": true
     },
     {
         "nome": "Rede TV",
@@ -44,7 +48,8 @@ export default [
         "url": `${siteBaseUrl}/redetv/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/rede_tv.png",
         "categoria": "Abertos",
-        "provedor": "site"
+        "provedor": "site",
+        "provedor_fixo": true
     },
     {
         "nome": "Record MG",
@@ -52,21 +57,24 @@ export default [
         "url": `${siteBaseUrl}/recordmg/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png",
         "categoria": "Abertos",
-        "provedor": "site"
+        "provedor": "site",
+        "provedor_fixo": true
     },
     {
         "nome": "Futura",
         "tvg_id": "FUTURA HD",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/futura.png",
         "categoria": "Abertos",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": true
     },
     {
         "nome": "TV Brasil",
         "tvg_id": "TV BRASIL",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_brasil.png",
         "categoria": "Abertos",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": true
     },
     {
         "nome": "TV Cultura",
@@ -74,7 +82,8 @@ export default [
         "url": `${siteBaseUrl}/tvcultura/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_cultura.png",
         "categoria": "Abertos",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
 
     /* FILMES E SÉRIES */
@@ -84,7 +93,8 @@ export default [
         "url": `${siteBaseUrl}/aee/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/ae.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "AMC",
@@ -92,7 +102,8 @@ export default [
         "url": `${siteBaseUrl}/amc/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amc.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "AXN",
@@ -100,14 +111,16 @@ export default [
         "url": `${siteBaseUrl}/axn/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/axn.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Canal Brasil",
         "tvg_id": "CANAL BRASIL HD",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_brasil.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": true
     },
     {
         "nome": "Cinemax",
@@ -115,7 +128,8 @@ export default [
         "url": `${siteBaseUrl}/cinemax/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cinemax.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "HBO",
@@ -123,7 +137,8 @@ export default [
         "url": `${siteBaseUrl}/hbo/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "HBO 2",
@@ -131,7 +146,8 @@ export default [
         "url": `${siteBaseUrl}/hbo2/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_2.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "HBO Family",
@@ -140,7 +156,8 @@ export default [
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_family.png",
         "categoria": "Filmes e Séries",
         "filtro_cdn": "Opção 02",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "HBO Mundi",
@@ -148,7 +165,8 @@ export default [
         "url": `${siteBaseUrl}/hbomundi/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_mundi.png",
         "categoria": "Filmes e Séries",
-        "provedor": "site"
+        "provedor": "site",
+        "provedor_fixo": true
     },
     {
         "nome": "HBO Plus",
@@ -156,7 +174,8 @@ export default [
         "url": `${siteBaseUrl}/hboplus/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_plus.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "HBO Pop",
@@ -164,7 +183,8 @@ export default [
         "url": `${siteBaseUrl}/hbopop/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_pop.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "HBO Signature",
@@ -172,7 +192,8 @@ export default [
         "url": `${siteBaseUrl}/hbosignature/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_signature.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "HBO Xtreme",
@@ -180,7 +201,8 @@ export default [
         "url": `${siteBaseUrl}/hboxtreme/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_xtreme.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Megapix",
@@ -188,7 +210,8 @@ export default [
         "url": `${siteBaseUrl}/megapix/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/megapix.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Sony Channel",
@@ -196,7 +219,8 @@ export default [
         "url": `${siteBaseUrl}/sonychannel/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sony_channel.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Space",
@@ -204,7 +228,8 @@ export default [
         "url": `${siteBaseUrl}/space/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/space.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Studio Universal",
@@ -212,7 +237,8 @@ export default [
         "url": `${siteBaseUrl}/studiouniversal/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/studio_universal.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "TCM",
@@ -220,7 +246,8 @@ export default [
         "url": `${siteBaseUrl}/tcm/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tcm.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Telecine Action",
@@ -228,7 +255,8 @@ export default [
         "url": `${siteBaseUrl}/tcaction/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_action.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Telecine Cult",
@@ -236,7 +264,8 @@ export default [
         "url": `${siteBaseUrl}/tccult/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_cult.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Telecine Fun",
@@ -244,7 +273,8 @@ export default [
         "url": `${siteBaseUrl}/tcfun/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_fun.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Telecine Pipoca",
@@ -252,7 +282,8 @@ export default [
         "url": `${siteBaseUrl}/tcpipoca/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_pipoca.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Telecine Premium",
@@ -260,7 +291,8 @@ export default [
         "url": `${siteBaseUrl}/tcpremium/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_premium.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Telecine Touch",
@@ -268,7 +300,8 @@ export default [
         "url": `${siteBaseUrl}/tctouch/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_touch.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "TNT",
@@ -276,7 +309,8 @@ export default [
         "url": `${siteBaseUrl}/tnt/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tnt.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "TNT Novelas",
@@ -284,7 +318,8 @@ export default [
         "url": `${siteBaseUrl}/tntnovelas/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tnt_novelas.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "TNT Séries",
@@ -292,7 +327,8 @@ export default [
         "url": `${siteBaseUrl}/tntseries/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tnt_sries.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Universal TV",
@@ -300,7 +336,8 @@ export default [
         "url": `${siteBaseUrl}/universaltv/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/universal_tv.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "USA",
@@ -308,7 +345,8 @@ export default [
         "url": `${siteBaseUrl}/paramountnetwork/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/usa.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Warner",
@@ -316,7 +354,8 @@ export default [
         "url": `${siteBaseUrl}/warner/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/warner.png",
         "categoria": "Filmes e Séries",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
 
     /* VARIEDADES */
@@ -325,21 +364,24 @@ export default [
         "tvg_id": "BIS HD",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/bis.png",
         "categoria": "Variedades",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": true
     },
     {
         "nome": "Curta!",
         "tvg_id": "CURTA",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/curta.png",
         "categoria": "Variedades",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": true
     },
     {
         "nome": "Fish TV",
         "tvg_id": "FISH TV",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/fish_tv.png",
         "categoria": "Variedades",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": true
     },
     {
         "nome": "Food Network",
@@ -347,7 +389,8 @@ export default [
         "url": `${siteBaseUrl}/foodnetwork/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/food_network.png",
         "categoria": "Variedades",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Globoplay Novelas",
@@ -355,7 +398,8 @@ export default [
         "url": `${siteBaseUrl}/globoplaynovelas/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globoplay_novelas.png",
         "categoria": "Variedades",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "GNT",
@@ -363,21 +407,24 @@ export default [
         "url": `${siteBaseUrl}/gnt/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/gnt.png",
         "categoria": "Variedades",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Lifetime",
         "tvg_id": "LIFETIME",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/lifetime.png",
         "categoria": "Variedades",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": true
     },
     {
         "nome": "Modo Viagem",
         "tvg_id": "Modo Viagem",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/modo_viagem.png",
         "categoria": "Variedades",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": true
     },
     {
         "nome": "Multishow",
@@ -385,35 +432,40 @@ export default [
         "url": `${siteBaseUrl}/multishow/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/multishow.png",
         "categoria": "Variedades",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Music Box Brazil",
         "tvg_id": "MUSIC BOX BRAZIL",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/music_box_brazil.png",
         "categoria": "Variedades",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": true
     },
     {
         "nome": "Prime Box Brazil",
         "tvg_id": "PRIME BOX BRAZIL",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/prime_box_brazil.png",
         "categoria": "Variedades",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": true
     },
     {
         "nome": "TLC",
         "tvg_id": "TLC HD",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tlc.png",
         "categoria": "Variedades",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": true
     },
     {
         "nome": "Travel Box Brazil",
         "tvg_id": "TRAVEL BOX",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/travel_box_brazil.png",
         "categoria": "Variedades",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": true
     },
 
     /* DOCUMENTÁRIOS */
@@ -423,14 +475,16 @@ export default [
         "url": `${siteBaseUrl}/animalplanet/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/animal_planet.png",
         "categoria": "Documentários",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Arte1",
         "tvg_id": "ARTE 1 HD",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/arte1.png",
         "categoria": "Documentários",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": true
     },
     {
         "nome": "Discovery Channel",
@@ -438,7 +492,8 @@ export default [
         "url": `${siteBaseUrl}/discoverychannel/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_channel.png",
         "categoria": "Documentários",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Discovery Home & Health",
@@ -446,7 +501,8 @@ export default [
         "url": `${siteBaseUrl}/discoveryhh/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_home__health.png",
         "categoria": "Documentários",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Discovery Science",
@@ -454,7 +510,8 @@ export default [
         "url": `${siteBaseUrl}/discoveryscience/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_science.png",
         "categoria": "Documentários",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Discovery Theater",
@@ -462,7 +519,8 @@ export default [
         "url": `${siteBaseUrl}/discoverytheater/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_theater.png",
         "categoria": "Documentários",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Discovery Turbo",
@@ -470,7 +528,8 @@ export default [
         "url": `${siteBaseUrl}/discoveryturbo/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_turbo.png",
         "categoria": "Documentários",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Discovery World",
@@ -478,7 +537,8 @@ export default [
         "url": `${siteBaseUrl}/discoveryworld/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_world.png",
         "categoria": "Documentários",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "E! Entertainment",
@@ -486,7 +546,8 @@ export default [
         "url": `${siteBaseUrl}/eentertainment/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/e_entertainment.png",
         "categoria": "Documentários",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "HGTV",
@@ -494,7 +555,8 @@ export default [
         "url": `${siteBaseUrl}/hgtv/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hgtv.png",
         "categoria": "Documentários",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "History",
@@ -502,7 +564,8 @@ export default [
         "url": `${siteBaseUrl}/history/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/history.png",
         "categoria": "Documentários",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "History 2",
@@ -510,7 +573,8 @@ export default [
         "url": `${siteBaseUrl}/history2/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/history_2.png",
         "categoria": "Documentários",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Investigação Discovery",
@@ -518,7 +582,8 @@ export default [
         "url": `${siteBaseUrl}/discoveryid/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/investigao_discovery.png",
         "categoria": "Documentários",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
 
     /* INFANTIS */
@@ -528,7 +593,8 @@ export default [
         "url": `${siteBaseUrl}/adultswim/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/adult_swim.png",
         "categoria": "Infantis",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Cartoon Network",
@@ -536,7 +602,8 @@ export default [
         "url": `${siteBaseUrl}/cartoonnetwork/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cartoon_network.png",
         "categoria": "Infantis",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Cartoonito",
@@ -544,7 +611,8 @@ export default [
         "url": `${siteBaseUrl}/cartoonito/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cartoonito.png",
         "categoria": "Infantis",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Discovery Kids",
@@ -552,7 +620,8 @@ export default [
         "url": `${siteBaseUrl}/discoverykids/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_kids.png",
         "categoria": "Infantis",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Gloob",
@@ -560,7 +629,8 @@ export default [
         "url": `${siteBaseUrl}/gloob/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/gloob.png",
         "categoria": "Infantis",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Gloobinho",
@@ -568,7 +638,8 @@ export default [
         "url": `${siteBaseUrl}/gloobinho/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/gloobinho.png",
         "categoria": "Infantis",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Tooncast",
@@ -576,7 +647,8 @@ export default [
         "url": `${siteBaseUrl}/tooncast/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tooncast.png",
         "categoria": "Infantis",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
 
     /* ESPORTES */
@@ -588,7 +660,8 @@ export default [
         "categoria": "Esportes",
         "nome_api": "Prime Vídeo",
         "filtro_cdn": "Opção 01",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Amazon Prime Video 2",
@@ -598,7 +671,8 @@ export default [
         "categoria": "Esportes",
         "nome_api": "Prime Vídeo",
         "filtro_cdn": "Opção 02",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Amazon Prime Video 3",
@@ -608,7 +682,8 @@ export default [
         "categoria": "Esportes",
         "nome_api": "Prime Vídeo",
         "filtro_cdn": "Opção 03",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Amazon Prime Video 4",
@@ -616,7 +691,8 @@ export default [
         "url": `${siteBaseUrl}/amazonprimevideo04/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_4.png",
         "categoria": "Esportes",
-        "provedor": "site"
+        "provedor": "site",
+        "provedor_fixo": true
     },
     {
         "nome": "Amazon Prime Video 5",
@@ -624,7 +700,8 @@ export default [
         "url": `${siteBaseUrl}/amazonprimevideo05/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_5.png",
         "categoria": "Esportes",
-        "provedor": "site"
+        "provedor": "site",
+        "provedor_fixo": true
     },
     {
         "nome": "Apple TV",
@@ -632,7 +709,8 @@ export default [
         "url": `${siteBaseUrl}/appletv01/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/apple_tv.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Band Sports",
@@ -640,14 +718,16 @@ export default [
         "url": `${siteBaseUrl}/bandsports/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band_sports.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Canal Goat",
         "tvg_id": "",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_goat.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": true
     },
     {
         "nome": "Canal Off",
@@ -655,7 +735,8 @@ export default [
         "url": `${siteBaseUrl}/canaloff/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_off.png",
         "categoria": "Esportes",
-        "provedor": "site"
+        "provedor": "site",
+        "provedor_fixo": true
     },
     // {
     //     "nome": "Caze TV",
@@ -663,7 +744,7 @@ export default [
     //     "url": `${siteBaseUrl}/cazetv/`,
     //     "logo": "",
     //     "categoria": "Esportes",
-    //     "provedor": "site"
+    //     "provedor": "site",
     // },
     {
         "nome": "Combate",
@@ -671,7 +752,8 @@ export default [
         "url": `${siteBaseUrl}/combate/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/combate.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Dazn",
@@ -679,7 +761,8 @@ export default [
         "url": `${siteBaseUrl}/dazn/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/dazn.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "ESPN",
@@ -687,7 +770,8 @@ export default [
         "url": `${siteBaseUrl}/espn/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "ESPN 2",
@@ -695,7 +779,8 @@ export default [
         "url": `${siteBaseUrl}/espn2/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_2.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "ESPN 3",
@@ -703,7 +788,8 @@ export default [
         "url": `${siteBaseUrl}/espn3/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_3.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "ESPN 4",
@@ -711,7 +797,8 @@ export default [
         "url": `${siteBaseUrl}/espn4/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_4.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "ESPN 5",
@@ -719,7 +806,8 @@ export default [
         "url": `${siteBaseUrl}/espn5/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_5.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "ESPN 6",
@@ -727,7 +815,8 @@ export default [
         "url": `${siteBaseUrl}/espn6/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_6.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "GE TV",
@@ -735,7 +824,8 @@ export default [
         "url": `${siteBaseUrl}/getv/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/ge_tv.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "HBO Max",
@@ -743,7 +833,8 @@ export default [
         "url": `${siteBaseUrl}/max/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "HBO Max 2",
@@ -751,7 +842,8 @@ export default [
         "url": `${siteBaseUrl}/max02/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_2.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "HBO Max 3",
@@ -759,7 +851,8 @@ export default [
         "url": `${siteBaseUrl}/max03/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_3.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "HBO Max 4",
@@ -767,7 +860,8 @@ export default [
         "url": `${siteBaseUrl}/max04/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_4.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "HBO Max 5",
@@ -775,7 +869,8 @@ export default [
         "url": `${siteBaseUrl}/max05/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_5.png",
         "categoria": "Esportes",
-        "provedor": "site"
+        "provedor": "site",
+        "provedor_fixo": true
     },
     {
         "nome": "HBO Max 6",
@@ -783,7 +878,8 @@ export default [
         "url": `${siteBaseUrl}/max06/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_6.png",
         "categoria": "Esportes",
-        "provedor": "site"
+        "provedor": "site",
+        "provedor_fixo": true
     },
     {
         "nome": "Paramount+",
@@ -791,7 +887,8 @@ export default [
         "url": `${siteBaseUrl}/paramountplus/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramount.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Paramount+ 2",
@@ -799,21 +896,24 @@ export default [
         "url": `${siteBaseUrl}/paramountplus02/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramount_2.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Paramount+ 3",
         "tvg_id": "Paramount+ 3",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramount_3.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": true
     },
     {
         "nome": "Paramount+ 4",
         "tvg_id": "Paramount+ 4",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramount_4.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": true
     },
     {
         "nome": "Premiere 2",
@@ -821,7 +921,8 @@ export default [
         "url": `${siteBaseUrl}/premiere2/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_2.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Premiere 3",
@@ -829,7 +930,8 @@ export default [
         "url": `${siteBaseUrl}/premiere3/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_3.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Premiere 4",
@@ -837,7 +939,8 @@ export default [
         "url": `${siteBaseUrl}/premiere4/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_4.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Premiere 5",
@@ -845,7 +948,8 @@ export default [
         "url": `${siteBaseUrl}/premiere5/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_5.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Premiere 6",
@@ -853,7 +957,8 @@ export default [
         "url": `${siteBaseUrl}/premiere6/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_6.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Premiere 7",
@@ -861,7 +966,8 @@ export default [
         "url": `${siteBaseUrl}/premiere7/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_7.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Premiere 8",
@@ -869,7 +975,8 @@ export default [
         "url": `${siteBaseUrl}/premiere8/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_8.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Premiere Clubes",
@@ -877,7 +984,8 @@ export default [
         "url": `${siteBaseUrl}/premiereclubes/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_clubes.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "SporTV",
@@ -885,7 +993,8 @@ export default [
         "url": `${siteBaseUrl}/sportv/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sportv.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "SporTV 2",
@@ -893,7 +1002,8 @@ export default [
         "url": `${siteBaseUrl}/sportv2/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sportv_2.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "SporTV 3",
@@ -901,7 +1011,8 @@ export default [
         "url": `${siteBaseUrl}/sportv3/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sportv_3.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "XSports",
@@ -909,7 +1020,8 @@ export default [
         "url": `${siteBaseUrl}/xsports/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/xsports.png",
         "categoria": "Esportes",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
 
     /* NOTÍCIAS */
@@ -919,7 +1031,8 @@ export default [
         "url": `${siteBaseUrl}/bandnews/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band_news.png",
         "categoria": "Notícias",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "CNN Brasil",
@@ -927,7 +1040,8 @@ export default [
         "url": `${siteBaseUrl}/cnnbrasil/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cnn_brasil.png",
         "categoria": "Notícias",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Globo News",
@@ -935,7 +1049,8 @@ export default [
         "url": `${siteBaseUrl}/globonews/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_news.png",
         "categoria": "Notícias",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     },
     {
         "nome": "Record News",
@@ -943,6 +1058,7 @@ export default [
         "url": `${siteBaseUrl}/recordnews/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_news.png",
         "categoria": "Notícias",
-        "provedor": "api"
+        "provedor": "api",
+        "provedor_fixo": false
     }
 ]
