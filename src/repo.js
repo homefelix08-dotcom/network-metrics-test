@@ -5,7 +5,7 @@ export default [
     {
         "nome": "Globo MG",
         "tvg_id": "Globo MG",
-        "url": "http://hls1.sua.tv/live/globominashd/s.m3u8",
+        "url": `${siteBaseUrl}/globomg/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png",
         "categoria": "Abertos",
         "provedor": "site",
@@ -14,7 +14,7 @@ export default [
     {
         "nome": "Globo",
         "tvg_id": "Globo MG",
-        "url": `${siteBaseUrl}/globomg/`,
+        "url": "https://ww2.embedtv.lat/globomg",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png",
         "categoria": "Abertos",
         "provedor": "site",
