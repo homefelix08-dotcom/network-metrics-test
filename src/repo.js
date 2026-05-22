@@ -5,21 +5,20 @@ export default [
     {
         "nome": "Globo MG",
         "tvg_id": "Globo MG",
-        "url": `${siteBaseUrl}/globomg/`,
-        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png",
+        "url": `http://hls1.sua.tv/live/globominashd/s.m3u8`,
+        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo.png",
         "categoria": "Abertos",
-        "provedor": "site",
+        "provedor": "api",
         "provedor_fixo": true
     },
     {
         "nome": "Globo",
         "tvg_id": "Globo MG",
-        "url": `http://hls1.sua.tv/live/globominashd/s.m3u8`,
-        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo.png",
+        "url": `${siteBaseUrl}/globomg/`,
+        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png",
         "categoria": "Abertos",
-        // "filtro_cdn": "Globo SP",
-        "provedor": "api",
-        "provedor_fixo": false
+        "provedor": "site",
+        "provedor_fixo": true
     },
     {
         "nome": "Band",
