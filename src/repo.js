@@ -13,11 +13,11 @@ export default [
     },
     {
         "nome": "Globo",
-        "tvg_id": "GLOBO SÃO PAULO",
-        "url": `${siteBaseUrl}/globosp/`,
+        "tvg_id": "Globo MG",
+        "url": `http://hls1.sua.tv/live/globominashd/s.m3u8`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo.png",
         "categoria": "Abertos",
-        "filtro_cdn": "Globo SP",
+        // "filtro_cdn": "Globo SP",
         "provedor": "api",
         "provedor_fixo": false
     },
