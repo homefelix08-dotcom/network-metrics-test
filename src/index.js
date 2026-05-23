@@ -140,7 +140,7 @@ export default {
     };
 
     // ==========================================
-    // FLUXO DE REDUNDÂNCIA, DEBUG E PROXY
+    // FLUXO DE REDUNDÂNCIA E DEBUG
     // ==========================================
     try {
       let linkFinal = null;
@@ -150,63 +150,27 @@ export default {
         linkFinal = await tentarScraping();
         if (linkFinal) traceOrigem = "SITE";
       } else {
+        // Tenta a API primeiro com a validação rigorosa
         linkFinal = await tentarAPI();
+
         if (linkFinal) {
           traceOrigem = "API";
-        } else if (!config.provedor_fixo && config.url) {
+        }
+        // A API falhou! Aciona o Fallback para o Site
+        else if (!config.provedor_fixo && config.url) {
           linkFinal = await tentarScraping();
           if (linkFinal) traceOrigem = "SITE (Fallback)";
         }
       }
 
-      // Função Mágica: Decide se redireciona (API) ou faz Proxy do M3U8 (Site)
-      const entregarStream = async (urlAlvo, trace, urlSiteOrigem) => {
-        const linkLimpo = urlAlvo.split('|')[0];
-
-        // Se o link veio do site (que exige Referer rigoroso), interceptamos o arquivo M3U8
-        if (trace.includes("SITE") && urlSiteOrigem) {
-          try {
-            const proxyRes = await fetch(linkLimpo, {
-              headers: { "Referer": urlSiteOrigem, "User-Agent": "okhttp/4.9.2" }
-            });
-
-            if (proxyRes.ok) {
-              let m3u8Text = await proxyRes.text();
-              const baseUrl = new URL(linkLimpo);
-              const basePath = baseUrl.href.substring(0, baseUrl.href.lastIndexOf('/') + 1);
-
-              // Reescreve os links relativos de vídeo (.ts) para links absolutos
-              m3u8Text = m3u8Text.split('\n').map(line => {
-                const trimmed = line.trim();
-                if (!trimmed || trimmed.startsWith('#') || trimmed.startsWith('http')) {
-                  return line;
-                }
-                // Converte caminho relativo em absoluto para a TV baixar direto da CDN
-                return trimmed.startsWith('/') ? baseUrl.origin + trimmed : basePath + trimmed;
-              }).join('\n');
-
-              // Entrega o mapa do vídeo com sucesso para o TiviMate
-              return new Response(m3u8Text, {
-                headers: {
-                  "Content-Type": "application/vnd.apple.mpegurl",
-                  "X-Debug-Origem": `${trace} (Proxied)`
-                }
-              });
-            }
-          } catch (e) {
-            // Se o proxy falhar, deixa cair no redirecionamento padrão abaixo
-          }
-        }
-
-        // Se for da API (não sofre bloqueio de Referer na TV), usa o 302 rápido
+      if (linkFinal) {
         return new Response(null, {
           status: 302,
-          headers: { "Location": linkLimpo, "X-Debug-Origem": trace }
+          headers: {
+            "Location": linkFinal.split('|')[0],
+            "X-Debug-Origem": traceOrigem // Aqui você pode checar de onde o Worker puxou o sinal!
+          }
         });
-      };
-
-      if (linkFinal) {
-        return await entregarStream(linkFinal, traceOrigem, config.url);
       }
 
       // ÚLTIMO RECURSO: Tenta o backup se tudo explodir
@@ -215,7 +179,13 @@ export default {
       const match = backupText.match(new RegExp(`tvg-name="${config.nome}".*?\\n(http[^\\s\\|\\n]+)`, "i"));
 
       if (match) {
-        return await entregarStream(match[1], "GITHUB BACKUP", config.url);
+        return new Response(null, {
+          status: 302,
+          headers: {
+            "Location": match[1],
+            "X-Debug-Origem": "GITHUB BACKUP"
+          }
+        });
       }
 
       return new Response("Nenhuma fonte online encontrada no momento.", { status: 404 });
