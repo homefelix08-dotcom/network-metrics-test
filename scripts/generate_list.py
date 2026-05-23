@@ -61,17 +61,19 @@ def main():
         tvg_id = c.get('tvg_id', nome)
         logo = c.get('logo', '')
         cat = c.get('categoria', 'Diversos')
-        provedor = c.get('provedor', 'api')
         url_site = c.get('url', '')
         
         worker_endpoint = f"{BASE_WORKER_URL}/{nome.replace(' ', '%20')}"
         
-        if provedor == 'site' and url_site:
-            lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome}" tvg-logo="{logo}" group-title="{cat}", {nome}\n')
-            lines.append(f"{worker_endpoint}|Referer={url_site}\n")
+        # Escreve os metadados do canal na lista M3U
+        lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome}" tvg-logo="{logo}" group-title="{cat}", {nome}\n')
+            
+        if url_site:
+            cabecalho = f"|Referer={url_site}"
         else:
-            lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome}" tvg-logo="{logo}" group-title="{cat}", {nome}\n')
-            lines.append(f"{worker_endpoint}|User-Agent=okhttp/4.9.2\n")
+            cabecalho = "|User-Agent=okhttp/4.9.2"
+            
+        lines.append(f"{worker_endpoint}{cabecalho}\n")
     
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         f.writelines(lines)
