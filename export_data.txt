@@ -2,7 +2,7 @@
 #EXTINF:-1 tvg-id="Globo MG" tvg-name="Globo MG" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" group-title="Abertos", Globo MG
 https://network-metrics-test.homefelix08.workers.dev/play/Globo%20MG|Referer=https://7embeddecanais.xyz/globomg/
 #EXTINF:-1 tvg-id="Globo MG" tvg-name="Globo" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" group-title="Abertos", Globo
-https://network-metrics-test.homefelix08.workers.dev/play/Globo|Referer=https://piratetv.cfd/
+https://network-metrics-test.homefelix08.workers.dev/play/Globo|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Band MG" tvg-name="Band" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band.png" group-title="Abertos", Band
 https://network-metrics-test.homefelix08.workers.dev/play/Band|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SBT MG" tvg-name="TV Alterosa" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" group-title="Abertos", TV Alterosa
