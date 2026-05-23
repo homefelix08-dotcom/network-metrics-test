@@ -5,82 +5,6 @@ const GITHUB_RAW_BASE = `https://raw.githubusercontent.com/homefelix08-dotcom/ne
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-
-    if (url.pathname === "/admin") {
-      const html = `
-        <!DOCTYPE html>
-        <html lang="pt-BR">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Painel IPTV Matrix</title>
-            <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-        </head>
-        <body class="bg-gray-900 text-gray-100 p-4">
-            <div class="max-w-md mx-auto bg-gray-800 rounded-xl p-6 shadow-lg">
-                <h1 class="text-xl font-bold mb-4 text-center text-blue-400">🎛️ Controle de Provedores</h1>
-                
-                <div class="mb-6 bg-gray-700 p-3 rounded-lg">
-                    <label class="block text-xs font-bold uppercase text-gray-400 mb-1">URL Base do Site</label>
-                    <input type="text" id="siteBaseUrl" value="https://7embeddecanais.xyz" class="w-full bg-gray-800 border border-gray-600 rounded px-3 py-2 text-sm focus:outline-none focus:border-blue-500">
-                </div>
-
-                <div class="space-y-3" id="lista-canais">
-                    </div>
-
-                <button onclick="salvarConfig()" class="w-full mt-6 bg-blue-600 hover:bg-blue-700 font-bold py-3 rounded-lg shadow transition">
-                    💾 Exportar Novo repo.js
-                </button>
-            </div>
-
-            <script>
-                // Simulando a leitura do seu array atual (o Worker injetará o real aqui)
-                const canais = [
-                    {"nome": "Globo MG", "provedor": "site", "provedor_fixo": true, "path": "/globomg/"},
-                    {"nome": "Globo", "provedor": "api", "provedor_fixo": false, "path": "/globosp/"},
-                    {"nome": "TV Alterosa", "provedor": "api", "provedor_fixo": false, "path": "/sbtsp/"}
-                ];
-
-                const lista = document.getElementById('lista-canais');
-                canais.forEach((c, index) => {
-                    const item = document.createElement('div');
-                    item.className = "flex items-center justify-between bg-gray-700 p-3 rounded-lg text-sm";
-                    
-                    const info = \`<div>
-                        <p class="font-semibold">\${c.nome}</p>
-                        <p class="text-xs text-gray-400 font-mono">\${c.provedor.toUpperCase()}</p>
-                    </div>\`;
-
-                    // Se o provedor for fixo, desabilita o botão
-                    const buttonClass = c.provedor_fixo 
-                      ? "bg-gray-600 text-gray-450 cursor-not-allowed opacity-50 text-xs px-3 py-1 rounded"
-                      : "bg-blue-550 hover:bg-blue-600 text-white text-xs px-3 py-1 rounded transition font-bold";
-
-                    const acao = c.provedor_fixo
-                      ? \`<span class="text-xs text-red-400 bg-red-950/50 px-2 py-1 rounded border border-red-900">Fixo</span>\`
-                      : \`<button onclick="alternar(\${index})" class="\${buttonClass}">Alternar</button>\`;
-
-                    item.innerHTML = info + acao;
-                    lista.appendChild(item);
-                });
-
-                function alternar(index) {
-                    canais[index].provedor = canais[index].provedor === 'api' ? 'site' : 'api';
-                    location.reload; // Prático para atualizar o estado visual rápido
-                }
-
-                function salvarConfig() {
-                    const novaUrl = document.getElementById('siteBaseUrl').value;
-                    // Aqui geramos a string prontinha do repo.js para você colar ou enviar via webhook
-                    alert("Gerando estrutura atualizada com a URL: " + novaUrl);
-                }
-            </script>
-        </body>
-        </html>
-        `;
-      return new Response(html, { headers: { "Content-Type": "text/html;charset=UTF-8" } });
-    }
-    
     const channelName = decodeURIComponent(url.pathname.replace('/play/', ''));
 
     if (!channelName || url.pathname === '/') {
@@ -90,6 +14,49 @@ export default {
     const config = REPO_CONFIG.find(c => c.nome.toLowerCase() === channelName.toLowerCase());
     if (!config) return new Response("Canal não mapeado no repo.js", { status: 404 });
 
+    // ==========================================
+    // HEALTH CHECK (O "Teste do Postman")
+    // ==========================================
+    const testarLinkVivo = async (link) => {
+      if (!link) return false;
+      try {
+        const urlPura = link.split('|')[0];
+        
+        // Controlador para matar a requisição se demorar mais de 3 segundos
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 3000);
+
+        // Fazemos um GET idêntico ao do Postman/TiviMate
+        const res = await fetch(urlPura, { 
+          method: 'GET',
+          headers: { 
+            'User-Agent': 'okhttp/4.9.2',
+            'Accept': '*/*'
+          },
+          signal: controller.signal
+        });
+        
+        clearTimeout(timeoutId);
+
+        // O SEGREDO: Se a requisição deu sucesso, cancelamos o download do corpo da resposta.
+        // Isso evita que o Worker faça download do vídeo, economizando sua banda,
+        // mas nos dá a certeza absoluta de que o link responde 200 OK.
+        if (res.ok && res.body) {
+          res.body.cancel();
+        }
+
+        // Se retornar 200 (OK), o link está validado!
+        return res.status === 200;
+        
+      } catch (e) {
+        // Se der timeout ou erro de rede, o link morreu.
+        return false; 
+      }
+    };
+
+    // ==========================================
+    // MOTOR DA API
+    // ==========================================
     const tentarAPI = async () => {
       const nomeBusca = config.nome_api || config.nome;
       try {
@@ -97,29 +64,53 @@ export default {
           headers: { 'User-Agent': 'okhttp/4.9.2' },
           cf: { cacheTtl: 300 }
         });
+        
         if (apiRes.ok) {
           const apiData = await apiRes.json();
           let canalApi = apiData.find(c => c.name.toLowerCase() === nomeBusca.toLowerCase()) ||
             apiData.find(c => c.name.toLowerCase().includes(nomeBusca.toLowerCase()));
 
           if (canalApi && canalApi.sources?.length > 0) {
-            return config.filtro_cdn
-              ? canalApi.sources.find(s => s.name.toLowerCase().includes(config.filtro_cdn.toLowerCase()))?.link
-              : canalApi.sources.find(s => !s.link.includes("sinal.cc"))?.link || canalApi.sources[0].link;
+            
+            // 1. Testa os links que batem com o filtro_cdn
+            if (config.filtro_cdn) {
+              const fontesFiltradas = canalApi.sources.filter(s => s.name.toLowerCase().includes(config.filtro_cdn.toLowerCase()));
+              for (const fonte of fontesFiltradas) {
+                if (await testarLinkVivo(fonte.link)) return fonte.link;
+              }
+            }
+            
+            // 2. Fallback interno da API: testa as outras fontes (ignorando sinal.cc)
+            const fontesValidas = canalApi.sources.filter(s => !s.link.includes("sinal.cc"));
+            for (const fonte of fontesValidas) {
+              if (await testarLinkVivo(fonte.link)) return fonte.link;
+            }
+
+            // 3. Último recurso dentro da API
+            if (canalApi.sources.length > 0 && await testarLinkVivo(canalApi.sources[0].link)) {
+              return canalApi.sources[0].link;
+            }
           }
         }
       } catch (e) { return null; }
-      return null;
+      
+      return null; // Se chegou aqui, TODAS as fontes da API falharam no GET (erro 404, 502, etc).
     };
 
+    // ==========================================
+    // MOTOR DO SITE (Sem Health Check, confia no scraper)
+    // ==========================================
     const tentarScraping = async () => {
       if (!config.url) return null;
+      if (config.url.includes("sua.tv") || config.url.endsWith(".m3u8")) {
+        return config.url; 
+      }
+
       try {
         const siteRes = await fetch(config.url, {
           headers: {
-            // Em vez de link fixo, usamos a própria URL do canal como origem
             "Referer": config.url,
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
           }
         });
         if (siteRes.ok) {
@@ -131,21 +122,56 @@ export default {
       return null;
     };
 
+    // ==========================================
+    // FLUXO DE REDUNDÂNCIA E DEBUG
+    // ==========================================
     try {
-      let linkFinal = (config.provedor === "site")
-        ? (await tentarScraping() || await tentarAPI())
-        : (await tentarAPI() || await tentarScraping());
+      let linkFinal = null;
+      let traceOrigem = "";
 
-      if (linkFinal) return Response.redirect(linkFinal.split('|')[0], 302);
+      if (config.provedor === "site") {
+        linkFinal = await tentarScraping();
+        if (linkFinal) traceOrigem = "SITE";
+      } else {
+        // Tenta a API primeiro com a validação rigorosa
+        linkFinal = await tentarAPI();
+        
+        if (linkFinal) {
+          traceOrigem = "API";
+        } 
+        // A API falhou! Aciona o Fallback para o Site
+        else if (!config.provedor_fixo && config.url) {
+          linkFinal = await tentarScraping();
+          if (linkFinal) traceOrigem = "SITE (Fallback)";
+        }
+      }
 
-      // ÚLTIMO RECURSO: Tenta o link direto salvo no backup.txt
+      if (linkFinal) {
+        return new Response(null, {
+          status: 302,
+          headers: {
+            "Location": linkFinal.split('|')[0],
+            "X-Debug-Origem": traceOrigem // Aqui você pode checar de onde o Worker puxou o sinal!
+          }
+        });
+      }
+
+      // ÚLTIMO RECURSO: Tenta o backup se tudo explodir
       const githubRes = await fetch(`${GITHUB_RAW_BASE}/backup.txt`);
       const backupText = await githubRes.text();
       const match = backupText.match(new RegExp(`tvg-name="${config.nome}".*?\\n(http[^\\s\\|\\n]+)`, "i"));
 
-      if (match) return Response.redirect(match[1], 302);
+      if (match) {
+        return new Response(null, {
+          status: 302,
+          headers: {
+            "Location": match[1],
+            "X-Debug-Origem": "GITHUB BACKUP"
+          }
+        });
+      }
 
-      return new Response("Nenhuma fonte encontrada.", { status: 404 });
+      return new Response("Nenhuma fonte online encontrada no momento.", { status: 404 });
     } catch (e) {
       return new Response("Erro Interno", { status: 500 });
     }
