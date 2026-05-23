@@ -1,82 +1,82 @@
 #EXTM3U x-tvg-url="https://raw.githubusercontent.com/limaalef/BrazilTVEPG/refs/heads/main/claro.xml,https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/local_meta.xml"
 #EXTINF:-1 tvg-id="Globo MG" tvg-name="Globo MG" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" group-title="Abertos", Globo MG
-https://network-metrics-test.homefelix08.workers.dev/play/Globo%20MG|Referer=https://7embeddecanais.xyz/globomg/
+https://network-metrics-test.homefelix08.workers.dev/play/Globo%20MG|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/globomg/
 #EXTINF:-1 tvg-id="Globo MG" tvg-name="Globo" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" group-title="Abertos", Globo
 https://network-metrics-test.homefelix08.workers.dev/play/Globo|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Band MG" tvg-name="Band" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band.png" group-title="Abertos", Band
-https://network-metrics-test.homefelix08.workers.dev/play/Band|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Band|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/bandsp/
 #EXTINF:-1 tvg-id="SBT MG" tvg-name="TV Alterosa" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" group-title="Abertos", TV Alterosa
-https://network-metrics-test.homefelix08.workers.dev/play/TV%20Alterosa|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/TV%20Alterosa|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/sbtsp/
 #EXTINF:-1 tvg-id="REDE TV! HD" tvg-name="Rede TV" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/rede_tv.png" group-title="Abertos", Rede TV
-https://network-metrics-test.homefelix08.workers.dev/play/Rede%20TV|Referer=https://7embeddecanais.xyz/redetv/
+https://network-metrics-test.homefelix08.workers.dev/play/Rede%20TV|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/redetv/
 #EXTINF:-1 tvg-id="Record MG" tvg-name="Record MG" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" group-title="Abertos", Record MG
-https://network-metrics-test.homefelix08.workers.dev/play/Record%20MG|Referer=https://7embeddecanais.xyz/recordmg/
+https://network-metrics-test.homefelix08.workers.dev/play/Record%20MG|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/recordmg/
 #EXTINF:-1 tvg-id="FUTURA HD" tvg-name="Futura" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/futura.png" group-title="Abertos", Futura
 https://network-metrics-test.homefelix08.workers.dev/play/Futura|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TV BRASIL" tvg-name="TV Brasil" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_brasil.png" group-title="Abertos", TV Brasil
 https://network-metrics-test.homefelix08.workers.dev/play/TV%20Brasil|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="CULTURA HD" tvg-name="TV Cultura" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_cultura.png" group-title="Abertos", TV Cultura
-https://network-metrics-test.homefelix08.workers.dev/play/TV%20Cultura|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/TV%20Cultura|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/tvcultura/
 #EXTINF:-1 tvg-id="A&E" tvg-name="A&E" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/ae.png" group-title="Filmes e Séries", A&E
-https://network-metrics-test.homefelix08.workers.dev/play/A&E|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/A&E|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/aee/
 #EXTINF:-1 tvg-id="AMC HD" tvg-name="AMC" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amc.png" group-title="Filmes e Séries", AMC
-https://network-metrics-test.homefelix08.workers.dev/play/AMC|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/AMC|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/amc/
 #EXTINF:-1 tvg-id="AXN" tvg-name="AXN" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/axn.png" group-title="Filmes e Séries", AXN
-https://network-metrics-test.homefelix08.workers.dev/play/AXN|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/AXN|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/axn/
 #EXTINF:-1 tvg-id="CANAL BRASIL HD" tvg-name="Canal Brasil" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_brasil.png" group-title="Filmes e Séries", Canal Brasil
 https://network-metrics-test.homefelix08.workers.dev/play/Canal%20Brasil|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="CINEMAX HD" tvg-name="Cinemax" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cinemax.png" group-title="Filmes e Séries", Cinemax
-https://network-metrics-test.homefelix08.workers.dev/play/Cinemax|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Cinemax|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/cinemax/
 #EXTINF:-1 tvg-id="HBO" tvg-name="HBO" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo.png" group-title="Filmes e Séries", HBO
-https://network-metrics-test.homefelix08.workers.dev/play/HBO|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/HBO|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/hbo/
 #EXTINF:-1 tvg-id="HBO2" tvg-name="HBO 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_2.png" group-title="Filmes e Séries", HBO 2
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%202|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%202|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/hbo2/
 #EXTINF:-1 tvg-id="HBO Family" tvg-name="HBO Family" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_family.png" group-title="Filmes e Séries", HBO Family
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Family|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Family|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/hbofamily/
 #EXTINF:-1 tvg-id="HBO Mundi" tvg-name="HBO Mundi" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_mundi.png" group-title="Filmes e Séries", HBO Mundi
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Mundi|Referer=https://7embeddecanais.xyz/hbomundi/
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Mundi|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/hbomundi/
 #EXTINF:-1 tvg-id="HBO+" tvg-name="HBO Plus" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_plus.png" group-title="Filmes e Séries", HBO Plus
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Plus|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Plus|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/hboplus/
 #EXTINF:-1 tvg-id="HBO Pop" tvg-name="HBO Pop" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_pop.png" group-title="Filmes e Séries", HBO Pop
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Pop|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Pop|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/hbopop/
 #EXTINF:-1 tvg-id="HBO Signature" tvg-name="HBO Signature" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_signature.png" group-title="Filmes e Séries", HBO Signature
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Signature|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Signature|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/hbosignature/
 #EXTINF:-1 tvg-id="HBO Xtreme" tvg-name="HBO Xtreme" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_xtreme.png" group-title="Filmes e Séries", HBO Xtreme
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Xtreme|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Xtreme|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/hboxtreme/
 #EXTINF:-1 tvg-id="MEGAPIX HD" tvg-name="Megapix" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/megapix.png" group-title="Filmes e Séries", Megapix
-https://network-metrics-test.homefelix08.workers.dev/play/Megapix|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Megapix|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/megapix/
 #EXTINF:-1 tvg-id="SONY CHANNEL" tvg-name="Sony Channel" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sony_channel.png" group-title="Filmes e Séries", Sony Channel
-https://network-metrics-test.homefelix08.workers.dev/play/Sony%20Channel|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Sony%20Channel|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/sonychannel/
 #EXTINF:-1 tvg-id="SPACE HD" tvg-name="Space" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/space.png" group-title="Filmes e Séries", Space
-https://network-metrics-test.homefelix08.workers.dev/play/Space|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Space|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/space/
 #EXTINF:-1 tvg-id="STUDIO UNIVERSAL HD" tvg-name="Studio Universal" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/studio_universal.png" group-title="Filmes e Séries", Studio Universal
-https://network-metrics-test.homefelix08.workers.dev/play/Studio%20Universal|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Studio%20Universal|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/studiouniversal/
 #EXTINF:-1 tvg-id="TCM BR" tvg-name="TCM" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tcm.png" group-title="Filmes e Séries", TCM
-https://network-metrics-test.homefelix08.workers.dev/play/TCM|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/TCM|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/tcm/
 #EXTINF:-1 tvg-id="TELECINE ACTION" tvg-name="Telecine Action" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_action.png" group-title="Filmes e Séries", Telecine Action
-https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Action|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Action|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/tcaction/
 #EXTINF:-1 tvg-id="TELECINE CULT" tvg-name="Telecine Cult" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_cult.png" group-title="Filmes e Séries", Telecine Cult
-https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Cult|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Cult|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/tccult/
 #EXTINF:-1 tvg-id="TELECINE FUN" tvg-name="Telecine Fun" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_fun.png" group-title="Filmes e Séries", Telecine Fun
-https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Fun|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Fun|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/tcfun/
 #EXTINF:-1 tvg-id="TELECINE PIPOCA" tvg-name="Telecine Pipoca" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_pipoca.png" group-title="Filmes e Séries", Telecine Pipoca
-https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Pipoca|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Pipoca|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/tcpipoca/
 #EXTINF:-1 tvg-id="TELECINE PREMIUM" tvg-name="Telecine Premium" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_premium.png" group-title="Filmes e Séries", Telecine Premium
-https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Premium|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Premium|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/tcpremium/
 #EXTINF:-1 tvg-id="TELECINE TOUCH" tvg-name="Telecine Touch" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_touch.png" group-title="Filmes e Séries", Telecine Touch
-https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Touch|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Touch|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/tctouch/
 #EXTINF:-1 tvg-id="TNT HD" tvg-name="TNT" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tnt.png" group-title="Filmes e Séries", TNT
-https://network-metrics-test.homefelix08.workers.dev/play/TNT|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/TNT|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/tnt/
 #EXTINF:-1 tvg-id="TNT NOVELAS" tvg-name="TNT Novelas" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tnt_novelas.png" group-title="Filmes e Séries", TNT Novelas
-https://network-metrics-test.homefelix08.workers.dev/play/TNT%20Novelas|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/TNT%20Novelas|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/tntnovelas/
 #EXTINF:-1 tvg-id="TNT SERIES HD" tvg-name="TNT Séries" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tnt_sries.png" group-title="Filmes e Séries", TNT Séries
-https://network-metrics-test.homefelix08.workers.dev/play/TNT%20Séries|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/TNT%20Séries|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/tntseries/
 #EXTINF:-1 tvg-id="UNIVERSAL TV HD" tvg-name="Universal TV" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/universal_tv.png" group-title="Filmes e Séries", Universal TV
-https://network-metrics-test.homefelix08.workers.dev/play/Universal%20TV|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Universal%20TV|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/universaltv/
 #EXTINF:-1 tvg-id="USA HD" tvg-name="USA" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/usa.png" group-title="Filmes e Séries", USA
-https://network-metrics-test.homefelix08.workers.dev/play/USA|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/USA|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/paramountnetwork/
 #EXTINF:-1 tvg-id="WARNER CHANNEL" tvg-name="Warner" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/warner.png" group-title="Filmes e Séries", Warner
-https://network-metrics-test.homefelix08.workers.dev/play/Warner|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Warner|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/warner/
 #EXTINF:-1 tvg-id="BIS HD" tvg-name="Bis" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/bis.png" group-title="Variedades", Bis
 https://network-metrics-test.homefelix08.workers.dev/play/Bis|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="CURTA" tvg-name="Curta!" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/curta.png" group-title="Variedades", Curta!
@@ -84,17 +84,17 @@ https://network-metrics-test.homefelix08.workers.dev/play/Curta!|User-Agent=okht
 #EXTINF:-1 tvg-id="FISH TV" tvg-name="Fish TV" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/fish_tv.png" group-title="Variedades", Fish TV
 https://network-metrics-test.homefelix08.workers.dev/play/Fish%20TV|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="FOOD NETWORK HD" tvg-name="Food Network" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/food_network.png" group-title="Variedades", Food Network
-https://network-metrics-test.homefelix08.workers.dev/play/Food%20Network|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Food%20Network|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/foodnetwork/
 #EXTINF:-1 tvg-id="Globoplay Novelas" tvg-name="Globoplay Novelas" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globoplay_novelas.png" group-title="Variedades", Globoplay Novelas
-https://network-metrics-test.homefelix08.workers.dev/play/Globoplay%20Novelas|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Globoplay%20Novelas|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/globoplaynovelas/
 #EXTINF:-1 tvg-id="GNT HD" tvg-name="GNT" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/gnt.png" group-title="Variedades", GNT
-https://network-metrics-test.homefelix08.workers.dev/play/GNT|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/GNT|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/gnt/
 #EXTINF:-1 tvg-id="LIFETIME" tvg-name="Lifetime" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/lifetime.png" group-title="Variedades", Lifetime
 https://network-metrics-test.homefelix08.workers.dev/play/Lifetime|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Modo Viagem" tvg-name="Modo Viagem" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/modo_viagem.png" group-title="Variedades", Modo Viagem
 https://network-metrics-test.homefelix08.workers.dev/play/Modo%20Viagem|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="MULTISHOW HD" tvg-name="Multishow" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/multishow.png" group-title="Variedades", Multishow
-https://network-metrics-test.homefelix08.workers.dev/play/Multishow|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Multishow|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/multishow/
 #EXTINF:-1 tvg-id="MUSIC BOX BRAZIL" tvg-name="Music Box Brazil" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/music_box_brazil.png" group-title="Variedades", Music Box Brazil
 https://network-metrics-test.homefelix08.workers.dev/play/Music%20Box%20Brazil|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="PRIME BOX BRAZIL" tvg-name="Prime Box Brazil" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/prime_box_brazil.png" group-title="Variedades", Prime Box Brazil
@@ -104,130 +104,130 @@ https://network-metrics-test.homefelix08.workers.dev/play/TLC|User-Agent=okhttp/
 #EXTINF:-1 tvg-id="TRAVEL BOX" tvg-name="Travel Box Brazil" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/travel_box_brazil.png" group-title="Variedades", Travel Box Brazil
 https://network-metrics-test.homefelix08.workers.dev/play/Travel%20Box%20Brazil|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="ANIMAL PLANET HD" tvg-name="Animal Planet" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/animal_planet.png" group-title="Documentários", Animal Planet
-https://network-metrics-test.homefelix08.workers.dev/play/Animal%20Planet|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Animal%20Planet|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/animalplanet/
 #EXTINF:-1 tvg-id="ARTE 1 HD" tvg-name="Arte1" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/arte1.png" group-title="Documentários", Arte1
 https://network-metrics-test.homefelix08.workers.dev/play/Arte1|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="DISCOVERY HD" tvg-name="Discovery Channel" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_channel.png" group-title="Documentários", Discovery Channel
-https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Channel|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Channel|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/discoverychannel/
 #EXTINF:-1 tvg-id="DISCOVERY HOME&HEALTH HD" tvg-name="Discovery Home & Health" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_home__health.png" group-title="Documentários", Discovery Home & Health
-https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Home%20&%20Health|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Home%20&%20Health|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/discoveryhh/
 #EXTINF:-1 tvg-id="DISCOVERY SCIENCE HD" tvg-name="Discovery Science" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_science.png" group-title="Documentários", Discovery Science
-https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Science|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Science|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/discoveryscience/
 #EXTINF:-1 tvg-id="DISCOVERY THEATER HD" tvg-name="Discovery Theater" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_theater.png" group-title="Documentários", Discovery Theater
-https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Theater|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Theater|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/discoverytheater/
 #EXTINF:-1 tvg-id="DISCOVERY TURBO HD" tvg-name="Discovery Turbo" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_turbo.png" group-title="Documentários", Discovery Turbo
-https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Turbo|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Turbo|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/discoveryturbo/
 #EXTINF:-1 tvg-id="DISCOVERY WORLD HD" tvg-name="Discovery World" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_world.png" group-title="Documentários", Discovery World
-https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20World|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20World|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/discoveryworld/
 #EXTINF:-1 tvg-id="E!" tvg-name="E! Entertainment" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/e_entertainment.png" group-title="Documentários", E! Entertainment
-https://network-metrics-test.homefelix08.workers.dev/play/E!%20Entertainment|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/E!%20Entertainment|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/eentertainment/
 #EXTINF:-1 tvg-id="HGTV HD" tvg-name="HGTV" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hgtv.png" group-title="Documentários", HGTV
-https://network-metrics-test.homefelix08.workers.dev/play/HGTV|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/HGTV|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/hgtv/
 #EXTINF:-1 tvg-id="HISTORY" tvg-name="History" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/history.png" group-title="Documentários", History
-https://network-metrics-test.homefelix08.workers.dev/play/History|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/History|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/history/
 #EXTINF:-1 tvg-id="HISTORY 2" tvg-name="History 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/history_2.png" group-title="Documentários", History 2
-https://network-metrics-test.homefelix08.workers.dev/play/History%202|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/History%202|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/history2/
 #EXTINF:-1 tvg-id="ID HD" tvg-name="Investigação Discovery" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/investigao_discovery.png" group-title="Documentários", Investigação Discovery
-https://network-metrics-test.homefelix08.workers.dev/play/Investigação%20Discovery|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Investigação%20Discovery|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/discoveryid/
 #EXTINF:-1 tvg-id="Adult Swim HD" tvg-name="Adult Swim" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/adult_swim.png" group-title="Infantis", Adult Swim
-https://network-metrics-test.homefelix08.workers.dev/play/Adult%20Swim|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Adult%20Swim|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/adultswim/
 #EXTINF:-1 tvg-id="CARTOON HD" tvg-name="Cartoon Network" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cartoon_network.png" group-title="Infantis", Cartoon Network
-https://network-metrics-test.homefelix08.workers.dev/play/Cartoon%20Network|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Cartoon%20Network|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/cartoonnetwork/
 #EXTINF:-1 tvg-id="CARTOONITO" tvg-name="Cartoonito" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cartoonito.png" group-title="Infantis", Cartoonito
-https://network-metrics-test.homefelix08.workers.dev/play/Cartoonito|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Cartoonito|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/cartoonito/
 #EXTINF:-1 tvg-id="DISCOVERY KIDS HD" tvg-name="Discovery Kids" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_kids.png" group-title="Infantis", Discovery Kids
-https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Kids|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Kids|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/discoverykids/
 #EXTINF:-1 tvg-id="GLOOB HD" tvg-name="Gloob" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/gloob.png" group-title="Infantis", Gloob
-https://network-metrics-test.homefelix08.workers.dev/play/Gloob|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Gloob|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/gloob/
 #EXTINF:-1 tvg-id="GLOOBINHO HD" tvg-name="Gloobinho" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/gloobinho.png" group-title="Infantis", Gloobinho
-https://network-metrics-test.homefelix08.workers.dev/play/Gloobinho|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Gloobinho|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/gloobinho/
 #EXTINF:-1 tvg-id="" tvg-name="Tooncast" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tooncast.png" group-title="Infantis", Tooncast
-https://network-metrics-test.homefelix08.workers.dev/play/Tooncast|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Tooncast|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/tooncast/
 #EXTINF:-1 tvg-id="" tvg-name="Amazon Prime Video 1" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_1.png" group-title="Esportes", Amazon Prime Video 1
-https://network-metrics-test.homefelix08.workers.dev/play/Amazon%20Prime%20Video%201|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Amazon%20Prime%20Video%201|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/amazonprimevideo/
 #EXTINF:-1 tvg-id="" tvg-name="Amazon Prime Video 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_2.png" group-title="Esportes", Amazon Prime Video 2
-https://network-metrics-test.homefelix08.workers.dev/play/Amazon%20Prime%20Video%202|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Amazon%20Prime%20Video%202|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/amazonprimevideo02/
 #EXTINF:-1 tvg-id="" tvg-name="Amazon Prime Video 3" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_3.png" group-title="Esportes", Amazon Prime Video 3
-https://network-metrics-test.homefelix08.workers.dev/play/Amazon%20Prime%20Video%203|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Amazon%20Prime%20Video%203|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/amazonprimevideo03/
 #EXTINF:-1 tvg-id="" tvg-name="Amazon Prime Video 4" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_4.png" group-title="Esportes", Amazon Prime Video 4
-https://network-metrics-test.homefelix08.workers.dev/play/Amazon%20Prime%20Video%204|Referer=https://7embeddecanais.xyz/amazonprimevideo04/
+https://network-metrics-test.homefelix08.workers.dev/play/Amazon%20Prime%20Video%204|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/amazonprimevideo04/
 #EXTINF:-1 tvg-id="" tvg-name="Amazon Prime Video 5" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_5.png" group-title="Esportes", Amazon Prime Video 5
-https://network-metrics-test.homefelix08.workers.dev/play/Amazon%20Prime%20Video%205|Referer=https://7embeddecanais.xyz/amazonprimevideo05/
+https://network-metrics-test.homefelix08.workers.dev/play/Amazon%20Prime%20Video%205|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/amazonprimevideo05/
 #EXTINF:-1 tvg-id="" tvg-name="Apple TV" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/apple_tv.png" group-title="Esportes", Apple TV
-https://network-metrics-test.homefelix08.workers.dev/play/Apple%20TV|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Apple%20TV|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/appletv01/
 #EXTINF:-1 tvg-id="BAND SPORTS HD" tvg-name="Band Sports" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band_sports.png" group-title="Esportes", Band Sports
-https://network-metrics-test.homefelix08.workers.dev/play/Band%20Sports|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Band%20Sports|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/bandsports/
 #EXTINF:-1 tvg-id="" tvg-name="Canal Goat" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_goat.png" group-title="Esportes", Canal Goat
 https://network-metrics-test.homefelix08.workers.dev/play/Canal%20Goat|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="OFF HD" tvg-name="Canal Off" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_off.png" group-title="Esportes", Canal Off
-https://network-metrics-test.homefelix08.workers.dev/play/Canal%20Off|Referer=https://7embeddecanais.xyz/canaloff/
+https://network-metrics-test.homefelix08.workers.dev/play/Canal%20Off|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/canaloff/
 #EXTINF:-1 tvg-id="COMBATE HD" tvg-name="Combate" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/combate.png" group-title="Esportes", Combate
-https://network-metrics-test.homefelix08.workers.dev/play/Combate|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Combate|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/combate/
 #EXTINF:-1 tvg-id="" tvg-name="Dazn" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/dazn.png" group-title="Esportes", Dazn
-https://network-metrics-test.homefelix08.workers.dev/play/Dazn|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Dazn|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/dazn/
 #EXTINF:-1 tvg-id="ESPN" tvg-name="ESPN" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn.png" group-title="Esportes", ESPN
-https://network-metrics-test.homefelix08.workers.dev/play/ESPN|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/ESPN|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/espn/
 #EXTINF:-1 tvg-id="ESPN 2" tvg-name="ESPN 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_2.png" group-title="Esportes", ESPN 2
-https://network-metrics-test.homefelix08.workers.dev/play/ESPN%202|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/ESPN%202|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/espn2/
 #EXTINF:-1 tvg-id="ESPN 3" tvg-name="ESPN 3" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_3.png" group-title="Esportes", ESPN 3
-https://network-metrics-test.homefelix08.workers.dev/play/ESPN%203|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/ESPN%203|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/espn3/
 #EXTINF:-1 tvg-id="ESPN 4" tvg-name="ESPN 4" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_4.png" group-title="Esportes", ESPN 4
-https://network-metrics-test.homefelix08.workers.dev/play/ESPN%204|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/ESPN%204|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/espn4/
 #EXTINF:-1 tvg-id="ESPN 5" tvg-name="ESPN 5" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_5.png" group-title="Esportes", ESPN 5
-https://network-metrics-test.homefelix08.workers.dev/play/ESPN%205|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/ESPN%205|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/espn5/
 #EXTINF:-1 tvg-id="ESPN 6" tvg-name="ESPN 6" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_6.png" group-title="Esportes", ESPN 6
-https://network-metrics-test.homefelix08.workers.dev/play/ESPN%206|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/ESPN%206|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/espn6/
 #EXTINF:-1 tvg-id="GE" tvg-name="GE TV" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/ge_tv.png" group-title="Esportes", GE TV
-https://network-metrics-test.homefelix08.workers.dev/play/GE%20TV|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/GE%20TV|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/getv/
 #EXTINF:-1 tvg-id="" tvg-name="HBO Max" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max.png" group-title="Esportes", HBO Max
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/max/
 #EXTINF:-1 tvg-id="" tvg-name="HBO Max 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_2.png" group-title="Esportes", HBO Max 2
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%202|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%202|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/max02/
 #EXTINF:-1 tvg-id="" tvg-name="HBO Max 3" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_3.png" group-title="Esportes", HBO Max 3
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%203|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%203|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/max03/
 #EXTINF:-1 tvg-id="" tvg-name="HBO Max 4" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_4.png" group-title="Esportes", HBO Max 4
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%204|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%204|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/max04/
 #EXTINF:-1 tvg-id="" tvg-name="HBO Max 5" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_5.png" group-title="Esportes", HBO Max 5
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%205|Referer=https://7embeddecanais.xyz/max05/
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%205|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/max05/
 #EXTINF:-1 tvg-id="" tvg-name="HBO Max 6" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_6.png" group-title="Esportes", HBO Max 6
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%206|Referer=https://7embeddecanais.xyz/max06/
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%206|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/max06/
 #EXTINF:-1 tvg-id="" tvg-name="Paramount+" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramount.png" group-title="Esportes", Paramount+
-https://network-metrics-test.homefelix08.workers.dev/play/Paramount+|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Paramount+|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/paramountplus/
 #EXTINF:-1 tvg-id="Paramount+ 2" tvg-name="Paramount+ 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramount_2.png" group-title="Esportes", Paramount+ 2
-https://network-metrics-test.homefelix08.workers.dev/play/Paramount+%202|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Paramount+%202|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/paramountplus02/
 #EXTINF:-1 tvg-id="Paramount+ 3" tvg-name="Paramount+ 3" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramount_3.png" group-title="Esportes", Paramount+ 3
 https://network-metrics-test.homefelix08.workers.dev/play/Paramount+%203|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Paramount+ 4" tvg-name="Paramount+ 4" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramount_4.png" group-title="Esportes", Paramount+ 4
 https://network-metrics-test.homefelix08.workers.dev/play/Paramount+%204|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="PREMIERE 2 HD" tvg-name="Premiere 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_2.png" group-title="Esportes", Premiere 2
-https://network-metrics-test.homefelix08.workers.dev/play/Premiere%202|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Premiere%202|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/premiere2/
 #EXTINF:-1 tvg-id="PREMIERE 3 HD" tvg-name="Premiere 3" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_3.png" group-title="Esportes", Premiere 3
-https://network-metrics-test.homefelix08.workers.dev/play/Premiere%203|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Premiere%203|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/premiere3/
 #EXTINF:-1 tvg-id="PREMIERE 4 HD" tvg-name="Premiere 4" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_4.png" group-title="Esportes", Premiere 4
-https://network-metrics-test.homefelix08.workers.dev/play/Premiere%204|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Premiere%204|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/premiere4/
 #EXTINF:-1 tvg-id="PREMIERE 5 HD" tvg-name="Premiere 5" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_5.png" group-title="Esportes", Premiere 5
-https://network-metrics-test.homefelix08.workers.dev/play/Premiere%205|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Premiere%205|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/premiere5/
 #EXTINF:-1 tvg-id="PREMIERE 6 HD" tvg-name="Premiere 6" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_6.png" group-title="Esportes", Premiere 6
-https://network-metrics-test.homefelix08.workers.dev/play/Premiere%206|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Premiere%206|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/premiere6/
 #EXTINF:-1 tvg-id="PREMIERE 7 HD" tvg-name="Premiere 7" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_7.png" group-title="Esportes", Premiere 7
-https://network-metrics-test.homefelix08.workers.dev/play/Premiere%207|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Premiere%207|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/premiere7/
 #EXTINF:-1 tvg-id="" tvg-name="Premiere 8" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_8.png" group-title="Esportes", Premiere 8
-https://network-metrics-test.homefelix08.workers.dev/play/Premiere%208|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Premiere%208|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/premiere8/
 #EXTINF:-1 tvg-id="PREMIERE CLUBES HD" tvg-name="Premiere Clubes" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_clubes.png" group-title="Esportes", Premiere Clubes
-https://network-metrics-test.homefelix08.workers.dev/play/Premiere%20Clubes|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Premiere%20Clubes|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/premiereclubes/
 #EXTINF:-1 tvg-id="SPORTV" tvg-name="SporTV" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sportv.png" group-title="Esportes", SporTV
-https://network-metrics-test.homefelix08.workers.dev/play/SporTV|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/SporTV|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/sportv/
 #EXTINF:-1 tvg-id="SPORTV 2" tvg-name="SporTV 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sportv_2.png" group-title="Esportes", SporTV 2
-https://network-metrics-test.homefelix08.workers.dev/play/SporTV%202|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/SporTV%202|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/sportv2/
 #EXTINF:-1 tvg-id="SPORTV 3" tvg-name="SporTV 3" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sportv_3.png" group-title="Esportes", SporTV 3
-https://network-metrics-test.homefelix08.workers.dev/play/SporTV%203|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/SporTV%203|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/sportv3/
 #EXTINF:-1 tvg-id="Xsports HD" tvg-name="XSports" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/xsports.png" group-title="Esportes", XSports
-https://network-metrics-test.homefelix08.workers.dev/play/XSports|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/XSports|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/xsports/
 #EXTINF:-1 tvg-id="BAND NEWS" tvg-name="Band News" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band_news.png" group-title="Notícias", Band News
-https://network-metrics-test.homefelix08.workers.dev/play/Band%20News|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Band%20News|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/bandnews/
 #EXTINF:-1 tvg-id="CNN BRASIL" tvg-name="CNN Brasil" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cnn_brasil.png" group-title="Notícias", CNN Brasil
-https://network-metrics-test.homefelix08.workers.dev/play/CNN%20Brasil|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/CNN%20Brasil|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/cnnbrasil/
 #EXTINF:-1 tvg-id="GLOBONEWS" tvg-name="Globo News" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_news.png" group-title="Notícias", Globo News
-https://network-metrics-test.homefelix08.workers.dev/play/Globo%20News|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Globo%20News|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/globonews/
 #EXTINF:-1 tvg-id="RECORD NEWS" tvg-name="Record News" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_news.png" group-title="Notícias", Record News
-https://network-metrics-test.homefelix08.workers.dev/play/Record%20News|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Record%20News|User-Agent=okhttp/4.9.2&Referer=https://7embeddecanais.xyz/recordnews/
