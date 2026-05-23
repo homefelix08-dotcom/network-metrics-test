@@ -58,8 +58,6 @@ export default {
     // MOTOR DA API (COM CORRIDA PARALELA)
     // ==========================================
     const tentarAPI = async () => {
-      // 🚨 MODO CAOS ATIVADO: Simula que a API explodiu e retorna erro instantâneo
-      return null;
       const nomeBusca = config.nome_api || config.nome;
       try {
         const apiRes = await fetch(`https://explouddev.com.br/api/canais/todos?search=${encodeURIComponent(nomeBusca)}`, {
