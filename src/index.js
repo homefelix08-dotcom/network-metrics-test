@@ -6,6 +6,81 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
+    if (url.pathname === "/admin") {
+      const html = `
+        <!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Painel IPTV Matrix</title>
+            <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        </head>
+        <body class="bg-gray-900 text-gray-100 p-4">
+            <div class="max-w-md mx-auto bg-gray-800 rounded-xl p-6 shadow-lg">
+                <h1 class="text-xl font-bold mb-4 text-center text-blue-400">🎛️ Controle de Provedores</h1>
+                
+                <div class="mb-6 bg-gray-700 p-3 rounded-lg">
+                    <label class="block text-xs font-bold uppercase text-gray-400 mb-1">URL Base do Site</label>
+                    <input type="text" id="siteBaseUrl" value="https://7embeddecanais.xyz" class="w-full bg-gray-800 border border-gray-600 rounded px-3 py-2 text-sm focus:outline-none focus:border-blue-500">
+                </div>
+
+                <div class="space-y-3" id="lista-canais">
+                    </div>
+
+                <button onclick="salvarConfig()" class="w-full mt-6 bg-blue-600 hover:bg-blue-700 font-bold py-3 rounded-lg shadow transition">
+                    💾 Exportar Novo repo.js
+                </button>
+            </div>
+
+            <script>
+                // Simulando a leitura do seu array atual (o Worker injetará o real aqui)
+                const canais = [
+                    {"nome": "Globo MG", "provedor": "site", "provedor_fixo": true, "path": "/globomg/"},
+                    {"nome": "Globo", "provedor": "api", "provedor_fixo": false, "path": "/globosp/"},
+                    {"nome": "TV Alterosa", "provedor": "api", "provedor_fixo": false, "path": "/sbtsp/"}
+                ];
+
+                const lista = document.getElementById('lista-canais');
+                canais.forEach((c, index) => {
+                    const item = document.createElement('div');
+                    item.className = "flex items-center justify-between bg-gray-700 p-3 rounded-lg text-sm";
+                    
+                    const info = \`<div>
+                        <p class="font-semibold">\${c.nome}</p>
+                        <p class="text-xs text-gray-400 font-mono">\${c.provedor.toUpperCase()}</p>
+                    </div>\`;
+
+                    // Se o provedor for fixo, desabilita o botão
+                    const buttonClass = c.provedor_fixo 
+                      ? "bg-gray-600 text-gray-450 cursor-not-allowed opacity-50 text-xs px-3 py-1 rounded"
+                      : "bg-blue-550 hover:bg-blue-600 text-white text-xs px-3 py-1 rounded transition font-bold";
+
+                    const acao = c.provedor_fixo
+                      ? \`<span class="text-xs text-red-400 bg-red-950/50 px-2 py-1 rounded border border-red-900">Fixo</span>\`
+                      : \`<button onclick="alternar(\${index})" class="\${buttonClass}">Alternar</button>\`;
+
+                    item.innerHTML = info + acao;
+                    lista.appendChild(item);
+                });
+
+                function alternar(index) {
+                    canais[index].provedor = canais[index].provedor === 'api' ? 'site' : 'api';
+                    location.reload; // Prático para atualizar o estado visual rápido
+                }
+
+                function salvarConfig() {
+                    const novaUrl = document.getElementById('siteBaseUrl').value;
+                    // Aqui geramos a string prontinha do repo.js para você colar ou enviar via webhook
+                    alert("Gerando estrutura atualizada com a URL: " + novaUrl);
+                }
+            </script>
+        </body>
+        </html>
+        `;
+      return new Response(html, { headers: { "Content-Type": "text/html;charset=UTF-8" } });
+    }
+    
     const channelName = decodeURIComponent(url.pathname.replace('/play/', ''));
 
     if (!channelName || url.pathname === '/') {
@@ -15,27 +90,6 @@ export default {
     const config = REPO_CONFIG.find(c => c.nome.toLowerCase() === channelName.toLowerCase());
     if (!config) return new Response("Canal não mapeado no repo.js", { status: 404 });
 
-    // ==========================================
-    // HEALTH CHECK (Apenas para fontes da API)
-    // ==========================================
-    const testarLinkVivo = async (link) => {
-      if (!link) return false;
-      try {
-        const urlPura = link.split('|')[0];
-        const res = await fetch(urlPura, {
-          method: 'HEAD',
-          headers: { 'User-Agent': 'okhttp/4.9.2' },
-          cf: { timeout: 2500 } // Desiste rápido da CDN em 2.5s
-        });
-        return res.status === 200 || res.status === 206;
-      } catch (e) {
-        return false;
-      }
-    };
-
-    // ==========================================
-    // MOTOR DA API (Itera e testa os links)
-    // ==========================================
     const tentarAPI = async () => {
       const nomeBusca = config.nome_api || config.nome;
       try {
@@ -43,51 +97,27 @@ export default {
           headers: { 'User-Agent': 'okhttp/4.9.2' },
           cf: { cacheTtl: 300 }
         });
-
         if (apiRes.ok) {
           const apiData = await apiRes.json();
           let canalApi = apiData.find(c => c.name.toLowerCase() === nomeBusca.toLowerCase()) ||
             apiData.find(c => c.name.toLowerCase().includes(nomeBusca.toLowerCase()));
 
           if (canalApi && canalApi.sources?.length > 0) {
-            // 1. Testa os links que batem com o filtro_cdn
-            if (config.filtro_cdn) {
-              const fontesFiltradas = canalApi.sources.filter(s => s.name.toLowerCase().includes(config.filtro_cdn.toLowerCase()));
-              for (const fonte of fontesFiltradas) {
-                if (await testarLinkVivo(fonte.link)) return fonte.link;
-              }
-            }
-
-            // 2. Se não achou/falhou no filtro, tenta as outras fontes (ignorando sinal.cc)
-            const fontesValidas = canalApi.sources.filter(s => !s.link.includes("sinal.cc"));
-            for (const fonte of fontesValidas) {
-              if (await testarLinkVivo(fonte.link)) return fonte.link;
-            }
-
-            // 3. Último recurso da API
-            if (canalApi.sources.length > 0 && await testarLinkVivo(canalApi.sources[0].link)) {
-              return canalApi.sources[0].link;
-            }
+            return config.filtro_cdn
+              ? canalApi.sources.find(s => s.name.toLowerCase().includes(config.filtro_cdn.toLowerCase()))?.link
+              : canalApi.sources.find(s => !s.link.includes("sinal.cc"))?.link || canalApi.sources[0].link;
           }
         }
       } catch (e) { return null; }
       return null;
     };
 
-    // ==========================================
-    // MOTOR DO SITE (Extração Direta, sem Health Check)
-    // ==========================================
     const tentarScraping = async () => {
       if (!config.url) return null;
-
-      // Bypass: Se for um link direto m3u8 ou sua.tv, entrega na hora sem tentar ler HTML
-      if (config.url.includes("sua.tv") || config.url.endsWith(".m3u8")) {
-        return config.url;
-      }
-
       try {
         const siteRes = await fetch(config.url, {
           headers: {
+            // Em vez de link fixo, usamos a própria URL do canal como origem
             "Referer": config.url,
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
           }
@@ -101,30 +131,14 @@ export default {
       return null;
     };
 
-    // ==========================================
-    // FLUXO DE REDUNDÂNCIA (A REGRA DE OURO)
-    // ==========================================
     try {
-      let linkFinal = null;
+      let linkFinal = (config.provedor === "site")
+        ? (await tentarScraping() || await tentarAPI())
+        : (await tentarAPI() || await tentarScraping());
 
-      if (config.provedor === "site") {
-        // Regra 1: Se é do site, extrai e manda direto. Sem ping, sem fallback pra API.
-        linkFinal = await tentarScraping();
-      } else {
-        // Regra 2: Se é da API, tenta a API (com pings de vida).
-        linkFinal = await tentarAPI();
-
-        // Regra 3: Se a API falhar completamente, faz o fallback pro Site
-        // APENAS se o canal não for fixo e possuir uma URL válida para o site.
-        if (!linkFinal && !config.provedor_fixo && config.url) {
-          linkFinal = await tentarScraping();
-        }
-      }
-
-      // Entrega o stream
       if (linkFinal) return Response.redirect(linkFinal.split('|')[0], 302);
 
-      // ÚLTIMO RECURSO: Tenta o link salvo no backup.txt (também entregue sem ping)
+      // ÚLTIMO RECURSO: Tenta o link direto salvo no backup.txt
       const githubRes = await fetch(`${GITHUB_RAW_BASE}/backup.txt`);
       const backupText = await githubRes.text();
       const match = backupText.match(new RegExp(`tvg-name="${config.nome}".*?\\n(http[^\\s\\|\\n]+)`, "i"));
