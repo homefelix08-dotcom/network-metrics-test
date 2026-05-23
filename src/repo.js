@@ -14,10 +14,11 @@ export default [
     {
         "nome": "Globo",
         "tvg_id": "Globo MG",
-        "url": "https://ww2.embedtv.lat/globomg",
+        // "url": "https://ww2.embedtv.lat/globomg",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png",
         "categoria": "Abertos",
-        "provedor": "site",
+        "provedor": "api",
+        "filtro_cdn": "Globo MG",
         "provedor_fixo": true
     },
     {
