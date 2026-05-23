@@ -22,13 +22,28 @@ export default {
       if (!link) return false;
       try {
         const urlPura = link.split('|')[0];
+
+        // Disfarça o ping como um download real do TiviMate, mas pede só os primeiros 100 bytes
         const res = await fetch(urlPura, {
-          method: 'HEAD',
-          headers: { 'User-Agent': 'okhttp/4.9.2' },
-          cf: { timeout: 2500 } // Desiste rápido da CDN em 2.5s
+          method: 'GET',
+          headers: {
+            'User-Agent': 'okhttp/4.9.2',
+            'Range': 'bytes=0-100'
+          },
+          cf: { timeout: 3000 } // Espera até 3 segundos pra CDN respirar
         });
-        return res.status === 200 || res.status === 206;
+
+        // 404 (Não Encontrado) ou 500+ (Erro de Servidor/Gateway) = CDN morta, aciona o fallback.
+        if (res.status === 404 || res.status >= 500) {
+          return false;
+        }
+
+        // Se deu 200 (OK), 206 (Partial), 302 (Redirect) ou até 403 (Firewall barrando a Cloudflare),
+        // significa que o servidor físico ESTÁ VIVO. Deixa a TV tentar rodar.
+        return true;
+
       } catch (e) {
+        // Se o fetch der exceção (DNS quebrado, timeout estourou), a CDN tá morta mesmo.
         return false;
       }
     };
