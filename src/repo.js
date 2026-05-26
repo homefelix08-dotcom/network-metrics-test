@@ -367,6 +367,15 @@ export default [
         "provedor_fixo": true
     },
     {
+        "nome": "Canal Off",
+        "tvg_id": "OFF HD",
+        "url": `${siteBaseUrl}/canaloff/`,
+        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_off.png",
+        "categoria": "Variedades",
+        "provedor": "site",
+        "provedor_fixo": true
+    },
+    {
         "nome": "Curta!",
         "tvg_id": "CURTA",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/curta.png",
@@ -440,15 +449,6 @@ export default [
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/music_box_brazil.png",
         "categoria": "Variedades",
         "provedor": "api",
-        "provedor_fixo": true
-    },
-    {
-        "nome": "Canal Off",
-        "tvg_id": "OFF HD",
-        "url": `${siteBaseUrl}/canaloff/`,
-        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_off.png",
-        "categoria": "Variedades",
-        "provedor": "site",
         "provedor_fixo": true
     },
     {

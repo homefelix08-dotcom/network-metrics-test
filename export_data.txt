@@ -79,6 +79,8 @@ https://network-metrics-test.homefelix08.workers.dev/play/USA|Referer=https://7e
 https://network-metrics-test.homefelix08.workers.dev/play/Warner|Referer=https://7embeddecanais.xyz/warner/
 #EXTINF:-1 tvg-id="BIS HD" tvg-name="Bis" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/bis.png" group-title="Variedades", Bis
 https://network-metrics-test.homefelix08.workers.dev/play/Bis|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="OFF HD" tvg-name="Canal Off" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_off.png" group-title="Variedades", Canal Off
+https://network-metrics-test.homefelix08.workers.dev/play/Canal%20Off|Referer=https://7embeddecanais.xyz/canaloff/
 #EXTINF:-1 tvg-id="CURTA" tvg-name="Curta!" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/curta.png" group-title="Variedades", Curta!
 https://network-metrics-test.homefelix08.workers.dev/play/Curta!|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="FISH TV" tvg-name="Fish TV" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/fish_tv.png" group-title="Variedades", Fish TV
@@ -97,8 +99,6 @@ https://network-metrics-test.homefelix08.workers.dev/play/Modo%20Viagem|User-Age
 https://network-metrics-test.homefelix08.workers.dev/play/Multishow|Referer=https://7embeddecanais.xyz/multishow/
 #EXTINF:-1 tvg-id="MUSIC BOX BRAZIL" tvg-name="Music Box Brazil" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/music_box_brazil.png" group-title="Variedades", Music Box Brazil
 https://network-metrics-test.homefelix08.workers.dev/play/Music%20Box%20Brazil|User-Agent=okhttp/4.9.2
-#EXTINF:-1 tvg-id="OFF HD" tvg-name="Canal Off" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_off.png" group-title="Variedades", Canal Off
-https://network-metrics-test.homefelix08.workers.dev/play/Canal%20Off|Referer=https://7embeddecanais.xyz/canaloff/
 #EXTINF:-1 tvg-id="PRIME BOX BRAZIL" tvg-name="Prime Box Brazil" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/prime_box_brazil.png" group-title="Variedades", Prime Box Brazil
 https://network-metrics-test.homefelix08.workers.dev/play/Prime%20Box%20Brazil|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TLC HD" tvg-name="TLC" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tlc.png" group-title="Variedades", TLC
