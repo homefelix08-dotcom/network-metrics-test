@@ -199,6 +199,8 @@ https://network-metrics-test.homefelix08.workers.dev/play/Paramount+%202|Referer
 https://network-metrics-test.homefelix08.workers.dev/play/Paramount+%203|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Paramount+ 4" tvg-name="Paramount+ 4" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramount_4.png" group-title="Esportes", Paramount+ 4
 https://network-metrics-test.homefelix08.workers.dev/play/Paramount+%204|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="PREMIERE CLUBES HD" tvg-name="Premiere Clubes" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_clubes.png" group-title="Esportes", Premiere Clubes
+https://network-metrics-test.homefelix08.workers.dev/play/Premiere%20Clubes|Referer=https://7embeddecanais.xyz/premiereclubes/
 #EXTINF:-1 tvg-id="PREMIERE 2 HD" tvg-name="Premiere 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_2.png" group-title="Esportes", Premiere 2
 https://network-metrics-test.homefelix08.workers.dev/play/Premiere%202|Referer=https://7embeddecanais.xyz/premiere2/
 #EXTINF:-1 tvg-id="PREMIERE 3 HD" tvg-name="Premiere 3" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_3.png" group-title="Esportes", Premiere 3
@@ -213,8 +215,6 @@ https://network-metrics-test.homefelix08.workers.dev/play/Premiere%206|Referer=h
 https://network-metrics-test.homefelix08.workers.dev/play/Premiere%207|Referer=https://7embeddecanais.xyz/premiere7/
 #EXTINF:-1 tvg-id="" tvg-name="Premiere 8" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_8.png" group-title="Esportes", Premiere 8
 https://network-metrics-test.homefelix08.workers.dev/play/Premiere%208|Referer=https://7embeddecanais.xyz/premiere8/
-#EXTINF:-1 tvg-id="PREMIERE CLUBES HD" tvg-name="Premiere Clubes" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_clubes.png" group-title="Esportes", Premiere Clubes
-https://network-metrics-test.homefelix08.workers.dev/play/Premiere%20Clubes|Referer=https://7embeddecanais.xyz/premiereclubes/
 #EXTINF:-1 tvg-id="SPORTV" tvg-name="SporTV" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sportv.png" group-title="Esportes", SporTV
 https://network-metrics-test.homefelix08.workers.dev/play/SporTV|Referer=https://7embeddecanais.xyz/sportv/
 #EXTINF:-1 tvg-id="SPORTV 2" tvg-name="SporTV 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sportv_2.png" group-title="Esportes", SporTV 2
