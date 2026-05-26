@@ -443,6 +443,15 @@ export default [
         "provedor_fixo": true
     },
     {
+        "nome": "Canal Off",
+        "tvg_id": "OFF HD",
+        "url": `${siteBaseUrl}/canaloff/`,
+        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_off.png",
+        "categoria": "Variedades",
+        "provedor": "site",
+        "provedor_fixo": true
+    },
+    {
         "nome": "Prime Box Brazil",
         "tvg_id": "PRIME BOX BRAZIL",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/prime_box_brazil.png",
@@ -726,15 +735,6 @@ export default [
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_goat.png",
         "categoria": "Esportes",
         "provedor": "api",
-        "provedor_fixo": true
-    },
-    {
-        "nome": "Canal Off",
-        "tvg_id": "OFF HD",
-        "url": `${siteBaseUrl}/canaloff/`,
-        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_off.png",
-        "categoria": "Esportes",
-        "provedor": "site",
         "provedor_fixo": true
     },
     {
