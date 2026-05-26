@@ -97,6 +97,8 @@ https://network-metrics-test.homefelix08.workers.dev/play/Modo%20Viagem|User-Age
 https://network-metrics-test.homefelix08.workers.dev/play/Multishow|Referer=https://7embeddecanais.xyz/multishow/
 #EXTINF:-1 tvg-id="MUSIC BOX BRAZIL" tvg-name="Music Box Brazil" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/music_box_brazil.png" group-title="Variedades", Music Box Brazil
 https://network-metrics-test.homefelix08.workers.dev/play/Music%20Box%20Brazil|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="OFF HD" tvg-name="Canal Off" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_off.png" group-title="Variedades", Canal Off
+https://network-metrics-test.homefelix08.workers.dev/play/Canal%20Off|Referer=https://7embeddecanais.xyz/canaloff/
 #EXTINF:-1 tvg-id="PRIME BOX BRAZIL" tvg-name="Prime Box Brazil" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/prime_box_brazil.png" group-title="Variedades", Prime Box Brazil
 https://network-metrics-test.homefelix08.workers.dev/play/Prime%20Box%20Brazil|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TLC HD" tvg-name="TLC" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tlc.png" group-title="Variedades", TLC
@@ -159,8 +161,6 @@ https://network-metrics-test.homefelix08.workers.dev/play/Apple%20TV|Referer=htt
 https://network-metrics-test.homefelix08.workers.dev/play/Band%20Sports|Referer=https://7embeddecanais.xyz/bandsports/
 #EXTINF:-1 tvg-id="" tvg-name="Canal Goat" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_goat.png" group-title="Esportes", Canal Goat
 https://network-metrics-test.homefelix08.workers.dev/play/Canal%20Goat|User-Agent=okhttp/4.9.2
-#EXTINF:-1 tvg-id="OFF HD" tvg-name="Canal Off" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_off.png" group-title="Esportes", Canal Off
-https://network-metrics-test.homefelix08.workers.dev/play/Canal%20Off|Referer=https://7embeddecanais.xyz/canaloff/
 #EXTINF:-1 tvg-id="COMBATE HD" tvg-name="Combate" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/combate.png" group-title="Esportes", Combate
 https://network-metrics-test.homefelix08.workers.dev/play/Combate|Referer=https://7embeddecanais.xyz/combate/
 #EXTINF:-1 tvg-id="" tvg-name="Dazn" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/dazn.png" group-title="Esportes", Dazn
