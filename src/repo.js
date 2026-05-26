@@ -737,14 +737,6 @@ export default [
         "provedor": "site",
         "provedor_fixo": true
     },
-    // {
-    //     "nome": "Caze TV",
-    //     "tvg_id": "",
-    //     "url": `${siteBaseUrl}/cazetv/`,
-    //     "logo": "",
-    //     "categoria": "Esportes",
-    //     "provedor": "site",
-    // },
     {
         "nome": "Combate",
         "tvg_id": "COMBATE HD",
@@ -915,6 +907,15 @@ export default [
         "provedor_fixo": true
     },
     {
+        "nome": "Premiere Clubes",
+        "tvg_id": "PREMIERE CLUBES HD",
+        "url": `${siteBaseUrl}/premiereclubes/`,
+        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_clubes.png",
+        "categoria": "Esportes",
+        "provedor": "api",
+        "provedor_fixo": false
+    },
+    {
         "nome": "Premiere 2",
         "tvg_id": "PREMIERE 2 HD",
         "url": `${siteBaseUrl}/premiere2/`,
@@ -973,15 +974,6 @@ export default [
         "tvg_id": "",
         "url": `${siteBaseUrl}/premiere8/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_8.png",
-        "categoria": "Esportes",
-        "provedor": "api",
-        "provedor_fixo": false
-    },
-    {
-        "nome": "Premiere Clubes",
-        "tvg_id": "PREMIERE CLUBES HD",
-        "url": `${siteBaseUrl}/premiereclubes/`,
-        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_clubes.png",
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false
