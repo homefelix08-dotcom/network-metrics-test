@@ -145,16 +145,6 @@ https://network-metrics-test.homefelix08.workers.dev/play/Gloob|Referer=https://
 https://network-metrics-test.homefelix08.workers.dev/play/Gloobinho|Referer=https://7embeddecanais.xyz/gloobinho/
 #EXTINF:-1 tvg-id="" tvg-name="Tooncast" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tooncast.png" group-title="Infantis", Tooncast
 https://network-metrics-test.homefelix08.workers.dev/play/Tooncast|Referer=https://7embeddecanais.xyz/tooncast/
-#EXTINF:-1 tvg-id="" tvg-name="Amazon Prime Video 1" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_1.png" group-title="Esportes", Amazon Prime Video 1
-https://network-metrics-test.homefelix08.workers.dev/play/Amazon%20Prime%20Video%201|Referer=https://7embeddecanais.xyz/amazonprimevideo/
-#EXTINF:-1 tvg-id="" tvg-name="Amazon Prime Video 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_2.png" group-title="Esportes", Amazon Prime Video 2
-https://network-metrics-test.homefelix08.workers.dev/play/Amazon%20Prime%20Video%202|Referer=https://7embeddecanais.xyz/amazonprimevideo02/
-#EXTINF:-1 tvg-id="" tvg-name="Amazon Prime Video 3" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_3.png" group-title="Esportes", Amazon Prime Video 3
-https://network-metrics-test.homefelix08.workers.dev/play/Amazon%20Prime%20Video%203|Referer=https://7embeddecanais.xyz/amazonprimevideo03/
-#EXTINF:-1 tvg-id="" tvg-name="Amazon Prime Video 4" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_4.png" group-title="Esportes", Amazon Prime Video 4
-https://network-metrics-test.homefelix08.workers.dev/play/Amazon%20Prime%20Video%204|Referer=https://7embeddecanais.xyz/amazonprimevideo04/
-#EXTINF:-1 tvg-id="" tvg-name="Amazon Prime Video 5" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_5.png" group-title="Esportes", Amazon Prime Video 5
-https://network-metrics-test.homefelix08.workers.dev/play/Amazon%20Prime%20Video%205|Referer=https://7embeddecanais.xyz/amazonprimevideo05/
 #EXTINF:-1 tvg-id="" tvg-name="Apple TV" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/apple_tv.png" group-title="Esportes", Apple TV
 https://network-metrics-test.homefelix08.workers.dev/play/Apple%20TV|Referer=https://7embeddecanais.xyz/appletv01/
 #EXTINF:-1 tvg-id="BAND SPORTS HD" tvg-name="Band Sports" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band_sports.png" group-title="Esportes", Band Sports
@@ -215,6 +205,16 @@ https://network-metrics-test.homefelix08.workers.dev/play/Premiere%206|Referer=h
 https://network-metrics-test.homefelix08.workers.dev/play/Premiere%207|Referer=https://7embeddecanais.xyz/premiere7/
 #EXTINF:-1 tvg-id="" tvg-name="Premiere 8" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_8.png" group-title="Esportes", Premiere 8
 https://network-metrics-test.homefelix08.workers.dev/play/Premiere%208|Referer=https://7embeddecanais.xyz/premiere8/
+#EXTINF:-1 tvg-id="" tvg-name="Prime Video 1" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_1.png" group-title="Esportes", Prime Video 1
+https://network-metrics-test.homefelix08.workers.dev/play/Prime%20Video%201|Referer=https://7embeddecanais.xyz/amazonprimevideo/
+#EXTINF:-1 tvg-id="" tvg-name="Prime Video 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_2.png" group-title="Esportes", Prime Video 2
+https://network-metrics-test.homefelix08.workers.dev/play/Prime%20Video%202|Referer=https://7embeddecanais.xyz/amazonprimevideo02/
+#EXTINF:-1 tvg-id="" tvg-name="Prime Video 3" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_3.png" group-title="Esportes", Prime Video 3
+https://network-metrics-test.homefelix08.workers.dev/play/Prime%20Video%203|Referer=https://7embeddecanais.xyz/amazonprimevideo03/
+#EXTINF:-1 tvg-id="" tvg-name="Prime Video 4" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_4.png" group-title="Esportes", Prime Video 4
+https://network-metrics-test.homefelix08.workers.dev/play/Prime%20Video%204|Referer=https://7embeddecanais.xyz/amazonprimevideo04/
+#EXTINF:-1 tvg-id="" tvg-name="Prime Video 5" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_5.png" group-title="Esportes", Prime Video 5
+https://network-metrics-test.homefelix08.workers.dev/play/Prime%20Video%205|Referer=https://7embeddecanais.xyz/amazonprimevideo05/
 #EXTINF:-1 tvg-id="SPORTV" tvg-name="SporTV" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sportv.png" group-title="Esportes", SporTV
 https://network-metrics-test.homefelix08.workers.dev/play/SporTV|Referer=https://7embeddecanais.xyz/sportv/
 #EXTINF:-1 tvg-id="SPORTV 2" tvg-name="SporTV 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sportv_2.png" group-title="Esportes", SporTV 2

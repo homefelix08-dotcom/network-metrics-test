@@ -661,57 +661,6 @@ export default [
 
     /* ESPORTES */
     {
-        "nome": "Amazon Prime Video 1",
-        "tvg_id": "",
-        "url": `${siteBaseUrl}/amazonprimevideo/`,
-        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_1.png",
-        "categoria": "Esportes",
-        "nome_api": "Prime Vídeo",
-        "filtro_cdn": "Opção 01",
-        "provedor": "api",
-        "provedor_fixo": false
-    },
-    {
-        "nome": "Amazon Prime Video 2",
-        "tvg_id": "",
-        "url": `${siteBaseUrl}/amazonprimevideo02/`,
-        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_2.png",
-        "categoria": "Esportes",
-        "nome_api": "Prime Vídeo",
-        "filtro_cdn": "Opção 02",
-        "provedor": "api",
-        "provedor_fixo": false
-    },
-    {
-        "nome": "Amazon Prime Video 3",
-        "tvg_id": "",
-        "url": `${siteBaseUrl}/amazonprimevideo03/`,
-        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_3.png",
-        "categoria": "Esportes",
-        "nome_api": "Prime Vídeo",
-        "filtro_cdn": "Opção 03",
-        "provedor": "api",
-        "provedor_fixo": false
-    },
-    {
-        "nome": "Amazon Prime Video 4",
-        "tvg_id": "",
-        "url": `${siteBaseUrl}/amazonprimevideo04/`,
-        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_4.png",
-        "categoria": "Esportes",
-        "provedor": "site",
-        "provedor_fixo": true
-    },
-    {
-        "nome": "Amazon Prime Video 5",
-        "tvg_id": "",
-        "url": `${siteBaseUrl}/amazonprimevideo05/`,
-        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_5.png",
-        "categoria": "Esportes",
-        "provedor": "site",
-        "provedor_fixo": true
-    },
-    {
         "nome": "Apple TV",
         "tvg_id": "",
         "url": `${siteBaseUrl}/appletv01/`,
@@ -977,6 +926,57 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false
+    },
+    {
+        "nome": "Prime Video 1",
+        "tvg_id": "",
+        "url": `${siteBaseUrl}/amazonprimevideo/`,
+        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_1.png",
+        "categoria": "Esportes",
+        "nome_api": "Prime Vídeo",
+        "filtro_cdn": "Opção 01",
+        "provedor": "api",
+        "provedor_fixo": false
+    },
+    {
+        "nome": "Prime Video 2",
+        "tvg_id": "",
+        "url": `${siteBaseUrl}/amazonprimevideo02/`,
+        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_2.png",
+        "categoria": "Esportes",
+        "nome_api": "Prime Vídeo",
+        "filtro_cdn": "Opção 02",
+        "provedor": "api",
+        "provedor_fixo": false
+    },
+    {
+        "nome": "Prime Video 3",
+        "tvg_id": "",
+        "url": `${siteBaseUrl}/amazonprimevideo03/`,
+        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_3.png",
+        "categoria": "Esportes",
+        "nome_api": "Prime Vídeo",
+        "filtro_cdn": "Opção 03",
+        "provedor": "api",
+        "provedor_fixo": false
+    },
+    {
+        "nome": "Prime Video 4",
+        "tvg_id": "",
+        "url": `${siteBaseUrl}/amazonprimevideo04/`,
+        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_4.png",
+        "categoria": "Esportes",
+        "provedor": "site",
+        "provedor_fixo": true
+    },
+    {
+        "nome": "Prime Video 5",
+        "tvg_id": "",
+        "url": `${siteBaseUrl}/amazonprimevideo05/`,
+        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_5.png",
+        "categoria": "Esportes",
+        "provedor": "site",
+        "provedor_fixo": true
     },
     {
         "nome": "SporTV",
