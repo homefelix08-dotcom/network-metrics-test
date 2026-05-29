@@ -710,7 +710,7 @@ export default [
         "url": `${siteBaseUrl}/espn/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn.png",
         "categoria": "Esportes",
-        "provedor": "site",
+        "provedor": "api",
         "provedor_fixo": false
     },
     {
