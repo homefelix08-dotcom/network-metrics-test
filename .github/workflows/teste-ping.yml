@@ -1,0 +1,18 @@
+name: Teste de ASN Block Azure
+
+on:
+  workflow_dispatch: # Essa linha cria um botão para rodarmos o teste manualmente
+
+jobs:
+  testar-firewall:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testar Link da Exploud (Futura)
+        run: |
+          echo "Disparando o cURL da Microsoft..."
+          curl -I -A "okhttp/4.9.2" "http://dns.explouddev.com/live/292330036/5179425/159.m3u8"
+
+      - name: Testar Link da Embed CDN (AXN)
+        run: |
+          echo "Disparando o cURL da Microsoft..."
+          curl -I -A "okhttp/4.9.2" "https://2905.cdn10embed.xyz/axn/index.m3u8"
