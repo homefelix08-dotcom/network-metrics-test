@@ -55,15 +55,23 @@ export default {
     };
 
     // ==========================================
-    // MOTOR DA API (COM CORRIDA PARALELA)
+    // MOTOR DA API (BLINDADO CONTRA TIMEOUT E FALSOS POSITIVOS)
     // ==========================================
     const tentarAPI = async () => {
       const nomeBusca = config.nome_api || config.nome;
       try {
+        // 1. Proteção contra o "Loading Infinito" da API
+        const controllerAPI = new AbortController();
+        // Se a API não entregar o JSON em 3.5 segundos, aborta tudo!
+        const idAPI = setTimeout(() => controllerAPI.abort(), 3500);
+
         const apiRes = await fetch(`https://explouddev.com.br/api/canais/todos?search=${encodeURIComponent(nomeBusca)}`, {
           headers: { 'User-Agent': 'okhttp/4.9.2' },
-          cf: { cacheTtl: 300 }
+          cf: { cacheTtl: 300 },
+          signal: controllerAPI.signal // Liga o cronômetro aqui
         });
+
+        clearTimeout(idAPI); // Sucesso, desliga o cronômetro
 
         if (apiRes.ok) {
           const apiData = await apiRes.json();
@@ -72,44 +80,42 @@ export default {
 
           if (canalApi && canalApi.sources?.length > 0) {
 
-            // Função auxiliar de corrida: Testa vários links de uma vez
             const testarEmParalelo = async (fontes) => {
               if (!fontes || fontes.length === 0) return null;
               try {
-                // Dispara o teste para todas as fontes simultaneamente. 
-                // O primeiro que der 'true' ganha e retorna.
                 return await Promise.any(fontes.map(async (fonte) => {
                   const vivo = await testarLinkVivo(fonte.link);
                   if (vivo) return fonte.link;
-                  throw new Error("Morto"); // Faz o Promise.any pular pro próximo
+                  throw new Error("Morto");
                 }));
               } catch (e) {
-                return null; // Todos os links testados falharam
+                return null;
               }
             };
 
-            // 1. Se tem filtro, testa em paralelo só as que batem com o filtro
+            // 1. Testa com filtro
             if (config.filtro_cdn) {
               const fontesFiltradas = canalApi.sources.filter(s => s.name.toLowerCase().includes(config.filtro_cdn.toLowerCase()));
               const linkFiltradoVencedor = await testarEmParalelo(fontesFiltradas);
               if (linkFiltradoVencedor) return linkFiltradoVencedor;
             }
 
-            // 2. Fallback interno da API: Se não tem filtro (ou o filtro falhou), 
-            // pega os primeiros 5 links válidos (para não estourar a memória do Worker) e testa em paralelo!
+            // 2. Fallback interno
             const fontesValidas = canalApi.sources.filter(s => !s.link.includes("sinal.cc")).slice(0, 5);
             const linkValidoVencedor = await testarEmParalelo(fontesValidas);
             if (linkValidoVencedor) return linkValidoVencedor;
 
-            // 3. Último recurso da API (sem teste, confia no primeiro que sobrou)
-            if (canalApi.sources.length > 0) {
-              return canalApi.sources[0].link;
-            }
+            // 🚨 REMOVIDO O "PASSO 3" DE CONFIANÇA CEGA.
+            // Se testamos e ninguém sobreviveu, retornamos nulo IMEDIATAMENTE.
+            return null;
           }
         }
-      } catch (e) { return null; }
+      } catch (e) {
+        // Se der timeout na API (AbortError) ou qualquer erro de rede
+        return null;
+      }
 
-      return null; // Se chegou aqui, TODAS as fontes da API deram timeout ou 404. Aciona o Site!
+      return null;
     };
 
     // ==========================================
