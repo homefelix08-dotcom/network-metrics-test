@@ -15,55 +15,50 @@ export default {
     if (!config) return new Response("Canal não mapeado no repo.js", { status: 404 });
 
     // ==========================================
-    // HEALTH CHECK INTELIGENTE (Retorna Estados)
+    // HEALTH CHECK: DIFERENCIA 404 DE BLOQUEIO DE CLOUDFLARE
     // ==========================================
     const testarLinkVivo = async (link) => {
-      if (!link) return "MORTO";
+      if (!link) return "404";
       try {
         const urlPura = link.split('|')[0];
 
-        // Bypass para IP direto (Bypass de Firewall)
+        // Bypass IP direto
         const ipPattern = /^https?:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/;
-        if (ipPattern.test(urlPura)) {
-          return "VIVO"; 
-        }
+        if (ipPattern.test(urlPura)) return "200";
 
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 4000); // 4 segundos tolerantes
+        const timeoutId = setTimeout(() => controller.abort(), 4000);
 
         const res = await fetch(urlPura, {
           method: 'GET',
-          headers: {
-            'User-Agent': 'okhttp/4.9.2',
-            'Accept': '*/*'
-          },
+          headers: { 'User-Agent': 'okhttp/4.9.2', 'Accept': '*/*' },
           signal: controller.signal
         });
 
         clearTimeout(timeoutId);
 
-        if (res.ok && res.body) {
-          res.body.cancel();
-        }
+        if (res.ok && res.body) res.body.cancel();
 
-        if (res.status === 200) return "VIVO";
-        if (res.status === 404) return "404"; // Identifica canal fora do ar de verdade
-        return "MORTO";
+        if (res.status === 200) return "200";
+        if (res.status === 404) return "404"; // A ÚNICA CONDIÇÃO DE MORTE REAL
+
+        // Qualquer outro status (403, 502, etc) é a CDN barrando a Cloudflare
+        return "BLOQUEADO";
 
       } catch (e) {
-        // Se deu timeout ou erro de rede, há forte indício de Bloqueio de ASN da Cloudflare
-        return "TIMEOUT_OU_BLOQUEIO";
+        // Timeout ou Network Error é a CDN barrando a Cloudflare
+        return "BLOQUEADO";
       }
     };
 
     // ==========================================
-    // MOTOR DA API (COM ÚLTIMO RECURSO INTELIGENTE)
+    // MOTOR DA API: VISÃO GLOBAL E DELEGAÇÃO CORRETA
     // ==========================================
     const tentarAPI = async () => {
       const nomeBusca = config.nome_api || config.nome;
       try {
         const controllerAPI = new AbortController();
-        const idAPI = setTimeout(() => controllerAPI.abort(), 10000); // 10 segundos seguros para a API
+        const idAPI = setTimeout(() => controllerAPI.abort(), 8000);
 
         const apiRes = await fetch(`https://explouddev.com.br/api/canais/todos?search=${encodeURIComponent(nomeBusca)}`, {
           headers: { 'User-Agent': 'okhttp/4.9.2' },
@@ -79,62 +74,60 @@ export default {
             apiData.find(c => c.name.toLowerCase().includes(nomeBusca.toLowerCase()));
 
           if (canalApi && canalApi.sources?.length > 0) {
-            
-            let temSuspeito = false;
 
-            const testarEmParalelo = async (fontes) => {
-              if (!fontes || fontes.length === 0) return null;
+            // Função de teste em lote que entende o porquê os links falharam
+            const testarLote = async (fontes) => {
+              if (!fontes || fontes.length === 0) return { link: null, todos404: true };
               try {
-                return await Promise.any(fontes.map(async (fonte) => {
-                  const resultado = await testarLinkVivo(fonte.link);
-                  if (resultado === "VIVO") return fonte.link;
-                  
-                  if (resultado === "TIMEOUT_OU_BLOQUEIO") {
-                    temSuspeito = true; // Alerta que o link pode estar vivo, mas barrou a Cloudflare
-                  }
-                  throw new Error("Não serve");
+                // Corrida: o primeiro que der 200 OK vence instantaneamente
+                const winner = await Promise.any(fontes.map(async (fonte) => {
+                  const status = await testarLinkVivo(fonte.link);
+                  if (status === "200") return fonte.link;
+                  throw new Error(status); // Joga o erro ("404" ou "BLOQUEADO")
                 }));
-              } catch (e) {
-                return null;
+                return { link: winner, todos404: false };
+
+              } catch (aggregateError) {
+                // Se caiu aqui, NENHUM link deu 200 OK. Vamos analisar os erros:
+                const erros = aggregateError.errors;
+
+                // Se houver algum "BLOQUEADO", a API está viva, mas a Cloudflare foi barrada.
+                // O Postman/TV conseguiria abrir. Confiamos na API.
+                if (erros.includes("BLOQUEADO")) {
+                  return { link: fontes[0].link, todos404: false };
+                }
+
+                // Se TODOS os links testados deram explícitamente "404"
+                return { link: null, todos404: true };
               }
             };
 
-            // 1. Testa com filtro
+            // 1. Testa os links do filtro CDN
             if (config.filtro_cdn) {
               const fontesFiltradas = canalApi.sources.filter(s => s.name.toLowerCase().includes(config.filtro_cdn.toLowerCase()));
-              const linkFiltradoVencedor = await testarEmParalelo(fontesFiltradas);
-              if (linkFiltradoVencedor) return linkFiltradoVencedor;
+              const resultadoFiltro = await testarLote(fontesFiltradas);
+              if (resultadoFiltro.link) return resultadoFiltro.link;
+              if (resultadoFiltro.todos404 && !config.provedor_fixo && config.url) return null; // Fallback!
             }
 
-            // 2. Fallback interno de CDNs válidas
+            // 2. Testa os links gerais
             const fontesValidas = canalApi.sources.filter(s => !s.link.includes("sinal.cc")).slice(0, 5);
-            const linkValidoVencedor = await testarEmParalelo(fontesValidas);
-            if (linkValidoVencedor) return linkValidoVencedor;
+            const resultadoGeral = await testarLote(fontesValidas);
 
-            // ==========================================================
-            // 🚨 O NOVO "PASSO 3 INTELIGENTE" (ÚLTIMO RECURSO)
-            // ==========================================================
-            // Se nenhum link retornou 200 OK limpo para a Cloudflare, avaliamos as exceções:
-            
-            // Caso A: O canal NÃO possui alternativa no site (exclusivo da API, como o Futura).
-            // Retornamos o primeiro link da API cegamente, pois é a única chance da TV abrir.
-            if (!config.url || config.provedor_fixo) {
-              return canalApi.sources[0].link;
+            if (resultadoGeral.link) return resultadoGeral.link;
+
+            // 3. O Veredito
+            // Se chegou aqui e todos404 for true, significa que a CDN disse ativamente
+            // "esse vídeo não existe mais". Retornamos null para acionar o site.
+            if (resultadoGeral.todos404) {
+              return null;
             }
 
-            // Caso B: Os testes deram Timeout/Bloqueio (Suspeita de Bloqueio de Datacenter).
-            // Se a API está online entregando dados, mas a CDN barrou o Worker, entregamos
-            // o link original para a TV tentar rodar com o IP residencial.
-            if (temSuspeito) {
-              return canalApi.sources[0].link;
-            }
-
-            // Caso C: Todos os links retornaram 404 explícito. 
-            // Retorna nulo para ativar com segurança o Fallback do Site!
-            return null;
+            return canalApi.sources[0].link;
           }
         }
       } catch (e) {
+        // Se a API global (explouddev) cair inteira (Timeout/502), aciona o site.
         return null;
       }
 
