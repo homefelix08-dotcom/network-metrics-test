@@ -22,34 +22,28 @@ export default {
       try {
         const urlPura = link.split('|')[0];
 
-        // Controlador para matar a requisição se demorar mais de 3 segundos
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 3000);
+        // Aumenta o timeout: streams têm latência maior
+        const timeoutId = setTimeout(() => controller.abort(), 6000);
 
-        // Fazemos um GET idêntico ao do Postman/TiviMate
         const res = await fetch(urlPura, {
           method: 'GET',
           headers: {
             'User-Agent': 'okhttp/4.9.2',
             'Accept': '*/*'
           },
+          redirect: 'follow', // garante que segue redirects
           signal: controller.signal
         });
 
         clearTimeout(timeoutId);
 
-        // O SEGREDO: Se a requisição deu sucesso, cancelamos o download do corpo da resposta.
-        // Isso evita que o Worker faça download do vídeo, economizando sua banda,
-        // mas nos dá a certeza absoluta de que o link responde 200 OK.
-        if (res.ok && res.body) {
-          res.body.cancel();
-        }
+        if (res.body) res.body.cancel();
 
-        // Se retornar 200 (OK), o link está validado!
-        return res.status === 200;
+        // Aceita 200 (OK) e 206 (Partial Content), ambos válidos para streams
+        return res.status === 200 || res.status === 206;
 
       } catch (e) {
-        // Se der timeout ou erro de rede, o link morreu.
         return false;
       }
     };
@@ -102,9 +96,9 @@ export default {
             if (linkValidoVencedor) return linkValidoVencedor;
 
             // 3. Último recurso da API (sem teste, confia no primeiro que sobrou)
-            if (canalApi.sources.length > 0) {
-              return canalApi.sources[0].link;
-            }
+            // if (canalApi.sources.length > 0) {
+            //   return canalApi.sources[0].link;
+            // }
           }
         }
       } catch (e) { return null; }
