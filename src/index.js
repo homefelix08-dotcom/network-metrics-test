@@ -15,18 +15,16 @@ export default {
     if (!config) return new Response("Canal não mapeado no repo.js", { status: 404 });
 
     // ==========================================
-    // HEALTH CHECK (O "Teste do Postman")
+    // HEALTH CHECK ADAPTADO PARA XTREAM CODES
     // ==========================================
     const testarLinkVivo = async (link) => {
       if (!link) return false;
       try {
         const urlPura = link.split('|')[0];
 
-        // Controlador para matar a requisição se demorar mais de 3 segundos
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 3000);
+        const timeoutId = setTimeout(() => controller.abort(), 5000);
 
-        // Fazemos um GET idêntico ao do Postman/TiviMate
         const res = await fetch(urlPura, {
           method: 'GET',
           headers: {
@@ -38,18 +36,13 @@ export default {
 
         clearTimeout(timeoutId);
 
-        // O SEGREDO: Se a requisição deu sucesso, cancelamos o download do corpo da resposta.
-        // Isso evita que o Worker faça download do vídeo, economizando sua banda,
-        // mas nos dá a certeza absoluta de que o link responde 200 OK.
         if (res.ok && res.body) {
           res.body.cancel();
         }
 
-        // Se retornar 200 (OK), o link está validado!
         return res.status === 200;
 
       } catch (e) {
-        // Se der timeout ou erro de rede, o link morreu.
         return false;
       }
     };
