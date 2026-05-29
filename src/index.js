@@ -86,7 +86,7 @@ export default {
         (!config.provedor_fixo && config.url) ? tentarScraping() : Promise.resolve(null)
       ]);
 
-      const urlApiLimpa = linkApi ? linkApi.split('|')[0] : null;
+      const urlApiLimpa = linkApi ? linkApi.split('|')[0] + "QUEBRADO" : null;
       const urlSiteLimpa = linkSite ? linkSite.split('|')[0] : null;
 
       // CENÁRIO 1: Temos as duas fontes. Devolvemos a Master Playlist para a TV decidir.
