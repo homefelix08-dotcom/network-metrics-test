@@ -15,15 +15,22 @@ export default {
     if (!config) return new Response("Canal não mapeado no repo.js", { status: 404 });
 
     // ==========================================
-    // HEALTH CHECK ADAPTADO PARA XTREAM CODES
+    // HEALTH CHECK (COM BYPASS DE FIREWALL)
     // ==========================================
     const testarLinkVivo = async (link) => {
       if (!link) return false;
       try {
         const urlPura = link.split('|')[0];
+        
+        // Se a URL for um IP direto (ex: http://38.247.134.19...) ou contiver porta específica
+        // O firewall do IPTV vai bloquear o ping da Cloudflare. Portanto, confiamos cegamente.
+        const ipPattern = /^https?:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/;
+        if (ipPattern.test(urlPura)) {
+          return true; // Pula o fetch e assume que o link está vivo para a TV testar!
+        }
 
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 5000);
+        const timeoutId = setTimeout(() => controller.abort(), 3000);
 
         const res = await fetch(urlPura, {
           method: 'GET',
