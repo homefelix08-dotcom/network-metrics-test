@@ -76,6 +76,7 @@ export default {
           if (canalApi && canalApi.sources?.length > 0) {
 
             // Função de teste em lote que entende o porquê os links falharam
+            // Função de teste em lote que entende o porquê os links falharam
             const testarLote = async (fontes) => {
               if (!fontes || fontes.length === 0) return { link: null, todos404: true };
               try {
@@ -88,11 +89,8 @@ export default {
                 return { link: winner, todos404: false };
 
               } catch (aggregateError) {
-                // Se caiu aqui, NENHUM link deu 200 OK. Vamos analisar os erros:
-                const erros = aggregateError.errors;
+                const erros = aggregateError.errors.map(e => e.message);
 
-                // Se houver algum "BLOQUEADO", a API está viva, mas a Cloudflare foi barrada.
-                // O Postman/TV conseguiria abrir. Confiamos na API.
                 if (erros.includes("BLOQUEADO")) {
                   return { link: fontes[0].link, todos404: false };
                 }
