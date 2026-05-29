@@ -15,21 +15,22 @@ export default {
     if (!config) return new Response("Canal não mapeado no repo.js", { status: 404 });
 
     // ==========================================
-    // HEALTH CHECK INTELIGENTE (Retorna Estados)
+    // HEALTH CHECK (COM BYPASS DE FIREWALL)
     // ==========================================
     const testarLinkVivo = async (link) => {
-      if (!link) return "MORTO";
+      if (!link) return false;
       try {
         const urlPura = link.split('|')[0];
 
-        // Bypass para IP direto (Bypass de Firewall)
+        // Se a URL for um IP direto (ex: http://38.247.134.19...) ou contiver porta específica
+        // O firewall do IPTV vai bloquear o ping da Cloudflare. Portanto, confiamos cegamente.
         const ipPattern = /^https?:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/;
         if (ipPattern.test(urlPura)) {
-          return "VIVO"; 
+          return true; // Pula o fetch e assume que o link está vivo para a TV testar!
         }
 
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 4000); // 4 segundos tolerantes
+        const timeoutId = setTimeout(() => controller.abort(), 8000);
 
         const res = await fetch(urlPura, {
           method: 'GET',
@@ -46,24 +47,23 @@ export default {
           res.body.cancel();
         }
 
-        if (res.status === 200) return "VIVO";
-        if (res.status === 404) return "404"; // Identifica canal fora do ar de verdade
-        return "MORTO";
+        return res.status === 200;
 
       } catch (e) {
-        // Se deu timeout ou erro de rede, há forte indício de Bloqueio de ASN da Cloudflare
-        return "TIMEOUT_OU_BLOQUEIO";
+        return false;
       }
     };
 
     // ==========================================
-    // MOTOR DA API (COM ÚLTIMO RECURSO INTELIGENTE)
+    // MOTOR DA API (BLINDADO CONTRA TIMEOUT E FALSOS POSITIVOS)
     // ==========================================
     const tentarAPI = async () => {
       const nomeBusca = config.nome_api || config.nome;
       try {
+        // 1. Proteção contra o "Loading Infinito" da API
         const controllerAPI = new AbortController();
-        const idAPI = setTimeout(() => controllerAPI.abort(), 10000); // 10 segundos seguros para a API
+        // Se a API não entregar o JSON em 3.5 segundos, aborta tudo!
+        const idAPI = setTimeout(() => controllerAPI.abort(), 10000);
 
         const apiRes = await fetch(`https://explouddev.com.br/api/canais/todos?search=${encodeURIComponent(nomeBusca)}`, {
           headers: { 'User-Agent': 'okhttp/4.9.2' },
@@ -79,20 +79,14 @@ export default {
             apiData.find(c => c.name.toLowerCase().includes(nomeBusca.toLowerCase()));
 
           if (canalApi && canalApi.sources?.length > 0) {
-            
-            let temSuspeito = false;
 
             const testarEmParalelo = async (fontes) => {
               if (!fontes || fontes.length === 0) return null;
               try {
                 return await Promise.any(fontes.map(async (fonte) => {
-                  const resultado = await testarLinkVivo(fonte.link);
-                  if (resultado === "VIVO") return fonte.link;
-                  
-                  if (resultado === "TIMEOUT_OU_BLOQUEIO") {
-                    temSuspeito = true; // Alerta que o link pode estar vivo, mas barrou a Cloudflare
-                  }
-                  throw new Error("Não serve");
+                  const vivo = await testarLinkVivo(fonte.link);
+                  if (vivo) return fonte.link;
+                  throw new Error("Morto");
                 }));
               } catch (e) {
                 return null;
@@ -106,35 +100,18 @@ export default {
               if (linkFiltradoVencedor) return linkFiltradoVencedor;
             }
 
-            // 2. Fallback interno de CDNs válidas
+            // 2. Fallback interno
             const fontesValidas = canalApi.sources.filter(s => !s.link.includes("sinal.cc")).slice(0, 5);
             const linkValidoVencedor = await testarEmParalelo(fontesValidas);
             if (linkValidoVencedor) return linkValidoVencedor;
 
-            // ==========================================================
-            // 🚨 O NOVO "PASSO 3 INTELIGENTE" (ÚLTIMO RECURSO)
-            // ==========================================================
-            // Se nenhum link retornou 200 OK limpo para a Cloudflare, avaliamos as exceções:
-            
-            // Caso A: O canal NÃO possui alternativa no site (exclusivo da API, como o Futura).
-            // Retornamos o primeiro link da API cegamente, pois é a única chance da TV abrir.
-            if (!config.url || config.provedor_fixo) {
-              return canalApi.sources[0].link;
-            }
-
-            // Caso B: Os testes deram Timeout/Bloqueio (Suspeita de Bloqueio de Datacenter).
-            // Se a API está online entregando dados, mas a CDN barrou o Worker, entregamos
-            // o link original para a TV tentar rodar com o IP residencial.
-            if (temSuspeito) {
-              return canalApi.sources[0].link;
-            }
-
-            // Caso C: Todos os links retornaram 404 explícito. 
-            // Retorna nulo para ativar com segurança o Fallback do Site!
+            // 🚨 REMOVIDO O "PASSO 3" DE CONFIANÇA CEGA.
+            // Se testamos e ninguém sobreviveu, retornamos nulo IMEDIATAMENTE.
             return null;
           }
         }
       } catch (e) {
+        // Se der timeout na API (AbortError) ou qualquer erro de rede
         return null;
       }
 
@@ -142,7 +119,7 @@ export default {
     };
 
     // ==========================================
-    // MOTOR DO SITE
+    // MOTOR DO SITE (Sem Health Check, confia no scraper)
     // ==========================================
     const tentarScraping = async () => {
       if (!config.url) return null;
@@ -177,11 +154,13 @@ export default {
         linkFinal = await tentarScraping();
         if (linkFinal) traceOrigem = "SITE";
       } else {
+        // Tenta a API primeiro com a validação rigorosa
         linkFinal = await tentarAPI();
 
         if (linkFinal) {
           traceOrigem = "API";
         }
+        // A API falhou! Aciona o Fallback para o Site
         else if (!config.provedor_fixo && config.url) {
           linkFinal = await tentarScraping();
           if (linkFinal) traceOrigem = "SITE (Fallback)";
@@ -193,11 +172,12 @@ export default {
           status: 302,
           headers: {
             "Location": linkFinal.split('|')[0],
-            "X-Debug-Origem": traceOrigem
+            "X-Debug-Origem": traceOrigem // Aqui você pode checar de onde o Worker puxou o sinal!
           }
         });
       }
 
+      // ÚLTIMO RECURSO: Tenta o backup se tudo explodir
       const githubRes = await fetch(`${GITHUB_RAW_BASE}/backup.txt`);
       const backupText = await githubRes.text();
       const match = backupText.match(new RegExp(`tvg-name="${config.nome}".*?\\n(http[^\\s\\|\\n]+)`, "i"));
@@ -217,4 +197,4 @@ export default {
       return new Response("Erro Interno", { status: 500 });
     }
   }
-};
+}
