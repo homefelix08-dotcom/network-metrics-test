@@ -30,7 +30,7 @@ export default {
         }
 
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 8000);
+        const timeoutId = setTimeout(() => controller.abort(), 4000);
 
         const res = await fetch(urlPura, {
           method: 'GET',
@@ -63,7 +63,7 @@ export default {
         // 1. Proteção contra o "Loading Infinito" da API
         const controllerAPI = new AbortController();
         // Se a API não entregar o JSON em 3.5 segundos, aborta tudo!
-        const idAPI = setTimeout(() => controllerAPI.abort(), 10000);
+        const idAPI = setTimeout(() => controllerAPI.abort(), 5000);
 
         const apiRes = await fetch(`https://explouddev.com.br/api/canais/todos?search=${encodeURIComponent(nomeBusca)}`, {
           headers: { 'User-Agent': 'okhttp/4.9.2' },
