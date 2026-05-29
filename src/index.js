@@ -21,7 +21,7 @@ export default {
       if (!link) return false;
       try {
         const urlPura = link.split('|')[0];
-        
+
         // Se a URL for um IP direto (ex: http://38.247.134.19...) ou contiver porta específica
         // O firewall do IPTV vai bloquear o ping da Cloudflare. Portanto, confiamos cegamente.
         const ipPattern = /^https?:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/;
@@ -30,7 +30,7 @@ export default {
         }
 
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 3000);
+        const timeoutId = setTimeout(() => controller.abort(), 4000);
 
         const res = await fetch(urlPura, {
           method: 'GET',
@@ -63,15 +63,15 @@ export default {
         // 1. Proteção contra o "Loading Infinito" da API
         const controllerAPI = new AbortController();
         // Se a API não entregar o JSON em 3.5 segundos, aborta tudo!
-        const idAPI = setTimeout(() => controllerAPI.abort(), 3500);
+        const idAPI = setTimeout(() => controllerAPI.abort(), 5000);
 
         const apiRes = await fetch(`https://explouddev.com.br/api/canais/todos?search=${encodeURIComponent(nomeBusca)}`, {
           headers: { 'User-Agent': 'okhttp/4.9.2' },
           cf: { cacheTtl: 300 },
-          signal: controllerAPI.signal // Liga o cronômetro aqui
+          signal: controllerAPI.signal
         });
 
-        clearTimeout(idAPI); // Sucesso, desliga o cronômetro
+        clearTimeout(idAPI);
 
         if (apiRes.ok) {
           const apiData = await apiRes.json();
