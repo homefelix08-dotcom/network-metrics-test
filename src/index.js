@@ -15,118 +15,51 @@ export default {
     if (!config) return new Response("Canal não mapeado no repo.js", { status: 404 });
 
     // ==========================================
-    // HEALTH CHECK (O "Teste do Postman")
+    // 1. BUSCA FONTES DA API (Saca até 3 links rápidos)
     // ==========================================
-    const testarLinkVivo = async (link) => {
-      if (!link) return false;
-      try {
-        const urlPura = link.split('|')[0];
-
-        // Controlador para matar a requisição se demorar mais de 3 segundos
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 3000);
-
-        // Fazemos um GET idêntico ao do Postman/TiviMate
-        const res = await fetch(urlPura, {
-          method: 'GET',
-          headers: {
-            'User-Agent': 'okhttp/4.9.2',
-            'Accept': '*/*'
-          },
-          signal: controller.signal
-        });
-
-        clearTimeout(timeoutId);
-
-        // O SEGREDO: Se a requisição deu sucesso, cancelamos o download do corpo da resposta.
-        // Isso evita que o Worker faça download do vídeo, economizando sua banda,
-        // mas nos dá a certeza absoluta de que o link responde 200 OK.
-        if (res.ok && res.body) {
-          res.body.cancel();
-        }
-
-        // Se retornar 200 (OK), o link está validado!
-        return res.status === 200;
-
-      } catch (e) {
-        // Se der timeout ou erro de rede, o link morreu.
-        return false;
-      }
-    };
-
-    // ==========================================
-    // MOTOR DA API (COM CORRIDA PARALELA)
-    // ==========================================
-    const tentarAPI = async () => {
+    const buscarLinksAPI = async () => {
       const nomeBusca = config.nome_api || config.nome;
       try {
+        const controllerAPI = new AbortController();
+        const idAPI = setTimeout(() => controllerAPI.abort(), 4000); // 4s máximo para não travar o zapping
+
         const apiRes = await fetch(`https://explouddev.com.br/api/canais/todos?search=${encodeURIComponent(nomeBusca)}`, {
           headers: { 'User-Agent': 'okhttp/4.9.2' },
-          cf: { cacheTtl: 300 }
+          cf: { cacheTtl: 300 },
+          signal: controllerAPI.signal
         });
+        
+        clearTimeout(idAPI);
 
         if (apiRes.ok) {
           const apiData = await apiRes.json();
           let canalApi = apiData.find(c => c.name.toLowerCase() === nomeBusca.toLowerCase()) ||
-            apiData.find(c => c.name.toLowerCase().includes(nomeBusca.toLowerCase()));
+                         apiData.find(c => c.name.toLowerCase().includes(nomeBusca.toLowerCase()));
 
           if (canalApi && canalApi.sources?.length > 0) {
-
-            // Função auxiliar de corrida: Testa vários links de uma vez
-            const testarEmParalelo = async (fontes) => {
-              if (!fontes || fontes.length === 0) return null;
-              try {
-                // Dispara o teste para todas as fontes simultaneamente. 
-                // O primeiro que der 'true' ganha e retorna.
-                return await Promise.any(fontes.map(async (fonte) => {
-                  const vivo = await testarLinkVivo(fonte.link);
-                  if (vivo) return fonte.link;
-                  throw new Error("Morto"); // Faz o Promise.any pular pro próximo
-                }));
-              } catch (e) {
-                return null; // Todos os links testados falharam
-              }
-            };
-
-            // 1. Se tem filtro, testa em paralelo só as que batem com o filtro
-            if (config.filtro_cdn) {
-              const fontesFiltradas = canalApi.sources.filter(s => s.name.toLowerCase().includes(config.filtro_cdn.toLowerCase()));
-              const linkFiltradoVencedor = await testarEmParalelo(fontesFiltradas);
-              if (linkFiltradoVencedor) return linkFiltradoVencedor;
-            }
-
-            // 2. Fallback interno da API: Se não tem filtro (ou o filtro falhou), 
-            // pega os primeiros 5 links válidos (para não estourar a memória do Worker) e testa em paralelo!
-            const fontesValidas = canalApi.sources.filter(s => !s.link.includes("sinal.cc")).slice(0, 5);
-            const linkValidoVencedor = await testarEmParalelo(fontesValidas);
-            if (linkValidoVencedor) return linkValidoVencedor;
-
-            // 3. Último recurso da API (sem teste, confia no primeiro que sobrou)
-            if (canalApi.sources.length > 0) {
-              return canalApi.sources[0].link;
-            }
+            // Pega até 3 fontes válidas (ignorando o lixo do sinal.cc) para a TV testar
+            return canalApi.sources
+              .filter(s => !s.link.includes("sinal.cc"))
+              .slice(0, 3)
+              .map(s => s.link.split('|')[0]); 
           }
         }
-      } catch (e) { return null; }
-
-      return null; // Se chegou aqui, TODAS as fontes da API deram timeout ou 404. Aciona o Site!
+      } catch (e) { 
+        // Se a API estiver 100% morta (Timeout/500), retorna array vazio
+        return []; 
+      }
+      return [];
     };
 
     // ==========================================
-    // MOTOR DO SITE (Sem Health Check, confia no scraper)
+    // 2. BUSCA O LINK DO SITE (Pneu de Estepe)
     // ==========================================
-    const tentarScraping = async () => {
+    const buscarLinkSite = async () => {
       if (!config.url) return null;
-      if (config.url.includes("sua.tv") || config.url.endsWith(".m3u8")) {
-        return config.url;
-      }
-
+      if (config.url.includes("sua.tv") || config.url.endsWith(".m3u8")) return config.url; 
       try {
         const siteRes = await fetch(config.url, {
-          headers: {
-            "Referer": config.url,
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-          }
+          headers: { "Referer": config.url, "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" }
         });
         if (siteRes.ok) {
           const html = await siteRes.text();
@@ -138,52 +71,54 @@ export default {
     };
 
     // ==========================================
-    // FLUXO DE REDUNDÂNCIA E DEBUG
+    // 3. MONTAGEM DA MASTER PLAYLIST E DELEGAÇÃO PRA TV
     // ==========================================
     try {
-      let linkFinal = null;
-      let traceOrigem = "";
+      // Dispara as duas procuras ao mesmo tempo para o Worker responder em milissegundos
+      const [linksApi, linkSite] = await Promise.all([
+        config.provedor === "site" ? Promise.resolve([]) : buscarLinksAPI(),
+        (!config.provedor_fixo && config.url) ? buscarLinkSite() : Promise.resolve(null)
+      ]);
 
-      if (config.provedor === "site") {
-        linkFinal = await tentarScraping();
-        if (linkFinal) traceOrigem = "SITE";
-      } else {
-        // Tenta a API primeiro com a validação rigorosa
-        linkFinal = await tentarAPI();
+      let playlist = "#EXTM3U\n";
+      let bandwidth = 5000000; // Começa com banda alta para forçar a prioridade
+      let adicionouAlgo = false;
 
-        if (linkFinal) {
-          traceOrigem = "API";
-        }
-        // A API falhou! Aciona o Fallback para o Site
-        else if (!config.provedor_fixo && config.url) {
-          linkFinal = await tentarScraping();
-          if (linkFinal) traceOrigem = "SITE (Fallback)";
-        }
+      // Coloca os links da API no topo (Prioridade Máxima)
+      if (linksApi && linksApi.length > 0) {
+        linksApi.forEach(link => {
+          playlist += `#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=${bandwidth}\n${link}\n`;
+          bandwidth -= 1000000; // Diminui a banda para a TV entender a hierarquia
+          adicionouAlgo = true;
+        });
       }
 
-      if (linkFinal) {
-        return new Response(null, {
-          status: 302,
+      // Coloca o link do Site por último (Prioridade Mínima / Fallback)
+      if (linkSite) {
+        const urlSiteLimpa = linkSite.split('|')[0];
+        playlist += `#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1000000\n${urlSiteLimpa}\n`;
+        adicionouAlgo = true;
+      }
+
+      // Se achamos qualquer link (API ou Site), devolvemos o arquivo 200 OK
+      if (adicionouAlgo) {
+        return new Response(playlist, {
+          status: 200,
           headers: {
-            "Location": linkFinal.split('|')[0],
-            "X-Debug-Origem": traceOrigem // Aqui você pode checar de onde o Worker puxou o sinal!
+            "Content-Type": "application/vnd.apple.mpegurl",
+            "X-Debug-Origem": "PLAYLIST MULTIPLA (DELEGADO PRA TV)",
+            "Access-Control-Allow-Origin": "*"
           }
         });
       }
 
-      // ÚLTIMO RECURSO: Tenta o backup se tudo explodir
+      // 4. Último recurso (Salvação do arquivo estático)
       const githubRes = await fetch(`${GITHUB_RAW_BASE}/backup.txt`);
       const backupText = await githubRes.text();
       const match = backupText.match(new RegExp(`tvg-name="${config.nome}".*?\\n(http[^\\s\\|\\n]+)`, "i"));
 
       if (match) {
-        return new Response(null, {
-          status: 302,
-          headers: {
-            "Location": match[1],
-            "X-Debug-Origem": "GITHUB BACKUP"
-          }
-        });
+        return Response.redirect(match[1], 302);
       }
 
       return new Response("Nenhuma fonte online encontrada no momento.", { status: 404 });
