@@ -24,10 +24,10 @@ export default {
         console.log(`\n[DEBUG] 🔍 INICIANDO TESTE PARA: ${urlPura}`);
 
         // Bypass de segurança para IPs diretos
-        if (/^https?:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/.test(urlPura)) {
-          console.log(`[DEBUG] ⚠️ Bypass de IP ativado. Teste ignorado para: ${urlPura}`);
-          return true;
-        }
+        // if (/^https?:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/.test(urlPura)) {
+        //   console.log(`[DEBUG] ⚠️ Bypass de IP ativado. Teste ignorado para: ${urlPura}`);
+        //   return true;
+        // }
 
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 3500);
