@@ -15,65 +15,56 @@ export default {
     if (!config) return new Response("Canal não mapeado no repo.js", { status: 404 });
 
     // ==========================================
-    // HEALTH CHECK (O "TESTE DO POSTMAN" COM GET)
+    // HEALTH CHECK ADAPTADO PARA XTREAM CODES
     // ==========================================
     const testarLinkVivo = async (link) => {
       if (!link) return false;
       try {
         const urlPura = link.split('|')[0];
 
-        // BYPASS DE IP REMOVIDO: Todos os links passam pelo teste do GET.
-
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 3500); // 3.5s de tolerância máxima
+        const timeoutId = setTimeout(() => controller.abort(), 5000);
 
-        // Dispara o GET exato do Postman com o Range para ler apenas os cabeçalhos
         const res = await fetch(urlPura, {
           method: 'GET',
           headers: {
             'User-Agent': 'okhttp/4.9.2',
-            'Accept': '*/*',
-            'Range': 'bytes=0-500'
+            'Accept': '*/*'
           },
           signal: controller.signal
         });
 
         clearTimeout(timeoutId);
 
-        // O Segredo: Assim que receber a resposta, cancela o corpo (o vídeo em si) 
-        // para não desperdiçar banda do Worker nem travar a execução.
         if (res.ok && res.body) {
           res.body.cancel();
         }
 
-        // A REGRA DE OURO ATUALIZADA:
-        // 200/206 = Sucesso limpo.
-        // 403 = O Firewall da CDN bloqueou o Worker, mas confirmou que o vídeo EXISTE.
-        return res.status === 200 || res.status === 206 || res.status === 403;
+        return res.status === 200;
 
       } catch (e) {
-        // Se der Timeout ou falha de rede (ex: servidor desligado, 404 real)
         return false;
       }
     };
 
     // ==========================================
-    // MOTOR DA API (COM CORRIDA PARALELA)
+    // MOTOR DA API (BLINDADO CONTRA TIMEOUT E FALSOS POSITIVOS)
     // ==========================================
     const tentarAPI = async () => {
       const nomeBusca = config.nome_api || config.nome;
       try {
-        // Trava de segurança: Se a Exploud ficar infinita, o Worker aborta em 6s
+        // 1. Proteção contra o "Loading Infinito" da API
         const controllerAPI = new AbortController();
-        const idAPI = setTimeout(() => controllerAPI.abort(), 6000);
+        // Se a API não entregar o JSON em 3.5 segundos, aborta tudo!
+        const idAPI = setTimeout(() => controllerAPI.abort(), 3500);
 
         const apiRes = await fetch(`https://explouddev.com.br/api/canais/todos?search=${encodeURIComponent(nomeBusca)}`, {
           headers: { 'User-Agent': 'okhttp/4.9.2' },
           cf: { cacheTtl: 300 },
-          signal: controllerAPI.signal
+          signal: controllerAPI.signal // Liga o cronômetro aqui
         });
 
-        clearTimeout(idAPI);
+        clearTimeout(idAPI); // Sucesso, desliga o cronômetro
 
         if (apiRes.ok) {
           const apiData = await apiRes.json();
@@ -82,46 +73,38 @@ export default {
 
           if (canalApi && canalApi.sources?.length > 0) {
 
-            // Testador em Lote Assíncrono
             const testarEmParalelo = async (fontes) => {
               if (!fontes || fontes.length === 0) return null;
               try {
-                // Promise.any devolve o PRIMEIRO link que passar no testarLinkVivo (true)
                 return await Promise.any(fontes.map(async (fonte) => {
                   const vivo = await testarLinkVivo(fonte.link);
                   if (vivo) return fonte.link;
-                  throw new Error("Morto"); 
+                  throw new Error("Morto");
                 }));
               } catch (e) {
-                // Se cair no catch, significa que TODOS os links testados falharam no GET
-                return null; 
+                return null;
               }
             };
 
-            // 1. Testa os links da CDN preferida primeiro
+            // 1. Testa com filtro
             if (config.filtro_cdn) {
               const fontesFiltradas = canalApi.sources.filter(s => s.name.toLowerCase().includes(config.filtro_cdn.toLowerCase()));
               const linkFiltradoVencedor = await testarEmParalelo(fontesFiltradas);
               if (linkFiltradoVencedor) return linkFiltradoVencedor;
             }
 
-            // 2. Fallback interno da API: Testa outras CDNs (removendo sinal.cc)
+            // 2. Fallback interno
             const fontesValidas = canalApi.sources.filter(s => !s.link.includes("sinal.cc")).slice(0, 5);
             const linkValidoVencedor = await testarEmParalelo(fontesValidas);
             if (linkValidoVencedor) return linkValidoVencedor;
 
-            // Se os testes garantiram que não tem link vivo, NÃO retorna cegamente.
-            // Retornamos nulo para que o fluxo mestre acione o site de backup.
-            // A exceção é se o canal for exclusivo da API (sem site cadastrado).
-            if (!config.url || config.provedor_fixo) {
-              return canalApi.sources[0].link;
-            }
-            
+            // 🚨 REMOVIDO O "PASSO 3" DE CONFIANÇA CEGA.
+            // Se testamos e ninguém sobreviveu, retornamos nulo IMEDIATAMENTE.
             return null;
           }
         }
       } catch (e) {
-        // API da Exploud fora do ar (erro 500 ou Timeout)
+        // Se der timeout na API (AbortError) ou qualquer erro de rede
         return null;
       }
 
@@ -129,7 +112,7 @@ export default {
     };
 
     // ==========================================
-    // MOTOR DO SITE (SCRAPING DE BACKUP)
+    // MOTOR DO SITE (Sem Health Check, confia no scraper)
     // ==========================================
     const tentarScraping = async () => {
       if (!config.url) return null;
@@ -154,7 +137,7 @@ export default {
     };
 
     // ==========================================
-    // FLUXO DE REDUNDÂNCIA MESTRE
+    // FLUXO DE REDUNDÂNCIA E DEBUG
     // ==========================================
     try {
       let linkFinal = null;
@@ -162,56 +145,41 @@ export default {
 
       if (config.provedor === "site") {
         linkFinal = await tentarScraping();
-        if (linkFinal) traceOrigem = "SITE FORCADO"; // Acento removido
+        if (linkFinal) traceOrigem = "SITE";
       } else {
-        
-        // Passo 1: Busca e testa de forma rigorosa os links da API
+        // Tenta a API primeiro com a validação rigorosa
         linkFinal = await tentarAPI();
 
         if (linkFinal) {
-          traceOrigem = "API PRINCIPAL";
+          traceOrigem = "API";
         }
-        // Passo 2: Fallback Automático ativado se a API estiver fora do ar ou todos os links derem erro
+        // A API falhou! Aciona o Fallback para o Site
         else if (!config.provedor_fixo && config.url) {
           linkFinal = await tentarScraping();
-          if (linkFinal) traceOrigem = "SITE (Fallback Automatico)"; // Acento removido
+          if (linkFinal) traceOrigem = "SITE (Fallback)";
         }
       }
 
-      // 🚨 GERAÇÃO DA MINI-PLAYLIST (Resolve o ParserException)
       if (linkFinal) {
-        let urlPura = linkFinal.split('|')[0];
-        let miniPlaylist = `#EXTM3U\n`;
-
-        // Se o link veio do site, injetamos o Referer via tag oficial do VLC.
-        // A URL pura PERMANECE pura. Nada de |Referer= misturado nela.
-        if (traceOrigem.includes("SITE") && config.url) {
-          miniPlaylist += `#EXTVLCOPT:http-referrer=${config.url}\n`;
-        }
-
-        miniPlaylist += `#EXTINF:-1,${config.nome}\n${urlPura}`;
-
-        return new Response(miniPlaylist, {
-          status: 200,
+        return new Response(null, {
+          status: 302,
           headers: {
-            "Content-Type": "application/vnd.apple.mpegurl",
-            "X-Debug-Origem": traceOrigem,
-            "Access-Control-Allow-Origin": "*"
+            "Location": linkFinal.split('|')[0],
+            "X-Debug-Origem": traceOrigem // Aqui você pode checar de onde o Worker puxou o sinal!
           }
         });
       }
 
-      // Passo 3: Salvação estática do GitHub se o site também falhar
+      // ÚLTIMO RECURSO: Tenta o backup se tudo explodir
       const githubRes = await fetch(`${GITHUB_RAW_BASE}/backup.txt`);
       const backupText = await githubRes.text();
       const match = backupText.match(new RegExp(`tvg-name="${config.nome}".*?\\n(http[^\\s\\|\\n]+)`, "i"));
 
       if (match) {
-        const playlistBackup = `#EXTM3U\n#EXTINF:-1,${config.nome}\n${match[1]}`;
-        return new Response(playlistBackup, {
-          status: 200,
+        return new Response(null, {
+          status: 302,
           headers: {
-            "Content-Type": "application/vnd.apple.mpegurl",
+            "Location": match[1],
             "X-Debug-Origem": "GITHUB BACKUP"
           }
         });
