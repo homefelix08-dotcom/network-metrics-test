@@ -15,7 +15,7 @@ export default {
     if (!config) return new Response("Canal não mapeado no repo.js", { status: 404 });
 
     // ==========================================
-    // HEALTH CHECK (COM RAIO-X / CONSOLE LOG)
+    // HEALTH CHECK (A REGRA DE OURO DO 403)
     // ==========================================
     const testarLinkVivo = async (link) => {
       if (!link) return false;
@@ -24,55 +24,44 @@ export default {
         console.log(`\n[DEBUG] 🔍 INICIANDO TESTE PARA: ${urlPura}`);
 
         // Bypass de segurança para IPs diretos
-        // if (/^https?:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/.test(urlPura)) {
-        //   console.log(`[DEBUG] ⚠️ Bypass de IP ativado. Teste ignorado para: ${urlPura}`);
-        //   return true;
-        // }
+        if (/^https?:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/.test(urlPura)) {
+          return true;
+        }
 
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 3500);
 
-        // Dispara o GET com Range para podermos ler o corpo com segurança
         const res = await fetch(urlPura, {
           method: 'GET',
           headers: {
             'User-Agent': 'okhttp/4.9.2',
             'Accept': '*/*',
-            'Range': 'bytes=0-500' // Essencial para o debug ler o texto sem travar
+            'Range': 'bytes=0-500' 
           },
           signal: controller.signal
         });
 
         clearTimeout(timeoutId);
 
-        // LOG 1: STATUS HTTP
         console.log(`[DEBUG] 📡 Status HTTP: ${res.status} ${res.statusText}`);
 
-        // LOG 2: CABEÇALHOS DA RESPOSTA (Ajuda a ver se é bloqueio da Cloudflare)
-        const headersObj = {};
-        res.headers.forEach((value, key) => { headersObj[key] = value; });
-        console.log(`[DEBUG] 📋 Headers Retornados:`, JSON.stringify(headersObj));
-
-        // LOG 3: CORPO DA RESPOSTA (A Prova Definitiva)
-        try {
-          const texto = await res.text();
-          const preview = texto.substring(0, 150).replace(/\n/g, ' '); // Limpa quebras de linha
-          console.log(`[DEBUG] 📦 Payload (Primeiros 150 bytes): ${preview}...`);
-        } catch (err) {
-          console.log(`[DEBUG] ❌ Erro ao ler o payload: ${err.message}`);
+        if (res.ok && res.body) {
+          res.body.cancel();
         }
 
-        // 200 OK ou 206 Partial Content (devido ao Range) significam sucesso
-        return res.status === 200 || res.status === 206;
+        // A SUA DESCOBERTA:
+        // 200/206 = Sucesso limpo.
+        // 403 = Sucesso sujo. O WAF bloqueou o ping do Worker, mas provou que o vídeo EXISTE! A TV vai rodar.
+        return res.status === 200 || res.status === 206 || res.status === 403;
 
       } catch (e) {
-        console.log(`[DEBUG] 🚨 Falha de Rede ou Timeout no link: ${link} -> Erro: ${e.message}`);
+        console.log(`[DEBUG] 🚨 Falha de Rede ou Timeout.`);
         return false;
       }
     };
 
     // ==========================================
-    // MOTOR DA API (COM CORRIDA PARALELA)
+    // MOTOR DA API
     // ==========================================
     const tentarAPI = async () => {
       const nomeBusca = config.nome_api || config.nome;
@@ -166,9 +155,8 @@ export default {
 
       if (config.provedor === "site") {
         linkFinal = await tentarScraping();
-        if (linkFinal) traceOrigem = "SITE FORÇADO";
+        if (linkFinal) traceOrigem = "SITE FORCADO";
       } else {
-        
         linkFinal = await tentarAPI();
 
         if (linkFinal) {
@@ -176,16 +164,29 @@ export default {
         }
         else if (!config.provedor_fixo && config.url) {
           linkFinal = await tentarScraping();
-          if (linkFinal) traceOrigem = "SITE (Fallback Automático)";
+          if (linkFinal) traceOrigem = "SITE (Fallback Automatico)"; // Acento removido para evitar TypeError
         }
       }
 
+      // MONTAGEM DA MINI-PLAYLIST PARA A TV (Resolve o ParserException e o Referer)
       if (linkFinal) {
-        return new Response(null, {
-          status: 302,
+        let urlPura = linkFinal.split('|')[0];
+        let miniPlaylist = `#EXTM3U\n`;
+
+        // Preserva o Referer se o link vier do site
+        if (traceOrigem.includes("SITE") && config.url) {
+          miniPlaylist += `#EXTVLCOPT:http-referrer=${config.url}\n`;
+          urlPura = `${urlPura}|Referer=${config.url}`;
+        }
+
+        miniPlaylist += `#EXTINF:-1,${config.nome}\n${urlPura}`;
+
+        return new Response(miniPlaylist, {
+          status: 200,
           headers: {
-            "Location": linkFinal.split('|')[0],
-            "X-Debug-Origem": traceOrigem 
+            "Content-Type": "application/vnd.apple.mpegurl",
+            "X-Debug-Origem": traceOrigem,
+            "Access-Control-Allow-Origin": "*"
           }
         });
       }
@@ -195,10 +196,11 @@ export default {
       const match = backupText.match(new RegExp(`tvg-name="${config.nome}".*?\\n(http[^\\s\\|\\n]+)`, "i"));
 
       if (match) {
-        return new Response(null, {
-          status: 302,
+        const playlistBackup = `#EXTM3U\n#EXTINF:-1,${config.nome}\n${match[1]}`;
+        return new Response(playlistBackup, {
+          status: 200,
           headers: {
-            "Location": match[1],
+            "Content-Type": "application/vnd.apple.mpegurl",
             "X-Debug-Origem": "GITHUB BACKUP"
           }
         });
