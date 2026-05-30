@@ -64,7 +64,7 @@ export default {
     const tentarAPI = async () => {
       const nomeBusca = config.nome_api || config.nome;
       console.log(`[⚙️ API] Buscando '${nomeBusca}' na Exploud...`);
-      
+
       try {
         const controllerAPI = new AbortController();
         const idAPI = setTimeout(() => controllerAPI.abort(), 3500);
@@ -72,10 +72,10 @@ export default {
         const apiRes = await fetch(`https://explouddev.com.br/api/canais/todos?search=${encodeURIComponent(nomeBusca)}`, {
           headers: { 'User-Agent': 'okhttp/4.9.2' },
           cf: { cacheTtl: 300 },
-          signal: controllerAPI.signal 
+          signal: controllerAPI.signal
         });
 
-        clearTimeout(idAPI); 
+        clearTimeout(idAPI);
 
         if (apiRes.ok) {
           const apiData = await apiRes.json();
@@ -102,7 +102,7 @@ export default {
             if (config.filtro_cdn) {
               const fontesFiltradas = canalApi.sources.filter(s => s.name.toLowerCase().includes(config.filtro_cdn.toLowerCase()));
               if (fontesFiltradas.length > 0) console.log(`[⚙️ API] Aplicando filtro de CDN: ${config.filtro_cdn}`);
-              
+
               const linkFiltradoVencedor = await testarEmParalelo(fontesFiltradas);
               if (linkFiltradoVencedor) {
                 console.log(`[🏆 VENCEDOR API] Link filtrado aprovado!`);
@@ -118,13 +118,24 @@ export default {
               return linkValidoVencedor;
             }
 
+            // ==========================================
+            // 🚨 3. O RETORNO DA CONFIANÇA CEGA
+            // ==========================================
+            // Se chegamos aqui, todos os links deram erro/404 no Health Check.
+            // Mas se o canal NÃO TEM SITE DE BACKUP (ou é fixo da API), nós não temos nada a perder.
+            // Mandamos o 1º link às cegas e deixamos a TV tentar a sorte contra o Falso 404.
+            if (!config.url || config.provedor_fixo) {
+              console.log(`[⚠️ ALERTA] Testes falharam (Possível Falso 404). Canal sem site. Enviando às cegas!`);
+              return canalApi.sources[0].link;
+            }
+
             console.log(`[⚠️ ALERTA] Todos os links da API testados estão mortos.`);
             return null;
           } else {
-             console.log(`[⚠️ ALERTA] Canal não encontrado no JSON da API.`);
+            console.log(`[⚠️ ALERTA] Canal não encontrado no JSON da API.`);
           }
         } else {
-           console.log(`[🚨 ERRO API] Exploud retornou HTTP ${apiRes.status}`);
+          console.log(`[🚨 ERRO API] Exploud retornou HTTP ${apiRes.status}`);
         }
       } catch (e) {
         console.log(`[🚨 ERRO API] Falha na comunicação com a Exploud: ${e.message}`);
@@ -165,11 +176,11 @@ export default {
             console.log(`[❌ SCRAPER] Nenhum link .m3u8 encontrado no HTML.`);
           }
         } else {
-           console.log(`[❌ SCRAPER] Site retornou HTTP ${siteRes.status}`);
+          console.log(`[❌ SCRAPER] Site retornou HTTP ${siteRes.status}`);
         }
-      } catch (e) { 
+      } catch (e) {
         console.log(`[🚨 ERRO SCRAPER] Falha ao tentar acessar o site: ${e.message}`);
-        return null; 
+        return null;
       }
       return null;
     };
@@ -205,7 +216,7 @@ export default {
           status: 302,
           headers: {
             "Location": linkFinal.split('|')[0],
-            "X-Debug-Origem": traceOrigem 
+            "X-Debug-Origem": traceOrigem
           }
         });
       }
