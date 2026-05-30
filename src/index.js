@@ -20,6 +20,9 @@ export default {
       return new Response("Canal não mapeado no repo.js", { status: 404 });
     }
 
+    // Variável do "bolso" para salvar a pátria no Apocalipse Duplo
+    let linkReservaAPI = null;
+
     // ==========================================
     // HEALTH CHECK ADAPTADO PARA XTREAM CODES
     // ==========================================
@@ -83,7 +86,11 @@ export default {
             apiData.find(c => c.name.toLowerCase().includes(nomeBusca.toLowerCase()));
 
           if (canalApi && canalApi.sources?.length > 0) {
-            console.log(`[⚙️ API] Encontradas ${canalApi.sources.length} fontes. Iniciando testes paralelos...`);
+            
+            // 🚨 GUARDA O LINK NO BOLSO ANTES DOS TESTES
+            linkReservaAPI = canalApi.sources[0].link;
+            
+            console.log(`[⚙️ API] Encontradas ${canalApi.sources.length} fontes. Guardando a 1ª no bolso e iniciando testes...`);
 
             const testarEmParalelo = async (fontes) => {
               if (!fontes || fontes.length === 0) return null;
@@ -118,12 +125,7 @@ export default {
               return linkValidoVencedor;
             }
 
-            // ==========================================
-            // 🚨 3. O RETORNO DA CONFIANÇA CEGA
-            // ==========================================
-            // Se chegamos aqui, todos os links deram erro/404 no Health Check.
-            // Mas se o canal NÃO TEM SITE DE BACKUP (ou é fixo da API), nós não temos nada a perder.
-            // Mandamos o 1º link às cegas e deixamos a TV tentar a sorte contra o Falso 404.
+            // 3. Confiando às cegas para canais sem site
             if (!config.url || config.provedor_fixo) {
               console.log(`[⚠️ ALERTA] Testes falharam (Possível Falso 404). Canal sem site. Enviando às cegas!`);
               return canalApi.sources[0].link;
@@ -208,6 +210,15 @@ export default {
           linkFinal = await tentarScraping();
           if (linkFinal) traceOrigem = "SITE (Fallback)";
         }
+      }
+
+      // ==========================================
+      // 🚨 MÁGICA: O APOCALIPSE DUPLO
+      // ==========================================
+      if (!linkFinal && linkReservaAPI) {
+        console.log(`[⚠️ APOCALIPSE] Site caiu e testes falharam. Tirando API do bolso às cegas!`);
+        linkFinal = linkReservaAPI;
+        traceOrigem = "API (Bolso / As Cegas)";
       }
 
       if (linkFinal) {
