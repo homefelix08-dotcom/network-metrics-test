@@ -40,7 +40,7 @@ export default {
           res.body.cancel();
         }
 
-        return res.status === 200;
+        return res.status === 200 || res.status === 206 ||res.status === 403;
 
       } catch (e) {
         return false;
