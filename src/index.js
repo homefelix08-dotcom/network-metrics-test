@@ -20,33 +20,27 @@ export default {
       return new Response("Canal não mapeado no repo.js", { status: 404 });
     }
 
+    // Variável do "bolso" para salvar a pátria no Apocalipse Duplo
     let linkReservaAPI = null;
 
     // ==========================================
-    // HEALTH CHECK (SPOOFING DE CABEÇALHOS - TIVIMATE)
+    // HEALTH CHECK ADAPTADO PARA XTREAM CODES
     // ==========================================
-    const testarLinkVivo = async (link, referer = null) => {
+    const testarLinkVivo = async (link) => {
       if (!link) return false;
       try {
         const urlPura = link.split('|')[0];
-        console.log(`[🔍 TESTE SPOOFING] Pingando: ${urlPura.substring(0, 50)}...`);
+        console.log(`[🔍 TESTE] Pingando: ${urlPura.substring(0, 50)}...`);
 
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 5000);
 
-        // 🚨 SPOOFING: Clona os cabeçalhos reais da sua requisição e injeta a identidade do TiviMate
-        const newHeaders = new Headers(request.headers);
-        newHeaders.set('User-Agent', 'TiviMate/4.7.0 (Linux; Android 11)');
-        newHeaders.set('Accept', '*/*');
-        newHeaders.set('Range', 'bytes=0-500'); // Trava de segurança obrigatória para o Worker não baixar o vídeo
-
-        if (referer) {
-          newHeaders.set('Referer', referer);
-        }
-
         const res = await fetch(urlPura, {
           method: 'GET',
-          headers: newHeaders,
+          headers: {
+            'User-Agent': 'okhttp/4.9.2',
+            'Accept': '*/*'
+          },
           signal: controller.signal
         });
 
@@ -56,20 +50,19 @@ export default {
           res.body.cancel();
         }
 
-        // Confiamos cegamente no que o servidor responder para a nossa falsificação
         const isVivo = res.status === 200 || res.status === 206 || res.status === 403;
         console.log(`[📡 STATUS] HTTP ${res.status} -> ${isVivo ? '✅ APROVADO' : '❌ DESCARTADO'} (${urlPura.substring(0, 40)}...)`);
 
         return isVivo;
 
       } catch (e) {
-        console.log(`[🚨 TIMEOUT/FALHA] Teste falhou. Erro: ${e.message}`);
+        console.log(`[🚨 TIMEOUT/FALHA] Teste falhou para o link: ${link.substring(0, 40)}... Erro: ${e.message}`);
         return false;
       }
     };
 
     // ==========================================
-    // MOTOR DA API
+    // MOTOR DA API (BLINDADO CONTRA TIMEOUT E FALSOS POSITIVOS)
     // ==========================================
     const tentarAPI = async () => {
       const nomeBusca = config.nome_api || config.nome;
@@ -94,8 +87,10 @@ export default {
 
           if (canalApi && canalApi.sources?.length > 0) {
             
+            // 🚨 GUARDA O LINK NO BOLSO ANTES DOS TESTES
             linkReservaAPI = canalApi.sources[0].link;
-            console.log(`[⚙️ API] Encontradas ${canalApi.sources.length} fontes. Iniciando testes de Spoofing...`);
+            
+            console.log(`[⚙️ API] Encontradas ${canalApi.sources.length} fontes. Guardando a 1ª no bolso e iniciando testes...`);
 
             const testarEmParalelo = async (fontes) => {
               if (!fontes || fontes.length === 0) return null;
@@ -110,6 +105,7 @@ export default {
               }
             };
 
+            // 1. Testa com filtro
             if (config.filtro_cdn) {
               const fontesFiltradas = canalApi.sources.filter(s => s.name.toLowerCase().includes(config.filtro_cdn.toLowerCase()));
               if (fontesFiltradas.length > 0) console.log(`[⚙️ API] Aplicando filtro de CDN: ${config.filtro_cdn}`);
@@ -121,6 +117,7 @@ export default {
               }
             }
 
+            // 2. Fallback interno
             const fontesValidas = canalApi.sources.filter(s => !s.link.includes("sinal.cc")).slice(0, 5);
             const linkValidoVencedor = await testarEmParalelo(fontesValidas);
             if (linkValidoVencedor) {
@@ -128,7 +125,13 @@ export default {
               return linkValidoVencedor;
             }
 
-            console.log(`[⚠️ ALERTA] Mesmo com Spoofing, o servidor bloqueou ou deu 404 em todos os links.`);
+            // 3. Confiando às cegas para canais sem site
+            if (!config.url || config.provedor_fixo) {
+              console.log(`[⚠️ ALERTA] Testes falharam (Possível Falso 404). Canal sem site. Enviando às cegas!`);
+              return canalApi.sources[0].link;
+            }
+
+            console.log(`[⚠️ ALERTA] Todos os links da API testados estão mortos.`);
             return null;
           } else {
             console.log(`[⚠️ ALERTA] Canal não encontrado no JSON da API.`);
@@ -145,15 +148,15 @@ export default {
     };
 
     // ==========================================
-    // MOTOR DO SITE 
+    // MOTOR DO SITE (Sem Health Check, confia no scraper)
     // ==========================================
     const tentarScraping = async () => {
       if (!config.url) {
-        console.log(`[🕷️ SCRAPER] Ignorado. Nenhuma URL configurada.`);
+        console.log(`[🕷️ SCRAPER] Ignorado. Nenhuma URL de site configurada.`);
         return null;
       }
       if (config.url.includes("sua.tv") || config.url.endsWith(".m3u8")) {
-        console.log(`[🕷️ SCRAPER] URL direta detectada. Retornando.`);
+        console.log(`[🕷️ SCRAPER] URL direta detectada. Retornando imediatamente.`);
         return config.url;
       }
 
@@ -168,22 +171,11 @@ export default {
         if (siteRes.ok) {
           const html = await siteRes.text();
           const m3u8Match = html.match(/(https?:\/\/[^\s"\'<>]+?\.m3u8[^"\'<>]*)/);
-          
           if (m3u8Match) {
-            const linkScrapado = m3u8Match[1];
-            console.log(`[✅ SCRAPER] Link .m3u8 extraído. Validando integridade...`);
-            
-            const videoEstaVivo = await testarLinkVivo(linkScrapado, config.url);
-            
-            if (videoEstaVivo) {
-              console.log(`[🏆 VENCEDOR SITE] O link interno do site está online.`);
-              return linkScrapado;
-            } else {
-              console.log(`[❌ SCRAPER] Link do vídeo lá dentro está quebrado.`);
-              return null;
-            }
+            console.log(`[✅ SCRAPER] Link .m3u8 extraído com sucesso!`);
+            return m3u8Match[1];
           } else {
-            console.log(`[❌ SCRAPER] Nenhum link .m3u8 encontrado.`);
+            console.log(`[❌ SCRAPER] Nenhum link .m3u8 encontrado no HTML.`);
           }
         } else {
           console.log(`[❌ SCRAPER] Site retornou HTTP ${siteRes.status}`);
@@ -196,7 +188,7 @@ export default {
     };
 
     // ==========================================
-    // FLUXO DE REDUNDÂNCIA MESTRE
+    // FLUXO DE REDUNDÂNCIA E DEBUG
     // ==========================================
     try {
       let linkFinal = null;
@@ -207,66 +199,56 @@ export default {
         linkFinal = await tentarScraping();
         if (linkFinal) traceOrigem = "SITE";
       } else {
-        console.log(`[🚦 ROTA] Tentando API Principal com Spoofing...`);
+        console.log(`[🚦 ROTA] Tentando API Principal...`);
         linkFinal = await tentarAPI();
 
         if (linkFinal) {
           traceOrigem = "API";
         }
         else if (!config.provedor_fixo && config.url) {
-          console.log(`[🔄 FALLBACK] Spoofing falhou. Acionando pneu de estepe (SITE)...`);
+          console.log(`[🔄 FALLBACK] API falhou. Acionando pneu de estepe (SITE)...`);
           linkFinal = await tentarScraping();
           if (linkFinal) traceOrigem = "SITE (Fallback)";
         }
       }
 
+      // ==========================================
+      // 🚨 MÁGICA: O APOCALIPSE DUPLO
+      // ==========================================
       if (!linkFinal && linkReservaAPI) {
-        console.log(`[⚠️ APOCALIPSE] Site caiu e spoofing falhou. Tirando API do bolso às cegas!`);
+        console.log(`[⚠️ APOCALIPSE] Site caiu e testes falharam. Tirando API do bolso às cegas!`);
         linkFinal = linkReservaAPI;
         traceOrigem = "API (Bolso / As Cegas)";
       }
 
       if (linkFinal) {
         console.log(`[🎯 ROTEAMENTO FINAL] Sucesso! Mandando TV para: ${traceOrigem}`);
-        
-        let urlPura = linkFinal.split('|')[0];
-        let miniPlaylist = `#EXTM3U\n`;
-
-        if (traceOrigem.includes("SITE") && config.url) {
-          miniPlaylist += `#EXTVLCOPT:http-referrer=${config.url}\n`;
-        }
-
-        miniPlaylist += `#EXTINF:-1,${config.nome}\n${urlPura}`;
-
-        return new Response(miniPlaylist, {
-          status: 200,
+        return new Response(null, {
+          status: 302,
           headers: {
-            "Content-Type": "application/vnd.apple.mpegurl",
-            "X-Debug-Origem": traceOrigem,
-            "Access-Control-Allow-Origin": "*"
+            "Location": linkFinal.split('|')[0],
+            "X-Debug-Origem": traceOrigem
           }
         });
       }
 
-      console.log(`[🆘 EMERGÊNCIA] Tentando buscar backup no GitHub...`);
+      console.log(`[🆘 EMERGÊNCIA] Tudo falhou. Tentando buscar backup no GitHub...`);
       const githubRes = await fetch(`${GITHUB_RAW_BASE}/backup.txt`);
       const backupText = await githubRes.text();
       const match = backupText.match(new RegExp(`tvg-name="${config.nome}".*?\\n(http[^\\s\\|\\n]+)`, "i"));
 
       if (match) {
         console.log(`[🛡️ BACKUP] Link estático encontrado no GitHub!`);
-        
-        const playlistBackup = `#EXTM3U\n#EXTINF:-1,${config.nome}\n${match[1]}`;
-        return new Response(playlistBackup, {
-          status: 200,
+        return new Response(null, {
+          status: 302,
           headers: {
-            "Content-Type": "application/vnd.apple.mpegurl",
+            "Location": match[1],
             "X-Debug-Origem": "GITHUB BACKUP"
           }
         });
       }
 
-      console.log(`[💀 FIM DA LINHA] Nenhum link vivo encontrado.`);
+      console.log(`[💀 FIM DA LINHA] Nenhum link vivo encontrado para o canal.`);
       return new Response("Nenhuma fonte online encontrada no momento.", { status: 404 });
     } catch (e) {
       console.log(`[💥 CRASH INTERNO] Erro fatal no script: ${e.message}`);
