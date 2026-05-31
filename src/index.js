@@ -21,23 +21,29 @@ export default {
     }
 
     // ==========================================
-    // HEALTH CHECK ADAPTADO PARA XTREAM CODES
+    // HEALTH CHECK (SPOOFING DE TIVIMATE - AGORA USADO NO SITE)
     // ==========================================
-    const testarLinkVivo = async (link) => {
+    const testarLinkVivo = async (link, referer = null) => {
       if (!link) return false;
       try {
         const urlPura = link.split('|')[0];
-        console.log(`[🔍 TESTE] Pingando: ${urlPura.substring(0, 50)}...`);
+        console.log(`[🔍 TESTE SPOOFING] Pingando: ${urlPura.substring(0, 50)}...`);
 
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 5000);
 
+        const newHeaders = new Headers(request.headers);
+        newHeaders.set('User-Agent', 'TiviMate/4.7.0 (Linux; Android 11)');
+        newHeaders.set('Accept', '*/*');
+        newHeaders.set('Range', 'bytes=0-500');
+
+        if (referer) {
+          newHeaders.set('Referer', referer);
+        }
+
         const res = await fetch(urlPura, {
           method: 'GET',
-          headers: {
-            'User-Agent': 'okhttp/4.9.2',
-            'Accept': '*/*'
-          },
+          headers: newHeaders,
           signal: controller.signal
         });
 
@@ -59,7 +65,59 @@ export default {
     };
 
     // ==========================================
-    // MOTOR DA API (BLINDADO CONTRA TIMEOUT E FALSOS POSITIVOS)
+    // MOTOR DO SITE (AGORA É A PRIORIDADE MÁXIMA)
+    // ==========================================
+    const tentarScraping = async () => {
+      if (!config.url) {
+        console.log(`[🕷️ SCRAPER] Ignorado. Nenhuma URL de site configurada.`);
+        return null;
+      }
+      if (config.url.includes("sua.tv") || config.url.endsWith(".m3u8")) {
+        console.log(`[🕷️ SCRAPER] URL direta detectada. Validando integridade...`);
+        const vivo = await testarLinkVivo(config.url);
+        return vivo ? config.url : null;
+      }
+
+      console.log(`[🕷️ SCRAPER] Iniciando raspagem em: ${config.url}`);
+      try {
+        const siteRes = await fetch(config.url, {
+          headers: {
+            "Referer": config.url,
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+          }
+        });
+        
+        if (siteRes.ok) {
+          const html = await siteRes.text();
+          const m3u8Match = html.match(/(https?:\/\/[^\s"\'<>]+?\.m3u8[^"\'<>]*)/);
+          
+          if (m3u8Match) {
+            const linkScrapado = m3u8Match[1];
+            console.log(`[✅ SCRAPER] Link .m3u8 extraído. Validando com spoofing...`);
+            
+            const videoEstaVivo = await testarLinkVivo(linkScrapado, config.url);
+            if (videoEstaVivo) {
+              console.log(`[🏆 VENCEDOR SITE] O link interno do site está online e aprovado.`);
+              return linkScrapado;
+            } else {
+              console.log(`[❌ SCRAPER] Link do vídeo lá dentro retornou erro no ping.`);
+              return null;
+            }
+          } else {
+            console.log(`[❌ SCRAPER] Nenhum link .m3u8 encontrado no HTML.`);
+          }
+        } else {
+          console.log(`[❌ SCRAPER] Site retornou HTTP ${siteRes.status}`);
+        }
+      } catch (e) {
+        console.log(`[🚨 ERRO SCRAPER] Falha ao acessar o site: ${e.message}`);
+        return null;
+      }
+      return null;
+    };
+
+    // ==========================================
+    // MOTOR DA API (AGORA É O FALLBACK CEGO)
     // ==========================================
     const tentarAPI = async () => {
       const nomeBusca = config.nome_api || config.nome;
@@ -83,54 +141,26 @@ export default {
             apiData.find(c => c.name.toLowerCase().includes(nomeBusca.toLowerCase()));
 
           if (canalApi && canalApi.sources?.length > 0) {
-            console.log(`[⚙️ API] Encontradas ${canalApi.sources.length} fontes. Iniciando testes paralelos...`);
+            console.log(`[⚙️ API] Encontradas ${canalApi.sources.length} fontes. Retornando primeira válida sem testar...`);
 
-            const testarEmParalelo = async (fontes) => {
-              if (!fontes || fontes.length === 0) return null;
-              try {
-                return await Promise.any(fontes.map(async (fonte) => {
-                  const vivo = await testarLinkVivo(fonte.link);
-                  if (vivo) return fonte.link;
-                  throw new Error("Morto");
-                }));
-              } catch (e) {
-                return null;
-              }
-            };
-
-            // 1. Testa com filtro
+            // Filtro de CDN
             if (config.filtro_cdn) {
               const fontesFiltradas = canalApi.sources.filter(s => s.name.toLowerCase().includes(config.filtro_cdn.toLowerCase()));
-              if (fontesFiltradas.length > 0) console.log(`[⚙️ API] Aplicando filtro de CDN: ${config.filtro_cdn}`);
-
-              const linkFiltradoVencedor = await testarEmParalelo(fontesFiltradas);
-              if (linkFiltradoVencedor) {
-                console.log(`[🏆 VENCEDOR API] Link filtrado aprovado!`);
-                return linkFiltradoVencedor;
+              if (fontesFiltradas.length > 0) {
+                console.log(`[🏆 VENCEDOR API] Link filtrado cego aprovado!`);
+                return fontesFiltradas[0].link;
               }
             }
 
-            // 2. Fallback interno
-            const fontesValidas = canalApi.sources.filter(s => !s.link.includes("sinal.cc")).slice(0, 5);
-            const linkValidoVencedor = await testarEmParalelo(fontesValidas);
-            if (linkValidoVencedor) {
-              console.log(`[🏆 VENCEDOR API] Link padrão aprovado!`);
-              return linkValidoVencedor;
+            // Fallback interno da API
+            const fontesValidas = canalApi.sources.filter(s => !s.link.includes("sinal.cc"));
+            if (fontesValidas.length > 0) {
+              console.log(`[🏆 VENCEDOR API] Link padrão cego aprovado!`);
+              return fontesValidas[0].link;
             }
 
-            // ==========================================
-            // 🚨 3. O RETORNO DA CONFIANÇA CEGA
-            // ==========================================
-            // Se chegamos aqui, todos os links deram erro/404 no Health Check.
-            // Mas se o canal NÃO TEM SITE DE BACKUP (ou é fixo da API), nós não temos nada a perder.
-            // Mandamos o 1º link às cegas e deixamos a TV tentar a sorte contra o Falso 404.
-            if (!config.url || config.provedor_fixo) {
-              console.log(`[⚠️ ALERTA] Testes falharam (Possível Falso 404). Canal sem site. Enviando às cegas!`);
-              return canalApi.sources[0].link;
-            }
-
-            console.log(`[⚠️ ALERTA] Todos os links da API testados estão mortos.`);
-            return null;
+            // Se sobrar só lixo, manda o primeiro mesmo
+            return canalApi.sources[0].link;
           } else {
             console.log(`[⚠️ ALERTA] Canal não encontrado no JSON da API.`);
           }
@@ -146,72 +176,30 @@ export default {
     };
 
     // ==========================================
-    // MOTOR DO SITE (Sem Health Check, confia no scraper)
-    // ==========================================
-    const tentarScraping = async () => {
-      if (!config.url) {
-        console.log(`[🕷️ SCRAPER] Ignorado. Nenhuma URL de site configurada.`);
-        return null;
-      }
-      if (config.url.includes("sua.tv") || config.url.endsWith(".m3u8")) {
-        console.log(`[🕷️ SCRAPER] URL direta detectada. Retornando imediatamente.`);
-        return config.url;
-      }
-
-      console.log(`[🕷️ SCRAPER] Iniciando raspagem em: ${config.url}`);
-      try {
-        const siteRes = await fetch(config.url, {
-          headers: {
-            "Referer": config.url,
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-          }
-        });
-        if (siteRes.ok) {
-          const html = await siteRes.text();
-          const m3u8Match = html.match(/(https?:\/\/[^\s"\'<>]+?\.m3u8[^"\'<>]*)/);
-          if (m3u8Match) {
-            console.log(`[✅ SCRAPER] Link .m3u8 extraído com sucesso!`);
-            return m3u8Match[1];
-          } else {
-            console.log(`[❌ SCRAPER] Nenhum link .m3u8 encontrado no HTML.`);
-          }
-        } else {
-          console.log(`[❌ SCRAPER] Site retornou HTTP ${siteRes.status}`);
-        }
-      } catch (e) {
-        console.log(`[🚨 ERRO SCRAPER] Falha ao tentar acessar o site: ${e.message}`);
-        return null;
-      }
-      return null;
-    };
-
-    // ==========================================
-    // FLUXO DE REDUNDÂNCIA E DEBUG
+    // FLUXO DE REDUNDÂNCIA INVERTIDO
     // ==========================================
     try {
       let linkFinal = null;
       let traceOrigem = "";
 
-      if (config.provedor === "site") {
-        console.log(`[🚦 ROTA] Canal forçado a usar o SITE.`);
-        linkFinal = await tentarScraping();
-        if (linkFinal) traceOrigem = "SITE";
-      } else {
-        console.log(`[🚦 ROTA] Tentando API Principal...`);
-        linkFinal = await tentarAPI();
+      console.log(`[🚦 ROTA] Tentando SITE como prioridade (com validação)...`);
+      linkFinal = await tentarScraping();
 
+      if (linkFinal) {
+        traceOrigem = "SITE PRINCIPAL";
+      } else {
+        console.log(`[🔄 FALLBACK] Site falhou ou canal não possui url. Tentando API às cegas...`);
+        linkFinal = await tentarAPI();
+        
         if (linkFinal) {
-          traceOrigem = "API";
-        }
-        else if (!config.provedor_fixo && config.url) {
-          console.log(`[🔄 FALLBACK] API falhou. Acionando pneu de estepe (SITE)...`);
-          linkFinal = await tentarScraping();
-          if (linkFinal) traceOrigem = "SITE (Fallback)";
+          traceOrigem = "API (Fallback Cego)";
         }
       }
 
       if (linkFinal) {
         console.log(`[🎯 ROTEAMENTO FINAL] Sucesso! Mandando TV para: ${traceOrigem}`);
+        
+        // Retorno Intacto: 302 Redirect Exato
         return new Response(null, {
           status: 302,
           headers: {
