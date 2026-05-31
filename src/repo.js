@@ -107,7 +107,7 @@ export default [
     {
         "nome": "AXN",
         "tvg_id": "AXN",
-        "url": `${siteBaseUrl}/axn/`,
+        "url": `https://6embeddecanais.xyz/axn/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/axn.png",
         "categoria": "Filmes e Séries",
         "provedor": "api",
