@@ -21,89 +21,52 @@ export default {
     }
 
     // ==========================================
-    // MOTOR DO SITE (COM ROTAÇÃO AUTOMÁTICA DE DOMÍNIO)
+    // HEALTH CHECK (SPOOFING DE TIVIMATE)
     // ==========================================
-    const tentarScraping = async () => {
-      if (!config.url) {
-        console.log(`[🕷️ SCRAPER] Ignorado. Nenhuma URL configurada.`);
-        return null;
-      }
-      if (config.url.includes("sua.tv") || config.url.endsWith(".m3u8")) {
-        console.log(`[🕷️ SCRAPER] URL direta detectada. Validando integridade...`);
-        const vivo = await testarLinkVivo(config.url);
-        return vivo ? config.url : null;
-      }
+    const testarLinkVivo = async (link, referer = null) => {
+      if (!link) return false;
+      try {
+        const urlPura = link.split('|')[0];
+        console.log(`[🔍 TESTE] Pingando: ${urlPura.substring(0, 50)}...`);
 
-      // 🚨 MÁGICA DA ROTAÇÃO: Extrai o número do domínio atual
-      const matchDominio = config.url.match(/https:\/\/(\d+)embeddecanais/);
-      const numeroBase = matchDominio ? parseInt(matchDominio[1]) : null;
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000);
 
-      // Se for o embeddecanais, ele ganha o direito a 3 tentativas (o atual + 2 gerações futuras)
-      const tentativasMaximas = numeroBase ? 3 : 1;
+        const newHeaders = new Headers(request.headers);
+        newHeaders.set('User-Agent', 'TiviMate/4.7.0 (Linux; Android 11)');
+        newHeaders.set('Accept', '*/*');
+        newHeaders.set('Range', 'bytes=0-500');
 
-      for (let i = 0; i < tentativasMaximas; i++) {
-        let urlTentativa = config.url;
-
-        // Se falhou na tentativa anterior (i > 0), incrementa o número e atualiza a URL
-        if (numeroBase && i > 0) {
-          const novoNumero = numeroBase + i;
-          urlTentativa = config.url.replace(`https://${numeroBase}embed`, `https://${novoNumero}embed`);
-          console.log(`[🔄 ROTAÇÃO] Domínio falhou. Caçando próxima geração: ${urlTentativa}`);
-        } else {
-          console.log(`[🕷️ SCRAPER] Iniciando raspagem em: ${urlTentativa}`);
+        if (referer) {
+          newHeaders.set('Referer', referer);
         }
 
-        try {
-          // Trava de tempo de 3 segundos para não segurar a TV se o domínio estiver morto
-          const controllerScraper = new AbortController();
-          const idScraper = setTimeout(() => controllerScraper.abort(), 3000);
+        const res = await fetch(urlPura, {
+          method: 'GET',
+          headers: newHeaders,
+          signal: controller.signal
+        });
 
-          const siteRes = await fetch(urlTentativa, {
-            headers: {
-              "Referer": urlTentativa,
-              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-            },
-            signal: controllerScraper.signal
-          });
+        clearTimeout(timeoutId);
 
-          clearTimeout(idScraper);
-
-          if (siteRes.ok) {
-            const html = await siteRes.text();
-            const m3u8Match = html.match(/(https?:\/\/[^\s"\'<>]+?\.m3u8[^"\'<>]*)/);
-
-            if (m3u8Match) {
-              const linkScrapado = m3u8Match[1];
-              console.log(`[✅ SCRAPER] Link extraído do domínio ${urlTentativa}. Validando com spoofing...`);
-
-              const videoEstaVivo = await testarLinkVivo(linkScrapado, urlTentativa);
-              if (videoEstaVivo) {
-                console.log(`[🏆 VENCEDOR SITE] O link interno está online e blindado!`);
-                return linkScrapado;
-              } else {
-                console.log(`[❌ SCRAPER] Link do vídeo quebrado dentro do site. Abortando rotação.`);
-                return null; // A "xerox" está quebrada. Interrompe as buscas.
-              }
-            } else {
-              console.log(`[❌ SCRAPER] Nenhum link .m3u8 encontrado no HTML. Abortando rotação.`);
-              return null;
-            }
-          } else {
-            console.log(`[❌ SCRAPER] Site retornou HTTP ${siteRes.status}. Tentando próximo...`);
-            // Falha de servidor (ex: 502 Bad Gateway). O laço 'for' continua e testa o próximo número!
-          }
-        } catch (e) {
-          console.log(`[🚨 ERRO SCRAPER] Domínio inacessível (${e.message}). Tentando próximo...`);
-          // Falha de DNS ou Timeout. O laço 'for' continua e tenta o próximo número!
+        if (res.ok && res.body) {
+          res.body.cancel();
         }
-      } // Fim do loop de rotação
 
-      console.log(`[💀 SCRAPER] Todas as gerações de domínio esgotadas.`);
-      return null;
+        // O 403 aqui brilha intensamente quando testamos IPs diretos!
+        const isVivo = res.status === 200 || res.status === 206 || res.status === 403;
+        console.log(`[📡 STATUS] HTTP ${res.status} -> ${isVivo ? '✅ APROVADO' : '❌ DESCARTADO'} (${urlPura.substring(0, 40)}...)`);
+
+        return isVivo;
+
+      } catch (e) {
+        console.log(`[🚨 TIMEOUT/FALHA] Teste falhou para o link: ${link.substring(0, 40)}... Erro: ${e.message}`);
+        return false;
+      }
     };
 
     // ==========================================
-    // MOTOR DO SITE (AGORA É A PRIORIDADE MÁXIMA)
+    // MOTOR DO SITE (PRIORIDADE MÁXIMA)
     // ==========================================
     const tentarScraping = async () => {
       if (!config.url) {
@@ -116,46 +79,69 @@ export default {
         return vivo ? config.url : null;
       }
 
-      console.log(`[🕷️ SCRAPER] Iniciando raspagem em: ${config.url}`);
-      try {
-        const siteRes = await fetch(config.url, {
-          headers: {
-            "Referer": config.url,
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-          }
-        });
+      const matchDominio = config.url.match(/https:\/\/(\d+)embeddecanais/);
+      const numeroBase = matchDominio ? parseInt(matchDominio[1]) : null;
+      const tentativasMaximas = numeroBase ? 3 : 1; 
 
-        if (siteRes.ok) {
-          const html = await siteRes.text();
-          const m3u8Match = html.match(/(https?:\/\/[^\s"\'<>]+?\.m3u8[^"\'<>]*)/);
+      for (let i = 0; i < tentativasMaximas; i++) {
+        let urlTentativa = config.url;
+        
+        if (numeroBase && i > 0) {
+          const novoNumero = numeroBase + i;
+          urlTentativa = config.url.replace(`https://${numeroBase}embed`, `https://${novoNumero}embed`);
+          console.log(`[🔄 ROTAÇÃO] Domínio falhou. Caçando próxima geração: ${urlTentativa}`);
+        } else {
+          console.log(`[🕷️ SCRAPER] Iniciando raspagem em: ${urlTentativa}`);
+        }
 
-          if (m3u8Match) {
-            const linkScrapado = m3u8Match[1];
-            console.log(`[✅ SCRAPER] Link .m3u8 extraído. Validando com spoofing...`);
+        try {
+          const controllerScraper = new AbortController();
+          const idScraper = setTimeout(() => controllerScraper.abort(), 3000);
 
-            const videoEstaVivo = await testarLinkVivo(linkScrapado, config.url);
-            if (videoEstaVivo) {
-              console.log(`[🏆 VENCEDOR SITE] O link interno do site está online e aprovado.`);
-              return linkScrapado;
+          const siteRes = await fetch(urlTentativa, {
+            headers: {
+              "Referer": urlTentativa,
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+            },
+            signal: controllerScraper.signal
+          });
+          
+          clearTimeout(idScraper);
+
+          if (siteRes.ok) {
+            const html = await siteRes.text();
+            const m3u8Match = html.match(/(https?:\/\/[^\s"\'<>]+?\.m3u8[^"\'<>]*)/);
+            
+            if (m3u8Match) {
+              const linkScrapado = m3u8Match[1];
+              console.log(`[✅ SCRAPER] Link extraído do domínio ${urlTentativa}. Validando com ping...`);
+              
+              const videoEstaVivo = await testarLinkVivo(linkScrapado, urlTentativa);
+              if (videoEstaVivo) {
+                console.log(`[🏆 VENCEDOR SITE] O link interno está online e blindado!`);
+                return linkScrapado;
+              } else {
+                console.log(`[❌ SCRAPER] Link do vídeo quebrado dentro do site. Abortando rotação.`);
+                return null;
+              }
             } else {
-              console.log(`[❌ SCRAPER] Link do vídeo lá dentro retornou erro no ping.`);
-              return null;
+              console.log(`[❌ SCRAPER] Nenhum link .m3u8 encontrado no HTML. Abortando rotação.`);
+              return null; 
             }
           } else {
-            console.log(`[❌ SCRAPER] Nenhum link .m3u8 encontrado no HTML.`);
+             console.log(`[❌ SCRAPER] Site retornou HTTP ${siteRes.status}. Tentando próximo...`);
           }
-        } else {
-          console.log(`[❌ SCRAPER] Site retornou HTTP ${siteRes.status}`);
+        } catch (e) {
+          console.log(`[🚨 ERRO SCRAPER] Domínio inacessível (${e.message}). Tentando próximo...`);
         }
-      } catch (e) {
-        console.log(`[🚨 ERRO SCRAPER] Falha ao acessar o site: ${e.message}`);
-        return null;
       }
+
+      console.log(`[💀 SCRAPER] Todas as gerações de domínio esgotadas.`);
       return null;
     };
 
     // ==========================================
-    // MOTOR DA API (AGORA É O FALLBACK CEGO)
+    // MOTOR DA API (FALLBACK INTELIGENTE -> CEGO)
     // ==========================================
     const tentarAPI = async () => {
       const nomeBusca = config.nome_api || config.nome;
@@ -179,9 +165,37 @@ export default {
             apiData.find(c => c.name.toLowerCase().includes(nomeBusca.toLowerCase()));
 
           if (canalApi && canalApi.sources?.length > 0) {
-            console.log(`[⚙️ API] Encontradas ${canalApi.sources.length} fontes. Retornando primeira válida sem testar...`);
+            console.log(`[⚙️ API] Encontradas ${canalApi.sources.length} fontes. Buscando IPs Reais...`);
 
-            // Filtro de CDN
+            // 1. A CAÇADA PELO IP DIRETO (Prioridade Absoluta na API)
+            const fontesIP = canalApi.sources.filter(s => /^https?:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/.test(s.link));
+            
+            if (fontesIP.length > 0) {
+              console.log(`[⚙️ API] Detectadas ${fontesIP.length} fontes de IP Direto. Iniciando validação...`);
+              
+              // Testa os IPs encontrados simultaneamente para achar o mais rápido
+              const testarEmParalelo = async (fontes) => {
+                if (!fontes || fontes.length === 0) return null;
+                try {
+                  return await Promise.any(fontes.map(async (fonte) => {
+                    const vivo = await testarLinkVivo(fonte.link);
+                    if (vivo) return fonte.link;
+                    throw new Error("Morto");
+                  }));
+                } catch (e) {
+                  return null;
+                }
+              };
+
+              const ipVencedor = await testarEmParalelo(fontesIP);
+              if (ipVencedor) {
+                console.log(`[🏆 VENCEDOR API] Link de IP Direto testado e aprovado!`);
+                return ipVencedor;
+              }
+              console.log(`[⚠️ API] Links de IP Direto falharam no teste. Acionando fallback cego...`);
+            }
+
+            // 2. O FALLBACK CEGO (Se não houver IPs ou se todos falharem)
             if (config.filtro_cdn) {
               const fontesFiltradas = canalApi.sources.filter(s => s.name.toLowerCase().includes(config.filtro_cdn.toLowerCase()));
               if (fontesFiltradas.length > 0) {
@@ -190,14 +204,12 @@ export default {
               }
             }
 
-            // Fallback interno da API
             const fontesValidas = canalApi.sources.filter(s => !s.link.includes("sinal.cc"));
             if (fontesValidas.length > 0) {
               console.log(`[🏆 VENCEDOR API] Link padrão cego aprovado!`);
               return fontesValidas[0].link;
             }
 
-            // Se sobrar só lixo, manda o primeiro mesmo
             return canalApi.sources[0].link;
           } else {
             console.log(`[⚠️ ALERTA] Canal não encontrado no JSON da API.`);
@@ -214,7 +226,7 @@ export default {
     };
 
     // ==========================================
-    // FLUXO DE REDUNDÂNCIA INVERTIDO
+    // FLUXO DE REDUNDÂNCIA MESTRE
     // ==========================================
     try {
       let linkFinal = null;
@@ -226,18 +238,20 @@ export default {
       if (linkFinal) {
         traceOrigem = "SITE PRINCIPAL";
       } else {
-        console.log(`[🔄 FALLBACK] Site falhou ou canal não possui url. Tentando API às cegas...`);
+        console.log(`[🔄 FALLBACK] Site falhou ou canal sem url. Tentando API...`);
         linkFinal = await tentarAPI();
-
+        
         if (linkFinal) {
-          traceOrigem = "API (Fallback Cego)";
+          // Identifica se a API venceu pelo IP validado ou pelo Cego para o Log
+          traceOrigem = /^https?:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/.test(linkFinal) 
+                        ? "API (IP Direto Verificado)" 
+                        : "API (Fallback Cego)";
         }
       }
 
       if (linkFinal) {
         console.log(`[🎯 ROTEAMENTO FINAL] Sucesso! Mandando TV para: ${traceOrigem}`);
-
-        // Retorno Intacto: 302 Redirect Exato
+        
         return new Response(null, {
           status: 302,
           headers: {
