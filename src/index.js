@@ -21,47 +21,85 @@ export default {
     }
 
     // ==========================================
-    // HEALTH CHECK (SPOOFING DE TIVIMATE - AGORA USADO NO SITE)
+    // MOTOR DO SITE (COM ROTAÇÃO AUTOMÁTICA DE DOMÍNIO)
     // ==========================================
-    const testarLinkVivo = async (link, referer = null) => {
-      if (!link) return false;
-      try {
-        const urlPura = link.split('|')[0];
-        console.log(`[🔍 TESTE SPOOFING] Pingando: ${urlPura.substring(0, 50)}...`);
-
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 5000);
-
-        const newHeaders = new Headers(request.headers);
-        newHeaders.set('User-Agent', 'TiviMate/4.7.0 (Linux; Android 11)');
-        newHeaders.set('Accept', '*/*');
-        newHeaders.set('Range', 'bytes=0-500');
-
-        if (referer) {
-          newHeaders.set('Referer', referer);
-        }
-
-        const res = await fetch(urlPura, {
-          method: 'GET',
-          headers: newHeaders,
-          signal: controller.signal
-        });
-
-        clearTimeout(timeoutId);
-
-        if (res.ok && res.body) {
-          res.body.cancel();
-        }
-
-        const isVivo = res.status === 200 || res.status === 206 || res.status === 403;
-        console.log(`[📡 STATUS] HTTP ${res.status} -> ${isVivo ? '✅ APROVADO' : '❌ DESCARTADO'} (${urlPura.substring(0, 40)}...)`);
-
-        return isVivo;
-
-      } catch (e) {
-        console.log(`[🚨 TIMEOUT/FALHA] Teste falhou para o link: ${link.substring(0, 40)}... Erro: ${e.message}`);
-        return false;
+    const tentarScraping = async () => {
+      if (!config.url) {
+        console.log(`[🕷️ SCRAPER] Ignorado. Nenhuma URL configurada.`);
+        return null;
       }
+      if (config.url.includes("sua.tv") || config.url.endsWith(".m3u8")) {
+        console.log(`[🕷️ SCRAPER] URL direta detectada. Validando integridade...`);
+        const vivo = await testarLinkVivo(config.url);
+        return vivo ? config.url : null;
+      }
+
+      // 🚨 MÁGICA DA ROTAÇÃO: Extrai o número do domínio atual
+      const matchDominio = config.url.match(/https:\/\/(\d+)embeddecanais/);
+      const numeroBase = matchDominio ? parseInt(matchDominio[1]) : null;
+
+      // Se for o embeddecanais, ele ganha o direito a 3 tentativas (o atual + 2 gerações futuras)
+      const tentativasMaximas = numeroBase ? 3 : 1;
+
+      for (let i = 0; i < tentativasMaximas; i++) {
+        let urlTentativa = config.url;
+
+        // Se falhou na tentativa anterior (i > 0), incrementa o número e atualiza a URL
+        if (numeroBase && i > 0) {
+          const novoNumero = numeroBase + i;
+          urlTentativa = config.url.replace(`https://${numeroBase}embed`, `https://${novoNumero}embed`);
+          console.log(`[🔄 ROTAÇÃO] Domínio falhou. Caçando próxima geração: ${urlTentativa}`);
+        } else {
+          console.log(`[🕷️ SCRAPER] Iniciando raspagem em: ${urlTentativa}`);
+        }
+
+        try {
+          // Trava de tempo de 3 segundos para não segurar a TV se o domínio estiver morto
+          const controllerScraper = new AbortController();
+          const idScraper = setTimeout(() => controllerScraper.abort(), 3000);
+
+          const siteRes = await fetch(urlTentativa, {
+            headers: {
+              "Referer": urlTentativa,
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+            },
+            signal: controllerScraper.signal
+          });
+
+          clearTimeout(idScraper);
+
+          if (siteRes.ok) {
+            const html = await siteRes.text();
+            const m3u8Match = html.match(/(https?:\/\/[^\s"\'<>]+?\.m3u8[^"\'<>]*)/);
+
+            if (m3u8Match) {
+              const linkScrapado = m3u8Match[1];
+              console.log(`[✅ SCRAPER] Link extraído do domínio ${urlTentativa}. Validando com spoofing...`);
+
+              const videoEstaVivo = await testarLinkVivo(linkScrapado, urlTentativa);
+              if (videoEstaVivo) {
+                console.log(`[🏆 VENCEDOR SITE] O link interno está online e blindado!`);
+                return linkScrapado;
+              } else {
+                console.log(`[❌ SCRAPER] Link do vídeo quebrado dentro do site. Abortando rotação.`);
+                return null; // A "xerox" está quebrada. Interrompe as buscas.
+              }
+            } else {
+              console.log(`[❌ SCRAPER] Nenhum link .m3u8 encontrado no HTML. Abortando rotação.`);
+              return null;
+            }
+          } else {
+            console.log(`[❌ SCRAPER] Site retornou HTTP ${siteRes.status}. Tentando próximo...`);
+            // Falha de servidor (ex: 502 Bad Gateway). O laço 'for' continua e testa o próximo número!
+          }
+        } catch (e) {
+          console.log(`[🚨 ERRO SCRAPER] Domínio inacessível (${e.message}). Tentando próximo...`);
+          // Falha de DNS ou Timeout. O laço 'for' continua e tenta o próximo número!
+        }
+      } // Fim do loop de rotação
+
+      console.log(`[💀 SCRAPER] Todas as gerações de domínio esgotadas.`);
+      return null;
     };
 
     // ==========================================
@@ -86,15 +124,15 @@ export default {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
           }
         });
-        
+
         if (siteRes.ok) {
           const html = await siteRes.text();
           const m3u8Match = html.match(/(https?:\/\/[^\s"\'<>]+?\.m3u8[^"\'<>]*)/);
-          
+
           if (m3u8Match) {
             const linkScrapado = m3u8Match[1];
             console.log(`[✅ SCRAPER] Link .m3u8 extraído. Validando com spoofing...`);
-            
+
             const videoEstaVivo = await testarLinkVivo(linkScrapado, config.url);
             if (videoEstaVivo) {
               console.log(`[🏆 VENCEDOR SITE] O link interno do site está online e aprovado.`);
@@ -190,7 +228,7 @@ export default {
       } else {
         console.log(`[🔄 FALLBACK] Site falhou ou canal não possui url. Tentando API às cegas...`);
         linkFinal = await tentarAPI();
-        
+
         if (linkFinal) {
           traceOrigem = "API (Fallback Cego)";
         }
@@ -198,7 +236,7 @@ export default {
 
       if (linkFinal) {
         console.log(`[🎯 ROTEAMENTO FINAL] Sucesso! Mandando TV para: ${traceOrigem}`);
-        
+
         // Retorno Intacto: 302 Redirect Exato
         return new Response(null, {
           status: 302,
