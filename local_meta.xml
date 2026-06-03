@@ -96,13 +96,13 @@
   <programme start="20260603033000 -0300" stop="20260603070500 -0300" channel="Record MG">
     <title lang="pt">IURD BH</title>
   </programme>
-  <programme start="20260603070500 -0300" stop="20260603083000 -0300" channel="Record MG">
+  <programme start="20260603070500 -0300" stop="20260603084000 -0300" channel="Record MG">
     <title lang="pt">MG no Ar</title>
   </programme>
-  <programme start="20260603083000 -0300" stop="20260603093000 -0300" channel="Record MG">
+  <programme start="20260603084000 -0300" stop="20260603095000 -0300" channel="Record MG">
     <title lang="pt">Fala Brasil</title>
   </programme>
-  <programme start="20260603093000 -0300" stop="20260603113000 -0300" channel="Record MG">
+  <programme start="20260603095000 -0300" stop="20260603113000 -0300" channel="Record MG">
     <title lang="pt">Hoje em Dia</title>
   </programme>
   <programme start="20260603113000 -0300" stop="20260603153000 -0300" channel="Record MG">
