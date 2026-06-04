@@ -42,7 +42,7 @@ export default [
     },
     {
         "nome": "SBT",
-        "tvg_id": "SBT MG",
+        "tvg_id": "SBT",
         "url": `${siteBaseUrl}/sbtsp/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png",
         "categoria": "Abertos",
