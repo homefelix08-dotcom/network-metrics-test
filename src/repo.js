@@ -41,6 +41,15 @@ export default [
         "provedor_fixo": true
     },
     {
+        "nome": "SBT",
+        "tvg_id": "SBT MG",
+        "url": `${siteBaseUrl}/sbtsp/`,
+        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png",
+        "categoria": "Abertos",
+        "provedor": "site",
+        "provedor_fixo": true
+    },
+    {
         "nome": "Rede TV",
         "tvg_id": "REDE TV! HD",
         "url": `${siteBaseUrl}/redetv/`,
