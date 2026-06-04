@@ -21,13 +21,13 @@ export default {
     }
 
     // ==========================================
-    // HEALTH CHECK (COM VALIDAÇÃO DE CONTEÚDO M3U8)
+    // HEALTH CHECK (SPOOFING DE TIVIMATE)
     // ==========================================
     const testarLinkVivo = async (link, referer = null) => {
       if (!link) return false;
       try {
         const urlPura = link.split('|')[0];
-        console.log(`[🔍 TESTE SPOOFING] Pingando: ${urlPura.substring(0, 50)}...`);
+        console.log(`[🔍 TESTE] Pingando: ${urlPura.substring(0, 50)}...`);
 
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 5000);
@@ -35,9 +35,7 @@ export default {
         const newHeaders = new Headers(request.headers);
         newHeaders.set('User-Agent', 'TiviMate/4.7.0 (Linux; Android 11)');
         newHeaders.set('Accept', '*/*');
-
-        // 🚨 REMOVIDA A TRAVA DE RANGE (bytes=0-500). 
-        // Vamos baixar o texto do .m3u8 inteiro para auditar o conteúdo.
+        newHeaders.set('Range', 'bytes=0-500');
 
         if (referer) {
           newHeaders.set('Referer', referer);
@@ -51,28 +49,15 @@ export default {
 
         clearTimeout(timeoutId);
 
-        // O 403 ainda é a nossa prova de vida para IPs Diretos da API
-        if (res.status === 403) {
-          console.log(`[📡 STATUS] HTTP 403 -> ✅ APROVADO (IP Direto Xtream Codes)`);
-          return true;
+        if (res.ok && res.body) {
+          res.body.cancel();
         }
 
-        // Se o servidor disse que deu certo (200 ou 206), vamos investigar o que ele entregou
-        if (res.ok || res.status === 206) {
-          const texto = await res.text();
+        // O 403 aqui brilha intensamente quando testamos IPs diretos!
+        const isVivo = res.status === 200 || res.status === 206 || res.status === 403;
+        console.log(`[📡 STATUS] HTTP ${res.status} -> ${isVivo ? '✅ APROVADO' : '❌ DESCARTADO'} (${urlPura.substring(0, 40)}...)`);
 
-          // Se for uma playlist de vídeo real, a tag #EXTM3U é obrigatória
-          if (texto.includes('#EXTM3U')) {
-            console.log(`[📡 STATUS] HTTP ${res.status} + Playlist Válida -> ✅ APROVADO`);
-            return true;
-          } else {
-            console.log(`[📡 STATUS] HTTP ${res.status} MAS sem tag #EXTM3U (Falso Positivo HTML) -> ❌ DESCARTADO`);
-            return false;
-          }
-        }
-
-        console.log(`[📡 STATUS] HTTP ${res.status} -> ❌ DESCARTADO`);
-        return false;
+        return isVivo;
 
       } catch (e) {
         console.log(`[🚨 TIMEOUT/FALHA] Teste falhou para o link: ${link.substring(0, 40)}... Erro: ${e.message}`);
@@ -96,11 +81,11 @@ export default {
 
       const matchDominio = config.url.match(/https:\/\/(\d+)embeddecanais/);
       const numeroBase = matchDominio ? parseInt(matchDominio[1]) : null;
-      const tentativasMaximas = numeroBase ? 3 : 1;
+      const tentativasMaximas = numeroBase ? 3 : 1; 
 
       for (let i = 0; i < tentativasMaximas; i++) {
         let urlTentativa = config.url;
-
+        
         if (numeroBase && i > 0) {
           const novoNumero = numeroBase + i;
           urlTentativa = config.url.replace(`https://${numeroBase}embed`, `https://${novoNumero}embed`);
@@ -120,17 +105,17 @@ export default {
             },
             signal: controllerScraper.signal
           });
-
+          
           clearTimeout(idScraper);
 
           if (siteRes.ok) {
             const html = await siteRes.text();
             const m3u8Match = html.match(/(https?:\/\/[^\s"\'<>]+?\.m3u8[^"\'<>]*)/);
-
+            
             if (m3u8Match) {
               const linkScrapado = m3u8Match[1];
               console.log(`[✅ SCRAPER] Link extraído do domínio ${urlTentativa}. Validando com ping...`);
-
+              
               const videoEstaVivo = await testarLinkVivo(linkScrapado, urlTentativa);
               if (videoEstaVivo) {
                 console.log(`[🏆 VENCEDOR SITE] O link interno está online e blindado!`);
@@ -141,10 +126,10 @@ export default {
               }
             } else {
               console.log(`[❌ SCRAPER] Nenhum link .m3u8 encontrado no HTML. Abortando rotação.`);
-              return null;
+              return null; 
             }
           } else {
-            console.log(`[❌ SCRAPER] Site retornou HTTP ${siteRes.status}. Tentando próximo...`);
+             console.log(`[❌ SCRAPER] Site retornou HTTP ${siteRes.status}. Tentando próximo...`);
           }
         } catch (e) {
           console.log(`[🚨 ERRO SCRAPER] Domínio inacessível (${e.message}). Tentando próximo...`);
@@ -184,10 +169,10 @@ export default {
 
             // 1. A CAÇADA PELO IP DIRETO (Prioridade Absoluta na API)
             const fontesIP = canalApi.sources.filter(s => /^https?:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/.test(s.link));
-
+            
             if (fontesIP.length > 0) {
               console.log(`[⚙️ API] Detectadas ${fontesIP.length} fontes de IP Direto. Iniciando validação...`);
-
+              
               // Testa os IPs encontrados simultaneamente para achar o mais rápido
               const testarEmParalelo = async (fontes) => {
                 if (!fontes || fontes.length === 0) return null;
@@ -255,18 +240,18 @@ export default {
       } else {
         console.log(`[🔄 FALLBACK] Site falhou ou canal sem url. Tentando API...`);
         linkFinal = await tentarAPI();
-
+        
         if (linkFinal) {
           // Identifica se a API venceu pelo IP validado ou pelo Cego para o Log
-          traceOrigem = /^https?:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/.test(linkFinal)
-            ? "API (IP Direto Verificado)"
-            : "API (Fallback Cego)";
+          traceOrigem = /^https?:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/.test(linkFinal) 
+                        ? "API (IP Direto Verificado)" 
+                        : "API (Fallback Cego)";
         }
       }
 
       if (linkFinal) {
         console.log(`[🎯 ROTEAMENTO FINAL] Sucesso! Mandando TV para: ${traceOrigem}`);
-
+        
         return new Response(null, {
           status: 302,
           headers: {
