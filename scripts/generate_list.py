@@ -75,7 +75,7 @@ def main():
             
         if fixo:
             # Canal Fixo
-            sufixo = "FHD" if provedor_padrao == "api" else "UHD"
+            sufixo = "HD" if provedor_padrao == "api" else "FHD"
             nome_display = f"{nome} {sufixo}"
             cabecalho = get_cabecalho(provedor_padrao)
             
@@ -87,7 +87,7 @@ def main():
             rota_reserva = "site" if provedor_padrao == "api" else "api"
             
             # 1. Primeira Opção
-            sufixo_principal = "FHD" if rota_principal == "api" else "UHD"
+            sufixo_principal = "HD" if rota_principal == "api" else "FHD"
             nome_principal = f"{nome} {sufixo_principal}"
             cabecalho_principal = get_cabecalho(rota_principal)
             
@@ -95,7 +95,7 @@ def main():
             lines.append(f"{worker_endpoint}?rota={rota_principal}{cabecalho_principal}\n")
             
             # 2. Segunda Opção
-            sufixo_reserva = "FHD" if rota_reserva == "api" else "UHD"
+            sufixo_reserva = "HD" if rota_reserva == "api" else "FHD"
             nome_reserva = f"{nome} {sufixo_reserva}"
             cabecalho_reserva = get_cabecalho(rota_reserva)
             
