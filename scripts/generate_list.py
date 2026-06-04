@@ -62,24 +62,50 @@ def main():
         logo = c.get('logo', '')
         cat = c.get('categoria', 'Diversos')
         url_site = c.get('url', '')
+        fixo = c.get('provedor_fixo', True)
+        provedor_padrao = c.get('provedor', 'api')
         
         worker_endpoint = f"{BASE_WORKER_URL}/{nome.replace(' ', '%20')}"
         
-        # Escreve os metadados do canal na lista M3U
-        lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome}" tvg-logo="{logo}" group-title="{cat}", {nome}\n')
+        # 🚨 MÁGICA AQUI: O cabeçalho agora se adapta à rota exata daquela linha
+        def get_cabecalho(rota):
+            if rota == "site" and url_site:
+                return f"|Referer={url_site}"
+            return "|User-Agent=okhttp/4.9.2"
             
-        if url_site:
-            cabecalho = f"|Referer={url_site}"
+        if fixo:
+            # Canal Fixo
+            sufixo = "FHD" if provedor_padrao == "api" else "UHD"
+            nome_display = f"{nome} {sufixo}"
+            cabecalho = get_cabecalho(provedor_padrao)
+            
+            lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_display}" tvg-logo="{logo}" group-title="{cat}", {nome_display}\n')
+            lines.append(f"{worker_endpoint}{cabecalho}\n")
         else:
-            cabecalho = "|User-Agent=okhttp/4.9.2"
+            # Canal Flexível
+            rota_principal = provedor_padrao
+            rota_reserva = "site" if provedor_padrao == "api" else "api"
             
-        lines.append(f"{worker_endpoint}{cabecalho}\n")
+            # 1. Primeira Opção
+            sufixo_principal = "FHD" if rota_principal == "api" else "UHD"
+            nome_principal = f"{nome} {sufixo_principal}"
+            cabecalho_principal = get_cabecalho(rota_principal)
+            
+            lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_principal}" tvg-logo="{logo}" group-title="{cat}", {nome_principal}\n')
+            lines.append(f"{worker_endpoint}?rota={rota_principal}{cabecalho_principal}\n")
+            
+            # 2. Segunda Opção
+            sufixo_reserva = "FHD" if rota_reserva == "api" else "UHD"
+            nome_reserva = f"{nome} {sufixo_reserva}"
+            cabecalho_reserva = get_cabecalho(rota_reserva)
+            
+            lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_reserva}" tvg-logo="{logo}" group-title="{cat}", {nome_reserva}\n')
+            lines.append(f"{worker_endpoint}?rota={rota_reserva}{cabecalho_reserva}\n")
     
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         f.writelines(lines)
         
-    print(f"Sucesso! {len(channels)} canais exportados perfeitamente para {OUTPUT_PATH}")
+    print(f"Sucesso! Grade IPTV clássica gerada em {OUTPUT_PATH}")
 
 if __name__ == "__main__":
     main()
-    
