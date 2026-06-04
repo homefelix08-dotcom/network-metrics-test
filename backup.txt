@@ -1,0 +1,235 @@
+#EXTM3U x-tvg-url="https://raw.githubusercontent.com/limaalef/BrazilTVEPG/refs/heads/main/claro.xml,https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/local_meta.xml"
+#EXTINF:-1 tvg-id="Globo MG" tvg-name="Globo MG" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" group-title="Abertos", Globo MG
+https://0406.cdn12embed.xyz/globomg/index.m3u8|Referer=https://10embeddecanais.xyz/globomg/
+#EXTINF:-1 tvg-id="GLOBO_SÃO_PAULO" tvg-name="Globo" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" group-title="Abertos", Globo
+http://38.247.134.19:80/live/92370341211/30082393260/375051|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="Band MG" tvg-name="Band" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band.png" group-title="Abertos", Band
+https://0406.cdn12embed.xyz/bandsp/index.m3u8|Referer=https://10embeddecanais.xyz/bandsp/
+#EXTINF:-1 tvg-id="SBT MG" tvg-name="TV Alterosa" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" group-title="Abertos", TV Alterosa
+http://dns.explouddev.com/live/501212992/G1Dw4f/244184.m3u8|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="SBT" tvg-name="SBT" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" group-title="Abertos", SBT
+https://0406.cdn12embed.xyz/sbtsp/index.m3u8|Referer=https://10embeddecanais.xyz/sbtsp/
+#EXTINF:-1 tvg-id="REDE TV! HD" tvg-name="Rede TV" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/rede_tv.png" group-title="Abertos", Rede TV
+https://0406.cdn12embed.xyz/redetv/index.m3u8|Referer=https://10embeddecanais.xyz/redetv/
+#EXTINF:-1 tvg-id="Record MG" tvg-name="Record MG" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" group-title="Abertos", Record MG
+https://0406.cdn12embed.xyz/recordmg/index.m3u8|Referer=https://10embeddecanais.xyz/recordmg/
+#EXTINF:-1 tvg-id="FUTURA HD" tvg-name="Futura" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/futura.png" group-title="Abertos", Futura
+http://dns.explouddev.com/live/501212992/G1Dw4f/159.m3u8|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="TV BRASIL" tvg-name="TV Brasil" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_brasil.png" group-title="Abertos", TV Brasil
+https://tvbrasil-stream.ebc.com.br/index.m3u8|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="CULTURA HD" tvg-name="TV Cultura" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_cultura.png" group-title="Abertos", TV Cultura
+https://0406.cdn12embed.xyz/tvcultura/index.m3u8|Referer=https://10embeddecanais.xyz/tvcultura/
+#EXTINF:-1 tvg-id="A&E" tvg-name="A&E" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/ae.png" group-title="Filmes e Séries", A&E
+http://38.247.134.19:80/live/92370341211/30082393260/374888|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="AMC HD" tvg-name="AMC" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amc.png" group-title="Filmes e Séries", AMC
+http://38.247.134.19:80/live/92370341211/30082393260/374891|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="AXN" tvg-name="AXN" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/axn.png" group-title="Filmes e Séries", AXN
+http://38.247.134.19:80/live/92370341211/30082393260/374894|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="CANAL BRASIL HD" tvg-name="Canal Brasil" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_brasil.png" group-title="Filmes e Séries", Canal Brasil
+http://38.247.134.19:80/live/92370341211/30082393260/374897|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="CINEMAX HD" tvg-name="Cinemax" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cinemax.png" group-title="Filmes e Séries", Cinemax
+http://38.247.134.19:80/live/92370341211/30082393260/374900|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="HBO" tvg-name="HBO" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo.png" group-title="Filmes e Séries", HBO
+http://38.247.134.19:80/live/92370341211/30082393260/55464|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="HBO2" tvg-name="HBO 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_2.png" group-title="Filmes e Séries", HBO 2
+http://38.247.134.19:80/live/92370341211/30082393260/55469|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="HBO Family" tvg-name="HBO Family" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_family.png" group-title="Filmes e Séries", HBO Family
+http://38.247.134.19:80/live/92370341211/30082393260/55474|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="HBO Mundi" tvg-name="HBO Mundi" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_mundi.png" group-title="Filmes e Séries", HBO Mundi
+https://0406.cdn12embed.xyz/hbomundi/index.m3u8|Referer=https://10embeddecanais.xyz/hbomundi/
+#EXTINF:-1 tvg-id="HBO+" tvg-name="HBO Plus" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_plus.png" group-title="Filmes e Séries", HBO Plus
+http://38.247.134.19:80/live/92370341211/30082393260/55494|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="HBO Pop" tvg-name="HBO Pop" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_pop.png" group-title="Filmes e Séries", HBO Pop
+http://38.247.134.19:80/live/92370341211/30082393260/55481|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="HBO Signature" tvg-name="HBO Signature" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_signature.png" group-title="Filmes e Séries", HBO Signature
+http://38.247.134.19:80/live/92370341211/30082393260/55486|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="HBO Xtreme" tvg-name="HBO Xtreme" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_xtreme.png" group-title="Filmes e Séries", HBO Xtreme
+http://38.247.134.19:80/live/92370341211/30082393260/55490|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="MEGAPIX HD" tvg-name="Megapix" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/megapix.png" group-title="Filmes e Séries", Megapix
+http://38.247.134.19:80/live/92370341211/30082393260/382801|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="SONY CHANNEL" tvg-name="Sony Channel" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sony_channel.png" group-title="Filmes e Séries", Sony Channel
+http://38.247.134.19:80/live/92370341211/30082393260/374912|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="SPACE HD" tvg-name="Space" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/space.png" group-title="Filmes e Séries", Space
+http://38.247.134.19:80/live/92370341211/30082393260/374915|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="STUDIO UNIVERSAL HD" tvg-name="Studio Universal" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/studio_universal.png" group-title="Filmes e Séries", Studio Universal
+http://38.247.134.19:80/live/92370341211/30082393260/374918|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="TCM BR" tvg-name="TCM" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tcm.png" group-title="Filmes e Séries", TCM
+http://38.247.134.19:80/live/92370341211/30082393260/374921|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="TELECINE ACTION" tvg-name="Telecine Action" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_action.png" group-title="Filmes e Séries", Telecine Action
+http://38.247.134.19:80/live/92370341211/30082393260/53708|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="TELECINE CULT" tvg-name="Telecine Cult" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_cult.png" group-title="Filmes e Séries", Telecine Cult
+http://38.247.134.19:80/live/92370341211/30082393260/53711|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="TELECINE FUN" tvg-name="Telecine Fun" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_fun.png" group-title="Filmes e Séries", Telecine Fun
+http://38.247.134.19:80/live/92370341211/30082393260/53714|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="TELECINE PIPOCA" tvg-name="Telecine Pipoca" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_pipoca.png" group-title="Filmes e Séries", Telecine Pipoca
+http://38.247.134.19:80/live/92370341211/30082393260/53720|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="TELECINE PREMIUM" tvg-name="Telecine Premium" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_premium.png" group-title="Filmes e Séries", Telecine Premium
+http://38.247.134.19:80/live/92370341211/30082393260/53720|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="TELECINE TOUCH" tvg-name="Telecine Touch" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_touch.png" group-title="Filmes e Séries", Telecine Touch
+http://38.247.134.19:80/live/92370341211/30082393260/53723|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="TNT HD" tvg-name="TNT" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tnt.png" group-title="Filmes e Séries", TNT
+http://38.247.134.19:80/live/92370341211/30082393260/374924|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="TNT NOVELAS" tvg-name="TNT Novelas" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tnt_novelas.png" group-title="Filmes e Séries", TNT Novelas
+http://38.247.134.19:80/live/92370341211/30082393260/374927|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="TNT SERIES HD" tvg-name="TNT Séries" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tnt_sries.png" group-title="Filmes e Séries", TNT Séries
+http://38.247.134.19:80/live/92370341211/30082393260/374930|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="UNIVERSAL TV HD" tvg-name="Universal TV" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/universal_tv.png" group-title="Filmes e Séries", Universal TV
+http://38.247.134.19:80/live/92370341211/30082393260/374937|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="USA HD" tvg-name="USA" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/usa.png" group-title="Filmes e Séries", USA
+http://38.247.134.19:80/live/92370341211/30082393260/374940|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="WARNER CHANNEL" tvg-name="Warner" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/warner.png" group-title="Filmes e Séries", Warner
+http://38.247.134.19:80/live/92370341211/30082393260/374942|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="BIS HD" tvg-name="Bis" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/bis.png" group-title="Variedades", Bis
+http://38.247.134.19:80/live/92370341211/30082393260/59859|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="OFF HD" tvg-name="Canal Off" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_off.png" group-title="Variedades", Canal Off
+https://0406.cdn12embed.xyz/canaloff/index.m3u8|Referer=https://10embeddecanais.xyz/canaloff/
+#EXTINF:-1 tvg-id="CURTA" tvg-name="Curta!" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/curta.png" group-title="Variedades", Curta!
+http://38.247.134.19:80/live/92370341211/30082393260/59867|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="FISH TV" tvg-name="Fish TV" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/fish_tv.png" group-title="Variedades", Fish TV
+http://38.247.134.19:80/live/92370341211/30082393260/17579|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="FOOD NETWORK HD" tvg-name="Food Network" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/food_network.png" group-title="Variedades", Food Network
+http://38.247.134.19:80/live/92370341211/30082393260/59882|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="Globoplay Novelas" tvg-name="Globoplay Novelas" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globoplay_novelas.png" group-title="Variedades", Globoplay Novelas
+http://79.127.238.228:14455|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="GNT HD" tvg-name="GNT" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/gnt.png" group-title="Variedades", GNT
+http://38.247.134.19:80/live/92370341211/30082393260/59895|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="LIFETIME" tvg-name="Lifetime" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/lifetime.png" group-title="Variedades", Lifetime
+http://38.247.134.19:80/live/92370341211/30082393260/374906|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="Modo Viagem" tvg-name="Modo Viagem" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/modo_viagem.png" group-title="Variedades", Modo Viagem
+http://38.247.134.19:80/live/92370341211/30082393260/58910|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="MULTISHOW HD" tvg-name="Multishow" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/multishow.png" group-title="Variedades", Multishow
+http://38.247.134.19:80/live/92370341211/30082393260/59900|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="MUSIC BOX BRAZIL" tvg-name="Music Box Brazil" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/music_box_brazil.png" group-title="Variedades", Music Box Brazil
+http://dns.explouddev.com/live/501212992/G1Dw4f/2520.m3u8|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="PRIME BOX BRAZIL" tvg-name="Prime Box Brazil" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/prime_box_brazil.png" group-title="Variedades", Prime Box Brazil
+http://dns.explouddev.com/live/501212992/G1Dw4f/537632.m3u8|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="TLC HD" tvg-name="TLC" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tlc.png" group-title="Variedades", TLC
+http://38.247.134.19:80/live/92370341211/30082393260/59901|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="TRAVEL BOX" tvg-name="Travel Box Brazil" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/travel_box_brazil.png" group-title="Variedades", Travel Box Brazil
+http://dns.explouddev.com/live/501212992/G1Dw4f/376353.m3u8|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="ANIMAL PLANET HD" tvg-name="Animal Planet" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/animal_planet.png" group-title="Documentários", Animal Planet
+http://38.247.134.19:80/live/92370341211/30082393260/58887|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="ARTE 1 HD" tvg-name="Arte1" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/arte1.png" group-title="Documentários", Arte1
+http://38.247.134.19:80/live/92370341211/30082393260/59853|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="DISCOVERY HD" tvg-name="Discovery Channel" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_channel.png" group-title="Documentários", Discovery Channel
+http://38.247.134.19:80/live/92370341211/30082393260/60809|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="DISCOVERY HOME&HEALTH HD" tvg-name="Discovery Home & Health" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_home__health.png" group-title="Documentários", Discovery Home & Health
+http://38.247.134.19:80/live/92370341211/30082393260/60812|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="DISCOVERY SCIENCE HD" tvg-name="Discovery Science" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_science.png" group-title="Documentários", Discovery Science
+http://38.247.134.19:80/live/92370341211/30082393260/60817|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="DISCOVERY THEATER HD" tvg-name="Discovery Theater" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_theater.png" group-title="Documentários", Discovery Theater
+http://38.247.134.19:80/live/92370341211/30082393260/60820|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="DISCOVERY TURBO HD" tvg-name="Discovery Turbo" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_turbo.png" group-title="Documentários", Discovery Turbo
+http://38.247.134.19:80/live/92370341211/30082393260/60823|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="DISCOVERY WORLD HD" tvg-name="Discovery World" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_world.png" group-title="Documentários", Discovery World
+http://38.247.134.19:80/live/92370341211/30082393260/60826|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="E!" tvg-name="E! Entertainment" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/e_entertainment.png" group-title="Documentários", E! Entertainment
+http://dns.explouddev.com/live/501212992/G1Dw4f/2472.m3u8|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="HGTV HD" tvg-name="HGTV" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hgtv.png" group-title="Documentários", HGTV
+http://dns.explouddev.com/live/501212992/G1Dw4f/2627.m3u8|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="HISTORY" tvg-name="History" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/history.png" group-title="Documentários", History
+https://0406.cdn12embed.xyz/history/index.m3u8|Referer=https://10embeddecanais.xyz/history/
+#EXTINF:-1 tvg-id="HISTORY 2" tvg-name="History 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/history_2.png" group-title="Documentários", History 2
+https://0406.cdn12embed.xyz/history2/index.m3u8|Referer=https://10embeddecanais.xyz/history2/
+#EXTINF:-1 tvg-id="ID HD" tvg-name="Investigação Discovery" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/investigao_discovery.png" group-title="Documentários", Investigação Discovery
+https://0406.cdn12embed.xyz/discoveryid/index.m3u8|Referer=https://10embeddecanais.xyz/discoveryid/
+#EXTINF:-1 tvg-id="Adult Swim HD" tvg-name="Adult Swim" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/adult_swim.png" group-title="Infantis", Adult Swim
+https://0406.cdn12embed.xyz/adultswim/index.m3u8|Referer=https://10embeddecanais.xyz/adultswim/
+#EXTINF:-1 tvg-id="CARTOON HD" tvg-name="Cartoon Network" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cartoon_network.png" group-title="Infantis", Cartoon Network
+http://38.247.134.19:80/live/92370341211/30082393260/17191|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="CARTOONITO" tvg-name="Cartoonito" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cartoonito.png" group-title="Infantis", Cartoonito
+http://38.247.134.19:80/live/92370341211/30082393260/17194|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="DISCOVERY KIDS HD" tvg-name="Discovery Kids" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_kids.png" group-title="Infantis", Discovery Kids
+http://38.247.134.19:80/live/92370341211/30082393260/17197|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="GLOOB HD" tvg-name="Gloob" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/gloob.png" group-title="Infantis", Gloob
+http://38.247.134.19:80/live/92370341211/30082393260/17203|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="GLOOBINHO HD" tvg-name="Gloobinho" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/gloobinho.png" group-title="Infantis", Gloobinho
+http://38.247.134.19:80/live/92370341211/30082393260/17201|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="" tvg-name="Tooncast" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tooncast.png" group-title="Infantis", Tooncast
+http://38.247.134.19/live/92370341211/30082393260/17212|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="" tvg-name="Apple TV" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/apple_tv.png" group-title="Esportes", Apple TV
+https://0406.cdn12embed.xyz/appletv01/index.m3u8|Referer=https://10embeddecanais.xyz/appletv01/
+#EXTINF:-1 tvg-id="BAND SPORTS HD" tvg-name="Band Sports" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band_sports.png" group-title="Esportes", Band Sports
+http://38.247.134.19:80/live/92370341211/30082393260/17576|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="" tvg-name="Canal Goat" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_goat.png" group-title="Esportes", Canal Goat
+http://38.247.134.19/live/92370341211/30082393260/2335094|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="COMBATE HD" tvg-name="Combate" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/combate.png" group-title="Esportes", Combate
+http://38.247.134.19:80/live/92370341211/30082393260/17574|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="" tvg-name="Dazn" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/dazn.png" group-title="Esportes", Dazn
+http://38.247.134.19:80/live/92370341211/30082393260/2335100|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="ESPN" tvg-name="ESPN" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn.png" group-title="Esportes", ESPN
+http://38.247.134.19:80/live/92370341211/30082393260/18683|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="ESPN 2" tvg-name="ESPN 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_2.png" group-title="Esportes", ESPN 2
+http://38.247.134.19:80/live/92370341211/30082393260/18686|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="ESPN 3" tvg-name="ESPN 3" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_3.png" group-title="Esportes", ESPN 3
+http://38.247.134.19:80/live/92370341211/30082393260/18689|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="ESPN 4" tvg-name="ESPN 4" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_4.png" group-title="Esportes", ESPN 4
+http://38.247.134.19:80/live/92370341211/30082393260/18692|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="ESPN 5" tvg-name="ESPN 5" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_5.png" group-title="Esportes", ESPN 5
+http://38.247.134.19:80/live/92370341211/30082393260/18695|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="ESPN 6" tvg-name="ESPN 6" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_6.png" group-title="Esportes", ESPN 6
+http://38.247.134.19:80/live/92370341211/30082393260/18698|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="GE" tvg-name="GE TV" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/ge_tv.png" group-title="Esportes", GE TV
+http://38.247.134.19:80/live/92370341211/30082393260/2335091|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="" tvg-name="HBO Max" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max.png" group-title="Esportes", HBO Max
+http://38.247.134.19:80/live/92370341211/30082393260/2335017|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="" tvg-name="HBO Max 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_2.png" group-title="Esportes", HBO Max 2
+http://38.247.134.19:80/live/92370341211/30082393260/2335018|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="" tvg-name="HBO Max 3" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_3.png" group-title="Esportes", HBO Max 3
+http://38.247.134.19:80/live/92370341211/30082393260/2335019|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="" tvg-name="HBO Max 4" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_4.png" group-title="Esportes", HBO Max 4
+http://38.247.134.19:80/live/92370341211/30082393260/2335020|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="" tvg-name="HBO Max 5" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_5.png" group-title="Esportes", HBO Max 5
+https://0406.cdn12embed.xyz/max05/index.m3u8|Referer=https://10embeddecanais.xyz/max05/
+#EXTINF:-1 tvg-id="" tvg-name="HBO Max 6" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_6.png" group-title="Esportes", HBO Max 6
+https://0406.cdn12embed.xyz/max06/index.m3u8|Referer=https://10embeddecanais.xyz/max06/
+#EXTINF:-1 tvg-id="" tvg-name="Paramount+" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramount.png" group-title="Esportes", Paramount+
+http://38.247.134.19:80/live/92370341211/30082393260/2335025|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="Paramount+ 2" tvg-name="Paramount+ 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramount_2.png" group-title="Esportes", Paramount+ 2
+http://38.247.134.19:80/live/92370341211/30082393260/2335026|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="Paramount+ 3" tvg-name="Paramount+ 3" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramount_3.png" group-title="Esportes", Paramount+ 3
+http://38.247.134.19:80/live/92370341211/30082393260/2335027|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="Paramount+ 4" tvg-name="Paramount+ 4" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramount_4.png" group-title="Esportes", Paramount+ 4
+http://38.247.134.19:80/live/92370341211/30082393260/2335028|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="PREMIERE CLUBES HD" tvg-name="Premiere Clubes" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_clubes.png" group-title="Esportes", Premiere Clubes
+https://0406.cdn12embed.xyz/premiereclubes/index.m3u8|Referer=https://10embeddecanais.xyz/premiereclubes/
+#EXTINF:-1 tvg-id="PREMIERE 2 HD" tvg-name="Premiere 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_2.png" group-title="Esportes", Premiere 2
+http://38.247.134.19:80/live/92370341211/30082393260/18723|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="PREMIERE 3 HD" tvg-name="Premiere 3" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_3.png" group-title="Esportes", Premiere 3
+http://38.247.134.19:80/live/92370341211/30082393260/18749|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="PREMIERE 4 HD" tvg-name="Premiere 4" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_4.png" group-title="Esportes", Premiere 4
+http://38.247.134.19:80/live/92370341211/30082393260/18752|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="PREMIERE 5 HD" tvg-name="Premiere 5" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_5.png" group-title="Esportes", Premiere 5
+http://38.247.134.19:80/live/92370341211/30082393260/18755|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="PREMIERE 6 HD" tvg-name="Premiere 6" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_6.png" group-title="Esportes", Premiere 6
+http://38.247.134.19:80/live/92370341211/30082393260/18759|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="PREMIERE 7 HD" tvg-name="Premiere 7" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_7.png" group-title="Esportes", Premiere 7
+http://38.247.134.19:80/live/92370341211/30082393260/18767|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="" tvg-name="Premiere 8" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_8.png" group-title="Esportes", Premiere 8
+https://0406.cdn12embed.xyz/premiere8/index.m3u8|Referer=https://10embeddecanais.xyz/premiere8/
+#EXTINF:-1 tvg-id="" tvg-name="Prime Video 1" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_1.png" group-title="Esportes", Prime Video 1
+http://38.247.134.19:80/live/92370341211/30082393260/2335007|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="" tvg-name="Prime Video 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_2.png" group-title="Esportes", Prime Video 2
+http://38.247.134.19:80/live/92370341211/30082393260/2335007|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="" tvg-name="Prime Video 3" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_3.png" group-title="Esportes", Prime Video 3
+http://38.247.134.19:80/live/92370341211/30082393260/2335007|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="" tvg-name="Prime Video 4" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_4.png" group-title="Esportes", Prime Video 4
+https://0406.cdn12embed.xyz/amazonprime04/index.m3u8|Referer=https://10embeddecanais.xyz/amazonprimevideo04/
+#EXTINF:-1 tvg-id="" tvg-name="Prime Video 5" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_5.png" group-title="Esportes", Prime Video 5
+https://0406.cdn12embed.xyz/amazonprime05/index.m3u8|Referer=https://10embeddecanais.xyz/amazonprimevideo05/
+#EXTINF:-1 tvg-id="SPORTV" tvg-name="SporTV" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sportv.png" group-title="Esportes", SporTV
+http://38.247.134.19/live/92370341211/30082393260/18711|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="SPORTV 2" tvg-name="SporTV 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sportv_2.png" group-title="Esportes", SporTV 2
+http://38.247.134.19:80/live/92370341211/30082393260/18714|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="SPORTV 3" tvg-name="SporTV 3" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sportv_3.png" group-title="Esportes", SporTV 3
+http://38.247.134.19:80/live/92370341211/30082393260/18717|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="Xsports HD" tvg-name="XSports" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/xsports.png" group-title="Esportes", XSports
+https://0406.cdn12embed.xyz/xsports/index.m3u8|Referer=https://10embeddecanais.xyz/xsports/
+#EXTINF:-1 tvg-id="BAND NEWS" tvg-name="Band News" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band_news.png" group-title="Notícias", Band News
+http://38.247.134.19:80/live/92370341211/30082393260/374948|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="CNN BRASIL" tvg-name="CNN Brasil" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cnn_brasil.png" group-title="Notícias", CNN Brasil
+http://38.247.134.19:80/live/92370341211/30082393260/374954|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="GLOBONEWS" tvg-name="Globo News" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_news.png" group-title="Notícias", Globo News
+http://79.127.238.228:14093/|User-Agent=okhttp/4.9.2
+#EXTINF:-1 tvg-id="RECORD NEWS" tvg-name="Record News" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_news.png" group-title="Notícias", Record News
+http://38.247.134.19:80/live/92370341211/30082393260/374963|User-Agent=okhttp/4.9.2
