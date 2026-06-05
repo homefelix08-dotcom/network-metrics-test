@@ -7,7 +7,7 @@ export default {
     const url = new URL(request.url);
     const channelName = decodeURIComponent(url.pathname.replace('/play/', ''));
 
-    // 🚨 Captura a intenção da sua Grade IPTV (FHD/API ou UHD/SITE)
+    // Captura a intenção da sua Grade IPTV (site ou api)
     const rotaForcada = url.searchParams.get('rota');
 
     if (!channelName || url.pathname === '/') {
@@ -89,11 +89,36 @@ export default {
     };
 
     // ==========================================
-    // MOTOR DA API (EXTRAÇÃO CEGA E HIERÁRQUICA)
+    // MOTOR DA API (TESTE DE IP + FALLBACK CEGO)
     // ==========================================
     const tentarAPI = async () => {
       const nomeBusca = config.nome_api || config.nome;
       console.log(`[⚙️ API] Buscando '${nomeBusca}' na Exploud...`);
+
+      // Validador Ultrarrápido (Tráfego zero, apenas cabeçalhos)
+      const testarIpDireto = async (url) => {
+        try {
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 2000);
+
+          const res = await fetch(url, {
+            method: 'HEAD',
+            headers: { 'User-Agent': 'TiviMate/4.7.0 (Linux; Android 11)' },
+            signal: controller.signal
+          });
+
+          clearTimeout(timeoutId);
+
+          if (res.ok) {
+            console.log(`[✅ IP VIVO] Status 200 OK: ${url.substring(0, 40)}...`);
+            return url;
+          }
+          throw new Error(`Status HTTP ${res.status}`);
+        } catch (e) {
+          console.log(`[❌ IP MORTO] Falha no HEAD para ${url.substring(0, 30)}... Erro: ${e.message}`);
+          throw e;
+        }
+      };
 
       try {
         const controllerAPI = new AbortController();
@@ -115,46 +140,51 @@ export default {
           if (canalApi && canalApi.sources?.length > 0) {
             console.log(`[⚙️ API] Encontradas ${canalApi.sources.length} fontes.`);
 
-            // Separa os links por categoria
             const fontesIP = canalApi.sources.filter(s => /^https?:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/.test(s.link));
             const fontesCDN = canalApi.sources.filter(s => !/^https?:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/.test(s.link) && !s.link.includes("sinal.cc"));
 
-            // 1. A TV exigiu estritamente o IP Direto (A Rota "HD")
-            if (rotaForcada === 'api_ip') {
-              if (fontesIP.length > 0) {
-                console.log(`[🏆 VENCEDOR API] Retornando IP Direto exigido!`);
-                return fontesIP[0].link;
+            // 1. Prioridade Máxima: Validação de IPs Diretos
+            if (fontesIP.length > 0) {
+              console.log(`[⚙️ API] Detectados ${fontesIP.length} IPs. Disparando pings HEAD simultâneos...`);
+              try {
+                const ipVencedor = await Promise.any(fontesIP.map(fonte => testarIpDireto(fonte.link)));
+                if (ipVencedor) {
+                  console.log(`[🏆 VENCEDOR API] IP validado e aprovado!`);
+                  return ipVencedor;
+                }
+              } catch (e) {
+                console.log(`[⚠️ API] Todos os IPs falharam no teste. Acionando fallback para CDN...`);
               }
-              console.log(`[❌ ERRO API] IP Direto exigido, mas não existe no JSON.`);
-              return null; // Força falha para não misturar a grade
             }
 
-            // 2. A TV exigiu estritamente a CDN da API (A Rota "HD 2")
-            if (rotaForcada === 'api_cdn') {
-              if (config.filtro_cdn) {
-                const filtrada = canalApi.sources.find(s => s.name.toLowerCase().includes(config.filtro_cdn.toLowerCase()));
-                if (filtrada) return filtrada.link;
+            // 2. Fallback Cego (CDN)
+            console.log(`[🔄 EXTRAÇÃO CEGA] Buscando a melhor CDN disponível...`);
+
+            if (config.filtro_cdn) {
+              const filtrada = canalApi.sources.find(s => s.name.toLowerCase().includes(config.filtro_cdn.toLowerCase()));
+              if (filtrada) {
+                console.log(`[🏆 VENCEDOR API] Retornando CDN filtrada.`);
+                return filtrada.link;
               }
-              if (fontesCDN.length > 0) {
-                console.log(`[🏆 VENCEDOR API] Retornando CDN Padrão.`);
-                return fontesCDN[0].link;
-              }
-              return canalApi.sources[0].link;
+            }
+            if (fontesCDN.length > 0) {
+              console.log(`[🏆 VENCEDOR API] Retornando CDN padrão limpa.`);
+              return fontesCDN[0].link;
             }
 
-            // Fallback Genérico (se não enviou parâmetro)
-            if (fontesIP.length > 0) return fontesIP[0].link;
-            if (fontesCDN.length > 0) return fontesCDN[0].link;
             return canalApi.sources[0].link;
 
           } else {
             console.log(`[⚠️ ALERTA] Canal não encontrado no JSON.`);
           }
+        } else {
+          console.log(`[🚨 ERRO API] Exploud retornou HTTP ${apiRes.status}`);
         }
       } catch (e) {
-        console.log(`[🚨 ERRO API] Falha na comunicação: ${e.message}`);
+        console.log(`[🚨 ERRO API] Falha na comunicação com a Exploud: ${e.message}`);
         return null;
       }
+
       return null;
     };
 
@@ -171,7 +201,7 @@ export default {
         linkFinal = await tentarScraping();
         traceOrigem = "SITE PRINCIPAL";
 
-        // Redundância passiva: Se o site sumiu do mapa até pro Worker, tenta a API.
+        // Redundância passiva: Se o site sumiu do mapa, tenta a API.
         if (!linkFinal && !config.provedor_fixo) {
           console.log(`[🔄 FALLBACK CRUZADO] Site evaporou da internet. Tentando API...`);
           linkFinal = await tentarAPI();
@@ -226,4 +256,4 @@ export default {
       return new Response("Erro Interno", { status: 500 });
     }
   }
-}
+};
