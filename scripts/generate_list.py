@@ -72,52 +72,50 @@ def main():
             return "|User-Agent=okhttp/4.9.2"
             
         # Nomenclaturas Clássicas Mapeadas
-        nome_site = f"{nome} FHD"
-        nome_api_ip = f"{nome} HD"
-        nome_api_cdn = f"{nome} HD 2"
+        nome_fhd = f"{nome} FHD"
+        nome_hd = f"{nome} HD"
+        nome_hd2 = f"{nome} HD 2"
+
+        # Categoria Isolada para os IPs de baixa qualidade
+        cat_backup = "Backup"
 
         if fixo:
             if provedor_padrao == "site":
                 # Fixo no Site (Apenas FHD)
-                lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_site}" tvg-logo="{logo}" group-title="{cat}", {nome_site}\n')
+                lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_fhd}" tvg-logo="{logo}" group-title="{cat}", {nome_fhd}\n')
                 lines.append(f"{worker_endpoint}?rota=site{get_cabecalho('site')}\n")
             else:
                 if tem_ip_direto:
-                    # Fixo na API, mas tem 2 rotas lá dentro (Ordem: HD -> HD 2)
-                    lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_api_ip}" tvg-logo="{logo}" group-title="{cat}", {nome_api_ip}\n')
-                    lines.append(f"{worker_endpoint}?rota=api_ip{get_cabecalho('api')}\n")
-                    
-                    lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_api_cdn}" tvg-logo="{logo}" group-title="{cat}", {nome_api_cdn}\n')
+                    # Fixo na API, 2 Rotas (FHD e HD 2 no Backup)
+                    lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_fhd}" tvg-logo="{logo}" group-title="{cat}", {nome_fhd}\n')
                     lines.append(f"{worker_endpoint}?rota=api_cdn{get_cabecalho('api')}\n")
+                    
+                    lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_hd2}" tvg-logo="{logo}" group-title="{cat_backup}", {nome_hd2}\n')
+                    lines.append(f"{worker_endpoint}?rota=api_ip{get_cabecalho('api')}\n")
                 else:
-                    # Fixo na API, Rota Única (Apenas HD)
-                    lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_api_ip}" tvg-logo="{logo}" group-title="{cat}", {nome_api_ip}\n')
+                    # Fixo na API, Rota Única (Apenas FHD)
+                    lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_fhd}" tvg-logo="{logo}" group-title="{cat}", {nome_fhd}\n')
                     lines.append(f"{worker_endpoint}?rota=api_cdn{get_cabecalho('api')}\n")
         else:
-            # Canal Flexível (Tem Site + API)
-            # 🚨 ORDEM FORÇADA AQUI: FHD -> HD -> HD 2
+            # Canal Flexível (Tem Site + API CDN)
             
-            # 1. Rota do Site (FHD)
-            lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_site}" tvg-logo="{logo}" group-title="{cat}", {nome_site}\n')
+            # 1. Rota da API CDN (FHD - Principal)
+            lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_fhd}" tvg-logo="{logo}" group-title="{cat}", {nome_fhd}\n')
+            lines.append(f"{worker_endpoint}?rota=api_cdn{get_cabecalho('api')}\n")
+            
+            # 2. Rota do Site (HD - Segunda Opção na mesma categoria)
+            lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_hd}" tvg-logo="{logo}" group-title="{cat}", {nome_hd}\n')
             lines.append(f"{worker_endpoint}?rota=site{get_cabecalho('site')}\n")
 
             if tem_ip_direto:
-                # 2. Rota API IP Direto (HD)
-                lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_api_ip}" tvg-logo="{logo}" group-title="{cat}", {nome_api_ip}\n')
+                # 3. Rota API IP Direto (HD 2 - Escondido na categoria Backup)
+                lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_hd2}" tvg-logo="{logo}" group-title="{cat_backup}", {nome_hd2}\n')
                 lines.append(f"{worker_endpoint}?rota=api_ip{get_cabecalho('api')}\n")
-                
-                # 3. Rota API CDN (HD 2)
-                lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_api_cdn}" tvg-logo="{logo}" group-title="{cat}", {nome_api_cdn}\n')
-                lines.append(f"{worker_endpoint}?rota=api_cdn{get_cabecalho('api')}\n")
-            else:
-                # 2. Rota API Única (HD)
-                lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_api_ip}" tvg-logo="{logo}" group-title="{cat}", {nome_api_ip}\n')
-                lines.append(f"{worker_endpoint}?rota=api_cdn{get_cabecalho('api')}\n")
     
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         f.writelines(lines)
         
-    print(f"Sucesso! Grade IPTV Clássica e Blindada gerada em {OUTPUT_PATH}")
+    print(f"Sucesso! Grade gerada: FHD (API), HD (Site), e HD 2 em '{cat_backup}' (em {OUTPUT_PATH})")
 
 if __name__ == "__main__":
     main()

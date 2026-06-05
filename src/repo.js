@@ -19,7 +19,6 @@ export default [
         "filtro_cdn": "Globo MG",
         "provedor": "api",
         "provedor_fixo": true,
-        "tem_ip_direto": true
     },
     {
         "nome": "Band",

@@ -7,7 +7,7 @@ export default {
     const url = new URL(request.url);
     const channelName = decodeURIComponent(url.pathname.replace('/play/', ''));
 
-    // 🚨 Captura a intenção da sua Grade IPTV (FHD/API ou UHD/SITE)
+    // Captura a intenção da sua Grade IPTV (api_cdn, site, api_ip)
     const rotaForcada = url.searchParams.get('rota');
 
     if (!channelName || url.pathname === '/') {
@@ -15,7 +15,7 @@ export default {
     }
 
     console.log(`\n========================================`);
-    console.log(`[🚀 INIT] Canal: ${channelName.toUpperCase()} | Rota Solicitada: ${rotaForcada ? rotaForcada.toUpperCase() : 'PADRÃO'}`);
+    console.log(`[🚀 INIT] Canal: ${channelName.toUpperCase()} | Rota: ${rotaForcada ? rotaForcada.toUpperCase() : 'PADRÃO'}`);
 
     const config = REPO_CONFIG.find(c => c.nome.toLowerCase() === channelName.toLowerCase());
     if (!config) {
@@ -24,7 +24,7 @@ export default {
     }
 
     // ==========================================
-    // MOTOR DO SITE (EXTRAÇÃO CEGA)
+    // MOTOR DO SITE (AGORA É A ROTA "HD")
     // ==========================================
     const tentarScraping = async () => {
       if (!config.url) {
@@ -32,7 +32,7 @@ export default {
         return null;
       }
       if (config.url.includes("sua.tv") || config.url.endsWith(".m3u8")) {
-        console.log(`[🕷️ SCRAPER] URL direta detectada. Retornando cegamente.`);
+        console.log(`[🕷️ SCRAPER] URL direta detectada.`);
         return config.url;
       }
 
@@ -46,7 +46,7 @@ export default {
         if (numeroBase && i > 0) {
           const novoNumero = numeroBase + i;
           urlTentativa = config.url.replace(`https://${numeroBase}embed`, `https://${novoNumero}embed`);
-          console.log(`[🔄 ROTAÇÃO] Domínio falhou. Caçando próxima geração: ${urlTentativa}`);
+          console.log(`[🔄 ROTAÇÃO] Domínio falhou. Próxima geração: ${urlTentativa}`);
         } else {
           console.log(`[🕷️ SCRAPER] Iniciando raspagem em: ${urlTentativa}`);
         }
@@ -70,26 +70,19 @@ export default {
             const m3u8Match = html.match(/(https?:\/\/[^\s"\'<>]+?\.m3u8[^"\'<>]*)/);
 
             if (m3u8Match) {
-              console.log(`[✅ SCRAPER] Link extraído do domínio ${urlTentativa}. Confiando cegamente!`);
+              console.log(`[✅ SCRAPER] Link extraído!`);
               return m3u8Match[1];
-            } else {
-              console.log(`[❌ SCRAPER] Nenhum link .m3u8 encontrado no HTML. Abortando rotação.`);
-              return null;
             }
-          } else {
-            console.log(`[❌ SCRAPER] Site retornou HTTP ${siteRes.status}. Tentando próximo...`);
           }
         } catch (e) {
-          console.log(`[🚨 ERRO SCRAPER] Domínio inacessível (${e.message}). Tentando próximo...`);
+          console.log(`[🚨 ERRO SCRAPER] Domínio inacessível (${e.message}).`);
         }
       }
-
-      console.log(`[💀 SCRAPER] Todas as gerações de domínio esgotadas.`);
       return null;
     };
 
     // ==========================================
-    // MOTOR DA API (EXTRAÇÃO CEGA E HIERÁRQUICA)
+    // MOTOR DA API (FHD = CDN | HD 2 = IP DIRETO)
     // ==========================================
     const tentarAPI = async () => {
       const nomeBusca = config.nome_api || config.nome;
@@ -115,85 +108,81 @@ export default {
           if (canalApi && canalApi.sources?.length > 0) {
             console.log(`[⚙️ API] Encontradas ${canalApi.sources.length} fontes.`);
 
-            // Separa os links por categoria
             const fontesIP = canalApi.sources.filter(s => /^https?:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/.test(s.link));
             const fontesCDN = canalApi.sources.filter(s => !/^https?:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/.test(s.link) && !s.link.includes("sinal.cc"));
 
-            // 1. A TV exigiu estritamente o IP Direto (A Rota "HD")
+            // ROTA HD 2: Exige estritamente o IP Direto
             if (rotaForcada === 'api_ip') {
               if (fontesIP.length > 0) {
-                console.log(`[🏆 VENCEDOR API] Retornando IP Direto exigido!`);
+                console.log(`[🏆 VENCEDOR API] Retornando IP Direto (Rota Backup).`);
                 return fontesIP[0].link;
               }
-              console.log(`[❌ ERRO API] IP Direto exigido, mas não existe no JSON.`);
-              return null; // Força falha para não misturar a grade
+              return null; 
             }
 
-            // 2. A TV exigiu estritamente a CDN da API (A Rota "HD 2")
-            if (rotaForcada === 'api_cdn') {
+            // ROTA FHD: Exige estritamente a CDN (com filtro respeitado)
+            if (rotaForcada === 'api_cdn' || !rotaForcada) {
               if (config.filtro_cdn) {
                 const filtrada = canalApi.sources.find(s => s.name.toLowerCase().includes(config.filtro_cdn.toLowerCase()));
-                if (filtrada) return filtrada.link;
+                if (filtrada) {
+                   console.log(`[🏆 VENCEDOR API] Retornando CDN Filtrada (FHD).`);
+                   return filtrada.link;
+                }
               }
               if (fontesCDN.length > 0) {
-                console.log(`[🏆 VENCEDOR API] Retornando CDN Padrão.`);
+                console.log(`[🏆 VENCEDOR API] Retornando CDN Padrão (FHD).`);
                 return fontesCDN[0].link;
               }
+              // Se não achou CDN limpa, manda a primeira fonte genérica
               return canalApi.sources[0].link;
             }
 
-            // Fallback Genérico (se não enviou parâmetro)
-            if (fontesIP.length > 0) return fontesIP[0].link;
-            if (fontesCDN.length > 0) return fontesCDN[0].link;
-            return canalApi.sources[0].link;
-
-          } else {
-            console.log(`[⚠️ ALERTA] Canal não encontrado no JSON.`);
           }
         }
       } catch (e) {
         console.log(`[🚨 ERRO API] Falha na comunicação: ${e.message}`);
-        return null;
       }
       return null;
     };
 
     // ==========================================
-    // FLUXO DE REDUNDÂNCIA MESTRE (COM INTERRUPTOR MANUAL)
+    // FLUXO DE REDUNDÂNCIA MESTRE
     // ==========================================
     try {
       let linkFinal = null;
       let traceOrigem = "";
 
-      // Lê o controle remoto (TV pediu Site ou a configuração dita que é apenas Site)
       if (rotaForcada === 'site' || (config.provedor === 'site' && !rotaForcada)) {
-        console.log(`[🚦 ROTA] Interruptor virado para o SITE.`);
+        console.log(`[🚦 ROTA] Acionando SITE (HD).`);
         linkFinal = await tentarScraping();
         traceOrigem = "SITE PRINCIPAL";
 
-        // Redundância passiva: Se o site sumiu do mapa até pro Worker, tenta a API.
         if (!linkFinal && !config.provedor_fixo) {
-          console.log(`[🔄 FALLBACK CRUZADO] Site evaporou da internet. Tentando API...`);
-          linkFinal = await tentarAPI();
-          traceOrigem = "API (Salva-Vidas do Site)";
+          console.log(`[🔄 FALLBACK] Site caiu. Tentando CDN da API...`);
+          linkFinal = await tentarAPI(); // Tenta puxar a CDN como resgate
+          traceOrigem = "API CDN (Salva-Vidas)";
         }
-      }
-      // Lê o controle remoto (TV pediu API ou não há instrução)
-      else {
-        console.log(`[🚦 ROTA] Interruptor virado para a API.`);
+      } 
+      else if (rotaForcada === 'api_ip') {
+        console.log(`[🚦 ROTA] Acionando IP DIRETO (HD 2 / Backup).`);
         linkFinal = await tentarAPI();
-        traceOrigem = "API PRINCIPAL";
+        traceOrigem = "API IP DIRETO";
+        // Sem fallback aqui. Se o IP falhou na categoria de backup, deu ruim de vez.
+      }
+      else {
+        console.log(`[🚦 ROTA] Acionando API CDN (FHD).`);
+        linkFinal = await tentarAPI();
+        traceOrigem = "API CDN PRINCIPAL";
 
         if (!linkFinal && !config.provedor_fixo && config.url) {
-          console.log(`[🔄 FALLBACK CRUZADO] API falhou internamente. Tentando Site...`);
+          console.log(`[🔄 FALLBACK] CDN falhou. Tentando raspar o Site...`);
           linkFinal = await tentarScraping();
-          traceOrigem = "SITE (Salva-Vidas da API)";
+          traceOrigem = "SITE (Salva-Vidas)";
         }
       }
 
       if (linkFinal) {
-        console.log(`[🎯 ROTEAMENTO FINAL] Sucesso! Mandando TV para: ${traceOrigem}`);
-
+        console.log(`[🎯 ROTEAMENTO FINAL] Sucesso! TV vai para: ${traceOrigem}`);
         return new Response(null, {
           status: 302,
           headers: {
@@ -203,13 +192,12 @@ export default {
         });
       }
 
-      console.log(`[🆘 EMERGÊNCIA] Tudo falhou. Tentando buscar backup no GitHub...`);
+      console.log(`[🆘 EMERGÊNCIA] Buscando no GitHub...`);
       const githubRes = await fetch(`${GITHUB_RAW_BASE}/backup.txt`);
       const backupText = await githubRes.text();
       const match = backupText.match(new RegExp(`tvg-name="${config.nome}".*?\\n(http[^\\s\\|\\n]+)`, "i"));
 
       if (match) {
-        console.log(`[🛡️ BACKUP] Link estático encontrado no GitHub!`);
         return new Response(null, {
           status: 302,
           headers: {
@@ -219,10 +207,8 @@ export default {
         });
       }
 
-      console.log(`[💀 FIM DA LINHA] Nenhuma rota disponível.`);
-      return new Response("Nenhuma fonte online encontrada no momento.", { status: 404 });
+      return new Response("Nenhuma fonte online encontrada.", { status: 404 });
     } catch (e) {
-      console.log(`[💥 CRASH INTERNO] Erro fatal no script: ${e.message}`);
       return new Response("Erro Interno", { status: 500 });
     }
   }
