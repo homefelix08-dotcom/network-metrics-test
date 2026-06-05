@@ -19,6 +19,7 @@ export default [
         "filtro_cdn": "Globo MG",
         "provedor": "api",
         "provedor_fixo": true,
+        "tem_ip_direto": true
     },
     {
         "nome": "Band",
@@ -102,6 +103,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "AMC",
@@ -111,6 +113,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "AXN",
@@ -120,6 +123,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Canal Brasil",
@@ -128,6 +132,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": true,
+        "tem_ip_direto": true
     },
     {
         "nome": "Cinemax",
@@ -137,6 +142,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "HBO",
@@ -146,6 +152,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "HBO 2",
@@ -155,6 +162,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "HBO Family",
@@ -165,6 +173,7 @@ export default [
         "filtro_cdn": "Opção 02",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "HBO Mundi",
@@ -183,6 +192,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "HBO Pop",
@@ -192,6 +202,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "HBO Signature",
@@ -201,6 +212,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "HBO Xtreme",
@@ -210,6 +222,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Megapix",
@@ -219,6 +232,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Sony Channel",
@@ -228,6 +242,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Space",
@@ -237,6 +252,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Studio Universal",
@@ -246,6 +262,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "TCM",
@@ -255,6 +272,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Telecine Action",
@@ -264,6 +282,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Telecine Cult",
@@ -273,6 +292,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Telecine Fun",
@@ -282,6 +302,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Telecine Pipoca",
@@ -291,6 +312,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Telecine Premium",
@@ -300,6 +322,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Telecine Touch",
@@ -309,6 +332,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "TNT",
@@ -318,6 +342,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "TNT Novelas",
@@ -327,6 +352,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "TNT Séries",
@@ -336,6 +362,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Universal TV",
@@ -345,6 +372,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "USA",
@@ -354,6 +382,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Warner",
@@ -363,6 +392,7 @@ export default [
         "categoria": "Filmes e Séries",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
 
     /* VARIEDADES */
@@ -373,6 +403,7 @@ export default [
         "categoria": "Variedades",
         "provedor": "api",
         "provedor_fixo": true,
+        "tem_ip_direto": true
     },
     {
         "nome": "Canal Off",
@@ -390,6 +421,7 @@ export default [
         "categoria": "Variedades",
         "provedor": "api",
         "provedor_fixo": true,
+        "tem_ip_direto": true
     },
     {
         "nome": "Fish TV",
@@ -398,6 +430,7 @@ export default [
         "categoria": "Variedades",
         "provedor": "api",
         "provedor_fixo": true,
+        "tem_ip_direto": true
     },
     {
         "nome": "Food Network",
@@ -407,6 +440,7 @@ export default [
         "categoria": "Variedades",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Globoplay Novelas",
@@ -416,6 +450,7 @@ export default [
         "categoria": "Variedades",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "GNT",
@@ -425,6 +460,7 @@ export default [
         "categoria": "Variedades",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Lifetime",
@@ -433,6 +469,7 @@ export default [
         "categoria": "Variedades",
         "provedor": "api",
         "provedor_fixo": true,
+        "tem_ip_direto": true
     },
     {
         "nome": "Modo Viagem",
@@ -441,6 +478,7 @@ export default [
         "categoria": "Variedades",
         "provedor": "api",
         "provedor_fixo": true,
+        "tem_ip_direto": true
     },
     {
         "nome": "Multishow",
@@ -450,6 +488,7 @@ export default [
         "categoria": "Variedades",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Music Box Brazil",
@@ -474,6 +513,7 @@ export default [
         "categoria": "Variedades",
         "provedor": "api",
         "provedor_fixo": true,
+        "tem_ip_direto": true
     },
     {
         "nome": "Travel Box Brazil",
@@ -493,6 +533,7 @@ export default [
         "categoria": "Documentários",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Arte1",
@@ -501,6 +542,7 @@ export default [
         "categoria": "Documentários",
         "provedor": "api",
         "provedor_fixo": true,
+        "tem_ip_direto": true
     },
     {
         "nome": "Discovery Channel",
@@ -510,6 +552,7 @@ export default [
         "categoria": "Documentários",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Discovery Home & Health",
@@ -519,6 +562,7 @@ export default [
         "categoria": "Documentários",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Discovery Science",
@@ -528,6 +572,7 @@ export default [
         "categoria": "Documentários",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Discovery Theater",
@@ -537,6 +582,7 @@ export default [
         "categoria": "Documentários",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Discovery Turbo",
@@ -546,6 +592,7 @@ export default [
         "categoria": "Documentários",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Discovery World",
@@ -555,6 +602,7 @@ export default [
         "categoria": "Documentários",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "E! Entertainment",
@@ -620,6 +668,7 @@ export default [
         "categoria": "Infantis",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Cartoonito",
@@ -629,6 +678,7 @@ export default [
         "categoria": "Infantis",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Discovery Kids",
@@ -638,6 +688,7 @@ export default [
         "categoria": "Infantis",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Gloob",
@@ -647,6 +698,7 @@ export default [
         "categoria": "Infantis",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Gloobinho",
@@ -656,6 +708,7 @@ export default [
         "categoria": "Infantis",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Tooncast",
@@ -665,6 +718,7 @@ export default [
         "categoria": "Infantis",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
 
     /* ESPORTES */
@@ -685,6 +739,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Canal Goat",
@@ -693,6 +748,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": true,
+        "tem_ip_direto": true
     },
     {
         "nome": "Combate",
@@ -702,6 +758,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Dazn",
@@ -711,6 +768,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "ESPN",
@@ -720,6 +778,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "ESPN 2",
@@ -729,6 +788,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "ESPN 3",
@@ -738,6 +798,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "ESPN 4",
@@ -747,6 +808,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "ESPN 5",
@@ -756,6 +818,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "ESPN 6",
@@ -765,6 +828,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "GE TV",
@@ -774,6 +838,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "HBO Max",
@@ -783,6 +848,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "HBO Max 2",
@@ -792,6 +858,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "HBO Max 3",
@@ -801,6 +868,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "HBO Max 4",
@@ -810,6 +878,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "HBO Max 5",
@@ -837,6 +906,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Paramount+ 2",
@@ -846,6 +916,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Paramount+ 3",
@@ -854,6 +925,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": true,
+        "tem_ip_direto": true
     },
     {
         "nome": "Paramount+ 4",
@@ -862,6 +934,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": true,
+        "tem_ip_direto": true
     },
     {
         "nome": "Premiere Clubes",
@@ -880,6 +953,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Premiere 3",
@@ -889,6 +963,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Premiere 4",
@@ -898,6 +973,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Premiere 5",
@@ -907,6 +983,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Premiere 6",
@@ -916,6 +993,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Premiere 7",
@@ -925,6 +1003,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Premiere 8",
@@ -945,6 +1024,7 @@ export default [
         "filtro_cdn": "Opção 01",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Prime Video 2",
@@ -956,6 +1036,7 @@ export default [
         "filtro_cdn": "Opção 02",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Prime Video 3",
@@ -967,6 +1048,7 @@ export default [
         "filtro_cdn": "Opção 03",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Prime Video 4",
@@ -994,6 +1076,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "SporTV 2",
@@ -1003,6 +1086,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "SporTV 3",
@@ -1012,6 +1096,7 @@ export default [
         "categoria": "Esportes",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "XSports",
@@ -1032,6 +1117,7 @@ export default [
         "categoria": "Notícias",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "CNN Brasil",
@@ -1041,6 +1127,7 @@ export default [
         "categoria": "Notícias",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     },
     {
         "nome": "Globo News",
@@ -1059,5 +1146,6 @@ export default [
         "categoria": "Notícias",
         "provedor": "api",
         "provedor_fixo": false,
+        "tem_ip_direto": true
     }
 ]
