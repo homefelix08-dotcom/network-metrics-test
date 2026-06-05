@@ -54,6 +54,9 @@ def main():
 
     lines = [f'#EXTM3U x-tvg-url="{EPG_GLOBAL},{EPG_LOCAL}"\n']
     
+    # Gaveta temporária para guardar os canais de backup e jogar pro final
+    backup_lines = []
+    
     for c in channels:
         nome = c['nome']
         tvg_id = c.get('tvg_id', nome)
@@ -86,12 +89,12 @@ def main():
                 lines.append(f"{worker_endpoint}?rota=site{get_cabecalho('site')}\n")
             else:
                 if tem_ip_direto:
-                    # Fixo na API, 2 Rotas (FHD e HD 2 no Backup)
+                    # Fixo na API, 2 Rotas (FHD na lista principal, HD 2 na gaveta de Backup)
                     lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_fhd}" tvg-logo="{logo}" group-title="{cat}", {nome_fhd}\n')
                     lines.append(f"{worker_endpoint}?rota=api_cdn{get_cabecalho('api')}\n")
                     
-                    lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_hd2}" tvg-logo="{logo}" group-title="{cat_backup}", {nome_hd2}\n')
-                    lines.append(f"{worker_endpoint}?rota=api_ip{get_cabecalho('api')}\n")
+                    backup_lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_hd2}" tvg-logo="{logo}" group-title="{cat_backup}", {nome_hd2}\n')
+                    backup_lines.append(f"{worker_endpoint}?rota=api_ip{get_cabecalho('api')}\n")
                 else:
                     # Fixo na API, Rota Única (Apenas FHD)
                     lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_fhd}" tvg-logo="{logo}" group-title="{cat}", {nome_fhd}\n')
@@ -108,14 +111,17 @@ def main():
             lines.append(f"{worker_endpoint}?rota=site{get_cabecalho('site')}\n")
 
             if tem_ip_direto:
-                # 3. Rota API IP Direto (HD 2 - Escondido na categoria Backup)
-                lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_hd2}" tvg-logo="{logo}" group-title="{cat_backup}", {nome_hd2}\n')
-                lines.append(f"{worker_endpoint}?rota=api_ip{get_cabecalho('api')}\n")
+                # 3. Rota API IP Direto (HD 2 - Escondido na gaveta de Backup)
+                backup_lines.append(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{nome_hd2}" tvg-logo="{logo}" group-title="{cat_backup}", {nome_hd2}\n')
+                backup_lines.append(f"{worker_endpoint}?rota=api_ip{get_cabecalho('api')}\n")
     
+    # Descarrega a gaveta de backup no final do arquivo
+    lines.extend(backup_lines)
+
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         f.writelines(lines)
         
-    print(f"Sucesso! Grade gerada: FHD (API), HD (Site), e HD 2 em '{cat_backup}' (em {OUTPUT_PATH})")
+    print(f"Sucesso! Grade gerada: FHD/HD nas categorias principais, e HD 2 empurrado para o final da lista (em {OUTPUT_PATH})")
 
 if __name__ == "__main__":
     main()
