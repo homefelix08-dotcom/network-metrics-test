@@ -6,7 +6,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const channelName = decodeURIComponent(url.pathname.replace('/play/', ''));
-
+    
     // Captura a intenção da sua Grade IPTV (site ou api)
     const rotaForcada = url.searchParams.get('rota');
 
@@ -38,11 +38,11 @@ export default {
 
       const matchDominio = config.url.match(/https:\/\/(\d+)embeddecanais/);
       const numeroBase = matchDominio ? parseInt(matchDominio[1]) : null;
-      const tentativasMaximas = numeroBase ? 3 : 1;
+      const tentativasMaximas = numeroBase ? 3 : 1; 
 
       for (let i = 0; i < tentativasMaximas; i++) {
         let urlTentativa = config.url;
-
+        
         if (numeroBase && i > 0) {
           const novoNumero = numeroBase + i;
           urlTentativa = config.url.replace(`https://${numeroBase}embed`, `https://${novoNumero}embed`);
@@ -62,22 +62,22 @@ export default {
             },
             signal: controllerScraper.signal
           });
-
+          
           clearTimeout(idScraper);
 
           if (siteRes.ok) {
             const html = await siteRes.text();
             const m3u8Match = html.match(/(https?:\/\/[^\s"\'<>]+?\.m3u8[^"\'<>]*)/);
-
+            
             if (m3u8Match) {
               console.log(`[✅ SCRAPER] Link extraído do domínio ${urlTentativa}. Confiando cegamente!`);
               return m3u8Match[1];
             } else {
               console.log(`[❌ SCRAPER] Nenhum link .m3u8 encontrado no HTML. Abortando rotação.`);
-              return null;
+              return null; 
             }
           } else {
-            console.log(`[❌ SCRAPER] Site retornou HTTP ${siteRes.status}. Tentando próximo...`);
+             console.log(`[❌ SCRAPER] Site retornou HTTP ${siteRes.status}. Tentando próximo...`);
           }
         } catch (e) {
           console.log(`[🚨 ERRO SCRAPER] Domínio inacessível (${e.message}). Tentando próximo...`);
@@ -100,17 +100,18 @@ export default {
         try {
           const controller = new AbortController();
           const timeoutId = setTimeout(() => controller.abort(), 2000);
-
+          
           const res = await fetch(url, {
             method: 'HEAD',
             headers: { 'User-Agent': 'TiviMate/4.7.0 (Linux; Android 11)' },
             signal: controller.signal
           });
-
+          
           clearTimeout(timeoutId);
-
-          if (res.ok) {
-            console.log(`[✅ IP VIVO] Status 200 OK: ${url.substring(0, 40)}...`);
+          
+          // 🚨 CORREÇÃO AQUI: O status 403 agora é consagrado como SUCESSO e IP VIVO!
+          if (res.ok || res.status === 403) {
+            console.log(`[✅ IP VIVO] Status ${res.status}: ${url.substring(0, 40)}...`);
             return url;
           }
           throw new Error(`Status HTTP ${res.status}`);
@@ -159,7 +160,7 @@ export default {
 
             // 2. Fallback Cego (CDN)
             console.log(`[🔄 EXTRAÇÃO CEGA] Buscando a melhor CDN disponível...`);
-
+            
             if (config.filtro_cdn) {
               const filtrada = canalApi.sources.find(s => s.name.toLowerCase().includes(config.filtro_cdn.toLowerCase()));
               if (filtrada) {
@@ -168,10 +169,10 @@ export default {
               }
             }
             if (fontesCDN.length > 0) {
-              console.log(`[🏆 VENCEDOR API] Retornando CDN padrão limpa.`);
-              return fontesCDN[0].link;
+               console.log(`[🏆 VENCEDOR API] Retornando CDN padrão limpa.`);
+               return fontesCDN[0].link;
             }
-
+            
             return canalApi.sources[0].link;
 
           } else {
@@ -200,20 +201,20 @@ export default {
         console.log(`[🚦 ROTA] Interruptor virado para o SITE.`);
         linkFinal = await tentarScraping();
         traceOrigem = "SITE PRINCIPAL";
-
+        
         // Redundância passiva: Se o site sumiu do mapa, tenta a API.
         if (!linkFinal && !config.provedor_fixo) {
           console.log(`[🔄 FALLBACK CRUZADO] Site evaporou da internet. Tentando API...`);
           linkFinal = await tentarAPI();
           traceOrigem = "API (Salva-Vidas do Site)";
         }
-      }
+      } 
       // Lê o controle remoto (TV pediu API ou não há instrução)
       else {
         console.log(`[🚦 ROTA] Interruptor virado para a API.`);
         linkFinal = await tentarAPI();
         traceOrigem = "API PRINCIPAL";
-
+        
         if (!linkFinal && !config.provedor_fixo && config.url) {
           console.log(`[🔄 FALLBACK CRUZADO] API falhou internamente. Tentando Site...`);
           linkFinal = await tentarScraping();
@@ -223,7 +224,7 @@ export default {
 
       if (linkFinal) {
         console.log(`[🎯 ROTEAMENTO FINAL] Sucesso! Mandando TV para: ${traceOrigem}`);
-
+        
         return new Response(null, {
           status: 302,
           headers: {
@@ -256,4 +257,4 @@ export default {
       return new Response("Erro Interno", { status: 500 });
     }
   }
-};
+}
