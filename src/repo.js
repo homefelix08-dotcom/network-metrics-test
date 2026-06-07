@@ -16,7 +16,7 @@ export default [
         "tvg_id": "GLOBO_SÃO_PAULO",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png",
         "categoria": "Abertos",
-        "filtro_cdn": "Globo MG",
+        "filtro_cdn": "Globo BA(CDN)",
         "provedor": "api",
         "provedor_fixo": true,
     },
