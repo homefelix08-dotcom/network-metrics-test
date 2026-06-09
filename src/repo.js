@@ -589,6 +589,7 @@ export default [
         "url": `${siteBaseUrl}/discoveryturbo/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_turbo.png",
         "categoria": "Documentários",
+        "filtro_cdn": "Opção 02",
         "provedor": "api",
         "provedor_fixo": false,
         "tem_ip_direto": true
