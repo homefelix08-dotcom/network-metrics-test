@@ -162,14 +162,11 @@
   <programme start="20260610110000 -0300" stop="20260610114500 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Agora</title>
   </programme>
-  <programme start="20260610114500 -0300" stop="20260610124500 -0300" channel="SBT MG">
+  <programme start="20260610114500 -0300" stop="20260610124000 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Esportes</title>
   </programme>
-  <programme start="20260610124500 -0300" stop="20260610132000 -0300" channel="SBT MG">
+  <programme start="20260610124000 -0300" stop="20260610134500 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Alerta</title>
-  </programme>
-  <programme start="20260610132000 -0300" stop="20260610134500 -0300" channel="SBT MG">
-    <title lang="pt">Alterosa Urgente</title>
   </programme>
   <programme start="20260610134500 -0300" stop="20260610153000 -0300" channel="SBT MG">
     <title lang="pt">Meu Coração é Teu</title>
