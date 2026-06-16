@@ -126,13 +126,13 @@
   <programme start="20260616223000 -0300" stop="20260617000000 -0300" channel="Record MG">
     <title lang="pt">Casa do Patrão</title>
   </programme>
-  <programme start="20260616000000 -0300" stop="20260616010000 -0300" channel="SBT MG">
+  <programme start="20260616001500 -0300" stop="20260616011500 -0300" channel="SBT MG">
     <title lang="pt">The Noite com Danilo Gentili</title>
   </programme>
-  <programme start="20260616010000 -0300" stop="20260616013000 -0300" channel="SBT MG">
+  <programme start="20260616011500 -0300" stop="20260616014500 -0300" channel="SBT MG">
     <title lang="pt">Operação Mesquita</title>
   </programme>
-  <programme start="20260616013000 -0300" stop="20260616060000 -0300" channel="SBT MG">
+  <programme start="20260616014500 -0300" stop="20260616060000 -0300" channel="SBT MG">
     <title lang="pt">SBT Notícias</title>
   </programme>
   <programme start="20260616060000 -0300" stop="20260616070000 -0300" channel="SBT MG">
@@ -162,11 +162,14 @@
   <programme start="20260616134500 -0300" stop="20260616153000 -0300" channel="SBT MG">
     <title lang="pt">Meu Coração é Teu</title>
   </programme>
-  <programme start="20260616153000 -0300" stop="20260616170000 -0300" channel="SBT MG">
-    <title lang="pt">Fofocalizando</title>
+  <programme start="20260616153000 -0300" stop="20260616160000 -0300" channel="SBT MG">
+    <title lang="pt">Copa do Mundo 2026: Vem pro Jogo - Ao Vivo</title>
   </programme>
-  <programme start="20260616170000 -0300" stop="20260616183000 -0300" channel="SBT MG">
-    <title lang="pt">Sortilégio</title>
+  <programme start="20260616160000 -0300" stop="20260616180000 -0300" channel="SBT MG">
+    <title lang="pt">França x Senegal - Ao Vivo</title>
+  </programme>
+  <programme start="20260616180000 -0300" stop="20260616183000 -0300" channel="SBT MG">
+    <title lang="pt">Aqui Agora</title>
   </programme>
   <programme start="20260616183000 -0300" stop="20260616191500 -0300" channel="SBT MG">
     <title lang="pt">Tá Na Hora Minas</title>
@@ -177,17 +180,14 @@
   <programme start="20260616194500 -0300" stop="20260616204500 -0300" channel="SBT MG">
     <title lang="pt">SBT Brasil</title>
   </programme>
-  <programme start="20260616204500 -0300" stop="20260616213000 -0300" channel="SBT MG">
+  <programme start="20260616204500 -0300" stop="20260616220000 -0300" channel="SBT MG">
     <title lang="pt">A História de Joana - A Virgem</title>
   </programme>
-  <programme start="20260616213000 -0300" stop="20260616220000 -0300" channel="SBT MG">
-    <title lang="pt">Domênica Montero</title>
-  </programme>
-  <programme start="20260616220000 -0300" stop="20260616230000 -0300" channel="SBT MG">
+  <programme start="20260616220000 -0300" stop="20260616233000 -0300" channel="SBT MG">
     <title lang="pt">Programa do Ratinho</title>
   </programme>
-  <programme start="20260616230000 -0300" stop="20260617000000 -0300" channel="SBT MG">
-    <title lang="pt">SBT Repórter</title>
+  <programme start="20260616233000 -0300" stop="20260617000000 -0300" channel="SBT MG">
+    <title lang="pt">Balanço da Copa - Ao Vivo</title>
   </programme>
   <programme start="20260616000000 -0300" stop="20260616010000 -0300" channel="Band MG">
     <title lang="pt">Jornal da Noite</title>
