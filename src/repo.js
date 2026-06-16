@@ -13,7 +13,7 @@ export default [
     },
     {
         "nome": "Globo",
-        "tvg_id": "GLOBO_SÃO_PAULO",
+        "tvg_id": "GLOBO SP",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png",
         "categoria": "Abertos",
         "filtro_cdn": "Globo BA(CDN)",
