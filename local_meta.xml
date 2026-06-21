@@ -16,55 +16,52 @@
     <title lang="pt">Central da Copa</title>
   </programme>
   <programme start="20260621004500 -0300" stop="20260621031000 -0300" channel="Globo MG">
-    <title lang="pt">Programação Globo</title>
+    <title lang="pt">Tunísia x Japão - Ao Vivo</title>
   </programme>
-  <programme start="20260621031000 -0300" stop="20260621040000 -0300" channel="Globo MG">
-    <title lang="pt">Comédia Na Madruga - Vai Que Cola I</title>
+  <programme start="20260621031000 -0300" stop="20260621034000 -0300" channel="Globo MG">
+    <title lang="pt">A Nobreza do Amor</title>
   </programme>
-  <programme start="20260621040000 -0300" stop="20260621054500 -0300" channel="Globo MG">
-    <title lang="pt">Corujão: O Auto da Boa Mentira</title>
+  <programme start="20260621034000 -0300" stop="20260621041000 -0300" channel="Globo MG">
+    <title lang="pt">Coração Acelerado</title>
+  </programme>
+  <programme start="20260621041000 -0300" stop="20260621054500 -0300" channel="Globo MG">
+    <title lang="pt">Corujão: Tô Ryca</title>
   </programme>
   <programme start="20260621054500 -0300" stop="20260621063500 -0300" channel="Globo MG">
     <title lang="pt">Santa Missa</title>
   </programme>
-  <programme start="20260621063500 -0300" stop="20260621072500 -0300" channel="Globo MG">
-    <title lang="pt">Globo Repórter</title>
-  </programme>
-  <programme start="20260621072500 -0300" stop="20260621075500 -0300" channel="Globo MG">
+  <programme start="20260621063500 -0300" stop="20260621070500 -0300" channel="Globo MG">
     <title lang="pt">Tô Indo</title>
   </programme>
-  <programme start="20260621075500 -0300" stop="20260621083000 -0300" channel="Globo MG">
+  <programme start="20260621070500 -0300" stop="20260621073500 -0300" channel="Globo MG">
     <title lang="pt">Auto Esporte</title>
   </programme>
-  <programme start="20260621083000 -0300" stop="20260621094000 -0300" channel="Globo MG">
+  <programme start="20260621073500 -0300" stop="20260621083000 -0300" channel="Globo MG">
     <title lang="pt">Globo Rural</title>
   </programme>
-  <programme start="20260621094000 -0300" stop="20260621120000 -0300" channel="Globo MG">
-    <title lang="pt">Programação Globo</title>
+  <programme start="20260621083000 -0300" stop="20260621092000 -0300" channel="Globo MG">
+    <title lang="pt">Viver Sertanejo</title>
   </programme>
-  <programme start="20260621120000 -0300" stop="20260621131500 -0300" channel="Globo MG">
+  <programme start="20260621092000 -0300" stop="20260621123500 -0300" channel="Globo MG">
     <title lang="pt">Esporte Espetacular</title>
   </programme>
-  <programme start="20260621131500 -0300" stop="20260621150500 -0300" channel="Globo MG">
-    <title lang="pt">Temperatura Máxima: A Lenda de Tarzan</title>
+  <programme start="20260621123500 -0300" stop="20260621142500 -0300" channel="Globo MG">
+    <title lang="pt">Temperatura Máxima: Sonic 2 - O Filme</title>
   </programme>
-  <programme start="20260621150500 -0300" stop="20260621163500 -0300" channel="Globo MG">
+  <programme start="20260621142500 -0300" stop="20260621161000 -0300" channel="Globo MG">
+    <title lang="pt">Campeões de Bilheteria: Viúva Negra</title>
+  </programme>
+  <programme start="20260621161000 -0300" stop="20260621185000 -0300" channel="Globo MG">
     <title lang="pt">Domingão Com Huck</title>
   </programme>
-  <programme start="20260621163500 -0300" stop="20260621191000 -0300" channel="Globo MG">
-    <title lang="pt">Programação Globo</title>
+  <programme start="20260621185000 -0300" stop="20260621211000 -0300" channel="Globo MG">
+    <title lang="pt">Uruguai x Cabo Verde - Ao Vivo</title>
   </programme>
-  <programme start="20260621191000 -0300" stop="20260621194500 -0300" channel="Globo MG">
-    <title lang="pt">Domingão Com Huck</title>
-  </programme>
-  <programme start="20260621194500 -0300" stop="20260621221000 -0300" channel="Globo MG">
-    <title lang="pt">Programação Globo</title>
-  </programme>
-  <programme start="20260621221000 -0300" stop="20260621224500 -0300" channel="Globo MG">
+  <programme start="20260621211000 -0300" stop="20260621214500 -0300" channel="Globo MG">
     <title lang="pt">Fantástico</title>
   </programme>
-  <programme start="20260621224500 -0300" stop="20260622000000 -0300" channel="Globo MG">
-    <title lang="pt">Programação Globo</title>
+  <programme start="20260621214500 -0300" stop="20260622000000 -0300" channel="Globo MG">
+    <title lang="pt">Nova Zelândia x Egito - Ao Vivo</title>
   </programme>
   <programme start="20260621011500 -0300" stop="20260621020000 -0300" channel="Record MG">
     <title lang="pt">Fala que eu te Escuto</title>
@@ -117,16 +114,16 @@
   <programme start="20260621231500 -0300" stop="20260622000000 -0300" channel="Record MG">
     <title lang="pt">Esporte Record</title>
   </programme>
-  <programme start="20260621000000 -0300" stop="20260621002000 -0300" channel="SBT MG">
+  <programme start="20260621000000 -0300" stop="20260621003000 -0300" channel="SBT MG">
     <title lang="pt">Balanço da Copa - Ao Vivo</title>
   </programme>
-  <programme start="20260621002000 -0300" stop="20260621011500 -0300" channel="SBT MG">
+  <programme start="20260621003000 -0300" stop="20260621013000 -0300" channel="SBT MG">
     <title lang="pt">Programa do João</title>
   </programme>
-  <programme start="20260621011500 -0300" stop="20260621020000 -0300" channel="SBT MG">
+  <programme start="20260621013000 -0300" stop="20260621021500 -0300" channel="SBT MG">
     <title lang="pt">Notícias Impressionantes</title>
   </programme>
-  <programme start="20260621020000 -0300" stop="20260621060000 -0300" channel="SBT MG">
+  <programme start="20260621021500 -0300" stop="20260621060000 -0300" channel="SBT MG">
     <title lang="pt">SBT Notícias</title>
   </programme>
   <programme start="20260621060000 -0300" stop="20260621070000 -0300" channel="SBT MG">
@@ -147,16 +144,16 @@
   <programme start="20260621101000 -0300" stop="20260621111500 -0300" channel="SBT MG">
     <title lang="pt">Notícias Impressionantes</title>
   </programme>
-  <programme start="20260621111500 -0300" stop="20260621163000 -0300" channel="SBT MG">
+  <programme start="20260621111500 -0300" stop="20260621183000 -0300" channel="SBT MG">
     <title lang="pt">Domingo Legal</title>
   </programme>
-  <programme start="20260621163000 -0300" stop="20260621170000 -0300" channel="SBT MG">
+  <programme start="20260621183000 -0300" stop="20260621190000 -0300" channel="SBT MG">
     <title lang="pt">Copa do Mundo 2026: Vem pro Jogo - Ao Vivo</title>
   </programme>
-  <programme start="20260621170000 -0300" stop="20260621190000 -0300" channel="SBT MG">
-    <title lang="pt">Programação do Canal</title>
+  <programme start="20260621190000 -0300" stop="20260621210000 -0300" channel="SBT MG">
+    <title lang="pt">Uruguai x Cabo Verde - Ao Vivo</title>
   </programme>
-  <programme start="20260621190000 -0300" stop="20260622000000 -0300" channel="SBT MG">
+  <programme start="20260621210000 -0300" stop="20260622000000 -0300" channel="SBT MG">
     <title lang="pt">Programa Silvio Santos com Patrícia Abravanel</title>
   </programme>
   <programme start="20260621000000 -0300" stop="20260621013000 -0300" channel="Band MG">
