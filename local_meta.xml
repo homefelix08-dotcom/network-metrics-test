@@ -79,7 +79,7 @@
     <title lang="pt">Programação Globo</title>
   </programme>
   <programme start="20260626000000 -0300" stop="20260626004500 -0300" channel="Record MG">
-    <title lang="pt">Chicago Med</title>
+    <title lang="pt">Série</title>
   </programme>
   <programme start="20260626004500 -0300" stop="20260626020000 -0300" channel="Record MG">
     <title lang="pt">Fala que eu te Escuto</title>
@@ -123,11 +123,14 @@
   <programme start="20260626210000 -0300" stop="20260626220000 -0300" channel="Record MG">
     <title lang="pt">Coração de Mãe</title>
   </programme>
-  <programme start="20260626220000 -0300" stop="20260626230000 -0300" channel="Record MG">
-    <title lang="pt">Reis - A Sucessão</title>
+  <programme start="20260626220000 -0300" stop="20260626223000 -0300" channel="Record MG">
+    <title lang="pt">Reis - A Decadência</title>
+  </programme>
+  <programme start="20260626223000 -0300" stop="20260626230000 -0300" channel="Record MG">
+    <title lang="pt">Casa do Patrão</title>
   </programme>
   <programme start="20260626230000 -0300" stop="20260627000000 -0300" channel="Record MG">
-    <title lang="pt">Quilos Mortais</title>
+    <title lang="pt">Câmera Record Especial: Um Dia na Vida</title>
   </programme>
   <programme start="20260626000000 -0300" stop="20260626003000 -0300" channel="SBT MG">
     <title lang="pt">Balanço da Copa - Ao Vivo</title>
