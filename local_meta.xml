@@ -12,188 +12,182 @@
   <channel id="Band MG">
     <display-name>Band</display-name>
   </channel>
-  <programme start="20260626001000 -0300" stop="20260626004000 -0300" channel="Globo MG">
-    <title lang="pt">Central da Copa</title>
+  <programme start="20260627000000 -0300" stop="20260627022000 -0300" channel="Globo MG">
+    <title lang="pt">Egito x Irã - Ao Vivo</title>
   </programme>
-  <programme start="20260626004000 -0300" stop="20260626012000 -0300" channel="Globo MG">
-    <title lang="pt">Jornal da Globo</title>
+  <programme start="20260627022000 -0300" stop="20260627042000 -0300" channel="Globo MG">
+    <title lang="pt">VT - Cabo Verde x Arábia Saudita</title>
   </programme>
-  <programme start="20260626012000 -0300" stop="20260626015500 -0300" channel="Globo MG">
+  <programme start="20260627042000 -0300" stop="20260627045000 -0300" channel="Globo MG">
     <title lang="pt">A Nobreza do Amor</title>
   </programme>
-  <programme start="20260626015500 -0300" stop="20260626024000 -0300" channel="Globo MG">
+  <programme start="20260627045000 -0300" stop="20260627052500 -0300" channel="Globo MG">
     <title lang="pt">Coração Acelerado</title>
   </programme>
-  <programme start="20260626024000 -0300" stop="20260626031500 -0300" channel="Globo MG">
+  <programme start="20260627052500 -0300" stop="20260627060000 -0300" channel="Globo MG">
     <title lang="pt">Comédia Na Madruga - Vai Que Cola I</title>
   </programme>
-  <programme start="20260626031500 -0300" stop="20260626040000 -0300" channel="Globo MG">
-    <title lang="pt">Comédia Na Madruga - Vai Que Cola II</title>
+  <programme start="20260627060000 -0300" stop="20260627065000 -0300" channel="Globo MG">
+    <title lang="pt">Globo Rural</title>
   </programme>
-  <programme start="20260626040000 -0300" stop="20260626060000 -0300" channel="Globo MG">
-    <title lang="pt">Hora Um</title>
+  <programme start="20260627065000 -0300" stop="20260627075000 -0300" channel="Globo MG">
+    <title lang="pt">Bom Dia Sábado</title>
   </programme>
-  <programme start="20260626060000 -0300" stop="20260626083000 -0300" channel="Globo MG">
-    <title lang="pt">Bom Dia Minas</title>
+  <programme start="20260627075000 -0300" stop="20260627083000 -0300" channel="Globo MG">
+    <title lang="pt">Pequenas Empresas & Grandes Negócios</title>
   </programme>
-  <programme start="20260626083000 -0300" stop="20260626093000 -0300" channel="Globo MG">
-    <title lang="pt">Bom Dia Brasil</title>
+  <programme start="20260627083000 -0300" stop="20260627114500 -0300" channel="Globo MG">
+    <title lang="pt">É de Casa</title>
   </programme>
-  <programme start="20260626093000 -0300" stop="20260626103500 -0300" channel="Globo MG">
-    <title lang="pt">Encontro com Patrícia Poeta</title>
-  </programme>
-  <programme start="20260626103500 -0300" stop="20260626114500 -0300" channel="Globo MG">
-    <title lang="pt">Mais Você</title>
-  </programme>
-  <programme start="20260626114500 -0300" stop="20260626130000 -0300" channel="Globo MG">
+  <programme start="20260627114500 -0300" stop="20260627130000 -0300" channel="Globo MG">
     <title lang="pt">MG1</title>
   </programme>
-  <programme start="20260626130000 -0300" stop="20260626132500 -0300" channel="Globo MG">
+  <programme start="20260627130000 -0300" stop="20260627132500 -0300" channel="Globo MG">
     <title lang="pt">Globo Esporte</title>
   </programme>
-  <programme start="20260626132500 -0300" stop="20260626144500 -0300" channel="Globo MG">
+  <programme start="20260627132500 -0300" stop="20260627141000 -0300" channel="Globo MG">
     <title lang="pt">Jornal Hoje</title>
   </programme>
-  <programme start="20260626144500 -0300" stop="20260626152500 -0300" channel="Globo MG">
+  <programme start="20260627141000 -0300" stop="20260627144000 -0300" channel="Globo MG">
     <title lang="pt">Além do Tempo</title>
   </programme>
-  <programme start="20260626152500 -0300" stop="20260626170500 -0300" channel="Globo MG">
-    <title lang="pt">Sessão da Tarde: Pureza</title>
+  <programme start="20260627144000 -0300" stop="20260627153500 -0300" channel="Globo MG">
+    <title lang="pt">Sessão de Sábado</title>
   </programme>
-  <programme start="20260626170500 -0300" stop="20260626180500 -0300" channel="Globo MG">
-    <title lang="pt">Vale a Pena Ver de Novo: Avenida Brasil</title>
+  <programme start="20260627153500 -0300" stop="20260627173000 -0300" channel="Globo MG">
+    <title lang="pt">Caldeirão com Mion</title>
   </programme>
-  <programme start="20260626180500 -0300" stop="20260626185000 -0300" channel="Globo MG">
-    <title lang="pt">A Nobreza do Amor</title>
+  <programme start="20260627173000 -0300" stop="20260627180000 -0300" channel="Globo MG">
+    <title lang="pt">Pré-Jogo - Copa do Mundo 2026</title>
   </programme>
-  <programme start="20260626185000 -0300" stop="20260626193000 -0300" channel="Globo MG">
-    <title lang="pt">Coração Acelerado</title>
+  <programme start="20260627180000 -0300" stop="20260627201500 -0300" channel="Globo MG">
+    <title lang="pt">Panamá x Inglaterra - Ao Vivo</title>
   </programme>
-  <programme start="20260626193000 -0300" stop="20260626195500 -0300" channel="Globo MG">
+  <programme start="20260627201500 -0300" stop="20260627211500 -0300" channel="Globo MG">
     <title lang="pt">Jornal Nacional</title>
   </programme>
-  <programme start="20260626195500 -0300" stop="20260626203000 -0300" channel="Globo MG">
+  <programme start="20260627211500 -0300" stop="20260627222000 -0300" channel="Globo MG">
     <title lang="pt">Quem Ama Cuida</title>
   </programme>
-  <programme start="20260626203000 -0300" stop="20260627000000 -0300" channel="Globo MG">
-    <title lang="pt">Programação Globo</title>
+  <programme start="20260627222000 -0300" stop="20260627230000 -0300" channel="Globo MG">
+    <title lang="pt">Central da Copa</title>
   </programme>
-  <programme start="20260626000000 -0300" stop="20260626004500 -0300" channel="Record MG">
-    <title lang="pt">Série</title>
+  <programme start="20260627230000 -0300" stop="20260628000000 -0300" channel="Globo MG">
+    <title lang="pt">Argélia x Áustria - Ao Vivo</title>
   </programme>
-  <programme start="20260626004500 -0300" stop="20260626020000 -0300" channel="Record MG">
+  <programme start="20260627003500 -0300" stop="20260627004500 -0300" channel="Record MG">
+    <title lang="pt">Jornal da Record 24h</title>
+  </programme>
+  <programme start="20260627004500 -0300" stop="20260627020000 -0300" channel="Record MG">
     <title lang="pt">Fala que eu te Escuto</title>
   </programme>
-  <programme start="20260626020000 -0300" stop="20260626023000 -0300" channel="Record MG">
+  <programme start="20260627020000 -0300" stop="20260627030000 -0300" channel="Record MG">
     <title lang="pt">IURD - Inteligência e Fé</title>
   </programme>
-  <programme start="20260626023000 -0300" stop="20260626033000 -0300" channel="Record MG">
+  <programme start="20260627030000 -0300" stop="20260627040000 -0300" channel="Record MG">
     <title lang="pt">IURD - Palavra Amiga</title>
   </programme>
-  <programme start="20260626033000 -0300" stop="20260626070500 -0300" channel="Record MG">
+  <programme start="20260627040000 -0300" stop="20260627060000 -0300" channel="Record MG">
     <title lang="pt">IURD BH</title>
   </programme>
-  <programme start="20260626070500 -0300" stop="20260626084000 -0300" channel="Record MG">
-    <title lang="pt">MG no Ar</title>
+  <programme start="20260627060000 -0300" stop="20260627070000 -0300" channel="Record MG">
+    <title lang="pt">IURD BH</title>
   </programme>
-  <programme start="20260626084000 -0300" stop="20260626095000 -0300" channel="Record MG">
-    <title lang="pt">Fala Brasil</title>
+  <programme start="20260627070000 -0300" stop="20260627073500 -0300" channel="Record MG">
+    <title lang="pt">Brasil Caminhoneiro</title>
   </programme>
-  <programme start="20260626095000 -0300" stop="20260626113000 -0300" channel="Record MG">
-    <title lang="pt">Hoje em Dia</title>
+  <programme start="20260627073500 -0300" stop="20260627120000 -0300" channel="Record MG">
+    <title lang="pt">Fala Brasil - Edição de Sábado</title>
   </programme>
-  <programme start="20260626113000 -0300" stop="20260626153000 -0300" channel="Record MG">
-    <title lang="pt">Balanço Geral - MG</title>
+  <programme start="20260627120000 -0300" stop="20260627130300 -0300" channel="Record MG">
+    <title lang="pt">The Love School - A Escola do Amor</title>
   </programme>
-  <programme start="20260626153000 -0300" stop="20260626163000 -0300" channel="Record MG">
-    <title lang="pt">Jesus</title>
+  <programme start="20260627130300 -0300" stop="20260627150000 -0300" channel="Record MG">
+    <title lang="pt">Balanço Geral - Edição de Sábado</title>
   </programme>
-  <programme start="20260626163000 -0300" stop="20260626180000 -0300" channel="Record MG">
-    <title lang="pt">Cidade Alerta</title>
+  <programme start="20260627150000 -0300" stop="20260627170000 -0300" channel="Record MG">
+    <title lang="pt">Cine Aventura</title>
   </programme>
-  <programme start="20260626180000 -0300" stop="20260626191000 -0300" channel="Record MG">
-    <title lang="pt">Cidade Alerta Minas</title>
+  <programme start="20260627170000 -0300" stop="20260627194500 -0300" channel="Record MG">
+    <title lang="pt">Cidade Alerta - Edição de Sábado</title>
   </programme>
-  <programme start="20260626191000 -0300" stop="20260626195500 -0300" channel="Record MG">
-    <title lang="pt">MG Record</title>
+  <programme start="20260627194500 -0300" stop="20260627210000 -0300" channel="Record MG">
+    <title lang="pt">Jornal da Record - Edição de Sábado</title>
   </programme>
-  <programme start="20260626195500 -0300" stop="20260626210000 -0300" channel="Record MG">
-    <title lang="pt">Jornal da Record</title>
+  <programme start="20260627210000 -0300" stop="20260627223000 -0300" channel="Record MG">
+    <title lang="pt">Cidade Alerta - Edição de Sábado</title>
   </programme>
-  <programme start="20260626210000 -0300" stop="20260626220000 -0300" channel="Record MG">
-    <title lang="pt">Coração de Mãe</title>
-  </programme>
-  <programme start="20260626220000 -0300" stop="20260626223000 -0300" channel="Record MG">
-    <title lang="pt">Reis - A Decadência</title>
-  </programme>
-  <programme start="20260626223000 -0300" stop="20260626230000 -0300" channel="Record MG">
+  <programme start="20260627223000 -0300" stop="20260627230000 -0300" channel="Record MG">
     <title lang="pt">Casa do Patrão</title>
   </programme>
-  <programme start="20260626230000 -0300" stop="20260627000000 -0300" channel="Record MG">
-    <title lang="pt">Câmera Record Especial: Um Dia na Vida</title>
+  <programme start="20260627230000 -0300" stop="20260628000000 -0300" channel="Record MG">
+    <title lang="pt">Super Tela</title>
   </programme>
-  <programme start="20260626000000 -0300" stop="20260626003000 -0300" channel="SBT MG">
+  <programme start="20260627000000 -0300" stop="20260627001500 -0300" channel="SBT MG">
     <title lang="pt">Balanço da Copa - Ao Vivo</title>
   </programme>
-  <programme start="20260626003000 -0300" stop="20260626013000 -0300" channel="SBT MG">
+  <programme start="20260627001500 -0300" stop="20260627011500 -0300" channel="SBT MG">
     <title lang="pt">The Noite com Danilo Gentili</title>
   </programme>
-  <programme start="20260626013000 -0300" stop="20260626020000 -0300" channel="SBT MG">
+  <programme start="20260627011500 -0300" stop="20260627014500 -0300" channel="SBT MG">
     <title lang="pt">Operação Mesquita</title>
   </programme>
-  <programme start="20260626020000 -0300" stop="20260626060000 -0300" channel="SBT MG">
+  <programme start="20260627014500 -0300" stop="20260627060000 -0300" channel="SBT MG">
     <title lang="pt">SBT Notícias</title>
   </programme>
-  <programme start="20260626060000 -0300" stop="20260626070000 -0300" channel="SBT MG">
-    <title lang="pt">Se Liga Brasil</title>
+  <programme start="20260627060000 -0300" stop="20260627070000 -0300" channel="SBT MG">
+    <title lang="pt">SBT Notícias</title>
   </programme>
-  <programme start="20260626070000 -0300" stop="20260626080000 -0300" channel="SBT MG">
-    <title lang="pt">Igreja Universal do Reino de Deus</title>
+  <programme start="20260627070000 -0300" stop="20260627080000 -0300" channel="SBT MG">
+    <title lang="pt">Flash Minas</title>
   </programme>
-  <programme start="20260626080000 -0300" stop="20260626083000 -0300" channel="SBT MG">
-    <title lang="pt">Se Liga Brasil</title>
+  <programme start="20260627080000 -0300" stop="20260627083000 -0300" channel="SBT MG">
+    <title lang="pt">Saber Além da Vida</title>
   </programme>
-  <programme start="20260626083000 -0300" stop="20260626110000 -0300" channel="SBT MG">
-    <title lang="pt">Primeiro Impacto</title>
+  <programme start="20260627083000 -0300" stop="20260627090000 -0300" channel="SBT MG">
+    <title lang="pt">Webmotors</title>
   </programme>
-  <programme start="20260626110000 -0300" stop="20260626114500 -0300" channel="SBT MG">
-    <title lang="pt">Alterosa Agora</title>
+  <programme start="20260627090000 -0300" stop="20260627093000 -0300" channel="SBT MG">
+    <title lang="pt">Saber Viver</title>
   </programme>
-  <programme start="20260626114500 -0300" stop="20260626124500 -0300" channel="SBT MG">
-    <title lang="pt">Alterosa Esportes</title>
+  <programme start="20260627093000 -0300" stop="20260627110000 -0300" channel="SBT MG">
+    <title lang="pt">Sábado Animado</title>
   </programme>
-  <programme start="20260626124500 -0300" stop="20260626132000 -0300" channel="SBT MG">
-    <title lang="pt">Alterosa Alerta</title>
+  <programme start="20260627110000 -0300" stop="20260627120000 -0300" channel="SBT MG">
+    <title lang="pt">SBT Notícias da Copa</title>
   </programme>
-  <programme start="20260626132000 -0300" stop="20260626134500 -0300" channel="SBT MG">
-    <title lang="pt">Alterosa Urgente</title>
+  <programme start="20260627120000 -0300" stop="20260627130000 -0300" channel="SBT MG">
+    <title lang="pt">Bola na Área</title>
   </programme>
-  <programme start="20260626134500 -0300" stop="20260626153000 -0300" channel="SBT MG">
-    <title lang="pt">Meu Coração é Teu</title>
+  <programme start="20260627130000 -0300" stop="20260627134000 -0300" channel="SBT MG">
+    <title lang="pt">Clube do Chaves</title>
   </programme>
-  <programme start="20260626153000 -0300" stop="20260626170000 -0300" channel="SBT MG">
-    <title lang="pt">Fofocalizando</title>
+  <programme start="20260627134000 -0300" stop="20260627143000 -0300" channel="SBT MG">
+    <title lang="pt">Don e Juan e Sua História</title>
   </programme>
-  <programme start="20260626170000 -0300" stop="20260626183000 -0300" channel="SBT MG">
-    <title lang="pt">Sortilégio</title>
+  <programme start="20260627143000 -0300" stop="20260627163000 -0300" channel="SBT MG">
+    <title lang="pt">Cinema em Casa</title>
   </programme>
-  <programme start="20260626183000 -0300" stop="20260626191500 -0300" channel="SBT MG">
-    <title lang="pt">Tá Na Hora Minas</title>
-  </programme>
-  <programme start="20260626191500 -0300" stop="20260626194500 -0300" channel="SBT MG">
-    <title lang="pt">Jornal da Alterosa</title>
-  </programme>
-  <programme start="20260626194500 -0300" stop="20260626204500 -0300" channel="SBT MG">
-    <title lang="pt">Torcida SBT - Ao Vivo</title>
-  </programme>
-  <programme start="20260626204500 -0300" stop="20260626213000 -0300" channel="SBT MG">
+  <programme start="20260627163000 -0300" stop="20260627170000 -0300" channel="SBT MG">
     <title lang="pt">Copa do Mundo 2026: Vem pro Jogo - Ao Vivo</title>
   </programme>
-  <programme start="20260626213000 -0300" stop="20260626233000 -0300" channel="SBT MG">
+  <programme start="20260627170000 -0300" stop="20260627190000 -0300" channel="SBT MG">
     <title lang="pt">Programação do Canal</title>
   </programme>
-  <programme start="20260626233000 -0300" stop="20260627000000 -0300" channel="SBT MG">
-    <title lang="pt">Balanço da Copa - Ao Vivo</title>
+  <programme start="20260627190000 -0300" stop="20260627194500 -0300" channel="SBT MG">
+    <title lang="pt">SBT Notícias da Copa</title>
+  </programme>
+  <programme start="20260627194500 -0300" stop="20260627204500 -0300" channel="SBT MG">
+    <title lang="pt">SBT Brasil</title>
+  </programme>
+  <programme start="20260627204500 -0300" stop="20260627213000 -0300" channel="SBT MG">
+    <title lang="pt">A História de Joana - A Virgem</title>
+  </programme>
+  <programme start="20260627213000 -0300" stop="20260627223000 -0300" channel="SBT MG">
+    <title lang="pt">Comédia SBT</title>
+  </programme>
+  <programme start="20260627223000 -0300" stop="20260628000000 -0300" channel="SBT MG">
+    <title lang="pt">Viva a Noite</title>
   </programme>
   <programme start="20260626000000 -0300" stop="20260626010000 -0300" channel="Band MG">
     <title lang="pt">Jornal da Noite</title>
