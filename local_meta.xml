@@ -52,7 +52,7 @@
     <title lang="pt">Domingão Com Huck</title>
   </programme>
   <programme start="20260705163500 -0300" stop="20260705191000 -0300" channel="Globo MG">
-    <title lang="pt">Programação Globo</title>
+    <title lang="pt">Brasil x Noruega - Ao Vivo</title>
   </programme>
   <programme start="20260705191000 -0300" stop="20260705194500 -0300" channel="Globo MG">
     <title lang="pt">Domingão Com Huck</title>
@@ -150,14 +150,11 @@
   <programme start="20260705111500 -0300" stop="20260705153000 -0300" channel="SBT MG">
     <title lang="pt">Domingo Legal</title>
   </programme>
-  <programme start="20260705153000 -0300" stop="20260705160000 -0300" channel="SBT MG">
+  <programme start="20260705153000 -0300" stop="20260705170000 -0300" channel="SBT MG">
     <title lang="pt">Copa do Mundo 2026: Vem pro Jogo - Ao Vivo</title>
   </programme>
-  <programme start="20260705160000 -0300" stop="20260705180000 -0300" channel="SBT MG">
+  <programme start="20260705170000 -0300" stop="20260705190000 -0300" channel="SBT MG">
     <title lang="pt">Brasil x Noruega - Ao Vivo</title>
-  </programme>
-  <programme start="20260705180000 -0300" stop="20260705190000 -0300" channel="SBT MG">
-    <title lang="pt">Roda a Roda</title>
   </programme>
   <programme start="20260705190000 -0300" stop="20260706000000 -0300" channel="SBT MG">
     <title lang="pt">Programa Silvio Santos com Patrícia Abravanel</title>
@@ -202,7 +199,7 @@
     <title lang="pt">Viva Sorte</title>
   </programme>
   <programme start="20260705120000 -0300" stop="20260705133000 -0300" channel="Band MG">
-    <title lang="pt">STU - National Pro Tour: Salvador</title>
+    <title lang="pt">STU - National Pro Tour: Salvador - Ao Vivo</title>
   </programme>
   <programme start="20260705133000 -0300" stop="20260705163000 -0300" channel="Band MG">
     <title lang="pt">Show do Esporte</title>
