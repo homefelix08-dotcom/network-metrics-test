@@ -12,14 +12,11 @@
   <channel id="Band MG">
     <display-name>Band</display-name>
   </channel>
-  <programme start="20260706011000 -0300" stop="20260706024500 -0300" channel="Globo MG">
-    <title lang="pt">Domingo Maior: Viajantes - Instinto e Desejo</title>
+  <programme start="20260706013500 -0300" stop="20260706031500 -0300" channel="Globo MG">
+    <title lang="pt">Cinemaço: O que é Isso, Companheiro?</title>
   </programme>
-  <programme start="20260706024500 -0300" stop="20260706032000 -0300" channel="Globo MG">
+  <programme start="20260706031500 -0300" stop="20260706040000 -0300" channel="Globo MG">
     <title lang="pt">Comédia Na Madruga - Vai Que Cola I</title>
-  </programme>
-  <programme start="20260706032000 -0300" stop="20260706040000 -0300" channel="Globo MG">
-    <title lang="pt">Comédia Na Madruga - Vai Que Cola II</title>
   </programme>
   <programme start="20260706040000 -0300" stop="20260706060000 -0300" channel="Globo MG">
     <title lang="pt">Hora Um</title>
@@ -49,7 +46,7 @@
     <title lang="pt">Além do Tempo</title>
   </programme>
   <programme start="20260706153000 -0300" stop="20260706181000 -0300" channel="Globo MG">
-    <title lang="pt">Programação Globo</title>
+    <title lang="pt">Portugal x Espanha - Ao Vivo</title>
   </programme>
   <programme start="20260706181000 -0300" stop="20260706184500 -0300" channel="Globo MG">
     <title lang="pt">A Nobreza do Amor</title>
