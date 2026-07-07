@@ -12,17 +12,20 @@
   <channel id="Band MG">
     <display-name>Band</display-name>
   </channel>
-  <programme start="20260707000500 -0300" stop="20260707005500 -0300" channel="Globo MG">
+  <programme start="20260707001500 -0300" stop="20260707004000 -0300" channel="Globo MG">
+    <title lang="pt">Central da Copa</title>
+  </programme>
+  <programme start="20260707004000 -0300" stop="20260707013000 -0300" channel="Globo MG">
     <title lang="pt">Jornal da Globo</title>
   </programme>
-  <programme start="20260707005500 -0300" stop="20260707013500 -0300" channel="Globo MG">
+  <programme start="20260707013000 -0300" stop="20260707022000 -0300" channel="Globo MG">
     <title lang="pt">A Nobreza do Amor</title>
   </programme>
-  <programme start="20260707013500 -0300" stop="20260707022000 -0300" channel="Globo MG">
-    <title lang="pt">Comédia Na Madruga - Vai Que Cola I</title>
+  <programme start="20260707022000 -0300" stop="20260707030500 -0300" channel="Globo MG">
+    <title lang="pt">Coração Acelerado</title>
   </programme>
-  <programme start="20260707022000 -0300" stop="20260707040000 -0300" channel="Globo MG">
-    <title lang="pt">Corujão</title>
+  <programme start="20260707030500 -0300" stop="20260707040000 -0300" channel="Globo MG">
+    <title lang="pt">Comédia Na Madruga - Vai Que Cola I</title>
   </programme>
   <programme start="20260707040000 -0300" stop="20260707060000 -0300" channel="Globo MG">
     <title lang="pt">Hora Um</title>
@@ -42,17 +45,11 @@
   <programme start="20260707114500 -0300" stop="20260707130000 -0300" channel="Globo MG">
     <title lang="pt">MG1</title>
   </programme>
-  <programme start="20260707130000 -0300" stop="20260707132500 -0300" channel="Globo MG">
-    <title lang="pt">Globo Esporte</title>
-  </programme>
-  <programme start="20260707132500 -0300" stop="20260707144500 -0300" channel="Globo MG">
-    <title lang="pt">Jornal Hoje</title>
-  </programme>
-  <programme start="20260707144500 -0300" stop="20260707153000 -0300" channel="Globo MG">
-    <title lang="pt">Além do Tempo</title>
+  <programme start="20260707130000 -0300" stop="20260707153000 -0300" channel="Globo MG">
+    <title lang="pt">Argentina x Egito - Ao Vivo</title>
   </programme>
   <programme start="20260707153000 -0300" stop="20260707181000 -0300" channel="Globo MG">
-    <title lang="pt">Programação Globo</title>
+    <title lang="pt">Suíça x Colômbia - Ao Vivo</title>
   </programme>
   <programme start="20260707181000 -0300" stop="20260707185500 -0300" channel="Globo MG">
     <title lang="pt">A Nobreza do Amor</title>
