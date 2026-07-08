@@ -12,11 +12,11 @@
   <channel id="Band MG">
     <display-name>Band</display-name>
   </channel>
-  <programme start="20260708000000 -0300" stop="20260708003500 -0300" channel="Globo MG">
+  <programme start="20260708004500 -0300" stop="20260708011000 -0300" channel="Globo MG">
     <title lang="pt">Central da Copa</title>
   </programme>
-  <programme start="20260708003500 -0300" stop="20260708031500 -0300" channel="Globo MG">
-    <title lang="pt">Programação Globo</title>
+  <programme start="20260708011000 -0300" stop="20260708031500 -0300" channel="Globo MG">
+    <title lang="pt">Jornal da Globo</title>
   </programme>
   <programme start="20260708031500 -0300" stop="20260708040000 -0300" channel="Globo MG">
     <title lang="pt">Comédia Na Madruga - Vai Que Cola I</title>
@@ -45,32 +45,38 @@
   <programme start="20260708132500 -0300" stop="20260708144500 -0300" channel="Globo MG">
     <title lang="pt">Jornal Hoje</title>
   </programme>
-  <programme start="20260708144500 -0300" stop="20260708152500 -0300" channel="Globo MG">
+  <programme start="20260708144500 -0300" stop="20260708153500 -0300" channel="Globo MG">
     <title lang="pt">Além do Tempo</title>
   </programme>
-  <programme start="20260708152500 -0300" stop="20260708163000 -0300" channel="Globo MG">
+  <programme start="20260708153500 -0300" stop="20260708170500 -0300" channel="Globo MG">
+    <title lang="pt">Sessão da Tarde: Dona Lurdes - O Filme</title>
+  </programme>
+  <programme start="20260708170500 -0300" stop="20260708182500 -0300" channel="Globo MG">
     <title lang="pt">Vale a Pena Ver de Novo: Avenida Brasil</title>
   </programme>
-  <programme start="20260708163000 -0300" stop="20260708191000 -0300" channel="Globo MG">
-    <title lang="pt">Programação Globo</title>
-  </programme>
-  <programme start="20260708191000 -0300" stop="20260708195000 -0300" channel="Globo MG">
+  <programme start="20260708182500 -0300" stop="20260708191000 -0300" channel="Globo MG">
     <title lang="pt">A Nobreza do Amor</title>
   </programme>
-  <programme start="20260708195000 -0300" stop="20260708201500 -0300" channel="Globo MG">
+  <programme start="20260708191000 -0300" stop="20260708194000 -0300" channel="Globo MG">
+    <title lang="pt">MG2</title>
+  </programme>
+  <programme start="20260708194000 -0300" stop="20260708203000 -0300" channel="Globo MG">
     <title lang="pt">Coração Acelerado</title>
   </programme>
-  <programme start="20260708201500 -0300" stop="20260708205500 -0300" channel="Globo MG">
+  <programme start="20260708203000 -0300" stop="20260708212000 -0300" channel="Globo MG">
     <title lang="pt">Jornal Nacional</title>
   </programme>
-  <programme start="20260708205500 -0300" stop="20260708215500 -0300" channel="Globo MG">
+  <programme start="20260708212000 -0300" stop="20260708222500 -0300" channel="Globo MG">
     <title lang="pt">Quem Ama Cuida</title>
   </programme>
-  <programme start="20260708215500 -0300" stop="20260708224500 -0300" channel="Globo MG">
-    <title lang="pt">Guerreiros Do Sol</title>
+  <programme start="20260708222500 -0300" stop="20260708224500 -0300" channel="Globo MG">
+    <title lang="pt">Central da Copa</title>
   </programme>
-  <programme start="20260708224500 -0300" stop="20260709000000 -0300" channel="Globo MG">
-    <title lang="pt">Programação Globo</title>
+  <programme start="20260708224500 -0300" stop="20260708232000 -0300" channel="Globo MG">
+    <title lang="pt">Anos 90: A Explosão do Pagode</title>
+  </programme>
+  <programme start="20260708232000 -0300" stop="20260709000000 -0300" channel="Globo MG">
+    <title lang="pt">Justiça 2</title>
   </programme>
   <programme start="20260708000000 -0300" stop="20260708004500 -0300" channel="Record MG">
     <title lang="pt">Chicago P.D.</title>
