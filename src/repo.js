@@ -42,7 +42,7 @@ export default [
     },
     {
         "nome": "SBT",
-        "tvg_id": "SBT",
+        "tvg_id": "SBT SP",
         "url": `${siteBaseUrl}/sbtsp/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png",
         "categoria": "Abertos",
@@ -51,7 +51,7 @@ export default [
     },
     {
         "nome": "Rede TV",
-        "tvg_id": "REDE TV! HD",
+        "tvg_id": "REDE TV! São Paulo",
         "url": `${siteBaseUrl}/redetv/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/rede_tv.png",
         "categoria": "Abertos",
