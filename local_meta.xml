@@ -159,16 +159,16 @@
   <programme start="20260712010000 -0300" stop="20260712020000 -0300" channel="Band MG">
     <title lang="pt">BWF - Luta Livre</title>
   </programme>
-  <programme start="20260712020000 -0300" stop="20260712030000 -0300" channel="Band MG">
-    <title lang="pt">Cine Privé: Obsessão Fatal</title>
+  <programme start="20260712020000 -0300" stop="20260712031500 -0300" channel="Band MG">
+    <title lang="pt">Cine Privé: Privacidade Obscena</title>
   </programme>
-  <programme start="20260712030000 -0300" stop="20260712034500 -0300" channel="Band MG">
+  <programme start="20260712031500 -0300" stop="20260712040000 -0300" channel="Band MG">
     <title lang="pt">Chama no Privé</title>
   </programme>
-  <programme start="20260712034500 -0300" stop="20260712051500 -0300" channel="Band MG">
-    <title lang="pt">Fórmula E: E-Prix Shangai II - Ao Vivo</title>
+  <programme start="20260712040000 -0300" stop="20260712053000 -0300" channel="Band MG">
+    <title lang="pt">Cinema na Madrugada: Três Ladrões e um Bebê</title>
   </programme>
-  <programme start="20260712051500 -0300" stop="20260712060000 -0300" channel="Band MG">
+  <programme start="20260712053000 -0300" stop="20260712060000 -0300" channel="Band MG">
     <title lang="pt">+info</title>
   </programme>
   <programme start="20260712060000 -0300" stop="20260712070000 -0300" channel="Band MG">
@@ -195,16 +195,13 @@
   <programme start="20260712110000 -0300" stop="20260712120000 -0300" channel="Band MG">
     <title lang="pt">Viva Sorte</title>
   </programme>
-  <programme start="20260712120000 -0300" stop="20260712133000 -0300" channel="Band MG">
+  <programme start="20260712120000 -0300" stop="20260712154500 -0300" channel="Band MG">
     <title lang="pt">Show do Esporte</title>
   </programme>
-  <programme start="20260712133000 -0300" stop="20260712160000 -0300" channel="Band MG">
-    <title lang="pt">Fórmula Indy: GP Mid-Ohio - Ao Vivo</title>
+  <programme start="20260712154500 -0300" stop="20260712180000 -0300" channel="Band MG">
+    <title lang="pt">Fluminense x Bahia - Ao Vivo</title>
   </programme>
-  <programme start="20260712160000 -0300" stop="20260712173000 -0300" channel="Band MG">
-    <title lang="pt">STU - National Pro Tour: Salvador</title>
-  </programme>
-  <programme start="20260712173000 -0300" stop="20260712200000 -0300" channel="Band MG">
+  <programme start="20260712180000 -0300" stop="20260712200000 -0300" channel="Band MG">
     <title lang="pt">Planeta Selvagem</title>
   </programme>
   <programme start="20260712200000 -0300" stop="20260712220000 -0300" channel="Band MG">
