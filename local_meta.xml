@@ -112,7 +112,7 @@
     <title lang="pt">Esporte Record</title>
   </programme>
   <programme start="20260719000000 -0300" stop="20260719003000 -0300" channel="SBT MG">
-    <title lang="pt">Balanço da Copa - Ao Vivo</title>
+    <title lang="pt">Balanço da Copa</title>
   </programme>
   <programme start="20260719003000 -0300" stop="20260719013000 -0300" channel="SBT MG">
     <title lang="pt">Programa do João</title>
@@ -120,10 +120,7 @@
   <programme start="20260719013000 -0300" stop="20260719021500 -0300" channel="SBT MG">
     <title lang="pt">Notícias Impressionantes</title>
   </programme>
-  <programme start="20260719021500 -0300" stop="20260719031500 -0300" channel="SBT MG">
-    <title lang="pt">SBT Notícias</title>
-  </programme>
-  <programme start="20260719031500 -0300" stop="20260719060000 -0300" channel="SBT MG">
+  <programme start="20260719021500 -0300" stop="20260719060000 -0300" channel="SBT MG">
     <title lang="pt">SBT Notícias</title>
   </programme>
   <programme start="20260719060000 -0300" stop="20260719070000 -0300" channel="SBT MG">
@@ -144,31 +141,19 @@
   <programme start="20260719101000 -0300" stop="20260719111500 -0300" channel="SBT MG">
     <title lang="pt">Notícias Impressionantes</title>
   </programme>
-  <programme start="20260719111500 -0300" stop="20260719121500 -0300" channel="SBT MG">
+  <programme start="20260719111500 -0300" stop="20260719133000 -0300" channel="SBT MG">
     <title lang="pt">Domingo Legal</title>
   </programme>
-  <programme start="20260719121500 -0300" stop="20260719131500 -0300" channel="SBT MG">
-    <title lang="pt">Domingo Legal</title>
+  <programme start="20260719133000 -0300" stop="20260719143000 -0300" channel="SBT MG">
+    <title lang="pt">Copa do Mundo 2026 - A Grande Final - Ao Vivo</title>
   </programme>
-  <programme start="20260719131500 -0300" stop="20260719141500 -0300" channel="SBT MG">
-    <title lang="pt">Domingo Legal</title>
+  <programme start="20260719143000 -0300" stop="20260719160000 -0300" channel="SBT MG">
+    <title lang="pt">Copa do Mundo 2026: Vem pro Jogo - Ao Vivo</title>
   </programme>
-  <programme start="20260719141500 -0300" stop="20260719151500 -0300" channel="SBT MG">
-    <title lang="pt">Domingo Legal</title>
+  <programme start="20260719160000 -0300" stop="20260719184500 -0300" channel="SBT MG">
+    <title lang="pt">Espanha x Argentina - Ao Vivo</title>
   </programme>
-  <programme start="20260719151500 -0300" stop="20260719181500 -0300" channel="SBT MG">
-    <title lang="pt">Domingo Legal</title>
-  </programme>
-  <programme start="20260719181500 -0300" stop="20260719190000 -0300" channel="SBT MG">
-    <title lang="pt">Roda a Roda</title>
-  </programme>
-  <programme start="20260719190000 -0300" stop="20260719200000 -0300" channel="SBT MG">
-    <title lang="pt">Programa Silvio Santos com Patrícia Abravanel</title>
-  </programme>
-  <programme start="20260719200000 -0300" stop="20260719210000 -0300" channel="SBT MG">
-    <title lang="pt">Programa Silvio Santos com Patrícia Abravanel</title>
-  </programme>
-  <programme start="20260719210000 -0300" stop="20260720000000 -0300" channel="SBT MG">
+  <programme start="20260719184500 -0300" stop="20260720000000 -0300" channel="SBT MG">
     <title lang="pt">Programa Silvio Santos com Patrícia Abravanel</title>
   </programme>
   <programme start="20260719010000 -0300" stop="20260719020000 -0300" channel="Band MG">
