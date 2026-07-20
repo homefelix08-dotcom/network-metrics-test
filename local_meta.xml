@@ -12,8 +12,11 @@
   <channel id="Band MG">
     <display-name>Band</display-name>
   </channel>
-  <programme start="20260720015000 -0300" stop="20260720040000 -0300" channel="Globo MG">
+  <programme start="20260720013000 -0300" stop="20260720031500 -0300" channel="Globo MG">
     <title lang="pt">Cinemaço: A Outra Face</title>
+  </programme>
+  <programme start="20260720031500 -0300" stop="20260720040000 -0300" channel="Globo MG">
+    <title lang="pt">Comédia Na Madruga - Vai Que Cola I</title>
   </programme>
   <programme start="20260720040000 -0300" stop="20260720060000 -0300" channel="Globo MG">
     <title lang="pt">Hora Um</title>
@@ -43,7 +46,7 @@
     <title lang="pt">Além do Tempo</title>
   </programme>
   <programme start="20260720154500 -0300" stop="20260720170500 -0300" channel="Globo MG">
-    <title lang="pt">Sessão da Tarde: Toy Story 2</title>
+    <title lang="pt">Sessão da Tarde: Os Suburbanos - O Filme</title>
   </programme>
   <programme start="20260720170500 -0300" stop="20260720182500 -0300" channel="Globo MG">
     <title lang="pt">Vale a Pena Ver de Novo: Avenida Brasil</title>
