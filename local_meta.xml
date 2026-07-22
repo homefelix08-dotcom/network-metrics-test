@@ -127,7 +127,7 @@
     <title lang="pt">Canta Comigo Teen</title>
   </programme>
   <programme start="20260722000000 -0300" stop="20260722001500 -0300" channel="SBT MG">
-    <title lang="pt">Balanço da Copa - Ao Vivo</title>
+    <title lang="pt">Programa do Ratinho</title>
   </programme>
   <programme start="20260722001500 -0300" stop="20260722011500 -0300" channel="SBT MG">
     <title lang="pt">The Noite com Danilo Gentili</title>
@@ -159,20 +159,20 @@
   <programme start="20260722124500 -0300" stop="20260722132000 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Alerta</title>
   </programme>
-  <programme start="20260722132000 -0300" stop="20260722134500 -0300" channel="SBT MG">
+  <programme start="20260722132000 -0300" stop="20260722140000 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Urgente</title>
   </programme>
-  <programme start="20260722134500 -0300" stop="20260722151500 -0300" channel="SBT MG">
+  <programme start="20260722140000 -0300" stop="20260722144500 -0300" channel="SBT MG">
+    <title lang="pt">A Desalmada</title>
+  </programme>
+  <programme start="20260722144500 -0300" stop="20260722153000 -0300" channel="SBT MG">
     <title lang="pt">Meu Coração é Teu</title>
   </programme>
-  <programme start="20260722151500 -0300" stop="20260722160000 -0300" channel="SBT MG">
-    <title lang="pt">Programação SBT 01</title>
+  <programme start="20260722153000 -0300" stop="20260722170000 -0300" channel="SBT MG">
+    <title lang="pt">Fofocalizando</title>
   </programme>
-  <programme start="20260722160000 -0300" stop="20260722181000 -0300" channel="SBT MG">
-    <title lang="pt">Programação do Canal</title>
-  </programme>
-  <programme start="20260722181000 -0300" stop="20260722183000 -0300" channel="SBT MG">
-    <title lang="pt">Aqui Agora</title>
+  <programme start="20260722170000 -0300" stop="20260722183000 -0300" channel="SBT MG">
+    <title lang="pt">Sortilégio</title>
   </programme>
   <programme start="20260722183000 -0300" stop="20260722191500 -0300" channel="SBT MG">
     <title lang="pt">Tá Na Hora Minas</title>
@@ -186,11 +186,8 @@
   <programme start="20260722204500 -0300" stop="20260722220000 -0300" channel="SBT MG">
     <title lang="pt">A História de Joana - A Virgem</title>
   </programme>
-  <programme start="20260722220000 -0300" stop="20260722233000 -0300" channel="SBT MG">
+  <programme start="20260722220000 -0300" stop="20260723000000 -0300" channel="SBT MG">
     <title lang="pt">Programa do Ratinho</title>
-  </programme>
-  <programme start="20260722233000 -0300" stop="20260723000000 -0300" channel="SBT MG">
-    <title lang="pt">Balanço da Copa - Ao Vivo</title>
   </programme>
   <programme start="20260722003000 -0300" stop="20260722011500 -0300" channel="Band MG">
     <title lang="pt">Jornal da Noite</title>
