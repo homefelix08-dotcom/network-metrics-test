@@ -12,23 +12,17 @@
   <channel id="Band MG">
     <display-name>Band</display-name>
   </channel>
-  <programme start="20260723011000 -0300" stop="20260723013500 -0300" channel="Globo MG">
-    <title lang="pt">Central da Copa</title>
-  </programme>
-  <programme start="20260723013500 -0300" stop="20260723020500 -0300" channel="Globo MG">
+  <programme start="20260723003000 -0300" stop="20260723012000 -0300" channel="Globo MG">
     <title lang="pt">Jornal da Globo</title>
   </programme>
-  <programme start="20260723020500 -0300" stop="20260723023000 -0300" channel="Globo MG">
+  <programme start="20260723012000 -0300" stop="20260723015500 -0300" channel="Globo MG">
     <title lang="pt">A Nobreza do Amor</title>
   </programme>
-  <programme start="20260723023000 -0300" stop="20260723025500 -0300" channel="Globo MG">
+  <programme start="20260723015500 -0300" stop="20260723023500 -0300" channel="Globo MG">
     <title lang="pt">Coração Acelerado</title>
   </programme>
-  <programme start="20260723025500 -0300" stop="20260723032500 -0300" channel="Globo MG">
-    <title lang="pt">Comédia Na Madruga - Vai Que Cola I</title>
-  </programme>
-  <programme start="20260723032500 -0300" stop="20260723040000 -0300" channel="Globo MG">
-    <title lang="pt">Comédia Na Madruga - Vai Que Cola II</title>
+  <programme start="20260723023500 -0300" stop="20260723040000 -0300" channel="Globo MG">
+    <title lang="pt">Corujão: O Jardim Secreto de Mariana</title>
   </programme>
   <programme start="20260723040000 -0300" stop="20260723060000 -0300" channel="Globo MG">
     <title lang="pt">Hora Um</title>
@@ -57,26 +51,32 @@
   <programme start="20260723144500 -0300" stop="20260723153000 -0300" channel="Globo MG">
     <title lang="pt">Além do Tempo</title>
   </programme>
-  <programme start="20260723153000 -0300" stop="20260723181000 -0300" channel="Globo MG">
-    <title lang="pt">Programação Globo</title>
+  <programme start="20260723153000 -0300" stop="20260723171000 -0300" channel="Globo MG">
+    <title lang="pt">Sessão da Tarde: Ingresso para o Paraíso</title>
   </programme>
-  <programme start="20260723181000 -0300" stop="20260723185000 -0300" channel="Globo MG">
+  <programme start="20260723171000 -0300" stop="20260723182500 -0300" channel="Globo MG">
+    <title lang="pt">Vale a Pena Ver de Novo: Avenida Brasil</title>
+  </programme>
+  <programme start="20260723182500 -0300" stop="20260723191000 -0300" channel="Globo MG">
     <title lang="pt">A Nobreza do Amor</title>
   </programme>
-  <programme start="20260723185000 -0300" stop="20260723191000 -0300" channel="Globo MG">
+  <programme start="20260723191000 -0300" stop="20260723194000 -0300" channel="Globo MG">
     <title lang="pt">MG2</title>
   </programme>
-  <programme start="20260723191000 -0300" stop="20260723200000 -0300" channel="Globo MG">
+  <programme start="20260723194000 -0300" stop="20260723203000 -0300" channel="Globo MG">
     <title lang="pt">Coração Acelerado</title>
   </programme>
-  <programme start="20260723200000 -0300" stop="20260723204000 -0300" channel="Globo MG">
+  <programme start="20260723203000 -0300" stop="20260723212000 -0300" channel="Globo MG">
     <title lang="pt">Jornal Nacional</title>
   </programme>
-  <programme start="20260723204000 -0300" stop="20260723214000 -0300" channel="Globo MG">
+  <programme start="20260723212000 -0300" stop="20260723222500 -0300" channel="Globo MG">
     <title lang="pt">Quem Ama Cuida</title>
   </programme>
-  <programme start="20260723214000 -0300" stop="20260724000000 -0300" channel="Globo MG">
-    <title lang="pt">Programação Globo</title>
+  <programme start="20260723222500 -0300" stop="20260723230000 -0300" channel="Globo MG">
+    <title lang="pt">Pablo & Luisão</title>
+  </programme>
+  <programme start="20260723230000 -0300" stop="20260724000000 -0300" channel="Globo MG">
+    <title lang="pt">Que História é Essa Porchat?</title>
   </programme>
   <programme start="20260723003000 -0300" stop="20260723004500 -0300" channel="Record MG">
     <title lang="pt">Jornal da Record 24h</title>
@@ -121,10 +121,10 @@
     <title lang="pt">Jornal da Record</title>
   </programme>
   <programme start="20260723190000 -0300" stop="20260723192000 -0300" channel="Record MG">
-    <title lang="pt">Botafogo x Vitória - Ao Vivo</title>
+    <title lang="pt">Aquecimento Futebol</title>
   </programme>
   <programme start="20260723192000 -0300" stop="20260723213000 -0300" channel="Record MG">
-    <title lang="pt">Campeonato Brasileiro 2026</title>
+    <title lang="pt">Botafogo x Vitória - Ao Vivo</title>
   </programme>
   <programme start="20260723213000 -0300" stop="20260723223000 -0300" channel="Record MG">
     <title lang="pt">Coração de Mãe</title>
