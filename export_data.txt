@@ -1,6 +1,6 @@
 #EXTM3U x-tvg-url="https://raw.githubusercontent.com/limaalef/BrazilTVEPG/refs/heads/main/claro.xml,https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/local_meta.xml"
 #EXTINF:-1 tvg-id="Globo MG" tvg-name="Globo MG FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" group-title="Abertos", Globo MG FHD
-https://network-metrics-test.homefelix08.workers.dev/play/Globo%20MG?rota=site|Referer=https://1707embcanais.xyz/globomg/
+https://network-metrics-test.homefelix08.workers.dev/play/Globo%20MG?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=globomg/
 #EXTINF:-1 tvg-id="GLOBO SP" tvg-name="Globo FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" group-title="Abertos", Globo FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Globo?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Band MG" tvg-name="Band FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band.png" group-title="Abertos", Band FHD
@@ -8,11 +8,11 @@ https://network-metrics-test.homefelix08.workers.dev/play/Band?rota=api_cdn|User
 #EXTINF:-1 tvg-id="SBT MG" tvg-name="TV Alterosa FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" group-title="Abertos", TV Alterosa FHD
 https://network-metrics-test.homefelix08.workers.dev/play/TV%20Alterosa?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SBT SP" tvg-name="SBT FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" group-title="Abertos", SBT FHD
-https://network-metrics-test.homefelix08.workers.dev/play/SBT?rota=site|Referer=https://1707embcanais.xyz/sbtsp/
+https://network-metrics-test.homefelix08.workers.dev/play/SBT?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=sbtsp/
 #EXTINF:-1 tvg-id="REDE TV! São Paulo" tvg-name="Rede TV FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/rede_tv.png" group-title="Abertos", Rede TV FHD
-https://network-metrics-test.homefelix08.workers.dev/play/Rede%20TV?rota=site|Referer=https://1707embcanais.xyz/redetv/
+https://network-metrics-test.homefelix08.workers.dev/play/Rede%20TV?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=redetv/
 #EXTINF:-1 tvg-id="Record MG" tvg-name="Record MG FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" group-title="Abertos", Record MG FHD
-https://network-metrics-test.homefelix08.workers.dev/play/Record%20MG?rota=site|Referer=https://1707embcanais.xyz/recordmg/
+https://network-metrics-test.homefelix08.workers.dev/play/Record%20MG?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=recordmg/
 #EXTINF:-1 tvg-id="FUTURA HD" tvg-name="Futura FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/futura.png" group-title="Abertos", Futura FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Futura?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TV BRASIL" tvg-name="TV Brasil FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_brasil.png" group-title="Abertos", TV Brasil FHD
@@ -20,19 +20,19 @@ https://network-metrics-test.homefelix08.workers.dev/play/TV%20Brasil?rota=api_c
 #EXTINF:-1 tvg-id="CULTURA HD" tvg-name="TV Cultura FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_cultura.png" group-title="Abertos", TV Cultura FHD
 https://network-metrics-test.homefelix08.workers.dev/play/TV%20Cultura?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="CULTURA HD" tvg-name="TV Cultura HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_cultura.png" group-title="Abertos", TV Cultura HD
-https://network-metrics-test.homefelix08.workers.dev/play/TV%20Cultura?rota=site|Referer=https://1707embcanais.xyz/tvcultura/
+https://network-metrics-test.homefelix08.workers.dev/play/TV%20Cultura?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=tvcultura/
 #EXTINF:-1 tvg-id="A&E" tvg-name="A&E FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/ae.png" group-title="Filmes e Séries", A&E FHD
 https://network-metrics-test.homefelix08.workers.dev/play/A&E?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="A&E" tvg-name="A&E HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/ae.png" group-title="Filmes e Séries", A&E HD
-https://network-metrics-test.homefelix08.workers.dev/play/A&E?rota=site|Referer=https://1707embcanais.xyz/aee/
+https://network-metrics-test.homefelix08.workers.dev/play/A&E?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=aee/
 #EXTINF:-1 tvg-id="AMC HD" tvg-name="AMC FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amc.png" group-title="Filmes e Séries", AMC FHD
 https://network-metrics-test.homefelix08.workers.dev/play/AMC?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="AMC HD" tvg-name="AMC HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amc.png" group-title="Filmes e Séries", AMC HD
-https://network-metrics-test.homefelix08.workers.dev/play/AMC?rota=site|Referer=https://1707embcanais.xyz/amc/
+https://network-metrics-test.homefelix08.workers.dev/play/AMC?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=amc/
 #EXTINF:-1 tvg-id="AXN" tvg-name="AXN FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/axn.png" group-title="Filmes e Séries", AXN FHD
 https://network-metrics-test.homefelix08.workers.dev/play/AXN?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="AXN" tvg-name="AXN HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/axn.png" group-title="Filmes e Séries", AXN HD
-https://network-metrics-test.homefelix08.workers.dev/play/AXN?rota=site|Referer=https://1707embcanais.xyz/axn/
+https://network-metrics-test.homefelix08.workers.dev/play/AXN?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=axn/
 #EXTINF:-1 tvg-id="CANAL BRASIL HD" tvg-name="Canal Brasil FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_brasil.png" group-title="Filmes e Séries", Canal Brasil FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Canal%20Brasil?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="CANAL BRASIL HD" tvg-name="Canal Brasil HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_brasil.png" group-title="Filmes e Séries", Canal Brasil HD
@@ -40,111 +40,111 @@ https://network-metrics-test.homefelix08.workers.dev/play/Canal%20Brasil?rota=ap
 #EXTINF:-1 tvg-id="CINEMAX HD" tvg-name="Cinemax FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cinemax.png" group-title="Filmes e Séries", Cinemax FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Cinemax?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="CINEMAX HD" tvg-name="Cinemax HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cinemax.png" group-title="Filmes e Séries", Cinemax HD
-https://network-metrics-test.homefelix08.workers.dev/play/Cinemax?rota=site|Referer=https://1707embcanais.xyz/cinemax/
+https://network-metrics-test.homefelix08.workers.dev/play/Cinemax?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=cinemax/
 #EXTINF:-1 tvg-id="HBO" tvg-name="HBO FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo.png" group-title="Filmes e Séries", HBO FHD
 https://network-metrics-test.homefelix08.workers.dev/play/HBO?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HBO" tvg-name="HBO HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo.png" group-title="Filmes e Séries", HBO HD
-https://network-metrics-test.homefelix08.workers.dev/play/HBO?rota=site|Referer=https://1707embcanais.xyz/hbo/
+https://network-metrics-test.homefelix08.workers.dev/play/HBO?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=hbo/
 #EXTINF:-1 tvg-id="HBO2" tvg-name="HBO 2 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_2.png" group-title="Filmes e Séries", HBO 2 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/HBO%202?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HBO2" tvg-name="HBO 2 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_2.png" group-title="Filmes e Séries", HBO 2 HD
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%202?rota=site|Referer=https://1707embcanais.xyz/hbo2/
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%202?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=hbo2/
 #EXTINF:-1 tvg-id="HBO Family" tvg-name="HBO Family FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_family.png" group-title="Filmes e Séries", HBO Family FHD
 https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Family?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HBO Family" tvg-name="HBO Family HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_family.png" group-title="Filmes e Séries", HBO Family HD
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Family?rota=site|Referer=https://1707embcanais.xyz/hbofamily/
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Family?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=hbofamily/
 #EXTINF:-1 tvg-id="HBO Mundi" tvg-name="HBO Mundi FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_mundi.png" group-title="Filmes e Séries", HBO Mundi FHD
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Mundi?rota=site|Referer=https://1707embcanais.xyz/hbomundi/
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Mundi?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=hbomundi/
 #EXTINF:-1 tvg-id="HBO+" tvg-name="HBO Plus FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_plus.png" group-title="Filmes e Séries", HBO Plus FHD
 https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Plus?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HBO+" tvg-name="HBO Plus HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_plus.png" group-title="Filmes e Séries", HBO Plus HD
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Plus?rota=site|Referer=https://1707embcanais.xyz/hboplus/
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Plus?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=hboplus/
 #EXTINF:-1 tvg-id="HBO Pop" tvg-name="HBO Pop FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_pop.png" group-title="Filmes e Séries", HBO Pop FHD
 https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Pop?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HBO Pop" tvg-name="HBO Pop HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_pop.png" group-title="Filmes e Séries", HBO Pop HD
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Pop?rota=site|Referer=https://1707embcanais.xyz/hbopop/
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Pop?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=hbopop/
 #EXTINF:-1 tvg-id="HBO Signature" tvg-name="HBO Signature FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_signature.png" group-title="Filmes e Séries", HBO Signature FHD
 https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Signature?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HBO Signature" tvg-name="HBO Signature HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_signature.png" group-title="Filmes e Séries", HBO Signature HD
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Signature?rota=site|Referer=https://1707embcanais.xyz/hbosignature/
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Signature?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=hbosignature/
 #EXTINF:-1 tvg-id="HBO Xtreme" tvg-name="HBO Xtreme FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_xtreme.png" group-title="Filmes e Séries", HBO Xtreme FHD
 https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Xtreme?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HBO Xtreme" tvg-name="HBO Xtreme HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_xtreme.png" group-title="Filmes e Séries", HBO Xtreme HD
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Xtreme?rota=site|Referer=https://1707embcanais.xyz/hboxtreme/
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Xtreme?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=hboxtreme/
 #EXTINF:-1 tvg-id="MEGAPIX HD" tvg-name="Megapix FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/megapix.png" group-title="Filmes e Séries", Megapix FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Megapix?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="MEGAPIX HD" tvg-name="Megapix HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/megapix.png" group-title="Filmes e Séries", Megapix HD
-https://network-metrics-test.homefelix08.workers.dev/play/Megapix?rota=site|Referer=https://1707embcanais.xyz/megapix/
+https://network-metrics-test.homefelix08.workers.dev/play/Megapix?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=megapix/
 #EXTINF:-1 tvg-id="SONY CHANNEL" tvg-name="Sony Channel FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sony_channel.png" group-title="Filmes e Séries", Sony Channel FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Sony%20Channel?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SONY CHANNEL" tvg-name="Sony Channel HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sony_channel.png" group-title="Filmes e Séries", Sony Channel HD
-https://network-metrics-test.homefelix08.workers.dev/play/Sony%20Channel?rota=site|Referer=https://1707embcanais.xyz/sonychannel/
+https://network-metrics-test.homefelix08.workers.dev/play/Sony%20Channel?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=sonychannel/
 #EXTINF:-1 tvg-id="SPACE HD" tvg-name="Space FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/space.png" group-title="Filmes e Séries", Space FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Space?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SPACE HD" tvg-name="Space HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/space.png" group-title="Filmes e Séries", Space HD
-https://network-metrics-test.homefelix08.workers.dev/play/Space?rota=site|Referer=https://1707embcanais.xyz/space/
+https://network-metrics-test.homefelix08.workers.dev/play/Space?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=space/
 #EXTINF:-1 tvg-id="STUDIO UNIVERSAL HD" tvg-name="Studio Universal FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/studio_universal.png" group-title="Filmes e Séries", Studio Universal FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Studio%20Universal?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="STUDIO UNIVERSAL HD" tvg-name="Studio Universal HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/studio_universal.png" group-title="Filmes e Séries", Studio Universal HD
-https://network-metrics-test.homefelix08.workers.dev/play/Studio%20Universal?rota=site|Referer=https://1707embcanais.xyz/studiouniversal/
+https://network-metrics-test.homefelix08.workers.dev/play/Studio%20Universal?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=studiouniversal/
 #EXTINF:-1 tvg-id="TCM BR" tvg-name="TCM FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tcm.png" group-title="Filmes e Séries", TCM FHD
 https://network-metrics-test.homefelix08.workers.dev/play/TCM?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TCM BR" tvg-name="TCM HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tcm.png" group-title="Filmes e Séries", TCM HD
-https://network-metrics-test.homefelix08.workers.dev/play/TCM?rota=site|Referer=https://1707embcanais.xyz/tcm/
+https://network-metrics-test.homefelix08.workers.dev/play/TCM?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=tcm/
 #EXTINF:-1 tvg-id="TELECINE ACTION" tvg-name="Telecine Action FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_action.png" group-title="Filmes e Séries", Telecine Action FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Action?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TELECINE ACTION" tvg-name="Telecine Action HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_action.png" group-title="Filmes e Séries", Telecine Action HD
-https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Action?rota=site|Referer=https://1707embcanais.xyz/tcaction/
+https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Action?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=tcaction/
 #EXTINF:-1 tvg-id="TELECINE CULT" tvg-name="Telecine Cult FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_cult.png" group-title="Filmes e Séries", Telecine Cult FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Cult?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TELECINE CULT" tvg-name="Telecine Cult HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_cult.png" group-title="Filmes e Séries", Telecine Cult HD
-https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Cult?rota=site|Referer=https://1707embcanais.xyz/tccult/
+https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Cult?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=tccult/
 #EXTINF:-1 tvg-id="TELECINE FUN" tvg-name="Telecine Fun FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_fun.png" group-title="Filmes e Séries", Telecine Fun FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Fun?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TELECINE FUN" tvg-name="Telecine Fun HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_fun.png" group-title="Filmes e Séries", Telecine Fun HD
-https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Fun?rota=site|Referer=https://1707embcanais.xyz/tcfun/
+https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Fun?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=tcfun/
 #EXTINF:-1 tvg-id="TELECINE PIPOCA" tvg-name="Telecine Pipoca FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_pipoca.png" group-title="Filmes e Séries", Telecine Pipoca FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Pipoca?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TELECINE PIPOCA" tvg-name="Telecine Pipoca HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_pipoca.png" group-title="Filmes e Séries", Telecine Pipoca HD
-https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Pipoca?rota=site|Referer=https://1707embcanais.xyz/tcpipoca/
+https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Pipoca?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=tcpipoca/
 #EXTINF:-1 tvg-id="TELECINE PREMIUM" tvg-name="Telecine Premium FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_premium.png" group-title="Filmes e Séries", Telecine Premium FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Premium?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TELECINE PREMIUM" tvg-name="Telecine Premium HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_premium.png" group-title="Filmes e Séries", Telecine Premium HD
-https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Premium?rota=site|Referer=https://1707embcanais.xyz/tcpremium/
+https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Premium?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=tcpremium/
 #EXTINF:-1 tvg-id="TELECINE TOUCH" tvg-name="Telecine Touch FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_touch.png" group-title="Filmes e Séries", Telecine Touch FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Touch?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TELECINE TOUCH" tvg-name="Telecine Touch HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/telecine_touch.png" group-title="Filmes e Séries", Telecine Touch HD
-https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Touch?rota=site|Referer=https://1707embcanais.xyz/tctouch/
+https://network-metrics-test.homefelix08.workers.dev/play/Telecine%20Touch?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=tctouch/
 #EXTINF:-1 tvg-id="TNT HD" tvg-name="TNT FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tnt.png" group-title="Filmes e Séries", TNT FHD
 https://network-metrics-test.homefelix08.workers.dev/play/TNT?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TNT HD" tvg-name="TNT HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tnt.png" group-title="Filmes e Séries", TNT HD
-https://network-metrics-test.homefelix08.workers.dev/play/TNT?rota=site|Referer=https://1707embcanais.xyz/tnt/
+https://network-metrics-test.homefelix08.workers.dev/play/TNT?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=tnt/
 #EXTINF:-1 tvg-id="TNT NOVELAS" tvg-name="TNT Novelas FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tnt_novelas.png" group-title="Filmes e Séries", TNT Novelas FHD
 https://network-metrics-test.homefelix08.workers.dev/play/TNT%20Novelas?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TNT NOVELAS" tvg-name="TNT Novelas HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tnt_novelas.png" group-title="Filmes e Séries", TNT Novelas HD
-https://network-metrics-test.homefelix08.workers.dev/play/TNT%20Novelas?rota=site|Referer=https://1707embcanais.xyz/tntnovelas/
+https://network-metrics-test.homefelix08.workers.dev/play/TNT%20Novelas?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=tntnovelas/
 #EXTINF:-1 tvg-id="TNT SERIES HD" tvg-name="TNT Séries FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tnt_sries.png" group-title="Filmes e Séries", TNT Séries FHD
 https://network-metrics-test.homefelix08.workers.dev/play/TNT%20Séries?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TNT SERIES HD" tvg-name="TNT Séries HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tnt_sries.png" group-title="Filmes e Séries", TNT Séries HD
-https://network-metrics-test.homefelix08.workers.dev/play/TNT%20Séries?rota=site|Referer=https://1707embcanais.xyz/tntseries/
+https://network-metrics-test.homefelix08.workers.dev/play/TNT%20Séries?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=tntseries/
 #EXTINF:-1 tvg-id="UNIVERSAL TV HD" tvg-name="Universal TV FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/universal_tv.png" group-title="Filmes e Séries", Universal TV FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Universal%20TV?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="UNIVERSAL TV HD" tvg-name="Universal TV HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/universal_tv.png" group-title="Filmes e Séries", Universal TV HD
-https://network-metrics-test.homefelix08.workers.dev/play/Universal%20TV?rota=site|Referer=https://1707embcanais.xyz/universaltv/
+https://network-metrics-test.homefelix08.workers.dev/play/Universal%20TV?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=universaltv/
 #EXTINF:-1 tvg-id="USA HD" tvg-name="USA FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/usa.png" group-title="Filmes e Séries", USA FHD
 https://network-metrics-test.homefelix08.workers.dev/play/USA?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="USA HD" tvg-name="USA HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/usa.png" group-title="Filmes e Séries", USA HD
-https://network-metrics-test.homefelix08.workers.dev/play/USA?rota=site|Referer=https://1707embcanais.xyz/paramountnetwork/
+https://network-metrics-test.homefelix08.workers.dev/play/USA?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=paramountnetwork/
 #EXTINF:-1 tvg-id="WARNER CHANNEL" tvg-name="Warner FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/warner.png" group-title="Filmes e Séries", Warner FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Warner?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="WARNER CHANNEL" tvg-name="Warner HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/warner.png" group-title="Filmes e Séries", Warner HD
-https://network-metrics-test.homefelix08.workers.dev/play/Warner?rota=site|Referer=https://1707embcanais.xyz/warner/
+https://network-metrics-test.homefelix08.workers.dev/play/Warner?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=warner/
 #EXTINF:-1 tvg-id="BIS HD" tvg-name="Bis FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/bis.png" group-title="Variedades", Bis FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Bis?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="BIS HD" tvg-name="Bis HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/bis.png" group-title="Variedades", Bis HD
 https://network-metrics-test.homefelix08.workers.dev/play/Bis?rota=api_ip|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="OFF HD" tvg-name="Canal Off FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_off.png" group-title="Variedades", Canal Off FHD
-https://network-metrics-test.homefelix08.workers.dev/play/Canal%20Off?rota=site|Referer=https://1707embcanais.xyz/canaloff/
+https://network-metrics-test.homefelix08.workers.dev/play/Canal%20Off?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=canaloff/
 #EXTINF:-1 tvg-id="CURTA" tvg-name="Curta! FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/curta.png" group-title="Variedades", Curta! FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Curta!?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="CURTA" tvg-name="Curta! HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/curta.png" group-title="Variedades", Curta! HD
@@ -156,15 +156,15 @@ https://network-metrics-test.homefelix08.workers.dev/play/Fish%20TV?rota=api_ip|
 #EXTINF:-1 tvg-id="FOOD NETWORK HD" tvg-name="Food Network FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/food_network.png" group-title="Variedades", Food Network FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Food%20Network?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="FOOD NETWORK HD" tvg-name="Food Network HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/food_network.png" group-title="Variedades", Food Network HD
-https://network-metrics-test.homefelix08.workers.dev/play/Food%20Network?rota=site|Referer=https://1707embcanais.xyz/foodnetwork/
+https://network-metrics-test.homefelix08.workers.dev/play/Food%20Network?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=foodnetwork/
 #EXTINF:-1 tvg-id="Globoplay Novelas" tvg-name="Globoplay Novelas FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globoplay_novelas.png" group-title="Variedades", Globoplay Novelas FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Globoplay%20Novelas?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Globoplay Novelas" tvg-name="Globoplay Novelas HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globoplay_novelas.png" group-title="Variedades", Globoplay Novelas HD
-https://network-metrics-test.homefelix08.workers.dev/play/Globoplay%20Novelas?rota=site|Referer=https://1707embcanais.xyz/globoplaynovelas/
+https://network-metrics-test.homefelix08.workers.dev/play/Globoplay%20Novelas?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=globoplaynovelas/
 #EXTINF:-1 tvg-id="GNT HD" tvg-name="GNT FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/gnt.png" group-title="Variedades", GNT FHD
 https://network-metrics-test.homefelix08.workers.dev/play/GNT?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="GNT HD" tvg-name="GNT HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/gnt.png" group-title="Variedades", GNT HD
-https://network-metrics-test.homefelix08.workers.dev/play/GNT?rota=site|Referer=https://1707embcanais.xyz/gnt/
+https://network-metrics-test.homefelix08.workers.dev/play/GNT?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=gnt/
 #EXTINF:-1 tvg-id="LIFETIME" tvg-name="Lifetime FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/lifetime.png" group-title="Variedades", Lifetime FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Lifetime?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="LIFETIME" tvg-name="Lifetime HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/lifetime.png" group-title="Variedades", Lifetime HD
@@ -176,7 +176,7 @@ https://network-metrics-test.homefelix08.workers.dev/play/Modo%20Viagem?rota=api
 #EXTINF:-1 tvg-id="MULTISHOW HD" tvg-name="Multishow FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/multishow.png" group-title="Variedades", Multishow FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Multishow?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="MULTISHOW HD" tvg-name="Multishow HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/multishow.png" group-title="Variedades", Multishow HD
-https://network-metrics-test.homefelix08.workers.dev/play/Multishow?rota=site|Referer=https://1707embcanais.xyz/multishow/
+https://network-metrics-test.homefelix08.workers.dev/play/Multishow?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=multishow/
 #EXTINF:-1 tvg-id="MUSIC BOX BRAZIL" tvg-name="Music Box Brazil FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/music_box_brazil.png" group-title="Variedades", Music Box Brazil FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Music%20Box%20Brazil?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="PRIME BOX BRAZIL" tvg-name="Prime Box Brazil FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/prime_box_brazil.png" group-title="Variedades", Prime Box Brazil FHD
@@ -190,7 +190,7 @@ https://network-metrics-test.homefelix08.workers.dev/play/Travel%20Box%20Brazil?
 #EXTINF:-1 tvg-id="ANIMAL PLANET HD" tvg-name="Animal Planet FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/animal_planet.png" group-title="Documentários", Animal Planet FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Animal%20Planet?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="ANIMAL PLANET HD" tvg-name="Animal Planet HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/animal_planet.png" group-title="Documentários", Animal Planet HD
-https://network-metrics-test.homefelix08.workers.dev/play/Animal%20Planet?rota=site|Referer=https://1707embcanais.xyz/animalplanet/
+https://network-metrics-test.homefelix08.workers.dev/play/Animal%20Planet?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=animalplanet/
 #EXTINF:-1 tvg-id="ARTE 1 HD" tvg-name="Arte1 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/arte1.png" group-title="Documentários", Arte1 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Arte1?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="ARTE 1 HD" tvg-name="Arte1 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/arte1.png" group-title="Documentários", Arte1 HD
@@ -198,83 +198,83 @@ https://network-metrics-test.homefelix08.workers.dev/play/Arte1?rota=api_ip|User
 #EXTINF:-1 tvg-id="DISCOVERY HD" tvg-name="Discovery Channel FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_channel.png" group-title="Documentários", Discovery Channel FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Channel?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="DISCOVERY HD" tvg-name="Discovery Channel HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_channel.png" group-title="Documentários", Discovery Channel HD
-https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Channel?rota=site|Referer=https://1707embcanais.xyz/discoverychannel/
+https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Channel?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=discoverychannel/
 #EXTINF:-1 tvg-id="DISCOVERY HOME&HEALTH HD" tvg-name="Discovery Home & Health FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_home__health.png" group-title="Documentários", Discovery Home & Health FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Home%20&%20Health?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="DISCOVERY HOME&HEALTH HD" tvg-name="Discovery Home & Health HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_home__health.png" group-title="Documentários", Discovery Home & Health HD
-https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Home%20&%20Health?rota=site|Referer=https://1707embcanais.xyz/discoveryhh/
+https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Home%20&%20Health?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=discoveryhh/
 #EXTINF:-1 tvg-id="DISCOVERY SCIENCE HD" tvg-name="Discovery Science FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_science.png" group-title="Documentários", Discovery Science FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Science?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="DISCOVERY SCIENCE HD" tvg-name="Discovery Science HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_science.png" group-title="Documentários", Discovery Science HD
-https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Science?rota=site|Referer=https://1707embcanais.xyz/discoveryscience/
+https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Science?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=discoveryscience/
 #EXTINF:-1 tvg-id="DISCOVERY THEATER HD" tvg-name="Discovery Theater FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_theater.png" group-title="Documentários", Discovery Theater FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Theater?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="DISCOVERY THEATER HD" tvg-name="Discovery Theater HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_theater.png" group-title="Documentários", Discovery Theater HD
-https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Theater?rota=site|Referer=https://1707embcanais.xyz/discoverytheater/
+https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Theater?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=discoverytheater/
 #EXTINF:-1 tvg-id="DISCOVERY TURBO HD" tvg-name="Discovery Turbo FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_turbo.png" group-title="Documentários", Discovery Turbo FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Turbo?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="DISCOVERY TURBO HD" tvg-name="Discovery Turbo HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_turbo.png" group-title="Documentários", Discovery Turbo HD
-https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Turbo?rota=site|Referer=https://1707embcanais.xyz/discoveryturbo/
+https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Turbo?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=discoveryturbo/
 #EXTINF:-1 tvg-id="DISCOVERY WORLD HD" tvg-name="Discovery World FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_world.png" group-title="Documentários", Discovery World FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20World?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="DISCOVERY WORLD HD" tvg-name="Discovery World HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_world.png" group-title="Documentários", Discovery World HD
-https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20World?rota=site|Referer=https://1707embcanais.xyz/discoveryworld/
+https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20World?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=discoveryworld/
 #EXTINF:-1 tvg-id="E!" tvg-name="E! Entertainment FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/e_entertainment.png" group-title="Documentários", E! Entertainment FHD
 https://network-metrics-test.homefelix08.workers.dev/play/E!%20Entertainment?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="E!" tvg-name="E! Entertainment HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/e_entertainment.png" group-title="Documentários", E! Entertainment HD
-https://network-metrics-test.homefelix08.workers.dev/play/E!%20Entertainment?rota=site|Referer=https://1707embcanais.xyz/eentertainment/
+https://network-metrics-test.homefelix08.workers.dev/play/E!%20Entertainment?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=eentertainment/
 #EXTINF:-1 tvg-id="HGTV HD" tvg-name="HGTV FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hgtv.png" group-title="Documentários", HGTV FHD
 https://network-metrics-test.homefelix08.workers.dev/play/HGTV?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HGTV HD" tvg-name="HGTV HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hgtv.png" group-title="Documentários", HGTV HD
-https://network-metrics-test.homefelix08.workers.dev/play/HGTV?rota=site|Referer=https://1707embcanais.xyz/hgtv/
+https://network-metrics-test.homefelix08.workers.dev/play/HGTV?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=hgtv/
 #EXTINF:-1 tvg-id="HISTORY" tvg-name="History FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/history.png" group-title="Documentários", History FHD
 https://network-metrics-test.homefelix08.workers.dev/play/History?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HISTORY" tvg-name="History HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/history.png" group-title="Documentários", History HD
-https://network-metrics-test.homefelix08.workers.dev/play/History?rota=site|Referer=https://1707embcanais.xyz/history/
+https://network-metrics-test.homefelix08.workers.dev/play/History?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=history/
 #EXTINF:-1 tvg-id="HISTORY 2" tvg-name="History 2 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/history_2.png" group-title="Documentários", History 2 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/History%202?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="HISTORY 2" tvg-name="History 2 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/history_2.png" group-title="Documentários", History 2 HD
-https://network-metrics-test.homefelix08.workers.dev/play/History%202?rota=site|Referer=https://1707embcanais.xyz/history2/
+https://network-metrics-test.homefelix08.workers.dev/play/History%202?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=history2/
 #EXTINF:-1 tvg-id="ID HD" tvg-name="Investigação Discovery FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/investigao_discovery.png" group-title="Documentários", Investigação Discovery FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Investigação%20Discovery?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="ID HD" tvg-name="Investigação Discovery HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/investigao_discovery.png" group-title="Documentários", Investigação Discovery HD
-https://network-metrics-test.homefelix08.workers.dev/play/Investigação%20Discovery?rota=site|Referer=https://1707embcanais.xyz/discoveryid/
+https://network-metrics-test.homefelix08.workers.dev/play/Investigação%20Discovery?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=discoveryid/
 #EXTINF:-1 tvg-id="Adult Swim HD" tvg-name="Adult Swim FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/adult_swim.png" group-title="Infantis", Adult Swim FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Adult%20Swim?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Adult Swim HD" tvg-name="Adult Swim HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/adult_swim.png" group-title="Infantis", Adult Swim HD
-https://network-metrics-test.homefelix08.workers.dev/play/Adult%20Swim?rota=site|Referer=https://1707embcanais.xyz/adultswim/
+https://network-metrics-test.homefelix08.workers.dev/play/Adult%20Swim?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=adultswim/
 #EXTINF:-1 tvg-id="CARTOON HD" tvg-name="Cartoon Network FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cartoon_network.png" group-title="Infantis", Cartoon Network FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Cartoon%20Network?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="CARTOON HD" tvg-name="Cartoon Network HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cartoon_network.png" group-title="Infantis", Cartoon Network HD
-https://network-metrics-test.homefelix08.workers.dev/play/Cartoon%20Network?rota=site|Referer=https://1707embcanais.xyz/cartoonnetwork/
+https://network-metrics-test.homefelix08.workers.dev/play/Cartoon%20Network?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=cartoonnetwork/
 #EXTINF:-1 tvg-id="CARTOONITO" tvg-name="Cartoonito FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cartoonito.png" group-title="Infantis", Cartoonito FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Cartoonito?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="CARTOONITO" tvg-name="Cartoonito HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cartoonito.png" group-title="Infantis", Cartoonito HD
-https://network-metrics-test.homefelix08.workers.dev/play/Cartoonito?rota=site|Referer=https://1707embcanais.xyz/cartoonito/
+https://network-metrics-test.homefelix08.workers.dev/play/Cartoonito?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=cartoonito/
 #EXTINF:-1 tvg-id="DISCOVERY KIDS HD" tvg-name="Discovery Kids FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_kids.png" group-title="Infantis", Discovery Kids FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Kids?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="DISCOVERY KIDS HD" tvg-name="Discovery Kids HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/discovery_kids.png" group-title="Infantis", Discovery Kids HD
-https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Kids?rota=site|Referer=https://1707embcanais.xyz/discoverykids/
+https://network-metrics-test.homefelix08.workers.dev/play/Discovery%20Kids?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=discoverykids/
 #EXTINF:-1 tvg-id="GLOOB HD" tvg-name="Gloob FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/gloob.png" group-title="Infantis", Gloob FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Gloob?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="GLOOB HD" tvg-name="Gloob HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/gloob.png" group-title="Infantis", Gloob HD
-https://network-metrics-test.homefelix08.workers.dev/play/Gloob?rota=site|Referer=https://1707embcanais.xyz/gloob/
+https://network-metrics-test.homefelix08.workers.dev/play/Gloob?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=gloob/
 #EXTINF:-1 tvg-id="GLOOBINHO HD" tvg-name="Gloobinho FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/gloobinho.png" group-title="Infantis", Gloobinho FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Gloobinho?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="GLOOBINHO HD" tvg-name="Gloobinho HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/gloobinho.png" group-title="Infantis", Gloobinho HD
-https://network-metrics-test.homefelix08.workers.dev/play/Gloobinho?rota=site|Referer=https://1707embcanais.xyz/gloobinho/
+https://network-metrics-test.homefelix08.workers.dev/play/Gloobinho?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=gloobinho/
 #EXTINF:-1 tvg-id="" tvg-name="Tooncast FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tooncast.png" group-title="Infantis", Tooncast FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Tooncast?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="Tooncast HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tooncast.png" group-title="Infantis", Tooncast HD
-https://network-metrics-test.homefelix08.workers.dev/play/Tooncast?rota=site|Referer=https://1707embcanais.xyz/tooncast/
+https://network-metrics-test.homefelix08.workers.dev/play/Tooncast?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=tooncast/
 #EXTINF:-1 tvg-id="" tvg-name="Apple TV FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/apple_tv.png" group-title="Esportes", Apple TV FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Apple%20TV?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="Apple TV HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/apple_tv.png" group-title="Esportes", Apple TV HD
-https://network-metrics-test.homefelix08.workers.dev/play/Apple%20TV?rota=site|Referer=https://1707embcanais.xyz/appletv01/
+https://network-metrics-test.homefelix08.workers.dev/play/Apple%20TV?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=appletv01/
 #EXTINF:-1 tvg-id="BAND SPORTS HD" tvg-name="Band Sports FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band_sports.png" group-title="Esportes", Band Sports FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Band%20Sports?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="BAND SPORTS HD" tvg-name="Band Sports HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band_sports.png" group-title="Esportes", Band Sports HD
-https://network-metrics-test.homefelix08.workers.dev/play/Band%20Sports?rota=site|Referer=https://1707embcanais.xyz/bandsports/
+https://network-metrics-test.homefelix08.workers.dev/play/Band%20Sports?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=bandsports/
 #EXTINF:-1 tvg-id="" tvg-name="Canal Goat FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_goat.png" group-title="Esportes", Canal Goat FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Canal%20Goat?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="Canal Goat HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_goat.png" group-title="Esportes", Canal Goat HD
@@ -282,67 +282,67 @@ https://network-metrics-test.homefelix08.workers.dev/play/Canal%20Goat?rota=api_
 #EXTINF:-1 tvg-id="COMBATE HD" tvg-name="Combate FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/combate.png" group-title="Esportes", Combate FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Combate?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="COMBATE HD" tvg-name="Combate HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/combate.png" group-title="Esportes", Combate HD
-https://network-metrics-test.homefelix08.workers.dev/play/Combate?rota=site|Referer=https://1707embcanais.xyz/combate/
+https://network-metrics-test.homefelix08.workers.dev/play/Combate?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=combate/
 #EXTINF:-1 tvg-id="" tvg-name="Dazn FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/dazn.png" group-title="Esportes", Dazn FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Dazn?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="Dazn HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/dazn.png" group-title="Esportes", Dazn HD
-https://network-metrics-test.homefelix08.workers.dev/play/Dazn?rota=site|Referer=https://1707embcanais.xyz/dazn/
+https://network-metrics-test.homefelix08.workers.dev/play/Dazn?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=dazn/
 #EXTINF:-1 tvg-id="ESPN" tvg-name="ESPN FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn.png" group-title="Esportes", ESPN FHD
 https://network-metrics-test.homefelix08.workers.dev/play/ESPN?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="ESPN" tvg-name="ESPN HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn.png" group-title="Esportes", ESPN HD
-https://network-metrics-test.homefelix08.workers.dev/play/ESPN?rota=site|Referer=https://1707embcanais.xyz/espn/
+https://network-metrics-test.homefelix08.workers.dev/play/ESPN?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=espn/
 #EXTINF:-1 tvg-id="ESPN 2" tvg-name="ESPN 2 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_2.png" group-title="Esportes", ESPN 2 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/ESPN%202?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="ESPN 2" tvg-name="ESPN 2 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_2.png" group-title="Esportes", ESPN 2 HD
-https://network-metrics-test.homefelix08.workers.dev/play/ESPN%202?rota=site|Referer=https://1707embcanais.xyz/espn2/
+https://network-metrics-test.homefelix08.workers.dev/play/ESPN%202?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=espn2/
 #EXTINF:-1 tvg-id="ESPN 3" tvg-name="ESPN 3 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_3.png" group-title="Esportes", ESPN 3 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/ESPN%203?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="ESPN 3" tvg-name="ESPN 3 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_3.png" group-title="Esportes", ESPN 3 HD
-https://network-metrics-test.homefelix08.workers.dev/play/ESPN%203?rota=site|Referer=https://1707embcanais.xyz/espn3/
+https://network-metrics-test.homefelix08.workers.dev/play/ESPN%203?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=espn3/
 #EXTINF:-1 tvg-id="ESPN 4" tvg-name="ESPN 4 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_4.png" group-title="Esportes", ESPN 4 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/ESPN%204?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="ESPN 4" tvg-name="ESPN 4 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_4.png" group-title="Esportes", ESPN 4 HD
-https://network-metrics-test.homefelix08.workers.dev/play/ESPN%204?rota=site|Referer=https://1707embcanais.xyz/espn4/
+https://network-metrics-test.homefelix08.workers.dev/play/ESPN%204?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=espn4/
 #EXTINF:-1 tvg-id="ESPN 5" tvg-name="ESPN 5 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_5.png" group-title="Esportes", ESPN 5 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/ESPN%205?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="ESPN 5" tvg-name="ESPN 5 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_5.png" group-title="Esportes", ESPN 5 HD
-https://network-metrics-test.homefelix08.workers.dev/play/ESPN%205?rota=site|Referer=https://1707embcanais.xyz/espn5/
+https://network-metrics-test.homefelix08.workers.dev/play/ESPN%205?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=espn5/
 #EXTINF:-1 tvg-id="ESPN 6" tvg-name="ESPN 6 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_6.png" group-title="Esportes", ESPN 6 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/ESPN%206?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="ESPN 6" tvg-name="ESPN 6 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/espn_6.png" group-title="Esportes", ESPN 6 HD
-https://network-metrics-test.homefelix08.workers.dev/play/ESPN%206?rota=site|Referer=https://1707embcanais.xyz/espn6/
+https://network-metrics-test.homefelix08.workers.dev/play/ESPN%206?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=espn6/
 #EXTINF:-1 tvg-id="GE" tvg-name="GE TV FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/ge_tv.png" group-title="Esportes", GE TV FHD
 https://network-metrics-test.homefelix08.workers.dev/play/GE%20TV?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="GE" tvg-name="GE TV HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/ge_tv.png" group-title="Esportes", GE TV HD
-https://network-metrics-test.homefelix08.workers.dev/play/GE%20TV?rota=site|Referer=https://1707embcanais.xyz/getv/
+https://network-metrics-test.homefelix08.workers.dev/play/GE%20TV?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=getv/
 #EXTINF:-1 tvg-id="" tvg-name="HBO Max FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max.png" group-title="Esportes", HBO Max FHD
 https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="HBO Max HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max.png" group-title="Esportes", HBO Max HD
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max?rota=site|Referer=https://1707embcanais.xyz/max/
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=max/
 #EXTINF:-1 tvg-id="" tvg-name="HBO Max 2 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_2.png" group-title="Esportes", HBO Max 2 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%202?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="HBO Max 2 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_2.png" group-title="Esportes", HBO Max 2 HD
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%202?rota=site|Referer=https://1707embcanais.xyz/max02/
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%202?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=max02/
 #EXTINF:-1 tvg-id="" tvg-name="HBO Max 3 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_3.png" group-title="Esportes", HBO Max 3 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%203?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="HBO Max 3 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_3.png" group-title="Esportes", HBO Max 3 HD
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%203?rota=site|Referer=https://1707embcanais.xyz/max03/
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%203?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=max03/
 #EXTINF:-1 tvg-id="" tvg-name="HBO Max 4 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_4.png" group-title="Esportes", HBO Max 4 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%204?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="HBO Max 4 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_4.png" group-title="Esportes", HBO Max 4 HD
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%204?rota=site|Referer=https://1707embcanais.xyz/max04/
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%204?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=max04/
 #EXTINF:-1 tvg-id="" tvg-name="HBO Max 5 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_5.png" group-title="Esportes", HBO Max 5 FHD
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%205?rota=site|Referer=https://1707embcanais.xyz/max05/
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%205?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=max05/
 #EXTINF:-1 tvg-id="" tvg-name="HBO Max 6 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_6.png" group-title="Esportes", HBO Max 6 FHD
-https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%206?rota=site|Referer=https://1707embcanais.xyz/max06/
+https://network-metrics-test.homefelix08.workers.dev/play/HBO%20Max%206?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=max06/
 #EXTINF:-1 tvg-id="" tvg-name="Paramount+ FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramount.png" group-title="Esportes", Paramount+ FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Paramount+?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="Paramount+ HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramount.png" group-title="Esportes", Paramount+ HD
-https://network-metrics-test.homefelix08.workers.dev/play/Paramount+?rota=site|Referer=https://1707embcanais.xyz/paramountplus/
+https://network-metrics-test.homefelix08.workers.dev/play/Paramount+?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=paramountplus/
 #EXTINF:-1 tvg-id="Paramount+ 2" tvg-name="Paramount+ 2 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramount_2.png" group-title="Esportes", Paramount+ 2 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Paramount+%202?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Paramount+ 2" tvg-name="Paramount+ 2 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramount_2.png" group-title="Esportes", Paramount+ 2 HD
-https://network-metrics-test.homefelix08.workers.dev/play/Paramount+%202?rota=site|Referer=https://1707embcanais.xyz/paramountplus02/
+https://network-metrics-test.homefelix08.workers.dev/play/Paramount+%202?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=paramountplus02/
 #EXTINF:-1 tvg-id="Paramount+ 3" tvg-name="Paramount+ 3 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramount_3.png" group-title="Esportes", Paramount+ 3 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Paramount+%203?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Paramount+ 3" tvg-name="Paramount+ 3 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramount_3.png" group-title="Esportes", Paramount+ 3 HD
@@ -354,83 +354,83 @@ https://network-metrics-test.homefelix08.workers.dev/play/Paramount+%204?rota=ap
 #EXTINF:-1 tvg-id="PREMIERE CLUBES HD" tvg-name="Premiere Clubes FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_clubes.png" group-title="Esportes", Premiere Clubes FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Premiere%20Clubes?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="PREMIERE CLUBES HD" tvg-name="Premiere Clubes HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_clubes.png" group-title="Esportes", Premiere Clubes HD
-https://network-metrics-test.homefelix08.workers.dev/play/Premiere%20Clubes?rota=site|Referer=https://1707embcanais.xyz/premiereclubes/
+https://network-metrics-test.homefelix08.workers.dev/play/Premiere%20Clubes?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=premiereclubes/
 #EXTINF:-1 tvg-id="PREMIERE 2 HD" tvg-name="Premiere 2 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_2.png" group-title="Esportes", Premiere 2 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Premiere%202?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="PREMIERE 2 HD" tvg-name="Premiere 2 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_2.png" group-title="Esportes", Premiere 2 HD
-https://network-metrics-test.homefelix08.workers.dev/play/Premiere%202?rota=site|Referer=https://1707embcanais.xyz/premiere2/
+https://network-metrics-test.homefelix08.workers.dev/play/Premiere%202?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=premiere2/
 #EXTINF:-1 tvg-id="PREMIERE 3 HD" tvg-name="Premiere 3 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_3.png" group-title="Esportes", Premiere 3 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Premiere%203?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="PREMIERE 3 HD" tvg-name="Premiere 3 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_3.png" group-title="Esportes", Premiere 3 HD
-https://network-metrics-test.homefelix08.workers.dev/play/Premiere%203?rota=site|Referer=https://1707embcanais.xyz/premiere3/
+https://network-metrics-test.homefelix08.workers.dev/play/Premiere%203?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=premiere3/
 #EXTINF:-1 tvg-id="PREMIERE 4 HD" tvg-name="Premiere 4 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_4.png" group-title="Esportes", Premiere 4 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Premiere%204?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="PREMIERE 4 HD" tvg-name="Premiere 4 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_4.png" group-title="Esportes", Premiere 4 HD
-https://network-metrics-test.homefelix08.workers.dev/play/Premiere%204?rota=site|Referer=https://1707embcanais.xyz/premiere4/
+https://network-metrics-test.homefelix08.workers.dev/play/Premiere%204?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=premiere4/
 #EXTINF:-1 tvg-id="PREMIERE 5 HD" tvg-name="Premiere 5 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_5.png" group-title="Esportes", Premiere 5 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Premiere%205?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="PREMIERE 5 HD" tvg-name="Premiere 5 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_5.png" group-title="Esportes", Premiere 5 HD
-https://network-metrics-test.homefelix08.workers.dev/play/Premiere%205?rota=site|Referer=https://1707embcanais.xyz/premiere5/
+https://network-metrics-test.homefelix08.workers.dev/play/Premiere%205?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=premiere5/
 #EXTINF:-1 tvg-id="PREMIERE 6 HD" tvg-name="Premiere 6 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_6.png" group-title="Esportes", Premiere 6 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Premiere%206?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="PREMIERE 6 HD" tvg-name="Premiere 6 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_6.png" group-title="Esportes", Premiere 6 HD
-https://network-metrics-test.homefelix08.workers.dev/play/Premiere%206?rota=site|Referer=https://1707embcanais.xyz/premiere6/
+https://network-metrics-test.homefelix08.workers.dev/play/Premiere%206?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=premiere6/
 #EXTINF:-1 tvg-id="PREMIERE 7 HD" tvg-name="Premiere 7 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_7.png" group-title="Esportes", Premiere 7 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Premiere%207?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="PREMIERE 7 HD" tvg-name="Premiere 7 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_7.png" group-title="Esportes", Premiere 7 HD
-https://network-metrics-test.homefelix08.workers.dev/play/Premiere%207?rota=site|Referer=https://1707embcanais.xyz/premiere7/
+https://network-metrics-test.homefelix08.workers.dev/play/Premiere%207?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=premiere7/
 #EXTINF:-1 tvg-id="" tvg-name="Premiere 8 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_8.png" group-title="Esportes", Premiere 8 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Premiere%208?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="Premiere 8 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_8.png" group-title="Esportes", Premiere 8 HD
-https://network-metrics-test.homefelix08.workers.dev/play/Premiere%208?rota=site|Referer=https://1707embcanais.xyz/premiere8/
+https://network-metrics-test.homefelix08.workers.dev/play/Premiere%208?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=premiere8/
 #EXTINF:-1 tvg-id="" tvg-name="Prime Video 1 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_1.png" group-title="Esportes", Prime Video 1 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Prime%20Video%201?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="Prime Video 1 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_1.png" group-title="Esportes", Prime Video 1 HD
-https://network-metrics-test.homefelix08.workers.dev/play/Prime%20Video%201?rota=site|Referer=https://1707embcanais.xyz/amazonprimevideo/
+https://network-metrics-test.homefelix08.workers.dev/play/Prime%20Video%201?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=amazonprimevideo/
 #EXTINF:-1 tvg-id="" tvg-name="Prime Video 2 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_2.png" group-title="Esportes", Prime Video 2 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Prime%20Video%202?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="Prime Video 2 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_2.png" group-title="Esportes", Prime Video 2 HD
-https://network-metrics-test.homefelix08.workers.dev/play/Prime%20Video%202?rota=site|Referer=https://1707embcanais.xyz/amazonprimevideo02/
+https://network-metrics-test.homefelix08.workers.dev/play/Prime%20Video%202?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=amazonprimevideo02/
 #EXTINF:-1 tvg-id="" tvg-name="Prime Video 3 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_3.png" group-title="Esportes", Prime Video 3 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Prime%20Video%203?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="" tvg-name="Prime Video 3 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_3.png" group-title="Esportes", Prime Video 3 HD
-https://network-metrics-test.homefelix08.workers.dev/play/Prime%20Video%203?rota=site|Referer=https://1707embcanais.xyz/amazonprimevideo03/
+https://network-metrics-test.homefelix08.workers.dev/play/Prime%20Video%203?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=amazonprimevideo03/
 #EXTINF:-1 tvg-id="" tvg-name="Prime Video 4 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_4.png" group-title="Esportes", Prime Video 4 FHD
-https://network-metrics-test.homefelix08.workers.dev/play/Prime%20Video%204?rota=site|Referer=https://1707embcanais.xyz/amazonprimevideo04/
+https://network-metrics-test.homefelix08.workers.dev/play/Prime%20Video%204?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=amazonprimevideo04/
 #EXTINF:-1 tvg-id="" tvg-name="Prime Video 5 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_5.png" group-title="Esportes", Prime Video 5 FHD
-https://network-metrics-test.homefelix08.workers.dev/play/Prime%20Video%205?rota=site|Referer=https://1707embcanais.xyz/amazonprimevideo05/
+https://network-metrics-test.homefelix08.workers.dev/play/Prime%20Video%205?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=amazonprimevideo05/
 #EXTINF:-1 tvg-id="SPORTV" tvg-name="SporTV FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sportv.png" group-title="Esportes", SporTV FHD
 https://network-metrics-test.homefelix08.workers.dev/play/SporTV?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SPORTV" tvg-name="SporTV HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sportv.png" group-title="Esportes", SporTV HD
-https://network-metrics-test.homefelix08.workers.dev/play/SporTV?rota=site|Referer=https://1707embcanais.xyz/sportv/
+https://network-metrics-test.homefelix08.workers.dev/play/SporTV?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=sportv/
 #EXTINF:-1 tvg-id="SPORTV 2" tvg-name="SporTV 2 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sportv_2.png" group-title="Esportes", SporTV 2 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/SporTV%202?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SPORTV 2" tvg-name="SporTV 2 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sportv_2.png" group-title="Esportes", SporTV 2 HD
-https://network-metrics-test.homefelix08.workers.dev/play/SporTV%202?rota=site|Referer=https://1707embcanais.xyz/sportv2/
+https://network-metrics-test.homefelix08.workers.dev/play/SporTV%202?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=sportv2/
 #EXTINF:-1 tvg-id="SPORTV 3" tvg-name="SporTV 3 FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sportv_3.png" group-title="Esportes", SporTV 3 FHD
 https://network-metrics-test.homefelix08.workers.dev/play/SporTV%203?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SPORTV 3" tvg-name="SporTV 3 HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/sportv_3.png" group-title="Esportes", SporTV 3 HD
-https://network-metrics-test.homefelix08.workers.dev/play/SporTV%203?rota=site|Referer=https://1707embcanais.xyz/sportv3/
+https://network-metrics-test.homefelix08.workers.dev/play/SporTV%203?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=sportv3/
 #EXTINF:-1 tvg-id="Xsports HD" tvg-name="XSports FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/xsports.png" group-title="Esportes", XSports FHD
 https://network-metrics-test.homefelix08.workers.dev/play/XSports?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Xsports HD" tvg-name="XSports HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/xsports.png" group-title="Esportes", XSports HD
-https://network-metrics-test.homefelix08.workers.dev/play/XSports?rota=site|Referer=https://1707embcanais.xyz/xsports/
+https://network-metrics-test.homefelix08.workers.dev/play/XSports?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=xsports/
 #EXTINF:-1 tvg-id="BAND NEWS" tvg-name="Band News FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band_news.png" group-title="Notícias", Band News FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Band%20News?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="BAND NEWS" tvg-name="Band News HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band_news.png" group-title="Notícias", Band News HD
-https://network-metrics-test.homefelix08.workers.dev/play/Band%20News?rota=site|Referer=https://1707embcanais.xyz/bandnews/
+https://network-metrics-test.homefelix08.workers.dev/play/Band%20News?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=bandnews/
 #EXTINF:-1 tvg-id="CNN BRASIL" tvg-name="CNN Brasil FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cnn_brasil.png" group-title="Notícias", CNN Brasil FHD
 https://network-metrics-test.homefelix08.workers.dev/play/CNN%20Brasil?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="CNN BRASIL" tvg-name="CNN Brasil HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/cnn_brasil.png" group-title="Notícias", CNN Brasil HD
-https://network-metrics-test.homefelix08.workers.dev/play/CNN%20Brasil?rota=site|Referer=https://1707embcanais.xyz/cnnbrasil/
+https://network-metrics-test.homefelix08.workers.dev/play/CNN%20Brasil?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=cnnbrasil/
 #EXTINF:-1 tvg-id="GLOBONEWS" tvg-name="Globo News FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_news.png" group-title="Notícias", Globo News FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Globo%20News?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="GLOBONEWS" tvg-name="Globo News HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_news.png" group-title="Notícias", Globo News HD
-https://network-metrics-test.homefelix08.workers.dev/play/Globo%20News?rota=site|Referer=https://1707embcanais.xyz/globonews/
+https://network-metrics-test.homefelix08.workers.dev/play/Globo%20News?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=globonews/
 #EXTINF:-1 tvg-id="RECORD NEWS" tvg-name="Record News FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_news.png" group-title="Notícias", Record News FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Record%20News?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="RECORD NEWS" tvg-name="Record News HD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_news.png" group-title="Notícias", Record News HD
-https://network-metrics-test.homefelix08.workers.dev/play/Record%20News?rota=site|Referer=https://1707embcanais.xyz/recordnews/
+https://network-metrics-test.homefelix08.workers.dev/play/Record%20News?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=recordnews/
 #EXTINF:-1 tvg-id="A&E" tvg-name="A&E HD 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/ae.png" group-title="Backup", A&E HD 2
 https://network-metrics-test.homefelix08.workers.dev/play/A&E?rota=api_ip|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="AMC HD" tvg-name="AMC HD 2" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amc.png" group-title="Backup", AMC HD 2
