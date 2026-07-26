@@ -1,4 +1,4 @@
-const siteBaseUrl = "https://1707embcanais.xyz";
+const siteBaseUrl = "https://embedcanaisdetv.xyz/e/index.php?canal=";
 
 export default [
     /* ABERTOS */
