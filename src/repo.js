@@ -1,4 +1,4 @@
-const siteBaseUrl = "https://13embeddecanais.xyz";
+const siteBaseUrl = "https://1707embcanais.xyz";
 
 export default [
     /* ABERTOS */
