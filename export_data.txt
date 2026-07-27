@@ -1,6 +1,6 @@
 #EXTM3U x-tvg-url="https://raw.githubusercontent.com/limaalef/BrazilTVEPG/refs/heads/main/claro.xml,https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/local_meta.xml"
 #EXTINF:-1 tvg-id="Globo MG" tvg-name="Globo MG FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" group-title="Abertos", Globo MG FHD
-https://network-metrics-test.homefelix08.workers.dev/play/Globo%20MG?rota=site|Referer=https://1707embcanais.xyz/globomg/
+https://network-metrics-test.homefelix08.workers.dev/play/Globo%20MG?rota=site|Referer=https://embedcanaisdetv.xyz/e/index.php?canal=globomg
 #EXTINF:-1 tvg-id="GLOBO SP" tvg-name="Globo FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" group-title="Abertos", Globo FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Globo?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Band MG" tvg-name="Band FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band.png" group-title="Abertos", Band FHD
