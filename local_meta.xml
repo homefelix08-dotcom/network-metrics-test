@@ -12,14 +12,8 @@
   <channel id="Band MG">
     <display-name>Band</display-name>
   </channel>
-  <programme start="20260727011000 -0300" stop="20260727024500 -0300" channel="Globo MG">
-    <title lang="pt">Domingo Maior: Viajantes - Instinto e Desejo</title>
-  </programme>
-  <programme start="20260727024500 -0300" stop="20260727032000 -0300" channel="Globo MG">
-    <title lang="pt">Comédia Na Madruga - Vai Que Cola I</title>
-  </programme>
-  <programme start="20260727032000 -0300" stop="20260727040000 -0300" channel="Globo MG">
-    <title lang="pt">Comédia Na Madruga - Vai Que Cola II</title>
+  <programme start="20260727014500 -0300" stop="20260727040000 -0300" channel="Globo MG">
+    <title lang="pt">Cinemaço: Poder Absoluto</title>
   </programme>
   <programme start="20260727040000 -0300" stop="20260727060000 -0300" channel="Globo MG">
     <title lang="pt">Hora Um</title>
@@ -48,26 +42,29 @@
   <programme start="20260727144500 -0300" stop="20260727153000 -0300" channel="Globo MG">
     <title lang="pt">Além do Tempo</title>
   </programme>
-  <programme start="20260727153000 -0300" stop="20260727181000 -0300" channel="Globo MG">
-    <title lang="pt">Programação Globo</title>
+  <programme start="20260727153000 -0300" stop="20260727171500 -0300" channel="Globo MG">
+    <title lang="pt">Sessão da Tarde: O Caçador e a Rainha do Gelo</title>
   </programme>
-  <programme start="20260727181000 -0300" stop="20260727184500 -0300" channel="Globo MG">
+  <programme start="20260727171500 -0300" stop="20260727182000 -0300" channel="Globo MG">
+    <title lang="pt">Vale a Pena Ver de Novo: Avenida Brasil</title>
+  </programme>
+  <programme start="20260727182000 -0300" stop="20260727190500 -0300" channel="Globo MG">
     <title lang="pt">A Nobreza do Amor</title>
   </programme>
-  <programme start="20260727184500 -0300" stop="20260727211000 -0300" channel="Globo MG">
-    <title lang="pt">Programação Globo</title>
+  <programme start="20260727190500 -0300" stop="20260727193500 -0300" channel="Globo MG">
+    <title lang="pt">MG2</title>
   </programme>
-  <programme start="20260727211000 -0300" stop="20260727214500 -0300" channel="Globo MG">
+  <programme start="20260727193500 -0300" stop="20260727203000 -0300" channel="Globo MG">
+    <title lang="pt">Coração Acelerado</title>
+  </programme>
+  <programme start="20260727203000 -0300" stop="20260727212000 -0300" channel="Globo MG">
     <title lang="pt">Jornal Nacional</title>
   </programme>
-  <programme start="20260727214500 -0300" stop="20260727225000 -0300" channel="Globo MG">
+  <programme start="20260727212000 -0300" stop="20260727222500 -0300" channel="Globo MG">
     <title lang="pt">Quem Ama Cuida</title>
   </programme>
-  <programme start="20260727225000 -0300" stop="20260727234000 -0300" channel="Globo MG">
-    <title lang="pt">Guerreiros Do Sol</title>
-  </programme>
-  <programme start="20260727234000 -0300" stop="20260728000000 -0300" channel="Globo MG">
-    <title lang="pt">Central da Copa</title>
+  <programme start="20260727222500 -0300" stop="20260728000000 -0300" channel="Globo MG">
+    <title lang="pt">Tela Quente: Avatar - O Caminho da Água</title>
   </programme>
   <programme start="20260727003000 -0300" stop="20260727011500 -0300" channel="Record MG">
     <title lang="pt">Chicago Fire</title>
