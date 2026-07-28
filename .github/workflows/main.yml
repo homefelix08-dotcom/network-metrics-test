@@ -36,8 +36,8 @@ jobs:
     - name: Rodar o sync
       run: python scripts/sync_worker.py
 
-    - name: Rodar o gerador
-      run: python scripts/generate_list.py
+    # - name: Rodar o gerador
+    #   run: python scripts/generate_list.py
 
     - name: Commit and Push
       run: |
