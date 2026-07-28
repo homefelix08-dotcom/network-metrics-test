@@ -3,6 +3,7 @@ import json
 import os
 import urllib.request
 import urllib.parse
+import cloudscraper
 
 BASE_WORKER_URL = "https://network-metrics-test.homefelix08.workers.dev/play"
 REPO_PATH = "src/repo.js"
@@ -80,16 +81,27 @@ def main():
                     canal_id = url_site.split("canal=", 1)[1]
                     if not cached_referer_base:
                         try:
-                            # Faz a requisição para obter a URL redirecionada apenas uma vez
-                            req = urllib.request.Request(url_site, headers={'User-Agent': 'Mozilla/5.0'})
-                            with urllib.request.urlopen(req, timeout=10) as response:
-                                final_url = response.geturl()
-                                final_parsed = urllib.parse.urlparse(final_url)
-                                orig_parsed = urllib.parse.urlparse(url_site)
-                                cached_referer_base = orig_parsed._replace(netloc=final_parsed.netloc).geturl().split("canal=", 1)[0] + "canal="
+                            # Cria o scraper simulando um navegador real
+                            scraper = cloudscraper.create_scraper(
+                                browser={
+                                    'browser': 'chrome',
+                                    'platform': 'windows',
+                                    'desktop': True
+                                }
+                            )
+                            
+                            # Faz a requisição (o requests já segue redirecionamentos automaticamente)
+                            response = scraper.get(url_site, timeout=15)
+                            response.raise_for_status() # Garante que erros HTTP (como 404 ou 500) gerem exceção
+                            
+                            final_url = response.url
+                            final_parsed = urllib.parse.urlparse(final_url)
+                            orig_parsed = urllib.parse.urlparse(url_site)
+                            cached_referer_base = orig_parsed._replace(netloc=final_parsed.netloc).geturl().split("canal=", 1)[0] + "canal="
                         except Exception as e:
                             print(f"Aviso: Não foi possível resolver o redirecionamento de {url_site}: {e}")
                             cached_referer_base = url_site.split("canal=", 1)[0] + "canal="
+                            
                     return f"|Referer={cached_referer_base}{canal_id}"
                 return f"|Referer={url_site}"
             return "|User-Agent=okhttp/4.9.2"
