@@ -1,6 +1,8 @@
 import subprocess
 import json
 import os
+import urllib.request
+import urllib.parse
 
 BASE_WORKER_URL = "https://network-metrics-test.homefelix08.workers.dev/play"
 REPO_PATH = "src/repo.js"
@@ -57,6 +59,8 @@ def main():
     # Gaveta temporária para guardar os canais de backup e jogar pro final
     backup_lines = []
     
+    cached_referer_base = None
+    
     for c in channels:
         nome = c['nome']
         tvg_id = c.get('tvg_id', nome)
@@ -70,7 +74,23 @@ def main():
         worker_endpoint = f"{BASE_WORKER_URL}/{nome.replace(' ', '%20')}"
         
         def get_cabecalho(rota):
+            nonlocal cached_referer_base
             if rota == "site" and url_site:
+                if "canal=" in url_site:
+                    canal_id = url_site.split("canal=", 1)[1]
+                    if not cached_referer_base:
+                        try:
+                            # Faz a requisição para obter a URL redirecionada apenas uma vez
+                            req = urllib.request.Request(url_site, headers={'User-Agent': 'Mozilla/5.0'})
+                            with urllib.request.urlopen(req, timeout=10) as response:
+                                final_url = response.geturl()
+                                final_parsed = urllib.parse.urlparse(final_url)
+                                orig_parsed = urllib.parse.urlparse(url_site)
+                                cached_referer_base = orig_parsed._replace(netloc=final_parsed.netloc).geturl().split("canal=", 1)[0] + "canal="
+                        except Exception as e:
+                            print(f"Aviso: Não foi possível resolver o redirecionamento de {url_site}: {e}")
+                            cached_referer_base = url_site.split("canal=", 1)[0] + "canal="
+                    return f"|Referer={cached_referer_base}{canal_id}"
                 return f"|Referer={url_site}"
             return "|User-Agent=okhttp/4.9.2"
             
