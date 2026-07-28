@@ -33,7 +33,7 @@ def load_repo_js():
             capture_output=True,
             text=True,
             encoding="utf-8",
-            shell=True
+            # shell=True
         )
 
         if os.path.exists(temp_filename):
