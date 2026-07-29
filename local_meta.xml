@@ -129,9 +129,6 @@
   <programme start="20260729223000 -0300" stop="20260730000000 -0300" channel="Record MG">
     <title lang="pt">Canta Comigo Teen</title>
   </programme>
-  <programme start="20260729000000 -0300" stop="20260729001500 -0300" channel="SBT MG">
-    <title lang="pt">Programa do Ratinho</title>
-  </programme>
   <programme start="20260729001500 -0300" stop="20260729011500 -0300" channel="SBT MG">
     <title lang="pt">The Noite com Danilo Gentili</title>
   </programme>
@@ -156,20 +153,17 @@
   <programme start="20260729110000 -0300" stop="20260729114500 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Agora</title>
   </programme>
-  <programme start="20260729114500 -0300" stop="20260729124500 -0300" channel="SBT MG">
+  <programme start="20260729114500 -0300" stop="20260729124000 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Esportes</title>
   </programme>
-  <programme start="20260729124500 -0300" stop="20260729132000 -0300" channel="SBT MG">
+  <programme start="20260729124000 -0300" stop="20260729133000 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Alerta</title>
   </programme>
-  <programme start="20260729132000 -0300" stop="20260729140000 -0300" channel="SBT MG">
-    <title lang="pt">Alterosa Urgente</title>
+  <programme start="20260729133000 -0300" stop="20260729140000 -0300" channel="SBT MG">
+    <title lang="pt">Chaves</title>
   </programme>
-  <programme start="20260729140000 -0300" stop="20260729144500 -0300" channel="SBT MG">
+  <programme start="20260729140000 -0300" stop="20260729153000 -0300" channel="SBT MG">
     <title lang="pt">A Desalmada</title>
-  </programme>
-  <programme start="20260729144500 -0300" stop="20260729153000 -0300" channel="SBT MG">
-    <title lang="pt">Meu Coração é Teu</title>
   </programme>
   <programme start="20260729153000 -0300" stop="20260729170000 -0300" channel="SBT MG">
     <title lang="pt">Fofocalizando</title>
@@ -177,10 +171,10 @@
   <programme start="20260729170000 -0300" stop="20260729183000 -0300" channel="SBT MG">
     <title lang="pt">Sortilégio</title>
   </programme>
-  <programme start="20260729183000 -0300" stop="20260729191500 -0300" channel="SBT MG">
+  <programme start="20260729183000 -0300" stop="20260729191000 -0300" channel="SBT MG">
     <title lang="pt">Tá Na Hora Minas</title>
   </programme>
-  <programme start="20260729191500 -0300" stop="20260729194500 -0300" channel="SBT MG">
+  <programme start="20260729191000 -0300" stop="20260729194500 -0300" channel="SBT MG">
     <title lang="pt">Jornal da Alterosa</title>
   </programme>
   <programme start="20260729194500 -0300" stop="20260729204500 -0300" channel="SBT MG">
