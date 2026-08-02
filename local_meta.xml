@@ -12,50 +12,50 @@
   <channel id="Band MG">
     <display-name>Band</display-name>
   </channel>
-  <programme start="20260802001500 -0300" stop="20260802020500 -0300" channel="Globo MG">
-    <title lang="pt">Supercine: Veja Como Eles Correm</title>
+  <programme start="20260802003000 -0300" stop="20260802013500 -0300" channel="Globo MG">
+    <title lang="pt">Faixa Combate - Jungle Fight 154</title>
   </programme>
-  <programme start="20260802020500 -0300" stop="20260802024500 -0300" channel="Globo MG">
+  <programme start="20260802013500 -0300" stop="20260802021500 -0300" channel="Globo MG">
     <title lang="pt">A Nobreza do Amor</title>
   </programme>
-  <programme start="20260802024500 -0300" stop="20260802032500 -0300" channel="Globo MG">
+  <programme start="20260802021500 -0300" stop="20260802030000 -0300" channel="Globo MG">
     <title lang="pt">Coração Acelerado</title>
   </programme>
-  <programme start="20260802032500 -0300" stop="20260802043500 -0300" channel="Globo MG">
-    <title lang="pt">Corujão: Sob Pressão</title>
+  <programme start="20260802030000 -0300" stop="20260802041500 -0300" channel="Globo MG">
+    <title lang="pt">Corujão: De Pernas Pro Ar</title>
   </programme>
-  <programme start="20260802043500 -0300" stop="20260802054500 -0300" channel="Globo MG">
-    <title lang="pt">Corujão II: O Silêncio da Chuva</title>
+  <programme start="20260802041500 -0300" stop="20260802055000 -0300" channel="Globo MG">
+    <title lang="pt">Corujão II: Evereste</title>
   </programme>
-  <programme start="20260802054500 -0300" stop="20260802063500 -0300" channel="Globo MG">
+  <programme start="20260802055000 -0300" stop="20260802064000 -0300" channel="Globo MG">
     <title lang="pt">Santa Missa</title>
   </programme>
-  <programme start="20260802063500 -0300" stop="20260802072500 -0300" channel="Globo MG">
+  <programme start="20260802064000 -0300" stop="20260802073000 -0300" channel="Globo MG">
     <title lang="pt">Globo Repórter</title>
   </programme>
-  <programme start="20260802072500 -0300" stop="20260802075500 -0300" channel="Globo MG">
+  <programme start="20260802073000 -0300" stop="20260802080000 -0300" channel="Globo MG">
     <title lang="pt">Tô Indo</title>
   </programme>
-  <programme start="20260802075500 -0300" stop="20260802083000 -0300" channel="Globo MG">
+  <programme start="20260802080000 -0300" stop="20260802083000 -0300" channel="Globo MG">
     <title lang="pt">Auto Esporte</title>
   </programme>
-  <programme start="20260802083000 -0300" stop="20260802094000 -0300" channel="Globo MG">
+  <programme start="20260802083000 -0300" stop="20260802100500 -0300" channel="Globo MG">
     <title lang="pt">Globo Rural</title>
   </programme>
-  <programme start="20260802094000 -0300" stop="20260802120000 -0300" channel="Globo MG">
-    <title lang="pt">Fórmula 1 - GP da Hungria - Ao Vivo</title>
+  <programme start="20260802100500 -0300" stop="20260802110000 -0300" channel="Globo MG">
+    <title lang="pt">Viver Sertanejo</title>
   </programme>
-  <programme start="20260802120000 -0300" stop="20260802125000 -0300" channel="Globo MG">
+  <programme start="20260802110000 -0300" stop="20260802122500 -0300" channel="Globo MG">
     <title lang="pt">Esporte Espetacular</title>
   </programme>
-  <programme start="20260802125000 -0300" stop="20260802143500 -0300" channel="Globo MG">
-    <title lang="pt">Temperatura Máxima: Missão Resgate</title>
+  <programme start="20260802122500 -0300" stop="20260802141500 -0300" channel="Globo MG">
+    <title lang="pt">Temperatura Máxima: Homem-Aranha - Longe de Casa</title>
   </programme>
-  <programme start="20260802143500 -0300" stop="20260802154500 -0300" channel="Globo MG">
+  <programme start="20260802141500 -0300" stop="20260802154500 -0300" channel="Globo MG">
     <title lang="pt">Em Família com Eliana</title>
   </programme>
   <programme start="20260802154500 -0300" stop="20260802181000 -0300" channel="Globo MG">
-    <title lang="pt">Futebol 2026</title>
+    <title lang="pt">Palmeiras x Fortaleza - Ao Vivo</title>
   </programme>
   <programme start="20260802181000 -0300" stop="20260802203000 -0300" channel="Globo MG">
     <title lang="pt">Domingão Com Huck</title>
@@ -64,7 +64,7 @@
     <title lang="pt">Fantástico</title>
   </programme>
   <programme start="20260802233500 -0300" stop="20260803000000 -0300" channel="Globo MG">
-    <title lang="pt">Domingo Maior: Batman Begins</title>
+    <title lang="pt">Capital Moto Week - Melhores Momentos</title>
   </programme>
   <programme start="20260802010000 -0300" stop="20260802020000 -0300" channel="Record MG">
     <title lang="pt">Fala que eu te Escuto</title>
@@ -103,7 +103,7 @@
     <title lang="pt">Record Kids - Todo Mundo Odeia o Chris</title>
   </programme>
   <programme start="20260802141500 -0300" stop="20260802160000 -0300" channel="Record MG">
-    <title lang="pt">Cine Maior</title>
+    <title lang="pt">Cine Maior: Fúria em Alto Mar</title>
   </programme>
   <programme start="20260802160000 -0300" stop="20260802183000 -0300" channel="Record MG">
     <title lang="pt">Acerte ou Caia</title>
