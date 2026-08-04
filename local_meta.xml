@@ -195,11 +195,8 @@
   <programme start="20260804231500 -0300" stop="20260805000000 -0300" channel="SBT MG">
     <title lang="pt">Programa do Ratinho</title>
   </programme>
-  <programme start="20260804000000 -0300" stop="20260804003000 -0300" channel="Band MG">
+  <programme start="20260804000000 -0300" stop="20260804010000 -0300" channel="Band MG">
     <title lang="pt">Jornal da Noite</title>
-  </programme>
-  <programme start="20260804003000 -0300" stop="20260804010000 -0300" channel="Band MG">
-    <title lang="pt">Band Eleições</title>
   </programme>
   <programme start="20260804010000 -0300" stop="20260804020000 -0300" channel="Band MG">
     <title lang="pt">Esporte Total</title>
