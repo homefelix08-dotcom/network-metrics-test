@@ -228,7 +228,10 @@
   <programme start="20260808111500 -0300" stop="20260808120000 -0300" channel="Band MG">
     <title lang="pt">Band Kids</title>
   </programme>
-  <programme start="20260808120000 -0300" stop="20260808160000 -0300" channel="Band MG">
+  <programme start="20260808120000 -0300" stop="20260808124500 -0300" channel="Band MG">
+    <title lang="pt">Stock Car: Etapa Santa Cruz do Sul (RS) - Corrida Sprint - Ao Vivo</title>
+  </programme>
+  <programme start="20260808124500 -0300" stop="20260808160000 -0300" channel="Band MG">
     <title lang="pt">Band Esporte Clube</title>
   </programme>
   <programme start="20260808160000 -0300" stop="20260808173000 -0300" channel="Band MG">
