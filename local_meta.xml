@@ -12,20 +12,20 @@
   <channel id="Band MG">
     <display-name>Band</display-name>
   </channel>
-  <programme start="20260809003000 -0300" stop="20260809013500 -0300" channel="Globo MG">
-    <title lang="pt">Faixa Combate - Jungle Fight 154</title>
+  <programme start="20260809001500 -0300" stop="20260809005000 -0300" channel="Globo MG">
+    <title lang="pt">Espiadinha Globoplay: Voepass 2283 - A Queda</title>
   </programme>
-  <programme start="20260809013500 -0300" stop="20260809021500 -0300" channel="Globo MG">
+  <programme start="20260809005000 -0300" stop="20260809024000 -0300" channel="Globo MG">
+    <title lang="pt">Supercine: De Pai para Filho</title>
+  </programme>
+  <programme start="20260809024000 -0300" stop="20260809032000 -0300" channel="Globo MG">
     <title lang="pt">A Nobreza do Amor</title>
   </programme>
-  <programme start="20260809021500 -0300" stop="20260809030000 -0300" channel="Globo MG">
+  <programme start="20260809032000 -0300" stop="20260809040000 -0300" channel="Globo MG">
     <title lang="pt">Coração Acelerado</title>
   </programme>
-  <programme start="20260809030000 -0300" stop="20260809041500 -0300" channel="Globo MG">
-    <title lang="pt">Corujão: De Pernas Pro Ar</title>
-  </programme>
-  <programme start="20260809041500 -0300" stop="20260809055000 -0300" channel="Globo MG">
-    <title lang="pt">Corujão II: Evereste</title>
+  <programme start="20260809040000 -0300" stop="20260809055000 -0300" channel="Globo MG">
+    <title lang="pt">Corujão: Saneamento Básico - O Filme</title>
   </programme>
   <programme start="20260809055000 -0300" stop="20260809064000 -0300" channel="Globo MG">
     <title lang="pt">Santa Missa</title>
@@ -39,23 +39,23 @@
   <programme start="20260809080000 -0300" stop="20260809083000 -0300" channel="Globo MG">
     <title lang="pt">Auto Esporte</title>
   </programme>
-  <programme start="20260809083000 -0300" stop="20260809100500 -0300" channel="Globo MG">
+  <programme start="20260809083000 -0300" stop="20260809100000 -0300" channel="Globo MG">
     <title lang="pt">Globo Rural</title>
   </programme>
-  <programme start="20260809100500 -0300" stop="20260809110000 -0300" channel="Globo MG">
+  <programme start="20260809100000 -0300" stop="20260809110000 -0300" channel="Globo MG">
     <title lang="pt">Viver Sertanejo</title>
   </programme>
   <programme start="20260809110000 -0300" stop="20260809122500 -0300" channel="Globo MG">
     <title lang="pt">Esporte Espetacular</title>
   </programme>
   <programme start="20260809122500 -0300" stop="20260809141500 -0300" channel="Globo MG">
-    <title lang="pt">Temperatura Máxima: Homem-Aranha - Longe de Casa</title>
+    <title lang="pt">Temperatura Máxima: King's Man - A Origem</title>
   </programme>
   <programme start="20260809141500 -0300" stop="20260809154500 -0300" channel="Globo MG">
     <title lang="pt">Em Família com Eliana</title>
   </programme>
   <programme start="20260809154500 -0300" stop="20260809181000 -0300" channel="Globo MG">
-    <title lang="pt">Futebol 2026</title>
+    <title lang="pt">Palmeiras x Internacional - Ao Vivo</title>
   </programme>
   <programme start="20260809181000 -0300" stop="20260809203000 -0300" channel="Globo MG">
     <title lang="pt">Domingão Com Huck</title>
@@ -64,7 +64,7 @@
     <title lang="pt">Fantástico</title>
   </programme>
   <programme start="20260809233500 -0300" stop="20260810000000 -0300" channel="Globo MG">
-    <title lang="pt">Capital Moto Week - Melhores Momentos</title>
+    <title lang="pt">Domingo Maior: Um Homem Implacável</title>
   </programme>
   <programme start="20260809010000 -0300" stop="20260809020000 -0300" channel="Record MG">
     <title lang="pt">Fala que eu te Escuto</title>
