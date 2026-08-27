@@ -132,16 +132,16 @@
   <programme start="20260827223000 -0300" stop="20260828000000 -0300" channel="Record MG">
     <title lang="pt">Doc Investigação</title>
   </programme>
-  <programme start="20260827003000 -0300" stop="20260827013000 -0300" channel="SBT MG">
+  <programme start="20260827000000 -0300" stop="20260827010000 -0300" channel="SBT MG">
     <title lang="pt">The Noite com Danilo Gentili</title>
   </programme>
-  <programme start="20260827013000 -0300" stop="20260827020000 -0300" channel="SBT MG">
+  <programme start="20260827010000 -0300" stop="20260827013000 -0300" channel="SBT MG">
     <title lang="pt">Operação Mesquita</title>
   </programme>
-  <programme start="20260827020000 -0300" stop="20260827023000 -0300" channel="SBT MG">
+  <programme start="20260827013000 -0300" stop="20260827020000 -0300" channel="SBT MG">
     <title lang="pt">Passe de Milhões</title>
   </programme>
-  <programme start="20260827023000 -0300" stop="20260827060000 -0300" channel="SBT MG">
+  <programme start="20260827020000 -0300" stop="20260827060000 -0300" channel="SBT MG">
     <title lang="pt">SBT Notícias</title>
   </programme>
   <programme start="20260827060000 -0300" stop="20260827070000 -0300" channel="SBT MG">
@@ -186,13 +186,13 @@
   <programme start="20260827194500 -0300" stop="20260827204500 -0300" channel="SBT MG">
     <title lang="pt">SBT Brasil</title>
   </programme>
-  <programme start="20260827204500 -0300" stop="20260827214500 -0300" channel="SBT MG">
-    <title lang="pt">A História de Joana - A Virgem</title>
+  <programme start="20260827204500 -0300" stop="20260827213000 -0300" channel="SBT MG">
+    <title lang="pt">Amor Valente</title>
   </programme>
-  <programme start="20260827214500 -0300" stop="20260827221500 -0300" channel="SBT MG">
+  <programme start="20260827213000 -0300" stop="20260827220000 -0300" channel="SBT MG">
     <title lang="pt">Sessão +SBT</title>
   </programme>
-  <programme start="20260827221500 -0300" stop="20260827231500 -0300" channel="SBT MG">
+  <programme start="20260827220000 -0300" stop="20260827231500 -0300" channel="SBT MG">
     <title lang="pt">Programa do Ratinho</title>
   </programme>
   <programme start="20260827231500 -0300" stop="20260828000000 -0300" channel="SBT MG">
