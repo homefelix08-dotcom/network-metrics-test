@@ -12,6 +12,81 @@
   <channel id="Band MG">
     <display-name>Band</display-name>
   </channel>
+  <programme start="20260828001500 -0300" stop="20260828010500 -0300" channel="Globo MG">
+    <title lang="pt">Jornal da Globo</title>
+  </programme>
+  <programme start="20260828010500 -0300" stop="20260828014500 -0300" channel="Globo MG">
+    <title lang="pt">A Nobreza do Amor</title>
+  </programme>
+  <programme start="20260828014500 -0300" stop="20260828023000 -0300" channel="Globo MG">
+    <title lang="pt">Por Você</title>
+  </programme>
+  <programme start="20260828023000 -0300" stop="20260828031500 -0300" channel="Globo MG">
+    <title lang="pt">Comédia Na Madruga - Vai Que Cola I</title>
+  </programme>
+  <programme start="20260828031500 -0300" stop="20260828040000 -0300" channel="Globo MG">
+    <title lang="pt">Comédia Na Madruga - Vai Que Cola II</title>
+  </programme>
+  <programme start="20260828040000 -0300" stop="20260828060000 -0300" channel="Globo MG">
+    <title lang="pt">Hora Um</title>
+  </programme>
+  <programme start="20260828060000 -0300" stop="20260828083000 -0300" channel="Globo MG">
+    <title lang="pt">Bom Dia Minas</title>
+  </programme>
+  <programme start="20260828083000 -0300" stop="20260828093000 -0300" channel="Globo MG">
+    <title lang="pt">Bom Dia Brasil</title>
+  </programme>
+  <programme start="20260828093000 -0300" stop="20260828103500 -0300" channel="Globo MG">
+    <title lang="pt">Encontro com Patrícia Poeta</title>
+  </programme>
+  <programme start="20260828103500 -0300" stop="20260828114500 -0300" channel="Globo MG">
+    <title lang="pt">Mais Você</title>
+  </programme>
+  <programme start="20260828114500 -0300" stop="20260828130000 -0300" channel="Globo MG">
+    <title lang="pt">MG1</title>
+  </programme>
+  <programme start="20260828130000 -0300" stop="20260828135000 -0300" channel="Globo MG">
+    <title lang="pt">Horário Político</title>
+  </programme>
+  <programme start="20260828135000 -0300" stop="20260828150000 -0300" channel="Globo MG">
+    <title lang="pt">Jornal Hoje</title>
+  </programme>
+  <programme start="20260828150000 -0300" stop="20260828154000 -0300" channel="Globo MG">
+    <title lang="pt">Além do Tempo</title>
+  </programme>
+  <programme start="20260828154000 -0300" stop="20260828171000 -0300" channel="Globo MG">
+    <title lang="pt">Sessão da Tarde: MIB - Homens de Preto 3</title>
+  </programme>
+  <programme start="20260828171000 -0300" stop="20260828182000 -0300" channel="Globo MG">
+    <title lang="pt">Vale a Pena Ver de Novo: Avenida Brasil</title>
+  </programme>
+  <programme start="20260828182000 -0300" stop="20260828190500 -0300" channel="Globo MG">
+    <title lang="pt">A Nobreza do Amor</title>
+  </programme>
+  <programme start="20260828190500 -0300" stop="20260828193500 -0300" channel="Globo MG">
+    <title lang="pt">MG2</title>
+  </programme>
+  <programme start="20260828193500 -0300" stop="20260828203000 -0300" channel="Globo MG">
+    <title lang="pt">Por Você</title>
+  </programme>
+  <programme start="20260828203000 -0300" stop="20260828205500 -0300" channel="Globo MG">
+    <title lang="pt">Horário Político</title>
+  </programme>
+  <programme start="20260828205500 -0300" stop="20260828213000 -0300" channel="Globo MG">
+    <title lang="pt">Jornal Nacional</title>
+  </programme>
+  <programme start="20260828213000 -0300" stop="20260828221500 -0300" channel="Globo MG">
+    <title lang="pt">Entrevista com os Candidatos à Presidência - Flávio Bolsonaro</title>
+  </programme>
+  <programme start="20260828221500 -0300" stop="20260828230000 -0300" channel="Globo MG">
+    <title lang="pt">Quem Ama Cuida</title>
+  </programme>
+  <programme start="20260828230000 -0300" stop="20260828233500 -0300" channel="Globo MG">
+    <title lang="pt">Estrela da Casa</title>
+  </programme>
+  <programme start="20260828233500 -0300" stop="20260829000000 -0300" channel="Globo MG">
+    <title lang="pt">Globo Repórter</title>
+  </programme>
   <programme start="20260828003500 -0300" stop="20260828004500 -0300" channel="Record MG">
     <title lang="pt">Jornal da Record 24h</title>
   </programme>
