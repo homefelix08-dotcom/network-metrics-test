@@ -12,50 +12,71 @@
   <channel id="Band MG">
     <display-name>Band</display-name>
   </channel>
-  <programme start="20260829001500 -0300" stop="20260829004500 -0300" channel="Record MG">
-    <title lang="pt">Jornal da Record 24h</title>
+  <programme start="20260829002500 -0300" stop="20260829010000 -0300" channel="Globo MG">
+    <title lang="pt">Espiadinha Globoplay - Jogada de Risco</title>
   </programme>
-  <programme start="20260829004500 -0300" stop="20260829020000 -0300" channel="Record MG">
-    <title lang="pt">Fala que eu te Escuto</title>
+  <programme start="20260829010000 -0300" stop="20260829015000 -0300" channel="Globo MG">
+    <title lang="pt">Jornal da Globo</title>
   </programme>
-  <programme start="20260829020000 -0300" stop="20260829030000 -0300" channel="Record MG">
-    <title lang="pt">IURD - Inteligência e Fé</title>
+  <programme start="20260829015000 -0300" stop="20260829023000 -0300" channel="Globo MG">
+    <title lang="pt">A Nobreza do Amor</title>
   </programme>
-  <programme start="20260829030000 -0300" stop="20260829040000 -0300" channel="Record MG">
-    <title lang="pt">IURD - Palavra Amiga</title>
+  <programme start="20260829023000 -0300" stop="20260829032000 -0300" channel="Globo MG">
+    <title lang="pt">Por Você</title>
   </programme>
-  <programme start="20260829040000 -0300" stop="20260829060000 -0300" channel="Record MG">
-    <title lang="pt">IURD BH</title>
+  <programme start="20260829032000 -0300" stop="20260829060000 -0300" channel="Globo MG">
+    <title lang="pt">Comédia Na Madruga - Vai Que Cola I</title>
   </programme>
-  <programme start="20260829060000 -0300" stop="20260829070000 -0300" channel="Record MG">
-    <title lang="pt">IURD BH</title>
+  <programme start="20260829060000 -0300" stop="20260829065000 -0300" channel="Globo MG">
+    <title lang="pt">Globo Rural</title>
   </programme>
-  <programme start="20260829070000 -0300" stop="20260829073500 -0300" channel="Record MG">
-    <title lang="pt">Brasil Caminhoneiro</title>
+  <programme start="20260829065000 -0300" stop="20260829075000 -0300" channel="Globo MG">
+    <title lang="pt">Bom Dia Sábado</title>
   </programme>
-  <programme start="20260829073500 -0300" stop="20260829120000 -0300" channel="Record MG">
-    <title lang="pt">Fala Brasil - Edição de Sábado</title>
+  <programme start="20260829075000 -0300" stop="20260829083000 -0300" channel="Globo MG">
+    <title lang="pt">Pequenas Empresas & Grandes Negócios</title>
   </programme>
-  <programme start="20260829120000 -0300" stop="20260829130300 -0300" channel="Record MG">
-    <title lang="pt">The Love School - A Escola do Amor</title>
+  <programme start="20260829083000 -0300" stop="20260829114500 -0300" channel="Globo MG">
+    <title lang="pt">É de Casa</title>
   </programme>
-  <programme start="20260829130300 -0300" stop="20260829150000 -0300" channel="Record MG">
-    <title lang="pt">Balanço Geral - Edição de Sábado</title>
+  <programme start="20260829114500 -0300" stop="20260829130000 -0300" channel="Globo MG">
+    <title lang="pt">MG1</title>
   </programme>
-  <programme start="20260829150000 -0300" stop="20260829170000 -0300" channel="Record MG">
-    <title lang="pt">Cine Aventura</title>
+  <programme start="20260829130000 -0300" stop="20260829132500 -0300" channel="Globo MG">
+    <title lang="pt">Globo Esporte</title>
   </programme>
-  <programme start="20260829170000 -0300" stop="20260829194500 -0300" channel="Record MG">
-    <title lang="pt">Cidade Alerta - Edição de Sábado</title>
+  <programme start="20260829132500 -0300" stop="20260829141000 -0300" channel="Globo MG">
+    <title lang="pt">Jornal Hoje</title>
   </programme>
-  <programme start="20260829194500 -0300" stop="20260829210000 -0300" channel="Record MG">
-    <title lang="pt">Jornal da Record - Edição de Sábado</title>
+  <programme start="20260829141000 -0300" stop="20260829144500 -0300" channel="Globo MG">
+    <title lang="pt">Além do Tempo</title>
   </programme>
-  <programme start="20260829210000 -0300" stop="20260829230000 -0300" channel="Record MG">
-    <title lang="pt">Cidade Alerta - Edição de Sábado</title>
+  <programme start="20260829144500 -0300" stop="20260829162000 -0300" channel="Globo MG">
+    <title lang="pt">Sessão de Sábado: Mulher-Gato</title>
   </programme>
-  <programme start="20260829230000 -0300" stop="20260830000000 -0300" channel="Record MG">
-    <title lang="pt">Super Tela</title>
+  <programme start="20260829162000 -0300" stop="20260829184000 -0300" channel="Globo MG">
+    <title lang="pt">Caldeirão com Mion</title>
+  </programme>
+  <programme start="20260829184000 -0300" stop="20260829192500 -0300" channel="Globo MG">
+    <title lang="pt">A Nobreza do Amor</title>
+  </programme>
+  <programme start="20260829192500 -0300" stop="20260829194500 -0300" channel="Globo MG">
+    <title lang="pt">MG2</title>
+  </programme>
+  <programme start="20260829194500 -0300" stop="20260829203000 -0300" channel="Globo MG">
+    <title lang="pt">Por Você</title>
+  </programme>
+  <programme start="20260829203000 -0300" stop="20260829211000 -0300" channel="Globo MG">
+    <title lang="pt">Jornal Nacional</title>
+  </programme>
+  <programme start="20260829211000 -0300" stop="20260829215500 -0300" channel="Globo MG">
+    <title lang="pt">Quem Ama Cuida</title>
+  </programme>
+  <programme start="20260829215500 -0300" stop="20260829230000 -0300" channel="Globo MG">
+    <title lang="pt">Altas Horas</title>
+  </programme>
+  <programme start="20260829230000 -0300" stop="20260830000000 -0300" channel="Globo MG">
+    <title lang="pt">Circuito Sertanejo - Barretos</title>
   </programme>
   <programme start="20260829000000 -0300" stop="20260829010000 -0300" channel="SBT MG">
     <title lang="pt">The Noite com Danilo Gentili</title>
