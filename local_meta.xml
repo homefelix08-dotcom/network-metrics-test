@@ -24,8 +24,11 @@
   <programme start="20260905024500 -0300" stop="20260905033500 -0300" channel="Globo MG">
     <title lang="pt">Por Você</title>
   </programme>
-  <programme start="20260905033500 -0300" stop="20260905055000 -0300" channel="Globo MG">
-    <title lang="pt">Comédia Na Madruga - Vai Que Cola I</title>
+  <programme start="20260905033500 -0300" stop="20260905042000 -0300" channel="Globo MG">
+    <title lang="pt">Comédia Na Madruga - Vai Que Cola</title>
+  </programme>
+  <programme start="20260905042000 -0300" stop="20260905055000 -0300" channel="Globo MG">
+    <title lang="pt">Corujão: Loop</title>
   </programme>
   <programme start="20260905055000 -0300" stop="20260905064500 -0300" channel="Globo MG">
     <title lang="pt">Globo Rural</title>
@@ -36,7 +39,10 @@
   <programme start="20260905074500 -0300" stop="20260905083000 -0300" channel="Globo MG">
     <title lang="pt">Pequenas Empresas & Grandes Negócios</title>
   </programme>
-  <programme start="20260905083000 -0300" stop="20260905114500 -0300" channel="Globo MG">
+  <programme start="20260905083000 -0300" stop="20260905093000 -0300" channel="Globo MG">
+    <title lang="pt">É de Casa</title>
+  </programme>
+  <programme start="20260905093000 -0300" stop="20260905114500 -0300" channel="Globo MG">
     <title lang="pt">É de Casa</title>
   </programme>
   <programme start="20260905114500 -0300" stop="20260905130000 -0300" channel="Globo MG">
@@ -55,7 +61,7 @@
     <title lang="pt">Caldeirão com Mion</title>
   </programme>
   <programme start="20260905162000 -0300" stop="20260905183000 -0300" channel="Globo MG">
-    <title lang="pt">Futebol 2026</title>
+    <title lang="pt">Ferroviária x Flamengo - Ao Vivo</title>
   </programme>
   <programme start="20260905183000 -0300" stop="20260905192000 -0300" channel="Globo MG">
     <title lang="pt">A Nobreza do Amor</title>
@@ -69,20 +75,17 @@
   <programme start="20260905203000 -0300" stop="20260905205500 -0300" channel="Globo MG">
     <title lang="pt">Horário Político</title>
   </programme>
-  <programme start="20260905205500 -0300" stop="20260905212000 -0300" channel="Globo MG">
+  <programme start="20260905205500 -0300" stop="20260905214500 -0300" channel="Globo MG">
     <title lang="pt">Jornal Nacional</title>
   </programme>
-  <programme start="20260905212000 -0300" stop="20260905220500 -0300" channel="Globo MG">
-    <title lang="pt">Entrevista com os Candidatos à Presidência - Augusto Cury</title>
-  </programme>
-  <programme start="20260905220500 -0300" stop="20260905225000 -0300" channel="Globo MG">
+  <programme start="20260905214500 -0300" stop="20260905225500 -0300" channel="Globo MG">
     <title lang="pt">Quem Ama Cuida</title>
   </programme>
-  <programme start="20260905225000 -0300" stop="20260905231500 -0300" channel="Globo MG">
+  <programme start="20260905225500 -0300" stop="20260905232500 -0300" channel="Globo MG">
     <title lang="pt">Estrela da Casa</title>
   </programme>
-  <programme start="20260905231500 -0300" stop="20260906000000 -0300" channel="Globo MG">
-    <title lang="pt">Faixa Combate - Spaten Fight Night 3</title>
+  <programme start="20260905232500 -0300" stop="20260906000000 -0300" channel="Globo MG">
+    <title lang="pt">Altas Horas</title>
   </programme>
   <programme start="20260905003000 -0300" stop="20260905004500 -0300" channel="Record MG">
     <title lang="pt">Jornal da Record 24h</title>
