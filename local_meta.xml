@@ -120,46 +120,64 @@
   <programme start="20260906230000 -0300" stop="20260907000000 -0300" channel="Record MG">
     <title lang="pt">Esporte Record</title>
   </programme>
-  <programme start="20260906000000 -0300" stop="20260906001500 -0300" channel="SBT MG">
-    <title lang="pt">Viva a Noite</title>
+  <programme start="20260906011500 -0300" stop="20260906021500 -0300" channel="Band MG">
+    <title lang="pt">BWF - Luta Livre</title>
   </programme>
-  <programme start="20260906001500 -0300" stop="20260906011500 -0300" channel="SBT MG">
-    <title lang="pt">Programa do João</title>
+  <programme start="20260906021500 -0300" stop="20260906031500 -0300" channel="Band MG">
+    <title lang="pt">Cine Privé: Prazeres do Futuro</title>
   </programme>
-  <programme start="20260906011500 -0300" stop="20260906021500 -0300" channel="SBT MG">
-    <title lang="pt">Notícias Impressionantes</title>
+  <programme start="20260906031500 -0300" stop="20260906040000 -0300" channel="Band MG">
+    <title lang="pt">Chama no Privé</title>
   </programme>
-  <programme start="20260906021500 -0300" stop="20260906050000 -0300" channel="SBT MG">
-    <title lang="pt">SBT Notícias</title>
+  <programme start="20260906040000 -0300" stop="20260906053000 -0300" channel="Band MG">
+    <title lang="pt">Cinema na Madrugada</title>
   </programme>
-  <programme start="20260906050000 -0300" stop="20260906060000 -0300" channel="SBT MG">
-    <title lang="pt">SBT Notícias</title>
+  <programme start="20260906053000 -0300" stop="20260906060000 -0300" channel="Band MG">
+    <title lang="pt">+info</title>
   </programme>
-  <programme start="20260906060000 -0300" stop="20260906070000 -0300" channel="SBT MG">
-    <title lang="pt">SBT Notícias</title>
+  <programme start="20260906060000 -0300" stop="20260906065000 -0300" channel="Band MG">
+    <title lang="pt">Band Kids</title>
   </programme>
-  <programme start="20260906070000 -0300" stop="20260906073000 -0300" channel="SBT MG">
-    <title lang="pt">Pé na Estrada</title>
+  <programme start="20260906065000 -0300" stop="20260906073000 -0300" channel="Band MG">
+    <title lang="pt">Entrevista Coletiva - Reapresentação</title>
   </programme>
-  <programme start="20260906073000 -0300" stop="20260906083000 -0300" channel="SBT MG">
-    <title lang="pt">SBT Sports</title>
+  <programme start="20260906073000 -0300" stop="20260906084000 -0300" channel="Band MG">
+    <title lang="pt">Foco em Saúde Minas</title>
   </programme>
-  <programme start="20260906083000 -0300" stop="20260906090000 -0300" channel="SBT MG">
-    <title lang="pt">Webmotors</title>
+  <programme start="20260906084000 -0300" stop="20260906090000 -0300" channel="Band MG">
+    <title lang="pt">Encontro Com Getsemani</title>
   </programme>
-  <programme start="20260906090000 -0300" stop="20260906101000 -0300" channel="SBT MG">
-    <title lang="pt">Bingo</title>
+  <programme start="20260906090000 -0300" stop="20260906100000 -0300" channel="Band MG">
+    <title lang="pt">Minas Cap</title>
   </programme>
-  <programme start="20260906101000 -0300" stop="20260906111500 -0300" channel="SBT MG">
-    <title lang="pt">Notícias Impressionantes</title>
+  <programme start="20260906100000 -0300" stop="20260906103000 -0300" channel="Band MG">
+    <title lang="pt">Viajando Com Toledo</title>
   </programme>
-  <programme start="20260906111500 -0300" stop="20260906181500 -0300" channel="SBT MG">
-    <title lang="pt">Domingo Legal</title>
+  <programme start="20260906103000 -0300" stop="20260906110000 -0300" channel="Band MG">
+    <title lang="pt">A Virada de Chave</title>
   </programme>
-  <programme start="20260906181500 -0300" stop="20260906190000 -0300" channel="SBT MG">
-    <title lang="pt">Roda a Roda</title>
+  <programme start="20260906110000 -0300" stop="20260906120000 -0300" channel="Band MG">
+    <title lang="pt">Viva Sorte</title>
   </programme>
-  <programme start="20260906190000 -0300" stop="20260907000000 -0300" channel="SBT MG">
-    <title lang="pt">Programa Silvio Santos com Patrícia Abravanel</title>
+  <programme start="20260906120000 -0300" stop="20260906133000 -0300" channel="Band MG">
+    <title lang="pt">Stock Car: Etapa de Curvelo-MG - Ao Vivo</title>
+  </programme>
+  <programme start="20260906133000 -0300" stop="20260906154500 -0300" channel="Band MG">
+    <title lang="pt">Show do Esporte</title>
+  </programme>
+  <programme start="20260906154500 -0300" stop="20260906181500 -0300" channel="Band MG">
+    <title lang="pt">Fórmula Indy: GP Laguna Seca - Ao Vivo</title>
+  </programme>
+  <programme start="20260906181500 -0300" stop="20260906200000 -0300" channel="Band MG">
+    <title lang="pt">Planeta Selvagem</title>
+  </programme>
+  <programme start="20260906200000 -0300" stop="20260906220000 -0300" channel="Band MG">
+    <title lang="pt">Perrengue na Band</title>
+  </programme>
+  <programme start="20260906220000 -0300" stop="20260906230000 -0300" channel="Band MG">
+    <title lang="pt">Som dos Oceanos</title>
+  </programme>
+  <programme start="20260906230000 -0300" stop="20260907000000 -0300" channel="Band MG">
+    <title lang="pt">Canal Livre</title>
   </programme>
 </tv>
