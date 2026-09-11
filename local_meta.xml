@@ -147,9 +147,6 @@
   <programme start="20260911230000 -0300" stop="20260912000000 -0300" channel="Record MG">
     <title lang="pt">Quilos Mortais</title>
   </programme>
-  <programme start="20260911000000 -0300" stop="20260911004500 -0300" channel="SBT MG">
-    <title lang="pt">A Praça é Nossa</title>
-  </programme>
   <programme start="20260911004500 -0300" stop="20260911014500 -0300" channel="SBT MG">
     <title lang="pt">The Noite com Danilo Gentili</title>
   </programme>
@@ -162,11 +159,8 @@
   <programme start="20260911060000 -0300" stop="20260911070000 -0300" channel="SBT MG">
     <title lang="pt">Se Liga Brasil</title>
   </programme>
-  <programme start="20260911070000 -0300" stop="20260911080000 -0300" channel="SBT MG">
+  <programme start="20260911070000 -0300" stop="20260911083000 -0300" channel="SBT MG">
     <title lang="pt">Igreja Universal do Reino de Deus</title>
-  </programme>
-  <programme start="20260911080000 -0300" stop="20260911083000 -0300" channel="SBT MG">
-    <title lang="pt">Se Liga Brasil</title>
   </programme>
   <programme start="20260911083000 -0300" stop="20260911110000 -0300" channel="SBT MG">
     <title lang="pt">Primeiro Impacto</title>
@@ -174,14 +168,14 @@
   <programme start="20260911110000 -0300" stop="20260911114500 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Agora</title>
   </programme>
-  <programme start="20260911114500 -0300" stop="20260911124500 -0300" channel="SBT MG">
+  <programme start="20260911114500 -0300" stop="20260911130000 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Esportes</title>
   </programme>
-  <programme start="20260911124500 -0300" stop="20260911132500 -0300" channel="SBT MG">
-    <title lang="pt">Alterosa Alerta</title>
+  <programme start="20260911130000 -0300" stop="20260911132500 -0300" channel="SBT MG">
+    <title lang="pt">Horário Eleitoral</title>
   </programme>
   <programme start="20260911132500 -0300" stop="20260911140000 -0300" channel="SBT MG">
-    <title lang="pt">Chaves</title>
+    <title lang="pt">Alterosa Alerta</title>
   </programme>
   <programme start="20260911140000 -0300" stop="20260911153000 -0300" channel="SBT MG">
     <title lang="pt">A Desalmada</title>
@@ -196,10 +190,10 @@
     <title lang="pt">Alterosa Alerta 2º Edição</title>
   </programme>
   <programme start="20260911184500 -0300" stop="20260911191500 -0300" channel="SBT MG">
-    <title lang="pt">SBT Cidades</title>
+    <title lang="pt">Jornal da Alterosa</title>
   </programme>
   <programme start="20260911191500 -0300" stop="20260911194500 -0300" channel="SBT MG">
-    <title lang="pt">Jornal da Alterosa</title>
+    <title lang="pt">SBT Cidades</title>
   </programme>
   <programme start="20260911194500 -0300" stop="20260911203000 -0300" channel="SBT MG">
     <title lang="pt">SBT Brasil</title>
