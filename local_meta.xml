@@ -144,6 +144,69 @@
   <programme start="20260916224500 -0300" stop="20260917000000 -0300" channel="Record MG">
     <title lang="pt">A Fazenda</title>
   </programme>
+  <programme start="20260916001500 -0300" stop="20260916011500 -0300" channel="SBT MG">
+    <title lang="pt">The Noite com Danilo Gentili</title>
+  </programme>
+  <programme start="20260916011500 -0300" stop="20260916014500 -0300" channel="SBT MG">
+    <title lang="pt">Operação Mesquita</title>
+  </programme>
+  <programme start="20260916014500 -0300" stop="20260916060000 -0300" channel="SBT MG">
+    <title lang="pt">SBT Notícias</title>
+  </programme>
+  <programme start="20260916060000 -0300" stop="20260916070000 -0300" channel="SBT MG">
+    <title lang="pt">Se Liga Brasil</title>
+  </programme>
+  <programme start="20260916070000 -0300" stop="20260916083000 -0300" channel="SBT MG">
+    <title lang="pt">Igreja Universal do Reino de Deus</title>
+  </programme>
+  <programme start="20260916083000 -0300" stop="20260916110000 -0300" channel="SBT MG">
+    <title lang="pt">Primeiro Impacto</title>
+  </programme>
+  <programme start="20260916110000 -0300" stop="20260916114500 -0300" channel="SBT MG">
+    <title lang="pt">Alterosa Agora</title>
+  </programme>
+  <programme start="20260916114500 -0300" stop="20260916130000 -0300" channel="SBT MG">
+    <title lang="pt">Alterosa Esportes</title>
+  </programme>
+  <programme start="20260916130000 -0300" stop="20260916132500 -0300" channel="SBT MG">
+    <title lang="pt">Horário Eleitoral</title>
+  </programme>
+  <programme start="20260916132500 -0300" stop="20260916140000 -0300" channel="SBT MG">
+    <title lang="pt">Alterosa Alerta</title>
+  </programme>
+  <programme start="20260916140000 -0300" stop="20260916153000 -0300" channel="SBT MG">
+    <title lang="pt">A Desalmada</title>
+  </programme>
+  <programme start="20260916153000 -0300" stop="20260916170000 -0300" channel="SBT MG">
+    <title lang="pt">Fofocalizando</title>
+  </programme>
+  <programme start="20260916170000 -0300" stop="20260916181500 -0300" channel="SBT MG">
+    <title lang="pt">O Que a Vida Me Roubou</title>
+  </programme>
+  <programme start="20260916181500 -0300" stop="20260916184500 -0300" channel="SBT MG">
+    <title lang="pt">Alterosa Alerta 2º Edição</title>
+  </programme>
+  <programme start="20260916184500 -0300" stop="20260916191500 -0300" channel="SBT MG">
+    <title lang="pt">Jornal da Alterosa</title>
+  </programme>
+  <programme start="20260916191500 -0300" stop="20260916194500 -0300" channel="SBT MG">
+    <title lang="pt">SBT Cidades</title>
+  </programme>
+  <programme start="20260916194500 -0300" stop="20260916203000 -0300" channel="SBT MG">
+    <title lang="pt">SBT Brasil</title>
+  </programme>
+  <programme start="20260916203000 -0300" stop="20260916211000 -0300" channel="SBT MG">
+    <title lang="pt">Horário Eleitoral</title>
+  </programme>
+  <programme start="20260916211000 -0300" stop="20260916220000 -0300" channel="SBT MG">
+    <title lang="pt">Amor Valente</title>
+  </programme>
+  <programme start="20260916220000 -0300" stop="20260916223000 -0300" channel="SBT MG">
+    <title lang="pt">Sessão +SBT</title>
+  </programme>
+  <programme start="20260916223000 -0300" stop="20260917000000 -0300" channel="SBT MG">
+    <title lang="pt">Programa do Ratinho</title>
+  </programme>
   <programme start="20260916010000 -0300" stop="20260916013000 -0300" channel="Band MG">
     <title lang="pt">Jornal da Noite</title>
   </programme>
