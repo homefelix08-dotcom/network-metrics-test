@@ -1,10 +1,14 @@
 """
-Módulo responsável exclusivamente pela geração e atualização do arquivo local_meta.xml (EPG local).
-Realiza scraping das grades de programação dos canais regionais na Claro TV e compila no formato XMLTV.
+Módulo responsável por:
+1. Geração e atualização do arquivo local_meta.xml (EPG local dos canais regionais).
+2. Resolução do novo domínio de CDN do provedor de canais (via redirecionamento de um canal de teste)
+   e atualização automática dos cabeçalhos Referer em export_data.txt.
 """
 
 import os
+import re
 import html
+import urllib.parse
 from datetime import datetime
 import requests
 from requests.adapters import HTTPAdapter
@@ -13,16 +17,24 @@ from bs4 import BeautifulSoup
 import pytz
 
 # ==========================================
-# CONFIGURAÇÕES
+# CONFIGURAÇÕES DE CAMINHOS
 # ==========================================
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUTPUT_XML_PATH = os.path.join(BASE_DIR, "local_meta.xml")
+EXPORT_DATA_PATH = os.path.join(BASE_DIR, "export_data.txt")
+REPO_PATH = os.path.join(BASE_DIR, "src", "repo.js")
 
+# ==========================================
+# CONFIGURAÇÕES DE REDE
+# ==========================================
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
 }
 TIMEOUT_SECONDS = 25
 
+# ==========================================
+# CONFIGURAÇÕES DO EPG LOCAL
+# ==========================================
 LOCAL_EPG_CONFIGS = [
     {"id": "Globo MG", "name": "Globo MG", "url": "https://www.claro.com.br/tv-por-assinatura/programacao/grade/programa/globo-hd/23-2068"},
     {"id": "Record MG", "name": "Record MG", "url": "https://www.claro.com.br/tv-por-assinatura/programacao/grade/programa/record-hd/23-2084"},
@@ -46,10 +58,12 @@ def create_session() -> requests.Session:
     return session
 
 
-def update_local_meta() -> bool:
+# ==========================================
+# 1. ATUALIZAÇÃO DO EPG LOCAL (local_meta.xml)
+# ==========================================
+def update_local_meta(session: requests.Session) -> bool:
     """Coleta a grade dos canais regionais configurados e atualiza o arquivo local_meta.xml."""
-    print("Iniciando atualização do local_meta.xml...")
-    session = create_session()
+    print("=== [1/2] ATUALIZAÇÃO DO LOCAL_META.XML ===")
     fuso_br = pytz.timezone('America/Sao_Paulo')
 
     xml_channels = []
@@ -100,7 +114,7 @@ def update_local_meta() -> bool:
             print(f"     [X] Falha na requisição: {e}")
 
     if not xml_programmes:
-        print("[ALERTA] Nenhum programa foi coletado. O arquivo local_meta.xml não foi sobrescrito para preservar os dados existentes.")
+        print("[ALERTA] Nenhum programa foi coletado. O arquivo local_meta.xml não foi sobrescrito para preservar os dados existentes.\n")
         return False
 
     linhas = ['<?xml version="1.0" encoding="UTF-8"?>\n<tv>\n'] + xml_channels + xml_programmes + ['</tv>\n']
@@ -108,9 +122,138 @@ def update_local_meta() -> bool:
     with open(OUTPUT_XML_PATH, 'w', encoding='utf-8') as f:
         f.writelines(linhas)
 
-    print(f"\n[SUCESSO] local_meta.xml atualizado com sucesso em '{OUTPUT_XML_PATH}'. Total de {total_blocos} programas.")
+    print(f"[SUCESSO] local_meta.xml atualizado com sucesso em '{OUTPUT_XML_PATH}'. Total de {total_blocos} programas.\n")
     return True
 
 
+# ==========================================
+# 2. SINCRONIZAÇÃO DO CDN REFERER EM EXPORT_DATA.TXT
+# ==========================================
+def get_sample_channel_url() -> str:
+    """Extrai a URL base e o slug de um canal a partir de repo.js ou retorna URL padrão."""
+    default_url = "https://embedcanaisdetv.xyz/e/index.php?canal=globomg"
+    if os.path.exists(REPO_PATH):
+        try:
+            with open(REPO_PATH, "r", encoding="utf-8") as f:
+                content = f.read()
+
+            base_match = re.search(r'siteBaseUrl\s*=\s*["\']([^"\']+)["\']', content)
+            base_url = base_match.group(1) if base_match else "https://embedcanaisdetv.xyz/e/index.php?canal="
+            slug_match = re.search(r'siteBaseUrl\}\s*([a-zA-Z0-9_\-]+)', content)
+            slug = slug_match.group(1) if slug_match else "globomg"
+            return f"{base_url}{slug}"
+        except Exception as e:
+            print(f"  [Aviso] Falha ao ler {REPO_PATH}: {e}")
+
+    return default_url
+
+
+def discover_cdn_base(sample_url: str, session: requests.Session) -> str | None:
+    """
+    Faz a requisição para um canal e segue os redirecionamentos HTTP
+    até identificar o domínio base do novo CDN para o Referer.
+    """
+    print(f"  -> Rastreando CDN através do canal de teste: {sample_url}")
+    current_url = sample_url
+    max_hops = 5
+
+    for hop in range(max_hops):
+        try:
+            resp = session.get(current_url, headers=HEADERS, allow_redirects=False, timeout=TIMEOUT_SECONDS)
+        except Exception as e:
+            print(f"  [X] Erro ao acessar {current_url}: {e}")
+            break
+
+        if resp.status_code in (301, 302, 303, 307, 308) and "Location" in resp.headers:
+            location = resp.headers["Location"].strip()
+            current_url = urllib.parse.urljoin(current_url, location)
+            print(f"     Hop {hop + 1}: redirecionado para {current_url}")
+
+            parsed = urllib.parse.urlparse(current_url)
+            # Verifica se já atingiu o host do CDN
+            if "cdn" in parsed.netloc:
+                cdn_base = f"{parsed.scheme}://{parsed.netloc}/"
+                return cdn_base
+        else:
+            parsed = urllib.parse.urlparse(current_url)
+            if "cdn" in parsed.netloc:
+                cdn_base = f"{parsed.scheme}://{parsed.netloc}/"
+                return cdn_base
+            break
+
+    # Se ao final houver redirecionamento para um host diferente
+    parsed = urllib.parse.urlparse(current_url)
+    if parsed.netloc and parsed.netloc != urllib.parse.urlparse(sample_url).netloc:
+        cdn_base = f"{parsed.scheme}://{parsed.netloc}/"
+        return cdn_base
+
+    return None
+
+
+def update_referers_in_file(file_path: str, new_cdn_base: str) -> int:
+    """Atualiza todas as ocorrências de Referer no arquivo alvo com o novo domínio CDN."""
+    if not os.path.exists(file_path):
+        print(f"  [Aviso] Arquivo não encontrado: {file_path}")
+        return 0
+
+    with open(file_path, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+
+    pattern = re.compile(r'\|Referer=https?://[^/\s|]+/(?:e/index\.php\?canal=)?([^\s|\r\n]+)')
+    updated_lines = []
+    changes_count = 0
+    total_referers = 0
+
+    for line in lines:
+        m = pattern.search(line)
+        if m:
+            total_referers += 1
+            canal_slug = m.group(1).strip("/")
+            new_ref = f"|Referer={new_cdn_base.rstrip('/')}/{canal_slug}/"
+            new_line = re.sub(r'\|Referer=https?://[^\s|\r\n]+', new_ref, line)
+            if new_line != line:
+                changes_count += 1
+            updated_lines.append(new_line)
+        else:
+            updated_lines.append(line)
+
+    if changes_count > 0:
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.writelines(updated_lines)
+        print(f"  [OK] '{os.path.basename(file_path)}': {changes_count} canais com Referer atualizados para {new_cdn_base} (Total: {total_referers}).")
+    else:
+        print(f"  [INFO] '{os.path.basename(file_path)}': Todos os {total_referers} Referers já estavam atualizados.")
+
+    return changes_count
+
+
+def sync_cdn_referers(session: requests.Session) -> bool:
+    """Executa a descoberta do CDN e atualiza o arquivo export_data.txt."""
+    print("=== [2/2] SINCRONIZAÇÃO DO CDN REFERER ===")
+    sample_url = get_sample_channel_url()
+    new_cdn_base = discover_cdn_base(sample_url, session)
+
+    if not new_cdn_base:
+        print("  [ERRO] Não foi possível obter o novo domínio base do CDN.\n")
+        return False
+
+    print(f"  -> Novo domínio base de CDN detectado: {new_cdn_base}")
+    update_referers_in_file(EXPORT_DATA_PATH, new_cdn_base)
+
+    print("[SUCESSO] Sincronização do CDN Referer concluída com sucesso.\n")
+    return True
+
+
+# ==========================================
+# PONTO DE ENTRADA PRINCIPAL
+# ==========================================
+def main():
+    print(f"Iniciando rotina do sync_worker [{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}]...\n")
+    session = create_session()
+    update_local_meta(session)
+    sync_cdn_referers(session)
+    print("Todas as rotinas foram finalizadas com sucesso.")
+
+
 if __name__ == "__main__":
-    update_local_meta()
+    main()

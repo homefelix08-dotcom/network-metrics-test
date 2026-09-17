@@ -1,7 +1,5 @@
 import REPO_CONFIG from './repo.js';
 
-const GITHUB_RAW_BASE = `https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main`;
-
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -188,21 +186,6 @@ export default {
           headers: {
             "Location": linkFinal.split('|')[0],
             "X-Debug-Origem": traceOrigem
-          }
-        });
-      }
-
-      console.log(`[🆘 EMERGÊNCIA] Buscando no GitHub...`);
-      const githubRes = await fetch(`${GITHUB_RAW_BASE}/backup.txt`);
-      const backupText = await githubRes.text();
-      const match = backupText.match(new RegExp(`tvg-name="${config.nome}".*?\\n(http[^\\s\\|\\n]+)`, "i"));
-
-      if (match) {
-        return new Response(null, {
-          status: 302,
-          headers: {
-            "Location": match[1],
-            "X-Debug-Origem": "GITHUB BACKUP"
           }
         });
       }
