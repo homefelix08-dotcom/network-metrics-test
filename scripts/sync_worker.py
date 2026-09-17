@@ -3,11 +3,13 @@ Módulo responsável por:
 1. Geração e atualização do arquivo local_meta.xml (EPG local dos canais regionais).
 2. Resolução do novo domínio de CDN do provedor de canais (via redirecionamento de um canal de teste)
    e atualização automática dos cabeçalhos Referer em export_data.txt.
+3. Commit e push automáticos no repositório caso haja alterações.
 """
 
 import os
 import re
 import html
+import subprocess
 import urllib.parse
 from datetime import datetime
 import requests
@@ -23,6 +25,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUTPUT_XML_PATH = os.path.join(BASE_DIR, "local_meta.xml")
 EXPORT_DATA_PATH = os.path.join(BASE_DIR, "export_data.txt")
 REPO_PATH = os.path.join(BASE_DIR, "src", "repo.js")
+
+# Identidade do bot para os commits automáticos
+GIT_BOT_NAME = "Data Sync Bot"
+GIT_BOT_EMAIL = "bot@github.com"
 
 # ==========================================
 # CONFIGURAÇÕES DE REDE
@@ -245,6 +251,107 @@ def sync_cdn_referers(session: requests.Session) -> bool:
 
 
 # ==========================================
+# 3. SINCRONIZAÇÃO GIT (COMMIT & PUSH AUTOMÁTICO)
+# ==========================================
+def git_commit_and_push() -> bool:
+    """Verifica se arquivos foram modificados e realiza git add, commit e push automaticamente."""
+    print("=== [3/3] SINCRONIZAÇÃO COM O GITHUB (GIT COMMIT & PUSH) ===")
+    env = os.environ.copy()
+    env["GIT_TERMINAL_PROMPT"] = "0"
+    env["GCM_INTERACTIVE"] = "never"
+    env["GIT_AUTHOR_NAME"] = GIT_BOT_NAME
+    env["GIT_AUTHOR_EMAIL"] = GIT_BOT_EMAIL
+    env["GIT_COMMITTER_NAME"] = GIT_BOT_NAME
+    env["GIT_COMMITTER_EMAIL"] = GIT_BOT_EMAIL
+
+    try:
+        status_res = subprocess.run(
+            ["git", "status", "--porcelain"],
+            cwd=BASE_DIR,
+            capture_output=True,
+            text=True,
+            check=True,
+            timeout=30
+        )
+        changes = status_res.stdout.strip()
+        if not changes:
+            print("  [INFO] Nenhuma alteração detectada no repositório. Nada a commitar.\n")
+            return False
+
+        print("  -> Alterações detectadas:")
+        for line in changes.splitlines():
+            print(f"     {line}")
+
+        # Adiciona os arquivos modificados
+        subprocess.run(["git", "add", "."], cwd=BASE_DIR, check=True, timeout=30)
+
+        # Cria a mensagem de commit com timestamp
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M")
+        commit_msg = f"chore: auto-sync EPG and CDN referers [{timestamp}]"
+
+        commit_res = subprocess.run(
+            [
+                "git",
+                "-c", f"user.name={GIT_BOT_NAME}",
+                "-c", f"user.email={GIT_BOT_EMAIL}",
+                "commit",
+                f"--author={GIT_BOT_NAME} <{GIT_BOT_EMAIL}>",
+                "-m", commit_msg
+            ],
+            cwd=BASE_DIR,
+            capture_output=True,
+            text=True,
+            env=env,
+            timeout=30
+        )
+        if commit_res.returncode != 0:
+            print(f"  [Aviso] Falha ou nada a commitar: {commit_res.stderr.strip()}\n")
+            return False
+
+        print(f"  [OK] Commit realizado: '{commit_msg}'")
+
+        # Sincroniza com remoto via rebase e autostash antes do push
+        print("  -> Sincronizando com o remoto (git pull --rebase --autostash)...")
+        pull_res = subprocess.run(
+            ["git", "pull", "--rebase", "--autostash"],
+            cwd=BASE_DIR,
+            capture_output=True,
+            text=True,
+            env=env,
+            timeout=60
+        )
+        if pull_res.returncode != 0:
+            print(f"  [Aviso] Retorno do git pull: {pull_res.stderr.strip() or pull_res.stdout.strip()}")
+
+        # Envia para o repositório remoto
+        print("  -> Enviando alterações para o remoto (git push)...")
+        push_res = subprocess.run(
+            ["git", "push"],
+            cwd=BASE_DIR,
+            capture_output=True,
+            text=True,
+            env=env,
+            timeout=60
+        )
+        if push_res.returncode == 0:
+            print("  [OK] Git push realizado com sucesso!\n")
+            return True
+        else:
+            print(f"  [X] Falha no git push: {push_res.stderr.strip()}\n")
+            return False
+
+    except subprocess.TimeoutExpired as e:
+        print(f"  [X] Timeout ao executar comando git: {e}\n")
+        return False
+    except FileNotFoundError:
+        print("  [X] O executável do Git não foi encontrado no ambiente.\n")
+        return False
+    except Exception as e:
+        print(f"  [X] Erro ao executar operações do Git: {e}\n")
+        return False
+
+
+# ==========================================
 # PONTO DE ENTRADA PRINCIPAL
 # ==========================================
 def main():
@@ -252,6 +359,7 @@ def main():
     session = create_session()
     update_local_meta(session)
     sync_cdn_referers(session)
+    git_commit_and_push()
     print("Todas as rotinas foram finalizadas com sucesso.")
 
 
