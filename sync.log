@@ -89,3 +89,33 @@ Iniciando rotina do sync_worker [2026-09-20 00:30:03]...
   [OK] Git push realizado com sucesso!
 
 Todas as rotinas foram finalizadas com sucesso.
+Iniciando rotina do sync_worker [2026-09-21 00:30:03]...
+
+=== [1/2] ATUALIZAÇÃO DO LOCAL_META.XML ===
+  -> Coletando grade: Globo MG (Globo MG)...
+     [OK] 22 programas coletados.
+  -> Coletando grade: Record MG (Record MG)...
+     [OK] 18 programas coletados.
+  -> Coletando grade: TV Alterosa (SBT MG)...
+     [OK] 22 programas coletados.
+  -> Coletando grade: Band (Band MG)...
+     [OK] 23 programas coletados.
+[SUCESSO] local_meta.xml atualizado com sucesso em '/home/lab/iptv/network-metrics-test/local_meta.xml'. Total de 85 programas.
+
+=== [2/2] SINCRONIZAÇÃO DO CDN REFERER ===
+  -> Rastreando CDN através do canal de teste: https://embedcanaisdetv.xyz/e/index.php?canal=globomg
+     Hop 1: redirecionado para https://1709.cdnembedcanais.xyz/globomg/
+  -> Novo domínio base de CDN detectado: https://1709.cdnembedcanais.xyz/
+  [INFO] 'export_data.txt': Todos os 98 Referers já estavam atualizados.
+[SUCESSO] Sincronização do CDN Referer concluída com sucesso.
+
+=== [3/3] SINCRONIZAÇÃO COM O GITHUB (GIT COMMIT & PUSH) ===
+  -> Alterações detectadas:
+     M local_meta.xml
+      M sync.log
+  [OK] Commit realizado: 'chore: auto-sync EPG and CDN referers [2026-09-21 00:30]'
+  -> Sincronizando com o remoto (git pull --rebase --autostash)...
+  -> Enviando alterações para o remoto (git push)...
+  [OK] Git push realizado com sucesso!
+
+Todas as rotinas foram finalizadas com sucesso.
