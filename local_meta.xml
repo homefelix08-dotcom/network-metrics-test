@@ -223,7 +223,7 @@
     <title lang="pt">Jornal da Noite</title>
   </programme>
   <programme start="20260929010000 -0300" stop="20260929013000 -0300" channel="Band MG">
-    <title lang="pt">Band Eleições - Local</title>
+    <title lang="pt">Band Eleições</title>
   </programme>
   <programme start="20260929013000 -0300" stop="20260929020000 -0300" channel="Band MG">
     <title lang="pt">Esporte Total</title>
@@ -265,7 +265,7 @@
     <title lang="pt">Brasil Urgente Minas</title>
   </programme>
   <programme start="20260929184000 -0300" stop="20260929192000 -0300" channel="Band MG">
-    <title lang="pt">Jornal Band Minas</title>
+    <title lang="pt">Band Minas</title>
   </programme>
   <programme start="20260929192000 -0300" stop="20260929203000 -0300" channel="Band MG">
     <title lang="pt">Jornal da Band</title>
@@ -277,9 +277,9 @@
     <title lang="pt">Guerra das Rosas</title>
   </programme>
   <programme start="20260929215000 -0300" stop="20260929224500 -0300" channel="Band MG">
-    <title lang="pt">Show da Fé</title>
+    <title lang="pt">A Prévia</title>
   </programme>
   <programme start="20260929224500 -0300" stop="20260930000000 -0300" channel="Band MG">
-    <title lang="pt">Masterchef Amadores</title>
+    <title lang="pt">Masterchef Amadores - Final</title>
   </programme>
 </tv>
