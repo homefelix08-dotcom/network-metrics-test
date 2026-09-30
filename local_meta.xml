@@ -147,29 +147,20 @@
   <programme start="20260930224500 -0300" stop="20261001001500 -0300" channel="Record MG">
     <title lang="pt">A Fazenda</title>
   </programme>
-  <programme start="20260930000000 -0300" stop="20260930003000 -0300" channel="SBT MG">
-    <title lang="pt">SBT Repórter</title>
-  </programme>
   <programme start="20260930003000 -0300" stop="20260930013000 -0300" channel="SBT MG">
     <title lang="pt">The Noite com Danilo Gentili</title>
   </programme>
   <programme start="20260930013000 -0300" stop="20260930020000 -0300" channel="SBT MG">
     <title lang="pt">Operação Mesquita</title>
   </programme>
-  <programme start="20260930020000 -0300" stop="20260930050000 -0300" channel="SBT MG">
-    <title lang="pt">SBT Notícias</title>
-  </programme>
-  <programme start="20260930050000 -0300" stop="20260930060000 -0300" channel="SBT MG">
+  <programme start="20260930020000 -0300" stop="20260930060000 -0300" channel="SBT MG">
     <title lang="pt">SBT Notícias</title>
   </programme>
   <programme start="20260930060000 -0300" stop="20260930070000 -0300" channel="SBT MG">
     <title lang="pt">Se Liga Brasil</title>
   </programme>
-  <programme start="20260930070000 -0300" stop="20260930080000 -0300" channel="SBT MG">
+  <programme start="20260930070000 -0300" stop="20260930083000 -0300" channel="SBT MG">
     <title lang="pt">Igreja Universal do Reino de Deus</title>
-  </programme>
-  <programme start="20260930080000 -0300" stop="20260930083000 -0300" channel="SBT MG">
-    <title lang="pt">Se Liga Brasil</title>
   </programme>
   <programme start="20260930083000 -0300" stop="20260930110000 -0300" channel="SBT MG">
     <title lang="pt">Primeiro Impacto</title>
@@ -177,19 +168,22 @@
   <programme start="20260930110000 -0300" stop="20260930114500 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Agora</title>
   </programme>
-  <programme start="20260930114500 -0300" stop="20260930124500 -0300" channel="SBT MG">
+  <programme start="20260930114500 -0300" stop="20260930130000 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Esportes</title>
   </programme>
-  <programme start="20260930124500 -0300" stop="20260930132500 -0300" channel="SBT MG">
+  <programme start="20260930130000 -0300" stop="20260930132500 -0300" channel="SBT MG">
+    <title lang="pt">Horário Eleitoral</title>
+  </programme>
+  <programme start="20260930132500 -0300" stop="20260930134500 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Alerta</title>
   </programme>
-  <programme start="20260930132500 -0300" stop="20260930140000 -0300" channel="SBT MG">
-    <title lang="pt">Chaves</title>
+  <programme start="20260930134500 -0300" stop="20260930143000 -0300" channel="SBT MG">
+    <title lang="pt">Marisol</title>
   </programme>
-  <programme start="20260930140000 -0300" stop="20260930153000 -0300" channel="SBT MG">
+  <programme start="20260930143000 -0300" stop="20260930152000 -0300" channel="SBT MG">
     <title lang="pt">A Desalmada</title>
   </programme>
-  <programme start="20260930153000 -0300" stop="20260930170000 -0300" channel="SBT MG">
+  <programme start="20260930152000 -0300" stop="20260930170000 -0300" channel="SBT MG">
     <title lang="pt">Fofocalizando</title>
   </programme>
   <programme start="20260930170000 -0300" stop="20260930181500 -0300" channel="SBT MG">
@@ -199,10 +193,10 @@
     <title lang="pt">Alterosa Alerta 2º Edição</title>
   </programme>
   <programme start="20260930184500 -0300" stop="20260930191500 -0300" channel="SBT MG">
-    <title lang="pt">SBT Cidades</title>
+    <title lang="pt">Jornal da Alterosa</title>
   </programme>
   <programme start="20260930191500 -0300" stop="20260930194500 -0300" channel="SBT MG">
-    <title lang="pt">Jornal da Alterosa</title>
+    <title lang="pt">SBT Cidades</title>
   </programme>
   <programme start="20260930194500 -0300" stop="20260930203000 -0300" channel="SBT MG">
     <title lang="pt">SBT Brasil</title>
@@ -216,8 +210,11 @@
   <programme start="20260930220000 -0300" stop="20260930223000 -0300" channel="SBT MG">
     <title lang="pt">Sessão +SBT</title>
   </programme>
-  <programme start="20260930223000 -0300" stop="20261001000000 -0300" channel="SBT MG">
+  <programme start="20260930223000 -0300" stop="20260930234500 -0300" channel="SBT MG">
     <title lang="pt">Programa do Ratinho</title>
+  </programme>
+  <programme start="20260930234500 -0300" stop="20261001004500 -0300" channel="SBT MG">
+    <title lang="pt">The Noite com Danilo Gentili</title>
   </programme>
   <programme start="20260930010000 -0300" stop="20260930013000 -0300" channel="Band MG">
     <title lang="pt">Jornal da Noite</title>
