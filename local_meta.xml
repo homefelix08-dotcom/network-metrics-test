@@ -141,10 +141,7 @@
   <programme start="20261001004500 -0300" stop="20261001011500 -0300" channel="SBT MG">
     <title lang="pt">Operação Mesquita</title>
   </programme>
-  <programme start="20261001011500 -0300" stop="20261001014500 -0300" channel="SBT MG">
-    <title lang="pt">Passe de Milhões</title>
-  </programme>
-  <programme start="20261001014500 -0300" stop="20261001060000 -0300" channel="SBT MG">
+  <programme start="20261001011500 -0300" stop="20261001060000 -0300" channel="SBT MG">
     <title lang="pt">SBT Notícias</title>
   </programme>
   <programme start="20261001060000 -0300" stop="20261001070000 -0300" channel="SBT MG">
