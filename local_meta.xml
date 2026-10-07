@@ -141,13 +141,13 @@
   <programme start="20261007223000 -0300" stop="20261008000000 -0300" channel="Record MG">
     <title lang="pt">A Fazenda</title>
   </programme>
-  <programme start="20261007003000 -0300" stop="20261007013000 -0300" channel="SBT MG">
+  <programme start="20261007001500 -0300" stop="20261007011500 -0300" channel="SBT MG">
     <title lang="pt">The Noite com Danilo Gentili</title>
   </programme>
-  <programme start="20261007013000 -0300" stop="20261007020000 -0300" channel="SBT MG">
+  <programme start="20261007011500 -0300" stop="20261007014500 -0300" channel="SBT MG">
     <title lang="pt">Operação Mesquita</title>
   </programme>
-  <programme start="20261007020000 -0300" stop="20261007060000 -0300" channel="SBT MG">
+  <programme start="20261007014500 -0300" stop="20261007060000 -0300" channel="SBT MG">
     <title lang="pt">SBT Notícias</title>
   </programme>
   <programme start="20261007060000 -0300" stop="20261007070000 -0300" channel="SBT MG">
@@ -162,22 +162,19 @@
   <programme start="20261007110000 -0300" stop="20261007114500 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Agora</title>
   </programme>
-  <programme start="20261007114500 -0300" stop="20261007130000 -0300" channel="SBT MG">
+  <programme start="20261007114500 -0300" stop="20261007124500 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Esportes</title>
   </programme>
-  <programme start="20261007130000 -0300" stop="20261007132500 -0300" channel="SBT MG">
-    <title lang="pt">Horário Eleitoral</title>
-  </programme>
-  <programme start="20261007132500 -0300" stop="20261007134500 -0300" channel="SBT MG">
+  <programme start="20261007124500 -0300" stop="20261007134500 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Alerta</title>
   </programme>
   <programme start="20261007134500 -0300" stop="20261007143000 -0300" channel="SBT MG">
     <title lang="pt">Marisol</title>
   </programme>
-  <programme start="20261007143000 -0300" stop="20261007152000 -0300" channel="SBT MG">
+  <programme start="20261007143000 -0300" stop="20261007153000 -0300" channel="SBT MG">
     <title lang="pt">A Desalmada</title>
   </programme>
-  <programme start="20261007152000 -0300" stop="20261007170000 -0300" channel="SBT MG">
+  <programme start="20261007153000 -0300" stop="20261007170000 -0300" channel="SBT MG">
     <title lang="pt">Fofocalizando</title>
   </programme>
   <programme start="20261007170000 -0300" stop="20261007181500 -0300" channel="SBT MG">
@@ -192,19 +189,16 @@
   <programme start="20261007191500 -0300" stop="20261007194500 -0300" channel="SBT MG">
     <title lang="pt">SBT Cidades</title>
   </programme>
-  <programme start="20261007194500 -0300" stop="20261007203000 -0300" channel="SBT MG">
+  <programme start="20261007194500 -0300" stop="20261007204500 -0300" channel="SBT MG">
     <title lang="pt">SBT Brasil</title>
   </programme>
-  <programme start="20261007203000 -0300" stop="20261007211000 -0300" channel="SBT MG">
-    <title lang="pt">Horário Eleitoral</title>
-  </programme>
-  <programme start="20261007211000 -0300" stop="20261007220000 -0300" channel="SBT MG">
+  <programme start="20261007204500 -0300" stop="20261007213000 -0300" channel="SBT MG">
     <title lang="pt">Amor Valente</title>
   </programme>
-  <programme start="20261007220000 -0300" stop="20261007223000 -0300" channel="SBT MG">
+  <programme start="20261007213000 -0300" stop="20261007220000 -0300" channel="SBT MG">
     <title lang="pt">Sessão +SBT</title>
   </programme>
-  <programme start="20261007223000 -0300" stop="20261008000000 -0300" channel="SBT MG">
+  <programme start="20261007220000 -0300" stop="20261008000000 -0300" channel="SBT MG">
     <title lang="pt">Programa do Ratinho</title>
   </programme>
   <programme start="20261007003000 -0300" stop="20261007011500 -0300" channel="Band MG">
