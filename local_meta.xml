@@ -12,20 +12,17 @@
   <channel id="Band MG">
     <display-name>Band</display-name>
   </channel>
-  <programme start="20261010004000 -0300" stop="20261010005000 -0300" channel="Globo MG">
-    <title lang="pt">Grid da Globo</title>
-  </programme>
-  <programme start="20261010005000 -0300" stop="20261010014000 -0300" channel="Globo MG">
-    <title lang="pt">This Is Us</title>
-  </programme>
-  <programme start="20261010014000 -0300" stop="20261010024000 -0300" channel="Globo MG">
+  <programme start="20261010003500 -0300" stop="20261010012500 -0300" channel="Globo MG">
     <title lang="pt">Jornal da Globo</title>
   </programme>
-  <programme start="20261010024000 -0300" stop="20261010032000 -0300" channel="Globo MG">
+  <programme start="20261010012500 -0300" stop="20261010020500 -0300" channel="Globo MG">
     <title lang="pt">A Nobreza do Amor</title>
   </programme>
-  <programme start="20261010032000 -0300" stop="20261010060000 -0300" channel="Globo MG">
+  <programme start="20261010020500 -0300" stop="20261010025000 -0300" channel="Globo MG">
     <title lang="pt">Por Você</title>
+  </programme>
+  <programme start="20261010025000 -0300" stop="20261010060000 -0300" channel="Globo MG">
+    <title lang="pt">Comédia Na Madruga - Vai Que Cola I</title>
   </programme>
   <programme start="20261010060000 -0300" stop="20261010063000 -0300" channel="Globo MG">
     <title lang="pt">Globo Rural</title>
@@ -96,29 +93,29 @@
   <programme start="20261010073500 -0300" stop="20261010120000 -0300" channel="Record MG">
     <title lang="pt">Fala Brasil - Edição de Sábado</title>
   </programme>
-  <programme start="20261010120000 -0300" stop="20261010130300 -0300" channel="Record MG">
+  <programme start="20261010120000 -0300" stop="20261010131000 -0300" channel="Record MG">
     <title lang="pt">The Love School - A Escola do Amor</title>
   </programme>
-  <programme start="20261010130300 -0300" stop="20261010150000 -0300" channel="Record MG">
+  <programme start="20261010131000 -0300" stop="20261010150000 -0300" channel="Record MG">
     <title lang="pt">Balanço Geral - Edição de Sábado</title>
   </programme>
-  <programme start="20261010150000 -0300" stop="20261010170000 -0300" channel="Record MG">
+  <programme start="20261010150000 -0300" stop="20261010180000 -0300" channel="Record MG">
     <title lang="pt">Cine Aventura</title>
   </programme>
-  <programme start="20261010170000 -0300" stop="20261010194500 -0300" channel="Record MG">
-    <title lang="pt">Cidade Alerta - Edição de Sábado</title>
+  <programme start="20261010180000 -0300" stop="20261010200000 -0300" channel="Record MG">
+    <title lang="pt">Vasco x Remo - Ao Vivo</title>
   </programme>
-  <programme start="20261010194500 -0300" stop="20261010210000 -0300" channel="Record MG">
+  <programme start="20261010200000 -0300" stop="20261010204000 -0300" channel="Record MG">
     <title lang="pt">Jornal da Record - Edição de Sábado</title>
   </programme>
-  <programme start="20261010210000 -0300" stop="20261010223000 -0300" channel="Record MG">
+  <programme start="20261010204000 -0300" stop="20261010211500 -0300" channel="Record MG">
+    <title lang="pt">Jornal da Record - Edição de Sábado</title>
+  </programme>
+  <programme start="20261010211500 -0300" stop="20261010224500 -0300" channel="Record MG">
     <title lang="pt">Cidade Alerta - Edição de Sábado</title>
   </programme>
-  <programme start="20261010223000 -0300" stop="20261010231500 -0300" channel="Record MG">
+  <programme start="20261010224500 -0300" stop="20261011000000 -0300" channel="Record MG">
     <title lang="pt">A Fazenda</title>
-  </programme>
-  <programme start="20261010231500 -0300" stop="20261011000000 -0300" channel="Record MG">
-    <title lang="pt">Super Tela</title>
   </programme>
   <programme start="20261010001500 -0300" stop="20261010011500 -0300" channel="SBT MG">
     <title lang="pt">The Noite com Danilo Gentili</title>
