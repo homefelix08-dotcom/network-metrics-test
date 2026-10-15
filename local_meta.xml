@@ -78457,9 +78457,9 @@
     <episode-num system="onscreen">T86 E288</episode-num>
   </programme>
   <programme start="20261015070000 -0300" stop="20261015090000 -0300" channel="ESPN 2">
-    <title lang="pt">ATP 1000: Xangai: Quartas de Final - Ao Vivo</title>
+    <title lang="pt">ATP 1000: Xangai: Alexander Zverev x Alex de Minaur - Ao Vivo</title>
     <desc lang="pt">É a série mais importante do tênis masculino depois dos quatro Grand Slams. Os principais tenistas do mundo se enfrentam em nove torneios ao longo do ano na Europa, Ásia e América do Norte.</desc>
-    <icon src="https://fh1i2j3k4l5mdgr.clarocdn.com.br/images_epg/420_236/0001558492_epg.jpg" />
+    <icon src="https://fh1i2j3k4l5mdgr.clarocdn.com.br/images_epg/420_236/0000597557_epg.jpg" />
     <category lang="pt">ESPORTES</category>
     <length units="seconds">7200</length>
   </programme>
@@ -78503,42 +78503,47 @@
       <value>[1]</value>
     </rating>
   </programme>
-  <programme start="20261015133000 -0300" stop="20261015153000 -0300" channel="ESPN 2">
-    <title lang="pt">Sportscenter</title>
-    <desc lang="pt">O telejornal esportivo mais assistido no mundo! Os principais fatos, imagens que marcaram o dia, temas fundamentais e polêmicos. Informação apurada e opinião transparente, sem abrir mão do bom humor.</desc>
-    <icon src="https://fh1i2j3k4l5mdgr.clarocdn.com.br/images_epg/420_236/00000000072890_epg.jpg" />
-    <category lang="pt">ESPORTES</category>
-    <length units="seconds">7200</length>
-    <episode-num system="xmltv_ns">82.287.</episode-num>
-    <episode-num system="onscreen">T83 E288</episode-num>
-  </programme>
-  <programme start="20261015153000 -0300" stop="20261015160000 -0300" channel="ESPN 2">
+  <programme start="20261015133000 -0300" stop="20261015140000 -0300" channel="ESPN 2">
     <title lang="pt">Show da Rodada do Italiano</title>
     <desc lang="pt">O melhor resumo dos gols da Série A italiana logo depois de cada partida.</desc>
     <icon src="https://fh1i2j3k4l5mdgr.clarocdn.com.br/images_epg/420_236/00000000081495_epg.jpg" />
     <category lang="pt">ESPORTES</category>
     <length units="seconds">1800</length>
-    <episode-num system="xmltv_ns">84.287.</episode-num>
-    <episode-num system="onscreen">T85 E288</episode-num>
+    <episode-num system="xmltv_ns">82.287.</episode-num>
+    <episode-num system="onscreen">T83 E288</episode-num>
   </programme>
-  <programme start="20261015160000 -0300" stop="20261015180000 -0300" channel="ESPN 2">
-    <title lang="pt">VT - ATP 1000: Xangai: Quartas de Final</title>
-    <desc lang="pt">É a série mais importante do tênis masculino depois dos quatro Grand Slams. Os principais tenistas do mundo se enfrentam em nove torneios ao longo do ano na Europa, Ásia e América do Norte.</desc>
-    <icon src="https://fh1i2j3k4l5mdgr.clarocdn.com.br/images_epg/420_236/0001558493_epg.jpg" />
-    <category lang="pt">ESPORTES</category>
-    <length units="seconds">7200</length>
-  </programme>
-  <programme start="20261015180000 -0300" stop="20261015210000 -0300" channel="ESPN 2">
-    <title lang="pt">MLB: Final da Liga Nacional - Ao Vivo</title>
+  <programme start="20261015140000 -0300" stop="20261015170000 -0300" channel="ESPN 2">
+    <title lang="pt">MLB: Tampa Bay Rays x Cleveland Guardians - Ao Vivo</title>
     <desc lang="pt">Acompanhe a reta final pelo título da MLB! Os melhores times das ligas americana e nacional se enfrentam pela vaga na World Series, a grande decisão.</desc>
-    <icon src="https://fh1i2j3k4l5mdgr.clarocdn.com.br/images_epg/420_236/0001039818_epg.jpg" />
+    <icon src="https://fh1i2j3k4l5mdgr.clarocdn.com.br/images_epg/420_236/0000597557_epg.jpg" />
     <category lang="pt">ESPORTES</category>
     <length units="seconds">10800</length>
   </programme>
-  <programme start="20261015210000 -0300" stop="20261016000000 -0300" channel="ESPN 2">
-    <title lang="pt">MLB: Final da Liga Americana - Ao Vivo</title>
+  <programme start="20261015170000 -0300" stop="20261015190000 -0300" channel="ESPN 2">
+    <title lang="pt">VT - Sarmiento x River Plate</title>
+    <desc lang="pt">Com muita paixão nas arquibancadas e disputas emocionantes dentro de campo, o futebol argentino reúne a combinação ideal para fãs da redonda.</desc>
+    <icon src="https://fh1i2j3k4l5mdgr.clarocdn.com.br/images_epg/420_236/0001551388_epg.jpg" />
+    <category lang="pt">ESPORTES</category>
+    <length units="seconds">7200</length>
+  </programme>
+  <programme start="20261015190000 -0300" stop="20261015210000 -0300" channel="ESPN 2">
+    <title lang="pt">VT - ATP 1000: Xangai: Alexander Zverev x Alex de Minaur</title>
+    <desc lang="pt">É a série mais importante do tênis masculino depois dos quatro Grand Slams. Os principais tenistas do mundo se enfrentam em nove torneios ao longo do ano na Europa, Ásia e América do Norte.</desc>
+    <icon src="https://fh1i2j3k4l5mdgr.clarocdn.com.br/images_epg/420_236/0000597557_epg.jpg" />
+    <category lang="pt">ESPORTES</category>
+    <length units="seconds">7200</length>
+  </programme>
+  <programme start="20261015210000 -0300" stop="20261015220000 -0300" channel="ESPN 2">
+    <title lang="pt">VT - NFL: Buffalo Bills x Los Angeles Rams</title>
+    <desc lang="pt">Touchdowns, viradas espetaculares, jogadas que entram para a história e os melhores atletas em campo. A NFL reúne a elite do futebol americano.</desc>
+    <icon src="https://fh1i2j3k4l5mdgr.clarocdn.com.br/images_epg/420_236/0001247030_epg.jpg" />
+    <category lang="pt">ESPORTES</category>
+    <length units="seconds">3600</length>
+  </programme>
+  <programme start="20261015220000 -0300" stop="20261016010000 -0300" channel="ESPN 2">
+    <title lang="pt">MLB: Milwaukee Brewers x Los Angeles Dodgers - Ao Vivo</title>
     <desc lang="pt">Os melhores jogadores do mundo protagonizam duelos épicos, e o time vencedor da World Series leva para casa o Commissioner's Trophy.</desc>
-    <icon src="https://fh1i2j3k4l5mdgr.clarocdn.com.br/images_epg/420_236/0001565670_epg.jpg" />
+    <icon src="https://fh1i2j3k4l5mdgr.clarocdn.com.br/images_epg/420_236/0000597557_epg.jpg" />
     <category lang="pt">ESPORTES</category>
     <length units="seconds">10800</length>
   </programme>
@@ -79086,11 +79091,13 @@
     <length units="seconds">9000</length>
   </programme>
   <programme start="20261015140000 -0300" stop="20261015160000 -0300" channel="ESPN 3">
-    <title lang="pt">VT - WNBA: New York Liberty x Atlanta Dream</title>
-    <desc lang="pt">A WNBA é a mais importante liga de basquete feminino. É disputada nos Estados Unidos desde 1997, sempre apresentando grande equilíbrio e competitividade. As melhores atletas do mundo estão aqui.</desc>
-    <icon src="https://fh1i2j3k4l5mdgr.clarocdn.com.br/images_epg/420_236/0001561790_epg.jpg" />
+    <title lang="pt">Sportscenter</title>
+    <desc lang="pt">O telejornal esportivo mais assistido no mundo! Os principais fatos, imagens que marcaram o dia, temas fundamentais e polêmicos. Informação apurada e opinião transparente, sem abrir mão do bom humor.</desc>
+    <icon src="https://fh1i2j3k4l5mdgr.clarocdn.com.br/images_epg/420_236/00000000072890_epg.jpg" />
     <category lang="pt">ESPORTES</category>
     <length units="seconds">7200</length>
+    <episode-num system="xmltv_ns">83.287.</episode-num>
+    <episode-num system="onscreen">T84 E288</episode-num>
   </programme>
   <programme start="20261015160000 -0300" stop="20261015180000 -0300" channel="ESPN 3">
     <title lang="pt">VT - Lincoln City x West Ham</title>
@@ -184280,7 +184287,7 @@
   <programme start="20261014104400 -0300" stop="20261014123000 -0300" channel="TNT HD">
     <title lang="pt">VT - Galatasaray x Barcelona</title>
     <desc lang="pt">Galatasaray e Barcelona jogam pela 2ª rodada da Fase de Liga da  UEFA Champions League, no Ali Sami Yen, em Istambul, Turquia.</desc>
-    <icon src="https://fh1i2j3k4l5mdgr.clarocdn.com.br/images_epg/420_236/0000598314_epg.jpg" />
+    <icon src="https://fh1i2j3k4l5mdgr.clarocdn.com.br/images_epg/420_236/0001571658_epg.jpg" />
     <category lang="pt">FILMES</category>
     <length units="seconds">6360</length>
   </programme>
@@ -254046,7 +254053,7 @@
   </programme>
   <programme start="20261014060000 -0300" stop="20261014083000 -0300" channel="Globo MG">
     <title lang="pt">Bom Dia Minas</title>
-    <desc lang="pt">Telejornal matutino com as primeiras notícias do dia de Belo Horizonte e do interior de Minas Gerais, trânsito e previsão do tempo.</desc>
+    <desc lang="pt">Liliana Junger, Sérgio Marques e Carlos Eduardo Alvim apresentam as primeiras noticias da manhã em todo o estado.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -254082,7 +254089,7 @@
   </programme>
   <programme start="20261014114500 -0300" stop="20261014130000 -0300" channel="Globo MG">
     <title lang="pt">MG1</title>
-    <desc lang="pt">Primeira edição do telejornal regional com as notícias do meio-dia em Minas Gerais, prestação de serviço, reportagens comunitárias e os destaques do estado.</desc>
+    <desc lang="pt">Aline Aguiar apresenta as noticias do dia e traz informações de serviço, saúde, cultura e cidadania.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -254154,7 +254161,7 @@
   </programme>
   <programme start="20261014184500 -0300" stop="20261014191500 -0300" channel="Globo MG">
     <title lang="pt">MG2</title>
-    <desc lang="pt">Segunda edição do telejornal regional trazendo o resumo completo dos principais acontecimentos do dia em Minas Gerais e reportagens aprofundadas.</desc>
+    <desc lang="pt">Mara Pinheiro resume os principais fatos do dia em Minas, além de reportagens e séries especiais.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -254262,7 +254269,7 @@
   </programme>
   <programme start="20261015060000 -0300" stop="20261015083000 -0300" channel="Globo MG">
     <title lang="pt">Bom Dia Minas</title>
-    <desc lang="pt">Telejornal matutino com as primeiras notícias do dia de Belo Horizonte e do interior de Minas Gerais, trânsito e previsão do tempo.</desc>
+    <desc lang="pt">Liliana Junger, Sérgio Marques e Carlos Eduardo Alvim apresentam as primeiras noticias da manhã em todo o estado.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -254298,7 +254305,7 @@
   </programme>
   <programme start="20261015114500 -0300" stop="20261015130000 -0300" channel="Globo MG">
     <title lang="pt">MG1</title>
-    <desc lang="pt">Primeira edição do telejornal regional com as notícias do meio-dia em Minas Gerais, prestação de serviço, reportagens comunitárias e os destaques do estado.</desc>
+    <desc lang="pt">Aline Aguiar apresenta as noticias do dia e traz informações de serviço, saúde, cultura e cidadania.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -254370,7 +254377,7 @@
   </programme>
   <programme start="20261015184500 -0300" stop="20261015191500 -0300" channel="Globo MG">
     <title lang="pt">MG2</title>
-    <desc lang="pt">Segunda edição do telejornal regional trazendo o resumo completo dos principais acontecimentos do dia em Minas Gerais e reportagens aprofundadas.</desc>
+    <desc lang="pt">Mara Pinheiro resume os principais fatos do dia em Minas, além de reportagens e séries especiais.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -254478,7 +254485,7 @@
   </programme>
   <programme start="20261016060000 -0300" stop="20261016083000 -0300" channel="Globo MG">
     <title lang="pt">Bom Dia Minas</title>
-    <desc lang="pt">Telejornal matutino com as primeiras notícias do dia de Belo Horizonte e do interior de Minas Gerais, trânsito e previsão do tempo.</desc>
+    <desc lang="pt">Liliana Junger, Sérgio Marques e Carlos Eduardo Alvim apresentam as primeiras noticias da manhã em todo o estado.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -254514,7 +254521,7 @@
   </programme>
   <programme start="20261016114500 -0300" stop="20261016130000 -0300" channel="Globo MG">
     <title lang="pt">MG1</title>
-    <desc lang="pt">Primeira edição do telejornal regional com as notícias do meio-dia em Minas Gerais, prestação de serviço, reportagens comunitárias e os destaques do estado.</desc>
+    <desc lang="pt">Aline Aguiar apresenta as noticias do dia e traz informações de serviço, saúde, cultura e cidadania.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -254586,7 +254593,7 @@
   </programme>
   <programme start="20261016184500 -0300" stop="20261016191500 -0300" channel="Globo MG">
     <title lang="pt">MG2</title>
-    <desc lang="pt">Segunda edição do telejornal regional trazendo o resumo completo dos principais acontecimentos do dia em Minas Gerais e reportagens aprofundadas.</desc>
+    <desc lang="pt">Mara Pinheiro resume os principais fatos do dia em Minas, além de reportagens e séries especiais.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -254694,7 +254701,7 @@
   </programme>
   <programme start="20261017060000 -0300" stop="20261017083000 -0300" channel="Globo MG">
     <title lang="pt">Bom Dia Minas</title>
-    <desc lang="pt">Telejornal matutino com as primeiras notícias do dia de Belo Horizonte e do interior de Minas Gerais, trânsito e previsão do tempo.</desc>
+    <desc lang="pt">Liliana Junger, Sérgio Marques e Carlos Eduardo Alvim apresentam as primeiras noticias da manhã em todo o estado.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -254730,7 +254737,7 @@
   </programme>
   <programme start="20261017114500 -0300" stop="20261017130000 -0300" channel="Globo MG">
     <title lang="pt">MG1</title>
-    <desc lang="pt">Primeira edição do telejornal regional com as notícias do meio-dia em Minas Gerais, prestação de serviço, reportagens comunitárias e os destaques do estado.</desc>
+    <desc lang="pt">Aline Aguiar apresenta as noticias do dia e traz informações de serviço, saúde, cultura e cidadania.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -254802,7 +254809,7 @@
   </programme>
   <programme start="20261017184500 -0300" stop="20261017191500 -0300" channel="Globo MG">
     <title lang="pt">MG2</title>
-    <desc lang="pt">Segunda edição do telejornal regional trazendo o resumo completo dos principais acontecimentos do dia em Minas Gerais e reportagens aprofundadas.</desc>
+    <desc lang="pt">Mara Pinheiro resume os principais fatos do dia em Minas, além de reportagens e séries especiais.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -254892,14 +254899,16 @@
   </programme>
   <programme start="20261014033000 -0300" stop="20261014070500 -0300" channel="Record MG">
     <title lang="pt">IURD BH</title>
+    <desc lang="pt">Programa diário da Igreja Universal do Reino de Deus.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
-    <category lang="pt">Jornalismo</category>
+    <category lang="pt">Variedades</category>
     <rating system="Brazil">
       <value>[L]</value>
     </rating>
   </programme>
   <programme start="20261014070500 -0300" stop="20261014084000 -0300" channel="Record MG">
     <title lang="pt">MG no Ar</title>
+    <desc lang="pt">Os principais destaques da noite, da madrugada e da manhã estão no MG no Ar. Apresentado por Eduardo Costa, um dos jornalistas de maior experiência e credibilidade no Estado.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -254926,6 +254935,7 @@
   </programme>
   <programme start="20261014113000 -0300" stop="20261014131000 -0300" channel="Record MG">
     <title lang="pt">Balanço Geral - MG</title>
+    <desc lang="pt">O programa, que transita entre o jornalismo e o entretenimento, mostra reportagens exclusivas, denúncias, prestação de serviço e assuntos que mexem com o dia a dia da comunidade.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -254934,6 +254944,7 @@
   </programme>
   <programme start="20261014131000 -0300" stop="20261014153000 -0300" channel="Record MG">
     <title lang="pt">Balanço Geral - MG</title>
+    <desc lang="pt">O programa, que transita entre o jornalismo e o entretenimento, mostra reportagens exclusivas, denúncias, prestação de serviço e assuntos que mexem com o dia a dia da comunidade.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -254960,6 +254971,7 @@
   </programme>
   <programme start="20261014180000 -0300" stop="20261014191000 -0300" channel="Record MG">
     <title lang="pt">Cidade Alerta Minas</title>
+    <desc lang="pt">Cidade Alerta estará ao lado do cidadão que necessita da atenção do poder público em questões cotidianas das cidades, além dos assuntos de maior repercussão no cenário da segurança.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -254968,6 +254980,7 @@
   </programme>
   <programme start="20261014191000 -0300" stop="20261014195000 -0300" channel="Record MG">
     <title lang="pt">MG Record</title>
+    <desc lang="pt">As principais notícias do dia, em um telejornal dinâmico, com informações ao vivo e exclusivas. Reportagens especiais e investigativas em uma cobertura ágil e diferenciada.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -255057,14 +255070,16 @@
   </programme>
   <programme start="20261015033000 -0300" stop="20261015070500 -0300" channel="Record MG">
     <title lang="pt">IURD BH</title>
+    <desc lang="pt">Programa diário da Igreja Universal do Reino de Deus.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
-    <category lang="pt">Jornalismo</category>
+    <category lang="pt">Variedades</category>
     <rating system="Brazil">
       <value>[L]</value>
     </rating>
   </programme>
   <programme start="20261015070500 -0300" stop="20261015084000 -0300" channel="Record MG">
     <title lang="pt">MG no Ar</title>
+    <desc lang="pt">Os principais destaques da noite, da madrugada e da manhã estão no MG no Ar. Apresentado por Eduardo Costa, um dos jornalistas de maior experiência e credibilidade no Estado.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -255091,6 +255106,7 @@
   </programme>
   <programme start="20261015113000 -0300" stop="20261015131000 -0300" channel="Record MG">
     <title lang="pt">Balanço Geral - MG</title>
+    <desc lang="pt">O programa, que transita entre o jornalismo e o entretenimento, mostra reportagens exclusivas, denúncias, prestação de serviço e assuntos que mexem com o dia a dia da comunidade.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -255099,6 +255115,7 @@
   </programme>
   <programme start="20261015131000 -0300" stop="20261015153000 -0300" channel="Record MG">
     <title lang="pt">Balanço Geral - MG</title>
+    <desc lang="pt">O programa, que transita entre o jornalismo e o entretenimento, mostra reportagens exclusivas, denúncias, prestação de serviço e assuntos que mexem com o dia a dia da comunidade.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -255125,6 +255142,7 @@
   </programme>
   <programme start="20261015180000 -0300" stop="20261015191000 -0300" channel="Record MG">
     <title lang="pt">Cidade Alerta Minas</title>
+    <desc lang="pt">Cidade Alerta estará ao lado do cidadão que necessita da atenção do poder público em questões cotidianas das cidades, além dos assuntos de maior repercussão no cenário da segurança.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -255133,6 +255151,7 @@
   </programme>
   <programme start="20261015191000 -0300" stop="20261015195000 -0300" channel="Record MG">
     <title lang="pt">MG Record</title>
+    <desc lang="pt">As principais notícias do dia, em um telejornal dinâmico, com informações ao vivo e exclusivas. Reportagens especiais e investigativas em uma cobertura ágil e diferenciada.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -255222,14 +255241,16 @@
   </programme>
   <programme start="20261016033000 -0300" stop="20261016070500 -0300" channel="Record MG">
     <title lang="pt">IURD BH</title>
+    <desc lang="pt">Programa diário da Igreja Universal do Reino de Deus.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
-    <category lang="pt">Jornalismo</category>
+    <category lang="pt">Variedades</category>
     <rating system="Brazil">
       <value>[L]</value>
     </rating>
   </programme>
   <programme start="20261016070500 -0300" stop="20261016084000 -0300" channel="Record MG">
     <title lang="pt">MG no Ar</title>
+    <desc lang="pt">Os principais destaques da noite, da madrugada e da manhã estão no MG no Ar. Apresentado por Eduardo Costa, um dos jornalistas de maior experiência e credibilidade no Estado.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -255256,6 +255277,7 @@
   </programme>
   <programme start="20261016113000 -0300" stop="20261016131000 -0300" channel="Record MG">
     <title lang="pt">Balanço Geral - MG</title>
+    <desc lang="pt">O programa, que transita entre o jornalismo e o entretenimento, mostra reportagens exclusivas, denúncias, prestação de serviço e assuntos que mexem com o dia a dia da comunidade.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -255264,6 +255286,7 @@
   </programme>
   <programme start="20261016131000 -0300" stop="20261016153000 -0300" channel="Record MG">
     <title lang="pt">Balanço Geral - MG</title>
+    <desc lang="pt">O programa, que transita entre o jornalismo e o entretenimento, mostra reportagens exclusivas, denúncias, prestação de serviço e assuntos que mexem com o dia a dia da comunidade.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -255290,6 +255313,7 @@
   </programme>
   <programme start="20261016180000 -0300" stop="20261016191000 -0300" channel="Record MG">
     <title lang="pt">Cidade Alerta Minas</title>
+    <desc lang="pt">Cidade Alerta estará ao lado do cidadão que necessita da atenção do poder público em questões cotidianas das cidades, além dos assuntos de maior repercussão no cenário da segurança.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -255298,6 +255322,7 @@
   </programme>
   <programme start="20261016191000 -0300" stop="20261016195000 -0300" channel="Record MG">
     <title lang="pt">MG Record</title>
+    <desc lang="pt">As principais notícias do dia, em um telejornal dinâmico, com informações ao vivo e exclusivas. Reportagens especiais e investigativas em uma cobertura ágil e diferenciada.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -255387,14 +255412,16 @@
   </programme>
   <programme start="20261017033000 -0300" stop="20261017070500 -0300" channel="Record MG">
     <title lang="pt">IURD BH</title>
+    <desc lang="pt">Programa diário da Igreja Universal do Reino de Deus.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
-    <category lang="pt">Jornalismo</category>
+    <category lang="pt">Variedades</category>
     <rating system="Brazil">
       <value>[L]</value>
     </rating>
   </programme>
   <programme start="20261017070500 -0300" stop="20261017084000 -0300" channel="Record MG">
     <title lang="pt">MG no Ar</title>
+    <desc lang="pt">Os principais destaques da noite, da madrugada e da manhã estão no MG no Ar. Apresentado por Eduardo Costa, um dos jornalistas de maior experiência e credibilidade no Estado.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -255421,6 +255448,7 @@
   </programme>
   <programme start="20261017113000 -0300" stop="20261017131000 -0300" channel="Record MG">
     <title lang="pt">Balanço Geral - MG</title>
+    <desc lang="pt">O programa, que transita entre o jornalismo e o entretenimento, mostra reportagens exclusivas, denúncias, prestação de serviço e assuntos que mexem com o dia a dia da comunidade.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -255429,6 +255457,7 @@
   </programme>
   <programme start="20261017131000 -0300" stop="20261017153000 -0300" channel="Record MG">
     <title lang="pt">Balanço Geral - MG</title>
+    <desc lang="pt">O programa, que transita entre o jornalismo e o entretenimento, mostra reportagens exclusivas, denúncias, prestação de serviço e assuntos que mexem com o dia a dia da comunidade.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -255455,6 +255484,7 @@
   </programme>
   <programme start="20261017180000 -0300" stop="20261017191000 -0300" channel="Record MG">
     <title lang="pt">Cidade Alerta Minas</title>
+    <desc lang="pt">Cidade Alerta estará ao lado do cidadão que necessita da atenção do poder público em questões cotidianas das cidades, além dos assuntos de maior repercussão no cenário da segurança.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -255463,6 +255493,7 @@
   </programme>
   <programme start="20261017191000 -0300" stop="20261017195000 -0300" channel="Record MG">
     <title lang="pt">MG Record</title>
+    <desc lang="pt">As principais notícias do dia, em um telejornal dinâmico, com informações ao vivo e exclusivas. Reportagens especiais e investigativas em uma cobertura ágil e diferenciada.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -255570,15 +255601,16 @@
   </programme>
   <programme start="20261014110000 -0300" stop="20261014114500 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Agora</title>
-    <desc lang="pt">Noticiário dinâmico e ao vivo com os fatos da tarde e a prestação de serviços na TV Alterosa / SBT em Minas Gerais.</desc>
+    <desc lang="pt">Álvaro Damião comanda ao vivo o Alterosa Agora um programa jornalístico e de entretenimento que traz todas as notícias do momento.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
-      <value>[10]</value>
+      <value>[L]</value>
     </rating>
   </programme>
   <programme start="20261014114500 -0300" stop="20261014124500 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Esportes</title>
+    <desc lang="pt">O Alterosa Esporte reúne todas as torcidas de Minas e tem a cobertura mais completa do cenário esportivo mineiro.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -255587,11 +255619,11 @@
   </programme>
   <programme start="20261014124500 -0300" stop="20261014134500 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Alerta</title>
-    <desc lang="pt">Telejornal tradicional da TV Alterosa trazendo os fatos policiais e as notícias mais importantes das cidades mineiras com agilidade e compromisso.</desc>
+    <desc lang="pt">O Alterosa Alerta com Stanley Gusman é o programa que está mais perto do povo.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
-      <value>[12]</value>
+      <value>[L]</value>
     </rating>
   </programme>
   <programme start="20261014134500 -0300" stop="20261014143000 -0300" channel="SBT MG">
@@ -255640,7 +255672,7 @@
   </programme>
   <programme start="20261014184500 -0300" stop="20261014191500 -0300" channel="SBT MG">
     <title lang="pt">Jornal da Alterosa</title>
-    <desc lang="pt">O principal telejornal noturno da TV Alterosa, trazendo um resumo aprofundado dos acontecimentos políticos, econômicos e sociais de Minas Gerais.</desc>
+    <desc lang="pt">O Jornal da Alterosa ocupa o horário nobre da TV, falando diretamente às cidades e regiões do Estado.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -255748,15 +255780,16 @@
   </programme>
   <programme start="20261015110000 -0300" stop="20261015114500 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Agora</title>
-    <desc lang="pt">Noticiário dinâmico e ao vivo com os fatos da tarde e a prestação de serviços na TV Alterosa / SBT em Minas Gerais.</desc>
+    <desc lang="pt">Álvaro Damião comanda ao vivo o Alterosa Agora um programa jornalístico e de entretenimento que traz todas as notícias do momento.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
-      <value>[10]</value>
+      <value>[L]</value>
     </rating>
   </programme>
   <programme start="20261015114500 -0300" stop="20261015124500 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Esportes</title>
+    <desc lang="pt">O Alterosa Esporte reúne todas as torcidas de Minas e tem a cobertura mais completa do cenário esportivo mineiro.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -255765,11 +255798,11 @@
   </programme>
   <programme start="20261015124500 -0300" stop="20261015134500 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Alerta</title>
-    <desc lang="pt">Telejornal tradicional da TV Alterosa trazendo os fatos policiais e as notícias mais importantes das cidades mineiras com agilidade e compromisso.</desc>
+    <desc lang="pt">O Alterosa Alerta com Stanley Gusman é o programa que está mais perto do povo.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
-      <value>[12]</value>
+      <value>[L]</value>
     </rating>
   </programme>
   <programme start="20261015134500 -0300" stop="20261015143000 -0300" channel="SBT MG">
@@ -255818,7 +255851,7 @@
   </programme>
   <programme start="20261015184500 -0300" stop="20261015191500 -0300" channel="SBT MG">
     <title lang="pt">Jornal da Alterosa</title>
-    <desc lang="pt">O principal telejornal noturno da TV Alterosa, trazendo um resumo aprofundado dos acontecimentos políticos, econômicos e sociais de Minas Gerais.</desc>
+    <desc lang="pt">O Jornal da Alterosa ocupa o horário nobre da TV, falando diretamente às cidades e regiões do Estado.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -255926,15 +255959,16 @@
   </programme>
   <programme start="20261016110000 -0300" stop="20261016114500 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Agora</title>
-    <desc lang="pt">Noticiário dinâmico e ao vivo com os fatos da tarde e a prestação de serviços na TV Alterosa / SBT em Minas Gerais.</desc>
+    <desc lang="pt">Álvaro Damião comanda ao vivo o Alterosa Agora um programa jornalístico e de entretenimento que traz todas as notícias do momento.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
-      <value>[10]</value>
+      <value>[L]</value>
     </rating>
   </programme>
   <programme start="20261016114500 -0300" stop="20261016124500 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Esportes</title>
+    <desc lang="pt">O Alterosa Esporte reúne todas as torcidas de Minas e tem a cobertura mais completa do cenário esportivo mineiro.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -255943,11 +255977,11 @@
   </programme>
   <programme start="20261016124500 -0300" stop="20261016134500 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Alerta</title>
-    <desc lang="pt">Telejornal tradicional da TV Alterosa trazendo os fatos policiais e as notícias mais importantes das cidades mineiras com agilidade e compromisso.</desc>
+    <desc lang="pt">O Alterosa Alerta com Stanley Gusman é o programa que está mais perto do povo.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
-      <value>[12]</value>
+      <value>[L]</value>
     </rating>
   </programme>
   <programme start="20261016134500 -0300" stop="20261016143000 -0300" channel="SBT MG">
@@ -255996,7 +256030,7 @@
   </programme>
   <programme start="20261016184500 -0300" stop="20261016191500 -0300" channel="SBT MG">
     <title lang="pt">Jornal da Alterosa</title>
-    <desc lang="pt">O principal telejornal noturno da TV Alterosa, trazendo um resumo aprofundado dos acontecimentos políticos, econômicos e sociais de Minas Gerais.</desc>
+    <desc lang="pt">O Jornal da Alterosa ocupa o horário nobre da TV, falando diretamente às cidades e regiões do Estado.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -256104,15 +256138,16 @@
   </programme>
   <programme start="20261017110000 -0300" stop="20261017114500 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Agora</title>
-    <desc lang="pt">Noticiário dinâmico e ao vivo com os fatos da tarde e a prestação de serviços na TV Alterosa / SBT em Minas Gerais.</desc>
+    <desc lang="pt">Álvaro Damião comanda ao vivo o Alterosa Agora um programa jornalístico e de entretenimento que traz todas as notícias do momento.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
-      <value>[10]</value>
+      <value>[L]</value>
     </rating>
   </programme>
   <programme start="20261017114500 -0300" stop="20261017124500 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Esportes</title>
+    <desc lang="pt">O Alterosa Esporte reúne todas as torcidas de Minas e tem a cobertura mais completa do cenário esportivo mineiro.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -256121,11 +256156,11 @@
   </programme>
   <programme start="20261017124500 -0300" stop="20261017134500 -0300" channel="SBT MG">
     <title lang="pt">Alterosa Alerta</title>
-    <desc lang="pt">Telejornal tradicional da TV Alterosa trazendo os fatos policiais e as notícias mais importantes das cidades mineiras com agilidade e compromisso.</desc>
+    <desc lang="pt">O Alterosa Alerta com Stanley Gusman é o programa que está mais perto do povo.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
-      <value>[12]</value>
+      <value>[L]</value>
     </rating>
   </programme>
   <programme start="20261017134500 -0300" stop="20261017143000 -0300" channel="SBT MG">
@@ -256174,7 +256209,7 @@
   </programme>
   <programme start="20261017184500 -0300" stop="20261017191500 -0300" channel="SBT MG">
     <title lang="pt">Jornal da Alterosa</title>
-    <desc lang="pt">O principal telejornal noturno da TV Alterosa, trazendo um resumo aprofundado dos acontecimentos políticos, econômicos e sociais de Minas Gerais.</desc>
+    <desc lang="pt">O Jornal da Alterosa ocupa o horário nobre da TV, falando diretamente às cidades e regiões do Estado.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -256300,6 +256335,7 @@
   </programme>
   <programme start="20261014120000 -0300" stop="20261014131000 -0300" channel="Band MG">
     <title lang="pt">Band Cidade</title>
+    <desc lang="pt">O programa mostra as mais variadas informações sobre saúde, política, educação, denúncias e acontecimentos, que fazem parte do dia-a-dia da região.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -256335,6 +256371,7 @@
   </programme>
   <programme start="20261014173000 -0300" stop="20261014184000 -0300" channel="Band MG">
     <title lang="pt">Brasil Urgente Minas</title>
+    <desc lang="pt">Os acontecimentos do dia, com foco na segurança, no transporte, na saúde, no trabalho e no comportamento do povo Brasileiro.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -256459,6 +256496,7 @@
   </programme>
   <programme start="20261015120000 -0300" stop="20261015131000 -0300" channel="Band MG">
     <title lang="pt">Band Cidade</title>
+    <desc lang="pt">O programa mostra as mais variadas informações sobre saúde, política, educação, denúncias e acontecimentos, que fazem parte do dia-a-dia da região.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -256494,6 +256532,7 @@
   </programme>
   <programme start="20261015173000 -0300" stop="20261015184000 -0300" channel="Band MG">
     <title lang="pt">Brasil Urgente Minas</title>
+    <desc lang="pt">Os acontecimentos do dia, com foco na segurança, no transporte, na saúde, no trabalho e no comportamento do povo Brasileiro.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -256618,6 +256657,7 @@
   </programme>
   <programme start="20261016120000 -0300" stop="20261016131000 -0300" channel="Band MG">
     <title lang="pt">Band Cidade</title>
+    <desc lang="pt">O programa mostra as mais variadas informações sobre saúde, política, educação, denúncias e acontecimentos, que fazem parte do dia-a-dia da região.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -256653,6 +256693,7 @@
   </programme>
   <programme start="20261016173000 -0300" stop="20261016184000 -0300" channel="Band MG">
     <title lang="pt">Brasil Urgente Minas</title>
+    <desc lang="pt">Os acontecimentos do dia, com foco na segurança, no transporte, na saúde, no trabalho e no comportamento do povo Brasileiro.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -256777,6 +256818,7 @@
   </programme>
   <programme start="20261017120000 -0300" stop="20261017131000 -0300" channel="Band MG">
     <title lang="pt">Band Cidade</title>
+    <desc lang="pt">O programa mostra as mais variadas informações sobre saúde, política, educação, denúncias e acontecimentos, que fazem parte do dia-a-dia da região.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">
@@ -256812,6 +256854,7 @@
   </programme>
   <programme start="20261017173000 -0300" stop="20261017184000 -0300" channel="Band MG">
     <title lang="pt">Brasil Urgente Minas</title>
+    <desc lang="pt">Os acontecimentos do dia, com foco na segurança, no transporte, na saúde, no trabalho e no comportamento do povo Brasileiro.</desc>
     <icon src="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band.png" />
     <category lang="pt">Jornalismo</category>
     <rating system="Brazil">

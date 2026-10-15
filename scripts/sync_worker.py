@@ -83,65 +83,110 @@ LOCAL_EPG_CONFIGS = [
     }
 ]
 
-# Sinopses e categorias curadas para os telejornais e programas locais mineiros
+# Sinopses e categorias oficiais extraídas diretamente das páginas de detalhes da Claro tv+
 REGIONAL_SHOWS_METADATA = {
-    "bom dia minas": {
-        "desc": "Telejornal matutino com as primeiras notícias do dia de Belo Horizonte e do interior de Minas Gerais, trânsito e previsão do tempo.",
-        "category": "Jornalismo",
-        "rating": "L"
-    },
     "mg1": {
-        "desc": "Primeira edição do telejornal regional com as notícias do meio-dia em Minas Gerais, prestação de serviço, reportagens comunitárias e os destaques do estado.",
+        "desc": "Aline Aguiar apresenta as noticias do dia e traz informações de serviço, saúde, cultura e cidadania.",
         "category": "Jornalismo",
         "rating": "L"
     },
     "mg2": {
-        "desc": "Segunda edição do telejornal regional trazendo o resumo completo dos principais acontecimentos do dia em Minas Gerais e reportagens aprofundadas.",
+        "desc": "Mara Pinheiro resume os principais fatos do dia em Minas, além de reportagens e séries especiais.",
+        "category": "Jornalismo",
+        "rating": "L"
+    },
+    "bom dia minas": {
+        "desc": "Liliana Junger, Sérgio Marques e Carlos Eduardo Alvim apresentam as primeiras noticias da manhã em todo o estado.",
         "category": "Jornalismo",
         "rating": "L"
     },
     "globo esporte": {
-        "desc": "O dia a dia dos principais clubes mineiros (Atlético-MG, Cruzeiro e América-MG), gols da rodada, tabelas e reportagens sobre o esporte de Minas.",
-        "category": "Esportes",
+        "desc": "Maurício Paulucci apresenta as notícias do esporte em Minas Gerais.",
+        "category": "Jornalismo",
+        "rating": "L"
+    },
+    "mg no ar": {
+        "desc": "Os principais destaques da noite, da madrugada e da manhã estão no MG no Ar. Apresentado por Eduardo Costa, um dos jornalistas de maior experiência e credibilidade no Estado.",
+        "category": "Jornalismo",
+        "rating": "L"
+    },
+    "balanço geral - mg": {
+        "desc": "O programa, que transita entre o jornalismo e o entretenimento, mostra reportagens exclusivas, denúncias, prestação de serviço e assuntos que mexem com o dia a dia da comunidade.",
+        "category": "Jornalismo",
         "rating": "L"
     },
     "balanço geral mg": {
-        "desc": "Jornalismo dinâmico e popular com os principais acontecimentos de Minas Gerais, notícias policiais, prestação de serviços e entretenimento sob o comando da Record Minas.",
+        "desc": "O programa, que transita entre o jornalismo e o entretenimento, mostra reportagens exclusivas, denúncias, prestação de serviço e assuntos que mexem com o dia a dia da comunidade.",
         "category": "Jornalismo",
-        "rating": "10"
+        "rating": "L"
     },
     "balanco geral mg": {
-        "desc": "Jornalismo dinâmico e popular com os principais acontecimentos de Minas Gerais, notícias policiais, prestação de serviços e entretenimento sob o comando da Record Minas.",
+        "desc": "O programa, que transita entre o jornalismo e o entretenimento, mostra reportagens exclusivas, denúncias, prestação de serviço e assuntos que mexem com o dia a dia da comunidade.",
         "category": "Jornalismo",
-        "rating": "10"
+        "rating": "L"
     },
-    "alterosa alerta": {
-        "desc": "Telejornal tradicional da TV Alterosa trazendo os fatos policiais e as notícias mais importantes das cidades mineiras com agilidade e compromisso.",
+    "balanco geral - mg": {
+        "desc": "O programa, que transita entre o jornalismo e o entretenimento, mostra reportagens exclusivas, denúncias, prestação de serviço e assuntos que mexem com o dia a dia da comunidade.",
         "category": "Jornalismo",
-        "rating": "12"
+        "rating": "L"
+    },
+    "cidade alerta minas": {
+        "desc": "Cidade Alerta estará ao lado do cidadão que necessita da atenção do poder público em questões cotidianas das cidades, além dos assuntos de maior repercussão no cenário da segurança.",
+        "category": "Jornalismo",
+        "rating": "L"
+    },
+    "mg record": {
+        "desc": "As principais notícias do dia, em um telejornal dinâmico, com informações ao vivo e exclusivas. Reportagens especiais e investigativas em uma cobertura ágil e diferenciada.",
+        "category": "Jornalismo",
+        "rating": "L"
     },
     "alterosa agora": {
-        "desc": "Noticiário dinâmico e ao vivo com os fatos da tarde e a prestação de serviços na TV Alterosa / SBT em Minas Gerais.",
+        "desc": "Álvaro Damião comanda ao vivo o Alterosa Agora um programa jornalístico e de entretenimento que traz todas as notícias do momento.",
         "category": "Jornalismo",
-        "rating": "10"
+        "rating": "L"
     },
-    "donos da bola mg": {
-        "desc": "Debates apaixonados, análises polêmicas e os bastidores do futebol mineiro na Band Minas com foco em Galo, Raposa e Coelho.",
-        "category": "Esportes",
+    "alterosa esportes": {
+        "desc": "O Alterosa Esporte reúne todas as torcidas de Minas e tem a cobertura mais completa do cenário esportivo mineiro.",
+        "category": "Jornalismo",
+        "rating": "L"
+    },
+    "alterosa esporte": {
+        "desc": "O Alterosa Esporte reúne todas as torcidas de Minas e tem a cobertura mais completa do cenário esportivo mineiro.",
+        "category": "Jornalismo",
+        "rating": "L"
+    },
+    "alterosa alerta": {
+        "desc": "O Alterosa Alerta com Stanley Gusman é o programa que está mais perto do povo.",
+        "category": "Jornalismo",
+        "rating": "L"
+    },
+    "jornal da alterosa": {
+        "desc": "O Jornal da Alterosa ocupa o horário nobre da TV, falando diretamente às cidades e regiões do Estado.",
+        "category": "Jornalismo",
+        "rating": "L"
+    },
+    "band cidade": {
+        "desc": "O programa mostra as mais variadas informações sobre saúde, política, educação, denúncias e acontecimentos, que fazem parte do dia-a-dia da região.",
+        "category": "Jornalismo",
+        "rating": "L"
+    },
+    "os donos da bola": {
+        "desc": "O programa de debate sobre o mundo do futebol mais bem humorado da TV.",
+        "category": "Jornalismo",
         "rating": "L"
     },
     "os donos da bola mg": {
-        "desc": "Debates apaixonados, análises polêmicas e os bastidores do futebol mineiro na Band Minas com foco em Galo, Raposa e Coelho.",
-        "category": "Esportes",
+        "desc": "O programa de debate sobre o mundo do futebol mais bem humorado da TV.",
+        "category": "Jornalismo",
+        "rating": "L"
+    },
+    "brasil urgente minas": {
+        "desc": "Os acontecimentos do dia, com foco na segurança, no transporte, na saúde, no trabalho e no comportamento do povo Brasileiro.",
+        "category": "Jornalismo",
         "rating": "L"
     },
     "brasil urgente mg": {
-        "desc": "Cobertura jornalística e policial dos principais acontecimentos de Minas Gerais com foco na segurança pública na Band Minas.",
-        "category": "Jornalismo",
-        "rating": "12"
-    },
-    "jornal da alterosa": {
-        "desc": "O principal telejornal noturno da TV Alterosa, trazendo um resumo aprofundado dos acontecimentos políticos, econômicos e sociais de Minas Gerais.",
+        "desc": "Os acontecimentos do dia, com foco na segurança, no transporte, na saúde, no trabalho e no comportamento do povo Brasileiro.",
         "category": "Jornalismo",
         "rating": "L"
     }
@@ -380,7 +425,11 @@ def fetch_regional_html_data(session: requests.Session, tz, program_info_lookup:
                     if not title_elem:
                         continue
                     title = title_elem.text.strip()
-                    base_items.append((st_sec, et_sec, title))
+                    a_elem = item.find('a', href=True)
+                    detail_link = a_elem['href'] if a_elem else None
+                    if detail_link and not detail_link.startswith('http'):
+                        detail_link = 'https://www.claro.com.br' + detail_link
+                    base_items.append((st_sec, et_sec, title, detail_link))
                 except Exception:
                     continue
 
@@ -389,9 +438,39 @@ def fetch_regional_html_data(session: requests.Session, tz, program_info_lookup:
             # Projeta os dias para a frente (dia 0 = hoje, dia 1..3 projetados)
             for day_offset in range(days_ahead):
                 shift = day_offset * 86400.0
-                for st_sec, et_sec, title in base_items:
+                for st_sec, et_sec, title, detail_link in base_items:
                     t_norm = title.lower()
-                    info = program_info_lookup.get(t_norm) or REGIONAL_SHOWS_METADATA.get(t_norm) or {}
+                    info = program_info_lookup.get(t_norm) or REGIONAL_SHOWS_METADATA.get(t_norm)
+                    if (not info or not info.get('desc')) and detail_link:
+                        try:
+                            d_resp = session.get(detail_link, headers=HEADERS, timeout=5)
+                            if d_resp.status_code == 200:
+                                d_soup = BeautifulSoup(d_resp.text, 'html.parser')
+                                box = d_soup.find('div', class_='box-programDetails')
+                                if box:
+                                    p_desc = box.find('p', class_='mdn-Text')
+                                    desc_txt = p_desc.text.strip() if p_desc else ''
+                                    b_info = box.find('div', class_='breadcrumb-info')
+                                    spans = [sp.text.strip() for sp in b_info.find_all('span') if sp.text.strip()] if b_info else []
+                                    cat_val = 'Jornalismo'
+                                    rat_val = 'L'
+                                    for sp_item in spans:
+                                        if any(g in sp_item.lower() for g in ['jornalismo', 'esporte', 'infantil', 'novela', 'filme', 'série', 'variedades', 'religioso']):
+                                            cat_val = sp_item
+                                        if 'anos' in sp_item.lower():
+                                            r_num = sp_item.replace(' anos', '').strip()
+                                            rat_val = 'L' if r_num in ['0', '5'] else r_num
+                                    info = {
+                                        'desc': desc_txt,
+                                        'category': cat_val,
+                                        'rating': rat_val
+                                    }
+                                    REGIONAL_SHOWS_METADATA[t_norm] = info
+                        except Exception:
+                            pass
+
+                    if not info:
+                        info = {}
 
                     regional_programmes[c_id].append({
                         'startTime': int(st_sec + shift),
