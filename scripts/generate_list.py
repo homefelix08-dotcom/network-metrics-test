@@ -5,9 +5,10 @@ import urllib.request
 import urllib.parse
 import cloudscraper
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_WORKER_URL = "https://network-metrics-test.homefelix08.workers.dev/play"
-REPO_PATH = "src/repo.js"
-OUTPUT_PATH = "export_data.txt"
+REPO_PATH = os.path.join(BASE_DIR, "src", "repo.js")
+OUTPUT_PATH = os.path.join(BASE_DIR, "export_data.txt")
 
 EPG_URL = "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/local_meta.xml"
 
@@ -24,7 +25,7 @@ def load_repo_js():
         execution_code = repo_content.replace("export default", "const data =")
         execution_code += "\nconsole.log(JSON.stringify(data));"
 
-        temp_filename = "temp_bridge.cjs"
+        temp_filename = os.path.join(BASE_DIR, "temp_bridge.cjs")
         with open(temp_filename, "w", encoding="utf-8") as f:
             f.write(execution_code)
 

@@ -712,7 +712,7 @@ export default [
     },
     {
         "nome": "Tooncast",
-        "tvg_id": "",
+        "tvg_id": "Tooncast",
         "url": `${siteBaseUrl}tooncast/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tooncast.png",
         "categoria": "Infantis",
@@ -724,7 +724,7 @@ export default [
     /* ESPORTES */
     {
         "nome": "Apple TV",
-        "tvg_id": "",
+        "tvg_id": "Apple TV",
         "url": `${siteBaseUrl}appletv01/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/apple_tv.png",
         "categoria": "Esportes",
@@ -743,7 +743,7 @@ export default [
     },
     {
         "nome": "Canal Goat",
-        "tvg_id": "",
+        "tvg_id": "Canal Goat",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/canal_goat.png",
         "categoria": "Esportes",
         "provedor": "api",
@@ -762,7 +762,7 @@ export default [
     },
     {
         "nome": "Dazn",
-        "tvg_id": "",
+        "tvg_id": "Dazn",
         "url": `${siteBaseUrl}dazn/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/dazn.png",
         "categoria": "Esportes",
@@ -842,7 +842,7 @@ export default [
     },
     {
         "nome": "HBO Max",
-        "tvg_id": "",
+        "tvg_id": "HBO Max",
         "url": `${siteBaseUrl}max/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max.png",
         "categoria": "Esportes",
@@ -852,7 +852,7 @@ export default [
     },
     {
         "nome": "HBO Max 2",
-        "tvg_id": "",
+        "tvg_id": "HBO Max 2",
         "url": `${siteBaseUrl}max02/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_2.png",
         "categoria": "Esportes",
@@ -862,7 +862,7 @@ export default [
     },
     {
         "nome": "HBO Max 3",
-        "tvg_id": "",
+        "tvg_id": "HBO Max 3",
         "url": `${siteBaseUrl}max03/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_3.png",
         "categoria": "Esportes",
@@ -872,7 +872,7 @@ export default [
     },
     {
         "nome": "HBO Max 4",
-        "tvg_id": "",
+        "tvg_id": "HBO Max 4",
         "url": `${siteBaseUrl}max04/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_4.png",
         "categoria": "Esportes",
@@ -882,7 +882,7 @@ export default [
     },
     {
         "nome": "HBO Max 5",
-        "tvg_id": "",
+        "tvg_id": "HBO Max 5",
         "url": `${siteBaseUrl}max05/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_5.png",
         "categoria": "Esportes",
@@ -891,7 +891,7 @@ export default [
     },
     {
         "nome": "HBO Max 6",
-        "tvg_id": "",
+        "tvg_id": "HBO Max 6",
         "url": `${siteBaseUrl}max06/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/hbo_max_6.png",
         "categoria": "Esportes",
@@ -900,7 +900,7 @@ export default [
     },
     {
         "nome": "Paramount+",
-        "tvg_id": "",
+        "tvg_id": "Paramount+ Eventos",
         "url": `${siteBaseUrl}paramountplus/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/paramount.png",
         "categoria": "Esportes",
@@ -1007,7 +1007,7 @@ export default [
     },
     {
         "nome": "Premiere 8",
-        "tvg_id": "",
+        "tvg_id": "Premiere 8",
         "url": `${siteBaseUrl}premiere8/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/premiere_8.png",
         "categoria": "Esportes",
@@ -1016,7 +1016,7 @@ export default [
     },
     {
         "nome": "Prime Video 1",
-        "tvg_id": "",
+        "tvg_id": "Prime Video 1",
         "url": `${siteBaseUrl}amazonprimevideo/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_1.png",
         "categoria": "Esportes",
@@ -1028,7 +1028,7 @@ export default [
     },
     {
         "nome": "Prime Video 2",
-        "tvg_id": "",
+        "tvg_id": "Prime Video 2",
         "url": `${siteBaseUrl}amazonprimevideo02/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_2.png",
         "categoria": "Esportes",
@@ -1040,7 +1040,7 @@ export default [
     },
     {
         "nome": "Prime Video 3",
-        "tvg_id": "",
+        "tvg_id": "Prime Video 3",
         "url": `${siteBaseUrl}amazonprimevideo03/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_3.png",
         "categoria": "Esportes",
@@ -1052,7 +1052,7 @@ export default [
     },
     {
         "nome": "Prime Video 4",
-        "tvg_id": "",
+        "tvg_id": "Prime Video 4",
         "url": `${siteBaseUrl}amazonprimevideo04/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_4.png",
         "categoria": "Esportes",
@@ -1061,7 +1061,7 @@ export default [
     },
     {
         "nome": "Prime Video 5",
-        "tvg_id": "",
+        "tvg_id": "Prime Video 5",
         "url": `${siteBaseUrl}amazonprimevideo05/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/amazon_prime_video_5.png",
         "categoria": "Esportes",
