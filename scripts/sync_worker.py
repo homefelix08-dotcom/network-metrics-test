@@ -1,6 +1,7 @@
 """
 Módulo responsável por:
-1. Geração e atualização do arquivo local_meta.xml (EPG local dos canais regionais).
+1. Geração e atualização automática do EPG completo (claro.xml e local_meta.xml)
+   consumindo a API oficial da Claro tv+ para todos os canais da lista.
 2. Resolução do novo domínio de CDN do provedor de canais (via redirecionamento de um canal de teste)
    e atualização automática dos cabeçalhos Referer em export_data.txt.
 3. Commit e push automáticos no repositório caso haja alterações.
@@ -11,18 +12,20 @@ import re
 import html
 import subprocess
 import urllib.parse
-from datetime import datetime
+from datetime import datetime, timedelta
+import time
+import xml.sax.saxutils
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
-from bs4 import BeautifulSoup
 import pytz
 
 # ==========================================
 # CONFIGURAÇÕES DE CAMINHOS
 # ==========================================
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUTPUT_XML_PATH = os.path.join(BASE_DIR, "local_meta.xml")
+OUTPUT_CLARO_XML = os.path.join(BASE_DIR, "claro.xml")
+OUTPUT_LOCAL_XML = os.path.join(BASE_DIR, "local_meta.xml")
 EXPORT_DATA_PATH = os.path.join(BASE_DIR, "export_data.txt")
 REPO_PATH = os.path.join(BASE_DIR, "src", "repo.js")
 
@@ -31,22 +34,25 @@ GIT_BOT_NAME = "Data Sync Bot"
 GIT_BOT_EMAIL = "bot@github.com"
 
 # ==========================================
-# CONFIGURAÇÕES DE REDE
+# CONFIGURAÇÕES DE REDE E API
 # ==========================================
 HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Accept': 'application/json, text/plain, */*'
 }
-TIMEOUT_SECONDS = 25
+TIMEOUT_SECONDS = 30
+CLARO_API_BASE_URL = "https://www.clarotvmais.com.br/avsclient/1.2/epg/livechannels"
+EPG_DAYS_AHEAD = 4  # Dia atual + 3 dias à frente (4 dias no total)
 
-# ==========================================
-# CONFIGURAÇÕES DO EPG LOCAL
-# ==========================================
-LOCAL_EPG_CONFIGS = [
-    {"id": "Globo MG", "name": "Globo MG", "url": "https://www.claro.com.br/tv-por-assinatura/programacao/grade/programa/globo-hd/23-2068"},
-    {"id": "Record MG", "name": "Record MG", "url": "https://www.claro.com.br/tv-por-assinatura/programacao/grade/programa/record-hd/23-2084"},
-    {"id": "SBT MG", "name": "TV Alterosa", "url": "https://www.claro.com.br/tv-por-assinatura/programacao/grade/programa/sbt-tv-alterosa/23-1949"},
-    {"id": "Band MG", "name": "Band", "url": "https://www.claro.com.br/tv-por-assinatura/programacao/grade/programa/band/23-408"}
-]
+# Mapeia nomes originais da API Claro para tvg_ids específicos da lista repo.js
+CHANNEL_ALIASES = {
+    'GLOBO SP': ['Globo MG'],
+    'BAND HD': ['Band MG'],
+    'SBT': ['SBT MG', 'SBT São Paulo'],
+    'RECORD HD': ['Record MG', 'RECORD - Sao Paulo'],
+    'REDE TV! HD': ['REDE TV! São Paulo'],
+    'GE TV HD': ['GE'],
+}
 
 
 def create_session() -> requests.Session:
@@ -64,71 +70,210 @@ def create_session() -> requests.Session:
     return session
 
 
+def escape_xml(text) -> str:
+    """Escapa caracteres especiais XML com segurança."""
+    if not text:
+        return ""
+    return xml.sax.saxutils.escape(str(text))
+
+
+def format_xmltv_date(ts: int, tz) -> str:
+    """Converte Unix timestamp para o formato de data padrão do XMLTV (YYYYMMDDHHMMSS +/-HHMM)."""
+    dt = datetime.fromtimestamp(ts, tz)
+    return dt.strftime("%Y%m%d%H%M%S %z")
+
+
 # ==========================================
-# 1. ATUALIZAÇÃO DO EPG LOCAL (local_meta.xml)
+# 1. ATUALIZAÇÃO DO EPG VIA API CLARO TV+
 # ==========================================
-def update_local_meta(session: requests.Session) -> bool:
-    """Coleta a grade dos canais regionais configurados e atualiza o arquivo local_meta.xml."""
-    print("=== [1/2] ATUALIZAÇÃO DO LOCAL_META.XML ===")
-    fuso_br = pytz.timezone('America/Sao_Paulo')
+def update_epg(session: requests.Session, days_ahead: int = EPG_DAYS_AHEAD) -> bool:
+    """
+    Coleta a grade de programação completa de todos os canais diretamente da API oficial da Claro tv+
+    e gera o arquivo XMLTV único (claro.xml e espelho local_meta.xml).
+    """
+    print(f"=== [1/2] ATUALIZAÇÃO DO EPG VIA API CLARO TV+ ({days_ahead} DIAS) ===")
+    start_time_total = time.time()
+    tz = pytz.timezone('America/Sao_Paulo')
+    now = datetime.now(tz)
+    start_of_today = now.replace(hour=0, minute=0, second=0, microsecond=0)
 
-    xml_channels = []
-    xml_programmes = []
-    total_blocos = 0
+    channels_dict = {}
+    programmes_by_channel = {}
 
-    for config in LOCAL_EPG_CONFIGS:
-        canal_id = config["id"]
-        canal_nome = config["name"]
-        url = config["url"]
+    for day_offset in range(days_ahead):
+        day_start = start_of_today + timedelta(days=day_offset)
+        day_end = day_start + timedelta(days=1)
+        start_ts = int(day_start.timestamp())
+        end_ts = int(day_end.timestamp())
 
-        print(f"  -> Coletando grade: {canal_nome} ({canal_id})...")
-        xml_channels.append(f'  <channel id="{canal_id}">\n    <display-name>{html.escape(canal_nome)}</display-name>\n  </channel>\n')
+        date_str = day_start.strftime("%d/%m/%Y")
+        print(f"  -> Coletando grade: {date_str} (start={start_ts}, end={end_ts})...")
+
+        url = f"{CLARO_API_BASE_URL}?types=&channelIds=&startTime={start_ts}&endTime={end_ts}&location=SAO%20PAULO,AMAZONAS&channel=PCTV"
 
         try:
-            resposta = session.get(url, headers=HEADERS, timeout=TIMEOUT_SECONDS)
-            if resposta.status_code != 200:
-                print(f"     [X] Erro HTTP {resposta.status_code}")
+            resp = session.get(url, headers=HEADERS, timeout=TIMEOUT_SECONDS)
+            if resp.status_code != 200:
+                print(f"     [X] Erro HTTP {resp.status_code} na API da Claro.")
                 continue
 
-            parsed_dom = BeautifulSoup(resposta.text, 'html.parser')
-            blocos_canal = 0
+            data = resp.json()
+            live_channels = data.get('response', {}).get('liveChannels', [])
+            print(f"     [OK] {len(live_channels)} canais recebidos da API.")
 
-            for bloco in parsed_dom.find_all('div', class_='cell-item'):
-                try:
-                    start_sec = int(bloco['data-start']) / 1000.0
-                    end_sec = int(bloco['data-end']) / 1000.0
-                    titulo_elem = bloco.find('p', class_='channel-program-item-title')
-                    if not titulo_elem:
-                        continue
-
-                    titulo = html.escape(titulo_elem.text.strip())
-                    str_inicio = datetime.fromtimestamp(start_sec, fuso_br).strftime('%Y%m%d%H%M%S %z')
-                    str_fim = datetime.fromtimestamp(end_sec, fuso_br).strftime('%Y%m%d%H%M%S %z')
-
-                    xml_programmes.append(
-                        f'  <programme start="{str_inicio}" stop="{str_fim}" channel="{canal_id}">\n'
-                        f'    <title lang="pt">{titulo}</title>\n'
-                        f'  </programme>\n'
-                    )
-                    blocos_canal += 1
-                except Exception:
+            for ch in live_channels:
+                ch_name = ch.get('name')
+                if not ch_name:
                     continue
 
-            total_blocos += blocos_canal
-            print(f"     [OK] {blocos_canal} programas coletados.")
-        except Exception as e:
-            print(f"     [X] Falha na requisição: {e}")
+                if ch_name not in channels_dict:
+                    channels_dict[ch_name] = {
+                        'name': ch_name,
+                        'logo': ch.get('logo') or ch.get('channelLogo'),
+                        'type': ch.get('type')
+                    }
+                    programmes_by_channel[ch_name] = []
 
-    if not xml_programmes:
-        print("[ALERTA] Nenhum programa foi coletado. O arquivo local_meta.xml não foi sobrescrito para preservar os dados existentes.\n")
+                schedules = ch.get('schedules', [])
+                programmes_by_channel[ch_name].extend(schedules)
+
+        except Exception as e:
+            print(f"     [X] Falha na requisição para o dia {date_str}: {e}")
+
+    total_programs = sum(len(p) for p in programmes_by_channel.values())
+    if not channels_dict or total_programs == 0:
+        print("[ALERTA] Nenhum dado de EPG foi coletado. Os arquivos XML existentes foram preservados.\n")
         return False
 
-    linhas = ['<?xml version="1.0" encoding="UTF-8"?>\n<tv>\n'] + xml_channels + xml_programmes + ['</tv>\n']
+    print(f"  -> Montando XMLTV completo ({len(channels_dict)} canais e {total_programs} programas brutos)...")
 
-    with open(OUTPUT_XML_PATH, 'w', encoding='utf-8') as f:
-        f.writelines(linhas)
+    xml_lines = ['<?xml version="1.0" encoding="utf-8"?>\n']
+    xml_lines.append(f'<tv generator-info-name="ClaroEPG - Network Metrics" generator-info-url="https://github.com/homefelix08-dotcom/network-metrics-test">\n')
 
-    print(f"[SUCESSO] local_meta.xml atualizado com sucesso em '{OUTPUT_XML_PATH}'. Total de {total_blocos} programas.\n")
+    # 1. Definições de Canais (<channel id="...">)
+    for ch_name, ch_data in sorted(channels_dict.items()):
+        xml_lines.append(f'  <channel id="{escape_xml(ch_name)}">\n')
+        xml_lines.append(f'    <display-name lang="pt">{escape_xml(ch_name)}</display-name>\n')
+        if ch_data.get('logo'):
+            xml_lines.append(f'    <icon src="{escape_xml(ch_data["logo"])}" />\n')
+        xml_lines.append(f'  </channel>\n')
+
+    # Adiciona canais alias para bater 100% com a lista repo.js
+    for orig_name, aliases in CHANNEL_ALIASES.items():
+        if orig_name in channels_dict:
+            orig_logo = channels_dict[orig_name].get('logo')
+            for alias in aliases:
+                xml_lines.append(f'  <channel id="{escape_xml(alias)}">\n')
+                xml_lines.append(f'    <display-name lang="pt">{escape_xml(alias)}</display-name>\n')
+                if orig_logo:
+                    xml_lines.append(f'    <icon src="{escape_xml(orig_logo)}" />\n')
+                xml_lines.append(f'  </channel>\n')
+
+    # 2. Definições de Programas (<programme start="..." stop="..." channel="...">)
+    total_written_programmes = 0
+
+    for ch_name, progs in programmes_by_channel.items():
+        # Remove duplicatas baseadas no intervalo de tempo
+        seen_intervals = set()
+        unique_progs = []
+        for p in progs:
+            st = p.get('startTime')
+            et = p.get('endTime')
+            if not st or not et:
+                continue
+            interval_key = (st, et)
+            if interval_key not in seen_intervals:
+                seen_intervals.add(interval_key)
+                unique_progs.append(p)
+
+        # Determina todos os IDs de canais alvos (canal original + aliases)
+        target_channel_ids = [ch_name]
+        if ch_name in CHANNEL_ALIASES:
+            target_channel_ids.extend(CHANNEL_ALIASES[ch_name])
+
+        for target_ch in target_channel_ids:
+            for p in unique_progs:
+                st = p.get('startTime')
+                et = p.get('endTime')
+                title = p.get('title')
+                if not title:
+                    continue
+
+                st_str = format_xmltv_date(st, tz)
+                et_str = format_xmltv_date(et, tz)
+
+                xml_lines.append(f'  <programme start="{st_str}" stop="{et_str}" channel="{escape_xml(target_ch)}">\n')
+                xml_lines.append(f'    <title lang="pt">{escape_xml(title)}</title>\n')
+
+                # Subtítulo / Nome do episódio
+                episode_name = p.get('episodeName')
+                if episode_name:
+                    xml_lines.append(f'    <sub-title lang="pt">{escape_xml(episode_name)}</sub-title>\n')
+
+                # Descrição / Sinopse
+                description = p.get('description')
+                if description:
+                    xml_lines.append(f'    <desc lang="pt">{escape_xml(description)}</desc>\n')
+
+                # Imagem / Poster em boa resolução (420x236)
+                image_url = p.get('image')
+                if image_url:
+                    formatted_image = image_url.replace('{{image-size-placeholder}}', '420_236')
+                    xml_lines.append(f'    <icon src="{escape_xml(formatted_image)}" />\n')
+
+                # Categoria
+                cat = None
+                if p.get('tvChannels') and len(p['tvChannels']) > 0:
+                    cat = p['tvChannels'][0].get('type')
+                if not cat:
+                    cat = channels_dict.get(ch_name, {}).get('type')
+                if cat:
+                    xml_lines.append(f'    <category lang="pt">{escape_xml(cat)}</category>\n')
+
+                # Duração em segundos
+                duration = p.get('duration')
+                if duration:
+                    xml_lines.append(f'    <length units="seconds">{duration}</length>\n')
+
+                # Número de temporada e episódio (formato xmltv_ns: 0-indexed)
+                season = p.get('seasonNumber')
+                episode = p.get('episodeNumber')
+                if season is not None and episode is not None:
+                    try:
+                        s_idx = max(0, int(season) - 1)
+                        e_idx = max(0, int(episode) - 1)
+                        xml_lines.append(f'    <episode-num system="xmltv_ns">{s_idx}.{e_idx}.</episode-num>\n')
+                        xml_lines.append(f'    <episode-num system="onscreen">T{season} E{episode}</episode-num>\n')
+                    except (ValueError, TypeError):
+                        pass
+
+                # Classificação Indicativa Brasileira
+                rating = p.get('rating')
+                if isinstance(rating, dict) and rating.get('code'):
+                    rating_code = str(rating['code']).strip()
+                    if rating_code:
+                        xml_lines.append(f'    <rating system="Brazil">\n')
+                        xml_lines.append(f'      <value>[{escape_xml(rating_code)}]</value>\n')
+                        xml_lines.append(f'    </rating>\n')
+
+                xml_lines.append('  </programme>\n')
+                total_written_programmes += 1
+
+    xml_lines.append('</tv>\n')
+
+    # Grava o claro.xml principal
+    with open(OUTPUT_CLARO_XML, 'w', encoding='utf-8') as f:
+        f.writelines(xml_lines)
+
+    # Grava também local_meta.xml como espelho idêntico para evitar links quebrados legados
+    with open(OUTPUT_LOCAL_XML, 'w', encoding='utf-8') as f:
+        f.writelines(xml_lines)
+
+    elapsed = time.time() - start_time_total
+    file_size_mb = os.path.getsize(OUTPUT_CLARO_XML) / (1024 * 1024)
+    print(f"[SUCESSO] claro.xml e local_meta.xml atualizados com sucesso!")
+    print(f"          Total: {len(channels_dict)} canais, {total_written_programmes} blocos de programação gravados.")
+    print(f"          Tamanho: {file_size_mb:.2f} MB em {elapsed:.2f} segundos.\n")
     return True
 
 
@@ -176,7 +321,6 @@ def discover_cdn_base(sample_url: str, session: requests.Session) -> str | None:
             print(f"     Hop {hop + 1}: redirecionado para {current_url}")
 
             parsed = urllib.parse.urlparse(current_url)
-            # Verifica se já atingiu o host do CDN
             if "cdn" in parsed.netloc:
                 cdn_base = f"{parsed.scheme}://{parsed.netloc}/"
                 return cdn_base
@@ -187,7 +331,6 @@ def discover_cdn_base(sample_url: str, session: requests.Session) -> str | None:
                 return cdn_base
             break
 
-    # Se ao final houver redirecionamento para um host diferente
     parsed = urllib.parse.urlparse(current_url)
     if parsed.netloc and parsed.netloc != urllib.parse.urlparse(sample_url).netloc:
         cdn_base = f"{parsed.scheme}://{parsed.netloc}/"
@@ -197,7 +340,7 @@ def discover_cdn_base(sample_url: str, session: requests.Session) -> str | None:
 
 
 def update_referers_in_file(file_path: str, new_cdn_base: str) -> int:
-    """Atualiza todas as ocorrências de Referer no arquivo alvo com o novo domínio CDN."""
+    """Atualiza todas as ocorrências de Referer e garante o cabeçalho único do EPG."""
     if not os.path.exists(file_path):
         print(f"  [Aviso] Arquivo não encontrado: {file_path}")
         return 0
@@ -205,12 +348,23 @@ def update_referers_in_file(file_path: str, new_cdn_base: str) -> int:
     with open(file_path, "r", encoding="utf-8") as f:
         lines = f.readlines()
 
+    single_epg_header = '#EXTM3U x-tvg-url="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/claro.xml"\n'
+    header_changed = False
+    if lines and lines[0].startswith("#EXTM3U"):
+        if lines[0] != single_epg_header:
+            lines[0] = single_epg_header
+            header_changed = True
+
     pattern = re.compile(r'\|Referer=https?://[^/\s|]+/(?:e/index\.php\?canal=)?([^\s|\r\n]+)')
     updated_lines = []
     changes_count = 0
     total_referers = 0
 
-    for line in lines:
+    for idx, line in enumerate(lines):
+        if idx == 0 and line.startswith("#EXTM3U"):
+            updated_lines.append(line)
+            continue
+
         m = pattern.search(line)
         if m:
             total_referers += 1
@@ -223,12 +377,14 @@ def update_referers_in_file(file_path: str, new_cdn_base: str) -> int:
         else:
             updated_lines.append(line)
 
-    if changes_count > 0:
+    if changes_count > 0 or header_changed:
         with open(file_path, "w", encoding="utf-8") as f:
             f.writelines(updated_lines)
         print(f"  [OK] '{os.path.basename(file_path)}': {changes_count} canais com Referer atualizados para {new_cdn_base} (Total: {total_referers}).")
+        if header_changed:
+            print("  [OK] Cabeçalho atualizado para apontar exclusivamente para o claro.xml unificado.")
     else:
-        print(f"  [INFO] '{os.path.basename(file_path)}': Todos os {total_referers} Referers já estavam atualizados.")
+        print(f"  [INFO] '{os.path.basename(file_path)}': Todos os {total_referers} Referers e o cabeçalho já estavam atualizados.")
 
     return changes_count
 
@@ -282,12 +438,10 @@ def git_commit_and_push() -> bool:
         for line in changes.splitlines():
             print(f"     {line}")
 
-        # Adiciona os arquivos modificados
         subprocess.run(["git", "add", "."], cwd=BASE_DIR, check=True, timeout=30)
 
-        # Cria a mensagem de commit com timestamp
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M")
-        commit_msg = f"chore: auto-sync EPG and CDN referers [{timestamp}]"
+        commit_msg = f"chore: auto-sync EPG (Claro TV+ API) and CDN referers [{timestamp}]"
 
         commit_res = subprocess.run(
             [
@@ -310,7 +464,6 @@ def git_commit_and_push() -> bool:
 
         print(f"  [OK] Commit realizado: '{commit_msg}'")
 
-        # Sincroniza com remoto via rebase e autostash antes do push
         print("  -> Sincronizando com o remoto (git pull --rebase --autostash)...")
         pull_res = subprocess.run(
             ["git", "pull", "--rebase", "--autostash"],
@@ -323,7 +476,6 @@ def git_commit_and_push() -> bool:
         if pull_res.returncode != 0:
             print(f"  [Aviso] Retorno do git pull: {pull_res.stderr.strip() or pull_res.stdout.strip()}")
 
-        # Envia para o repositório remoto
         print("  -> Enviando alterações para o remoto (git push)...")
         push_res = subprocess.run(
             ["git", "push"],
@@ -357,7 +509,7 @@ def git_commit_and_push() -> bool:
 def main():
     print(f"Iniciando rotina do sync_worker [{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}]...\n")
     session = create_session()
-    update_local_meta(session)
+    update_epg(session)
     sync_cdn_referers(session)
     git_commit_and_push()
     print("Todas as rotinas foram finalizadas com sucesso.")

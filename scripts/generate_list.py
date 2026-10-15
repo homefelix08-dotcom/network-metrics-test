@@ -9,8 +9,7 @@ BASE_WORKER_URL = "https://network-metrics-test.homefelix08.workers.dev/play"
 REPO_PATH = "src/repo.js"
 OUTPUT_PATH = "export_data.txt"
 
-EPG_GLOBAL = "https://raw.githubusercontent.com/limaalef/BrazilTVEPG/refs/heads/main/claro.xml"
-EPG_LOCAL = "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/local_meta.xml"
+EPG_URL = "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/claro.xml"
 
 def load_repo_js():
     try:
@@ -55,7 +54,7 @@ def main():
     if not channels:
         return
 
-    lines = [f'#EXTM3U x-tvg-url="{EPG_GLOBAL},{EPG_LOCAL}"\n']
+    lines = [f'#EXTM3U x-tvg-url="{EPG_URL}"\n']
     
     # Gaveta temporária para guardar os canais de backup e jogar pro final
     backup_lines = []
