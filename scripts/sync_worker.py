@@ -24,8 +24,7 @@ import pytz
 # CONFIGURAÇÕES DE CAMINHOS
 # ==========================================
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUTPUT_CLARO_XML = os.path.join(BASE_DIR, "claro.xml")
-OUTPUT_LOCAL_XML = os.path.join(BASE_DIR, "local_meta.xml")
+OUTPUT_XML_PATH = os.path.join(BASE_DIR, "local_meta.xml")
 EXPORT_DATA_PATH = os.path.join(BASE_DIR, "export_data.txt")
 REPO_PATH = os.path.join(BASE_DIR, "src", "repo.js")
 
@@ -261,17 +260,13 @@ def update_epg(session: requests.Session, days_ahead: int = EPG_DAYS_AHEAD) -> b
 
     xml_lines.append('</tv>\n')
 
-    # Grava o claro.xml principal
-    with open(OUTPUT_CLARO_XML, 'w', encoding='utf-8') as f:
-        f.writelines(xml_lines)
-
-    # Grava também local_meta.xml como espelho idêntico para evitar links quebrados legados
-    with open(OUTPUT_LOCAL_XML, 'w', encoding='utf-8') as f:
+    # Grava o local_meta.xml unificado
+    with open(OUTPUT_XML_PATH, 'w', encoding='utf-8') as f:
         f.writelines(xml_lines)
 
     elapsed = time.time() - start_time_total
-    file_size_mb = os.path.getsize(OUTPUT_CLARO_XML) / (1024 * 1024)
-    print(f"[SUCESSO] claro.xml e local_meta.xml atualizados com sucesso!")
+    file_size_mb = os.path.getsize(OUTPUT_XML_PATH) / (1024 * 1024)
+    print(f"[SUCESSO] local_meta.xml atualizado com sucesso!")
     print(f"          Total: {len(channels_dict)} canais, {total_written_programmes} blocos de programação gravados.")
     print(f"          Tamanho: {file_size_mb:.2f} MB em {elapsed:.2f} segundos.\n")
     return True
@@ -348,7 +343,7 @@ def update_referers_in_file(file_path: str, new_cdn_base: str) -> int:
     with open(file_path, "r", encoding="utf-8") as f:
         lines = f.readlines()
 
-    single_epg_header = '#EXTM3U x-tvg-url="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/claro.xml"\n'
+    single_epg_header = '#EXTM3U x-tvg-url="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/local_meta.xml"\n'
     header_changed = False
     if lines and lines[0].startswith("#EXTM3U"):
         if lines[0] != single_epg_header:

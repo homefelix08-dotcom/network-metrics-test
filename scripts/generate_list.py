@@ -9,7 +9,7 @@ BASE_WORKER_URL = "https://network-metrics-test.homefelix08.workers.dev/play"
 REPO_PATH = "src/repo.js"
 OUTPUT_PATH = "export_data.txt"
 
-EPG_URL = "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/claro.xml"
+EPG_URL = "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/local_meta.xml"
 
 def load_repo_js():
     try:
