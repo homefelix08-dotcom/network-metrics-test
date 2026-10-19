@@ -2,15 +2,15 @@ const siteBaseUrl = "https://embedcanaisdetv.xyz/e/index.php?canal=";
 
 export default [
     /* ABERTOS */
-    {
-        "nome": "Globo MG",
-        "tvg_id": "Globo MG",
-        "url": `${siteBaseUrl}globomg/`,
-        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png",
-        "categoria": "Abertos",
-        "provedor": "site",
-        "provedor_fixo": true
-    },
+    // {
+    //     "nome": "Globo MG",
+    //     "tvg_id": "Globo MG",
+    //     "url": `${siteBaseUrl}globomg/`,
+    //     "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png",
+    //     "categoria": "Abertos",
+    //     "provedor": "site",
+    //     "provedor_fixo": true
+    // },
     {
         "nome": "Globo",
         "tvg_id": "GLOBO SP",
