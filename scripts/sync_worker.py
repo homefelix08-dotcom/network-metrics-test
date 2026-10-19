@@ -64,6 +64,12 @@ LOCAL_EPG_CONFIGS = [
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png"
     },
     {
+        "id": "Rede Minas",
+        "name": "Rede Minas",
+        "url": "https://www.claro.com.br/tv-por-assinatura/programacao/grade/programa/tv-minas/23-2000",
+        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/rede_minas.png"
+    },
+    {
         "id": "Record MG",
         "name": "Record MG",
         "url": "https://www.claro.com.br/tv-por-assinatura/programacao/grade/programa/record-hd/23-2084",
