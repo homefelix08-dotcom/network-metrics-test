@@ -20,16 +20,16 @@ export default [
         "provedor": "api",
         "provedor_fixo": true,
     },
-    {
-        "nome": "Band",
-        "tvg_id": "Band MG",
-        "url": `${siteBaseUrl}bandsp/`,
-        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band.png",
-        "categoria": "Abertos",
-        "filtro_cdn": "Band MG",
-        "provedor": "api",
-        "provedor_fixo": true
-    },
+    // {
+    //     "nome": "Band",
+    //     "tvg_id": "Band MG",
+    //     "url": `${siteBaseUrl}bandsp/`,
+    //     "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band.png",
+    //     "categoria": "Abertos",
+    //     "filtro_cdn": "Band MG",
+    //     "provedor": "api",
+    //     "provedor_fixo": true
+    // },
     {
         "nome": "TV Alterosa",
         "nome_api": "SBT",
@@ -40,33 +40,33 @@ export default [
         "provedor": "api",
         "provedor_fixo": true
     },
+    // {
+    //     "nome": "SBT",
+    //     "tvg_id": "SBT São Paulo",
+    //     "url": `${siteBaseUrl}sbtsp/`,
+    //     "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png",
+    //     "categoria": "Abertos",
+    //     "provedor": "site",
+    //     "provedor_fixo": true
+    // },
     {
-        "nome": "SBT",
-        "tvg_id": "SBT São Paulo",
-        "url": `${siteBaseUrl}sbtsp/`,
-        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png",
-        "categoria": "Abertos",
-        "provedor": "site",
-        "provedor_fixo": true
-    },
-    {
-        "nome": "Rede TV",
+        "nome": "RedeTV!",
         "tvg_id": "REDE TV! São Paulo",
-        "url": `${siteBaseUrl}redetv/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/rede_tv.png",
         "categoria": "Abertos",
-        "provedor": "site",
+        "filtro_cdn": "Opção 01(CDN)",
+        "provedor": "api",
         "provedor_fixo": true
     },
-    {
-        "nome": "Record MG",
-        "tvg_id": "Record MG",
-        "url": `${siteBaseUrl}recordmg/`,
-        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png",
-        "categoria": "Abertos",
-        "provedor": "site",
-        "provedor_fixo": true
-    },
+    // {
+    //     "nome": "Record MG",
+    //     "tvg_id": "Record MG",
+    //     "url": `${siteBaseUrl}recordmg/`,
+    //     "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png",
+    //     "categoria": "Abertos",
+    //     "provedor": "site",
+    //     "provedor_fixo": true
+    // },
     {
         "nome": "Futura",
         "tvg_id": "FUTURA HD",
