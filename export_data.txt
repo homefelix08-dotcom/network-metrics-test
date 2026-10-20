@@ -8,7 +8,7 @@ http://192.168.100.50:3999/band-minas.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SBT São Paulo" tvg-name="SBT FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" group-title="Abertos", SBT FHD
 http://192.168.100.50:3999/sbt.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="REDE TV! São Paulo" tvg-name="Rede TV FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/rede_tv.png" group-title="Abertos", Rede TV FHD
-https://network-metrics-test.homefelix08.workers.dev/play/Rede%20TV?rota=site|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Rede%20TV?rota=api|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Record MG" tvg-name="Record MG FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" group-title="Abertos", Record MG FHD
 http://192.168.100.50:3999/record-minas.m3u8|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="FUTURA HD" tvg-name="Futura FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/futura.png" group-title="Abertos", Futura FHD
