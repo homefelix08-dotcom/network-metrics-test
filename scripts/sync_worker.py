@@ -239,8 +239,8 @@ def fetch_regional_html_data(session: requests.Session, program_info_lookup: dic
                 try:
                     title_elem = item.find('p', class_='channel-program-item-title')
                     if title_elem and title_elem.text.strip():
-                        st = int(item['data-start']) / 1000.0
-                        et = int(item['data-end']) / 1000.0
+                        st = int(item['data-start']) / 1000.0 # type: ignore
+                        et = int(item['data-end']) / 1000.0 # type: ignore
                         base_items.append((st, et, title_elem.text.strip()))
                 except Exception:
                     continue
