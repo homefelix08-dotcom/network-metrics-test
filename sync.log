@@ -1380,3 +1380,42 @@ Tempo total de atualização do EPG: 39.97 segundos.
   [OK] Git push realizado com sucesso!
 
 Todas as rotinas foram finalizadas com sucesso.
+Iniciando rotina do sync_worker [2026-10-24 00:30:03]...
+
+=== [1/2] ATUALIZAÇÃO DO EPG UNIFICADO (4 DIAS) ===
+  [API Claro] Coletando grade: 24/10/2026 (start=1792810800, end=1792897200)...
+    [OK] 162 canais recebidos.
+  [API Claro] Coletando grade: 25/10/2026 (start=1792897200, end=1792983600)...
+    [OK] 162 canais recebidos.
+  [API Claro] Coletando grade: 26/10/2026 (start=1792983600, end=1793070000)...
+    [OK] 162 canais recebidos.
+  [API Claro] Coletando grade: 27/10/2026 (start=1793070000, end=1793156400)...
+    [OK] 162 canais recebidos.
+  [Scraper Regional] Coletando canais locais de Minas Gerais (HTML Claro)...
+    [OK] Globo MG: 25 programas na grade de hoje.
+    [OK] Rede Minas: 28 programas na grade de hoje.
+    [OK] Record MG: 18 programas na grade de hoje.
+    [OK] SBT MG: 21 programas na grade de hoje.
+    [OK] Band MG: 24 programas na grade de hoje.
+  [Canais Especiais] Gerando grade contínua para canais de streaming e eventos...
+  -> Consolidando dados no arquivo 'local_meta.xml'...
+[SUCESSO] local_meta.xml gravado (188 canais, 22714 programas, 14.59 MB).
+Tempo total de atualização do EPG: 34.83 segundos.
+
+=== [2/2] SINCRONIZAÇÃO DO CDN REFERER ===
+  -> Rastreando CDN através do canal de teste: https://embedcanaisdetv.xyz/e/index.php?canal=globomg
+     Hop 1: redirecionado para https://2210.playerembcanais.com/globomg/
+  -> Novo domínio base de CDN detectado: https://2210.playerembcanais.com/
+  [INFO] 'export_data.txt': Todos os 94 Referers e cabeçalho já estavam atualizados.
+[SUCESSO] Sincronização do CDN Referer concluída com sucesso.
+
+=== [3/3] SINCRONIZAÇÃO COM O GITHUB (GIT COMMIT & PUSH) ===
+  -> Alterações detectadas:
+     M local_meta.xml
+      M sync.log
+  [OK] Commit realizado: 'chore: auto-sync unified EPG (local_meta.xml) and CDN referers [2026-10-24 00:30]'
+  -> Sincronizando com o remoto (git pull --rebase --autostash)...
+  -> Enviando alterações para o remoto (git push)...
+  [OK] Git push realizado com sucesso!
+
+Todas as rotinas foram finalizadas com sucesso.
