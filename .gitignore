@@ -1,2 +1,7 @@
 src/index_local.js
 __pycache__/
+.env
+.env.*
+.dev.vars
+.venv/
+node_modules/
