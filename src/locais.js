@@ -1,11 +1,10 @@
 // =========================================================================
 // MÓDULO DE CANAIS LOCAIS - WORKER
-// No repositório público, os tokens ficam vazios por segurança.
 // =========================================================================
 
-const GLOBO_AUTH_TOKEN = "";
-const RECORD_REFRESH_TOKEN = "";
-let RECORD_AUTH_TOKEN = "";
+const GLOBO_AUTH_TOKEN = "REDACTED_GLOBO_TOKEN";
+const RECORD_REFRESH_TOKEN = "REDACTED_RECORD_JWT";
+let RECORD_AUTH_TOKEN = "REDACTED_RECORD_JWT";
 const RECORD_CHANNEL_ID = "Y2hhbm5lbCNyNy5jb20jbWc";
 
 const BAND_LIVE_ID = "0195cdf3-d8d8-74b6-9516-6c79c06bcec8";
