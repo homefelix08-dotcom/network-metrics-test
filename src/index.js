@@ -15,7 +15,7 @@ export default {
     // ==========================================
     // 1. LISTA M3U DE CANAIS LOCAIS
     // ==========================================
-    if (path === '/canais_locais.m3u' || path === '/locais.m3u' || path === '/canais_locais.txt') {
+    if (path === '/canais_locais.m3u' || path === '/locais.m3u' || path === '/canais_locais.txt' || path === '/playlist.m3u' || path === '/playlist.m3u8') {
       const host = url.host;
       const scheme = url.protocol;
       const m3u = `#EXTM3U x-tvg-url="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/local_meta.xml"
