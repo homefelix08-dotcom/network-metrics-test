@@ -20,14 +20,41 @@ const memoryCache = {
   record: { url: null, expires: 0 }
 };
 
+// Validador inteligente de expiração de tokens JWT ou parâmetros exp= na URL
+function isUrlExpired(streamUrl) {
+  if (!streamUrl) return true;
+  try {
+    const jwtMatch = streamUrl.match(/\/j\/[^.]+\.([^.]+)\.[^/]+/);
+    if (jwtMatch) {
+      let b64 = jwtMatch[1].replace(/-/g, '+').replace(/_/g, '/');
+      while (b64.length % 4) b64 += '=';
+      const payload = JSON.parse(atob(b64));
+      if (payload.exp && (payload.exp * 1000) <= (Date.now() + 180000)) {
+        console.log(`[EXPIRADO] Token JWT da Globo expirado em ${new Date(payload.exp * 1000).toISOString()}`);
+        return true;
+      }
+    }
+    const expMatch = streamUrl.match(/[?&]hdnts=exp=(\d+)/);
+    if (expMatch) {
+      const expSec = parseInt(expMatch[1], 10);
+      if (expSec && (expSec * 1000) <= (Date.now() + 180000)) {
+        return true;
+      }
+    }
+  } catch (e) {}
+  return false;
+}
+
 async function getCachedStream(key, ttlSeconds, forceFresh, fetchFn) {
   const now = Date.now();
 
   // 1. Memória rápida do isolate (se ainda válida e não forçado)
   if (!forceFresh && memoryCache[key] && memoryCache[key].url && memoryCache[key].expires > now) {
+    if (isUrlExpired(memoryCache[key].url)) { memoryCache[key].url = null; } else {
     const remainingMin = Math.round((memoryCache[key].expires - now) / 60000);
     console.log(`[⚡ CACHE HIT MEMÓRIA] ${key.toUpperCase()} reaproveitada (válida por mais ${remainingMin} min).`);
     return memoryCache[key].url;
+    }
   }
 
   // 2. Cloudflare Cache API (compartilhado entre diferentes isolates/borda)
@@ -41,9 +68,12 @@ async function getCachedStream(key, ttlSeconds, forceFresh, fetchFn) {
         if (cachedResponse) {
           const streamUrl = await cachedResponse.text();
           if (streamUrl && streamUrl.startsWith("http")) {
-            console.log(`[🌐 CACHE HIT EDGE] ${key.toUpperCase()} recuperada do Cache compartilhado da Cloudflare.`);
-            memoryCache[key] = { url: streamUrl, expires: now + ttlSeconds * 1000 };
-            return streamUrl;
+            if (!isUrlExpired(streamUrl)) {
+              console.log(`[🌐 CACHE HIT EDGE] ${key.toUpperCase()} recuperada do Cache compartilhado da Cloudflare.`);
+              memoryCache[key] = { url: streamUrl, expires: now + ttlSeconds * 1000 };
+              return streamUrl;
+            }
+            console.log(`[⚠️ CACHE EXPIRADO] ${key.toUpperCase()} na borda continha URL já expirada. Descartando cache...`);
           }
         }
       }
