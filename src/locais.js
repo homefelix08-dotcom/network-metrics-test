@@ -80,10 +80,33 @@ async function getCachedStream(key, ttlSeconds, forceFresh, fetchFn) {
 }
 
 /**
- * 1. GLOBO MG (Globoplay Video Session API com Cache de 4 horas)
+ * 1. GLOBO MG (Globoplay Video Session com Geo-Bridge no Homelab MG e Cache de 4 horas)
  */
 export async function fetchGloboStream(env, forceFresh = false) {
   return getCachedStream("globo", 14400, forceFresh, async () => {
+    // 1. Prioridade Máxima: Obter a sessão via Homelab em Minas Gerais (garante sinal regional globo-bh)
+    const homelabUrl = "https://canais.flxcloud.dev/globo-mg.m3u8";
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 4000);
+      const resBridge = await fetch(homelabUrl, {
+        method: "GET",
+        headers: { "User-Agent": "okhttp/4.9.2" },
+        redirect: "manual",
+        signal: controller.signal
+      });
+      clearTimeout(timeoutId);
+
+      const location = resBridge.headers.get("Location") || resBridge.headers.get("location");
+      if (location && location.includes(".m3u8")) {
+        console.log("[GLOBO WORKER] Sucesso ao obter sinal regional Globo Minas (BH) via Homelab Bridge!");
+        return location;
+      }
+    } catch (e) {
+      console.log(`[GLOBO WORKER] Homelab Bridge indisponível (${e.message}). Acionando fallback nativo...`);
+    }
+
+    // 2. Fallback de Contingência: Chamada direta pelo Worker à API da Globo
     const token = (env && env.GLOBO_AUTH_TOKEN) || GLOBO_AUTH_TOKEN;
     if (!token) {
       console.log("[GLOBO WORKER] GLOBO_AUTH_TOKEN não configurado.");
