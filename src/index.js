@@ -81,10 +81,14 @@ ${scheme}//${host}/play/Record%20MG|User-Agent=okhttp/4.9.2
       return new Response("Erro ao obter stream do SBT via Worker", { status: 502 });
     }
 
-    const channelName = decodeURIComponent(url.pathname.replace('/play/', ''));
+    if (!path.startsWith('/play/')) {
+      return new Response("Endpoint não encontrado. Use /play/{nome} ou /playlist.m3u", { status: 404 });
+    }
+
+    const channelName = decodeURIComponent(path.replace('/play/', ''));
     const rotaForcada = url.searchParams.get('rota');
 
-    if (!channelName || url.pathname === '/') {
+    if (!channelName) {
       return new Response("Informe o canal no endpoint /play/{nome}", { status: 400 });
     }
 

@@ -9,6 +9,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_WORKER_URL = "https://network-metrics-test.homefelix08.workers.dev/play"
 REPO_PATH = os.path.join(BASE_DIR, "src", "repo.js")
 OUTPUT_PATH = os.path.join(BASE_DIR, "export_data.txt")
+CANAIS_LOCAIS_PATH = os.path.join(BASE_DIR, "canais_locais.txt")
 
 EPG_URL = "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/local_meta.xml"
 
@@ -56,6 +57,13 @@ def main():
         return
 
     lines = [f'#EXTM3U x-tvg-url="{EPG_URL}"\n']
+    
+    # Injeta os canais locais no topo da grade se canais_locais.txt existir
+    if os.path.exists(CANAIS_LOCAIS_PATH):
+        with open(CANAIS_LOCAIS_PATH, "r", encoding="utf-8") as f_loc:
+            for l in f_loc:
+                if not l.startswith("#EXTM3U"):
+                    lines.append(l)
     
     # Gaveta temporária para guardar os canais de backup e jogar pro final
     backup_lines = []

@@ -1,7 +1,14 @@
 src/index_local.js
 __pycache__/
+*.pyc
 .env
 .env.*
 .dev.vars
 .venv/
 node_modules/
+.wrangler/
+*.log
+sync.log
+temp_bridge.cjs
+.DS_Store
+Thumbs.db
