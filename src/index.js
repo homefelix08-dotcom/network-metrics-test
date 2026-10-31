@@ -225,7 +225,7 @@ ${scheme}//${host}/play/Record%20MG|User-Agent=okhttp/4.9.2
                 console.log(`[🏆 VENCEDOR API] Retornando IP Direto (Rota Backup).`);
                 return fontesIP[0].link;
               }
-              return null; 
+              return null;
             }
 
             // ROTA FHD: Exige estritamente a CDN (com filtro respeitado)
@@ -233,8 +233,8 @@ ${scheme}//${host}/play/Record%20MG|User-Agent=okhttp/4.9.2
               if (config.filtro_cdn) {
                 const filtrada = canalApi.sources.find(s => s.name.toLowerCase().includes(config.filtro_cdn.toLowerCase()));
                 if (filtrada) {
-                   console.log(`[🏆 VENCEDOR API] Retornando CDN Filtrada (FHD).`);
-                   return filtrada.link;
+                  console.log(`[🏆 VENCEDOR API] Retornando CDN Filtrada (FHD).`);
+                  return filtrada.link;
                 }
               }
               if (fontesCDN.length > 0) {
@@ -270,7 +270,7 @@ ${scheme}//${host}/play/Record%20MG|User-Agent=okhttp/4.9.2
           linkFinal = await tentarAPI(); // Tenta puxar a CDN como resgate
           traceOrigem = "API CDN (Salva-Vidas)";
         }
-      } 
+      }
       else if (rotaForcada === 'api_ip') {
         console.log(`[🚦 ROTA] Acionando IP DIRETO (HD 2 / Backup).`);
         linkFinal = await tentarAPI();
