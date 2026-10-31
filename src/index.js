@@ -30,7 +30,7 @@ ${scheme}//${host}/play/Rede%20Minas|User-Agent=okhttp/4.9.2
 ${scheme}//${host}/play/Band%20MG|User-Agent=okhttp/4.9.2
 
 #EXTINF:-1 tvg-id="SBT São Paulo" tvg-name="SBT FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" group-title="Abertos", SBT FHD
-${scheme}//${host}/play/SBT?rota=local|User-Agent=okhttp/4.9.2
+${scheme}//${host}/play/SBT|User-Agent=okhttp/4.9.2
 
 #EXTINF:-1 tvg-id="Record MG" tvg-name="Record MG FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" group-title="Abertos", Record MG FHD
 ${scheme}//${host}/play/Record%20MG|User-Agent=okhttp/4.9.2
@@ -76,7 +76,7 @@ ${scheme}//${host}/play/Record%20MG|User-Agent=okhttp/4.9.2
       return new Response("Erro ao obter stream da Record Minas via Worker", { status: 502 });
     }
     if (path === '/sbt.m3u8') {
-      const stream = await fetchSbtStream(env);
+      const stream = fetchSbtStream(env);
       if (stream) return redirectWithCache(stream);
       return new Response("Erro ao obter stream do SBT via Worker", { status: 502 });
     }
@@ -115,9 +115,9 @@ ${scheme}//${host}/play/Record%20MG|User-Agent=okhttp/4.9.2
       if (stream) return redirectWithCache(stream);
       return new Response("Erro ao obter stream da Record Minas via Worker", { status: 502 });
     }
-    if ((channelNorm === 'sbt' || channelNorm === 'sbt ao vivo') && rotaForcada === 'local') {
-      console.log(`[🏠 CANAL LOCAL] Acionando motor nativo do SBT Local`);
-      const stream = await fetchSbtStream(env);
+    if (channelNorm === 'sbt' || channelNorm === 'sbt ao vivo' || channelNorm === 'sbt sp' || channelNorm === 'sbt são paulo' || channelNorm === 'sbt sao paulo' || channelNorm === 'sbt nacional') {
+      console.log(`[🏠 CANAL LOCAL] Acionando motor nativo do SBT (Streamlock Wowza)`);
+      const stream = fetchSbtStream(env);
       if (stream) return redirectWithCache(stream);
       return new Response("Erro ao obter stream do SBT via Worker", { status: 502 });
     }

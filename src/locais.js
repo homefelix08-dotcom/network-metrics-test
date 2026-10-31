@@ -9,7 +9,7 @@ const RECORD_CHANNEL_ID = "Y2hhbm5lbCNyNy5jb20jbWc";
 
 const BAND_LIVE_ID = "0195cdf3-d8d8-74b6-9516-6c79c06bcec8";
 const REDE_MINAS_URL = "https://8hzcavccys.zoeweb.tv/redeminas/ngrp:redeminas_all/playlist.m3u8";
-const SBT_DEFAULT_YOUTUBE_ID = "R0ZJ4uevOd4";
+const SBT_URL = "https://6836041ea1117.streamlock.net/cverde/cverde/playlist.m3u8";
 
 // =========================================================================
 // CAMADA DE CACHE INTELIGENTE (MEMÓRIA DO ISOLATE + CACHE API DA CLOUDFLARE)
@@ -286,42 +286,8 @@ export async function fetchRecordStream(env, forceFresh = false) {
 }
 
 /**
- * 5. SBT AO VIVO
+ * 5. SBT AO VIVO (SBT Satélite / Nacional - Wowza 1080p)
  */
-export async function fetchSbtStream(env) {
-  const defaultId = (env && env.SBT_DEFAULT_YOUTUBE_ID) || SBT_DEFAULT_YOUTUBE_ID;
-  try {
-    let videoId = defaultId;
-    const r = await fetch("https://www.sbt.com.br/ao-vivo", {
-      headers: { "User-Agent": "Mozilla/5.0" }
-    });
-    if (r.ok) {
-      const html = await r.text();
-      const m = html.match(/videoID=([a-zA-Z0-9_-]+)/);
-      if (m && m[1]) {
-        videoId = m[1];
-      }
-    }
-    console.log(`[SBT WORKER] Video ID ativo: ${videoId}`);
-  } catch (e) {
-    console.log("[SBT WORKER] Erro ao raspar sbt.com.br:", e.message);
-  }
-
-  try {
-    const apiRes = await fetch("https://explouddev.com.br/api/canais/todos?search=SBT", {
-      headers: { "User-Agent": "okhttp/4.9.2" }
-    });
-    if (apiRes.ok) {
-      const list = await apiRes.json();
-      const sbt = list.find(c => c.name.toLowerCase().includes("sbt"));
-      if (sbt && sbt.sources?.length > 0) {
-        const cdn = sbt.sources.find(s => s.name.toLowerCase().includes("sbt mg")) || sbt.sources[0];
-        console.log("[SBT WORKER] Retornando fonte CDN de contingência!");
-        return cdn.link;
-      }
-    }
-  } catch (e) {
-    console.log("[SBT WORKER] Erro fallback:", e.message);
-  }
-  return null;
+export function fetchSbtStream(env) {
+  return (env && env.SBT_URL) || SBT_URL;
 }

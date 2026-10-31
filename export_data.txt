@@ -8,7 +8,7 @@ https://network-metrics-test.homefelix08.workers.dev/play/Band%20MG|User-Agent=o
 #EXTINF:-1 tvg-id="SBT MG" tvg-name="TV Alterosa FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" group-title="Abertos", TV Alterosa FHD
 https://network-metrics-test.homefelix08.workers.dev/play/TV%20Alterosa?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SBT São Paulo" tvg-name="SBT FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" group-title="Abertos", SBT FHD
-https://network-metrics-test.homefelix08.workers.dev/play/SBT?rota=site|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/SBT|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="REDE TV! São Paulo" tvg-name="Rede TV FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/rede_tv.png" group-title="Abertos", Rede TV FHD
 https://network-metrics-test.homefelix08.workers.dev/play/RedeTV!?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Record MG" tvg-name="Record MG FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" group-title="Abertos", Record MG FHD
