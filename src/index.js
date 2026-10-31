@@ -1,15 +1,114 @@
 import REPO_CONFIG from './repo.js';
+import {
+  fetchGloboStream,
+  fetchBandStream,
+  fetchRedeMinasStream,
+  fetchRecordStream,
+  fetchSbtStream
+} from './locais.js';
 
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-    const channelName = decodeURIComponent(url.pathname.replace('/play/', ''));
+    const path = url.pathname;
 
-    // Captura a intenção da sua Grade IPTV (api_cdn, site, api_ip)
+    // ==========================================
+    // 1. LISTA M3U DE CANAIS LOCAIS
+    // ==========================================
+    if (path === '/canais_locais.m3u' || path === '/locais.m3u' || path === '/canais_locais.txt') {
+      const host = url.host;
+      const scheme = url.protocol;
+      const m3u = `#EXTM3U x-tvg-url="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/local_meta.xml"
+
+#EXTINF:-1 tvg-id="Globo MG" tvg-name="Globo MG FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" group-title="Abertos", Globo MG FHD
+${scheme}//${host}/play/Globo%20MG|User-Agent=okhttp/4.9.2
+
+#EXTINF:-1 tvg-id="Rede Minas" tvg-name="Rede Minas FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/rede_minas.png" group-title="Abertos", Rede Minas FHD
+${scheme}//${host}/play/Rede%20Minas|User-Agent=okhttp/4.9.2
+
+#EXTINF:-1 tvg-id="Band MG" tvg-name="Band FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band.png" group-title="Abertos", Band FHD
+${scheme}//${host}/play/Band%20MG|User-Agent=okhttp/4.9.2
+
+#EXTINF:-1 tvg-id="SBT São Paulo" tvg-name="SBT FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" group-title="Abertos", SBT FHD
+${scheme}//${host}/play/SBT?rota=local|User-Agent=okhttp/4.9.2
+
+#EXTINF:-1 tvg-id="Record MG" tvg-name="Record MG FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" group-title="Abertos", Record MG FHD
+${scheme}//${host}/play/Record%20MG|User-Agent=okhttp/4.9.2
+`;
+      return new Response(m3u, {
+        headers: {
+          "Content-Type": "application/x-mpegurl; charset=utf-8",
+          "Access-Control-Allow-Origin": "*"
+        }
+      });
+    }
+
+    // ==========================================
+    // 2. ATALHOS DIRETOS .M3U8 (COMPATÍVEL HOMELAB)
+    // ==========================================
+    if (path === '/globo-mg.m3u8') {
+      const stream = await fetchGloboStream(env);
+      if (stream) return Response.redirect(stream, 302);
+      return new Response("Erro ao obter stream da Globo MG via Worker", { status: 502 });
+    }
+    if (path === '/band-minas.m3u8') {
+      const stream = await fetchBandStream(env);
+      if (stream) return Response.redirect(stream, 302);
+      return new Response("Erro ao obter stream da Band Minas via Worker", { status: 502 });
+    }
+    if (path === '/rede-minas.m3u8') {
+      return Response.redirect(fetchRedeMinasStream(env), 302);
+    }
+    if (path === '/record-minas.m3u8') {
+      const stream = await fetchRecordStream(env);
+      if (stream) return Response.redirect(stream, 302);
+      return new Response("Erro ao obter stream da Record Minas via Worker", { status: 502 });
+    }
+    if (path === '/sbt.m3u8') {
+      const stream = await fetchSbtStream(env);
+      if (stream) return Response.redirect(stream, 302);
+      return new Response("Erro ao obter stream do SBT via Worker", { status: 502 });
+    }
+
+    const channelName = decodeURIComponent(url.pathname.replace('/play/', ''));
     const rotaForcada = url.searchParams.get('rota');
 
     if (!channelName || url.pathname === '/') {
       return new Response("Informe o canal no endpoint /play/{nome}", { status: 400 });
+    }
+
+    const channelNorm = channelName.trim().toLowerCase();
+
+    // ==========================================
+    // 3. INTERCEPTADOR DOS CANAIS LOCAIS /play/{nome}
+    // ==========================================
+    if (channelNorm === 'globo mg' || channelNorm === 'globo minas') {
+      console.log(`[🏠 CANAL LOCAL] Acionando motor nativo da Globo MG`);
+      const stream = await fetchGloboStream(env);
+      if (stream) return Response.redirect(stream, 302);
+      return new Response("Erro ao obter stream da Globo MG via Worker (Geobloqueio ou token expirado)", { status: 502 });
+    }
+    if (channelNorm === 'band mg' || channelNorm === 'band minas') {
+      console.log(`[🏠 CANAL LOCAL] Acionando motor nativo da Band Minas (Spalla)`);
+      const stream = await fetchBandStream(env);
+      if (stream) return Response.redirect(stream, 302);
+      return new Response("Erro ao obter stream da Band Minas via Worker", { status: 502 });
+    }
+    if (channelNorm === 'rede minas') {
+      console.log(`[🏠 CANAL LOCAL] Acionando motor nativo da Rede Minas (ZoeWeb)`);
+      return Response.redirect(fetchRedeMinasStream(env), 302);
+    }
+    if (channelNorm === 'record mg' || channelNorm === 'record minas') {
+      console.log(`[🏠 CANAL LOCAL] Acionando motor nativo da Record Minas (RecordPlus)`);
+      const stream = await fetchRecordStream(env);
+      if (stream) return Response.redirect(stream, 302);
+      return new Response("Erro ao obter stream da Record Minas via Worker", { status: 502 });
+    }
+    if ((channelNorm === 'sbt' || channelNorm === 'sbt ao vivo') && rotaForcada === 'local') {
+      console.log(`[🏠 CANAL LOCAL] Acionando motor nativo do SBT Local`);
+      const stream = await fetchSbtStream(env);
+      if (stream) return Response.redirect(stream, 302);
+      return new Response("Erro ao obter stream do SBT via Worker", { status: 502 });
     }
 
     console.log(`\n========================================`);

@@ -1,16 +1,16 @@
 #EXTM3U x-tvg-url="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/local_meta.xml"
 #EXTINF:-1 tvg-id="Globo MG" tvg-name="Globo MG FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png" group-title="Abertos", Globo MG FHD
-https://canais.flxcloud.dev/globo-mg.m3u8|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Globo%20MG|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Rede Minas" tvg-name="Rede Minas FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/rede_minas.png" group-title="Abertos", Rede Minas FHD
-https://canais.flxcloud.dev/rede-minas.m3u8|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Rede%20Minas|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Band MG" tvg-name="Band FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band.png" group-title="Abertos", Band FHD
-https://canais.flxcloud.dev/band-minas.m3u8|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Band%20MG|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="SBT São Paulo" tvg-name="SBT FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png" group-title="Abertos", SBT FHD
-https://canais.flxcloud.dev/sbt.m3u8|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/SBT?rota=local|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="REDE TV! São Paulo" tvg-name="Rede TV FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/rede_tv.png" group-title="Abertos", Rede TV FHD
 https://network-metrics-test.homefelix08.workers.dev/play/RedeTV!?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="Record MG" tvg-name="Record MG FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" group-title="Abertos", Record MG FHD
-https://canais.flxcloud.dev/record-minas.m3u8|User-Agent=okhttp/4.9.2
+https://network-metrics-test.homefelix08.workers.dev/play/Record%20MG|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="FUTURA HD" tvg-name="Futura FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/futura.png" group-title="Abertos", Futura FHD
 https://network-metrics-test.homefelix08.workers.dev/play/Futura?rota=api_cdn|User-Agent=okhttp/4.9.2
 #EXTINF:-1 tvg-id="TV BRASIL" tvg-name="TV Brasil FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_brasil.png" group-title="Abertos", TV Brasil FHD
