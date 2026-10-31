@@ -40,15 +40,15 @@ export default [
         "provedor": "api",
         "provedor_fixo": true
     },
-    // {
-    //     "nome": "SBT",
-    //     "tvg_id": "SBT São Paulo",
-    //     "url": `${siteBaseUrl}sbtsp/`,
-    //     "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png",
-    //     "categoria": "Abertos",
-    //     "provedor": "site",
-    //     "provedor_fixo": true
-    // },
+    {
+        "nome": "SBT",
+        "tvg_id": "SBT São Paulo",
+        "url": `${siteBaseUrl}sbtsp/`,
+        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/tv_alterosa.png",
+        "categoria": "Abertos",
+        "provedor": "site",
+        "provedor_fixo": true
+    },
     {
         "nome": "RedeTV!",
         "tvg_id": "REDE TV! São Paulo",
