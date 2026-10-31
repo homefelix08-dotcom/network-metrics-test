@@ -2,15 +2,6 @@ const siteBaseUrl = "https://embedcanaisdetv.xyz/e/index.php?canal=";
 
 export default [
     /* ABERTOS */
-    // {
-    //     "nome": "Globo MG",
-    //     "tvg_id": "Globo MG",
-    //     "url": `${siteBaseUrl}globomg/`,
-    //     "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/globo_mg.png",
-    //     "categoria": "Abertos",
-    //     "provedor": "site",
-    //     "provedor_fixo": true
-    // },
     {
         "nome": "Globo",
         "tvg_id": "GLOBO SP",
@@ -20,16 +11,6 @@ export default [
         "provedor": "api",
         "provedor_fixo": true,
     },
-    // {
-    //     "nome": "Band",
-    //     "tvg_id": "Band MG",
-    //     "url": `${siteBaseUrl}bandsp/`,
-    //     "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/band.png",
-    //     "categoria": "Abertos",
-    //     "filtro_cdn": "Band MG",
-    //     "provedor": "api",
-    //     "provedor_fixo": true
-    // },
     {
         "nome": "TV Alterosa",
         "nome_api": "SBT",
@@ -58,15 +39,6 @@ export default [
         "provedor": "api",
         "provedor_fixo": true
     },
-    // {
-    //     "nome": "Record MG",
-    //     "tvg_id": "Record MG",
-    //     "url": `${siteBaseUrl}recordmg/`,
-    //     "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png",
-    //     "categoria": "Abertos",
-    //     "provedor": "site",
-    //     "provedor_fixo": true
-    // },
     {
         "nome": "Futura",
         "tvg_id": "FUTURA HD",
