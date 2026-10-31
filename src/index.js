@@ -52,7 +52,8 @@ ${scheme}//${host}/play/Record%20MG|User-Agent=okhttp/4.9.2
       status: 302,
       headers: {
         "Location": targetUrl,
-        "Cache-Control": "private, max-age=1800"
+        "Cache-Control": "private, max-age=1800",
+        "X-Cache-Version": "v2-cached"
       }
     });
 
