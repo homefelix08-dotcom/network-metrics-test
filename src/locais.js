@@ -1,5 +1,5 @@
 // =========================================================================
-// MÓDULO DE CANAIS LOCAIS - WORKER
+// MÓDULO DE CANAIS LOCAIS - WORKER COM CACHE DE BORDA
 // =========================================================================
 
 const GLOBO_AUTH_TOKEN = "18f104f386bacf489ba202b511074d9af594f73496763564a6239544c34663075755f70775a48635748505935546e593752765f7171534f7670366a454b536433315955466c312d344d563278594430453030635066466643464a4162576e6f39414a447145673d3d3a303a756f756f78646178736470656c636e656b796b71";
@@ -11,94 +11,166 @@ const BAND_LIVE_ID = "0195cdf3-d8d8-74b6-9516-6c79c06bcec8";
 const REDE_MINAS_URL = "https://8hzcavccys.zoeweb.tv/redeminas/ngrp:redeminas_all/playlist.m3u8";
 const SBT_DEFAULT_YOUTUBE_ID = "R0ZJ4uevOd4";
 
-/**
- * 1. GLOBO MG (Globoplay Video Session API)
- */
-export async function fetchGloboStream(env) {
-  const token = (env && env.GLOBO_AUTH_TOKEN) || GLOBO_AUTH_TOKEN;
-  if (!token) {
-    console.log("[GLOBO WORKER] GLOBO_AUTH_TOKEN não configurado.");
-    return null;
+// =========================================================================
+// CAMADA DE CACHE INTELIGENTE (MEMÓRIA DO ISOLATE + CACHE API DA CLOUDFLARE)
+// =========================================================================
+const memoryCache = {
+  globo: { url: null, expires: 0 },
+  band: { url: null, expires: 0 },
+  record: { url: null, expires: 0 }
+};
+
+async function getCachedStream(key, ttlSeconds, forceFresh, fetchFn) {
+  const now = Date.now();
+
+  // 1. Memória rápida do isolate (se ainda válida e não forçado)
+  if (!forceFresh && memoryCache[key] && memoryCache[key].url && memoryCache[key].expires > now) {
+    const remainingMin = Math.round((memoryCache[key].expires - now) / 60000);
+    console.log(`[⚡ CACHE HIT MEMÓRIA] ${key.toUpperCase()} reaproveitada (válida por mais ${remainingMin} min).`);
+    return memoryCache[key].url;
   }
 
-  const url = "https://playback.video.globo.com/v5/video-session";
-  const headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:157.0) Gecko/20100101 Firefox/157.0",
-    "Accept": "*/*",
-    "Content-Type": "application/json",
-    "Authorization": `Bearer ${token}`,
-    "Origin": "https://globoplay.globo.com",
-    "Referer": "https://globoplay.globo.com/"
-  };
-
-  const payload = {
-    player_type: "desktop",
-    video_id: "4452349",
-    quality: "max",
-    content_protection: "widevine",
-    vsid: crypto.randomUUID(),
-    tz: "-03:00",
-    capabilities: { low_latency: true, smart_mosaic: true, max_frame_rate: "60", dvr: true },
-    consumption: "streaming",
-    metadata: { name: "web", device: { type: "desktop", os: {} } },
-    version: 2
-  };
-
+  // 2. Cloudflare Cache API (compartilhado entre diferentes isolates/borda)
+  const cacheKeyUrl = `https://cache.network-metrics.internal/stream/${key}`;
+  let cfCache = null;
   try {
-    const res = await fetch(url, {
-      method: "POST",
-      headers,
-      body: JSON.stringify(payload)
-    });
-
-    if (res.ok) {
-      const data = await res.json();
-      const sources = data.sources || [];
-      for (const s of sources) {
-        if (s.type === "hls" || (s.url && s.url.includes("m3u8"))) {
-          console.log("[GLOBO WORKER] Sucesso ao obter stream!");
-          return s.url;
+    if (typeof caches !== "undefined" && caches.default) {
+      cfCache = caches.default;
+      if (!forceFresh) {
+        const cachedResponse = await cfCache.match(cacheKeyUrl);
+        if (cachedResponse) {
+          const streamUrl = await cachedResponse.text();
+          if (streamUrl && streamUrl.startsWith("http")) {
+            console.log(`[🌐 CACHE HIT EDGE] ${key.toUpperCase()} recuperada do Cache compartilhado da Cloudflare.`);
+            memoryCache[key] = { url: streamUrl, expires: now + ttlSeconds * 1000 };
+            return streamUrl;
+          }
         }
       }
-      if (sources.length > 0 && sources[0].url) {
-        return sources[0].url;
-      }
-    } else {
-      console.log(`[GLOBO WORKER ERRO ${res.status}]:`, await res.text());
     }
-  } catch (e) {
-    console.log(`[GLOBO WORKER EXCEPTION]:`, e.message);
+  } catch (err) {
+    console.log(`[CACHE API MATCH AVISO]: ${err.message}`);
   }
-  return null;
+
+  // 3. Cache Miss (ou forceFresh): Executa chamada real à API
+  console.log(`[🔄 CACHE MISS] Gerando nova sessão para ${key.toUpperCase()}...`);
+  const freshUrl = await fetchFn();
+  if (freshUrl) {
+    // Atualiza memória rápida
+    memoryCache[key] = { url: freshUrl, expires: now + ttlSeconds * 1000 };
+
+    // Persiste no cache compartilhado da Cloudflare
+    if (cfCache) {
+      try {
+        const toCache = new Response(freshUrl, {
+          status: 200,
+          headers: {
+            "Content-Type": "text/plain",
+            "Cache-Control": `public, max-age=${ttlSeconds}`
+          }
+        });
+        await cfCache.put(cacheKeyUrl, toCache);
+      } catch (err) {
+        console.log(`[CACHE API PUT AVISO]: ${err.message}`);
+      }
+    }
+  }
+
+  return freshUrl;
 }
 
 /**
- * 2. BAND MINAS (Spalla CDN API)
+ * 1. GLOBO MG (Globoplay Video Session API com Cache de 4 horas)
  */
-export async function fetchBandStream(env) {
-  const liveId = (env && env.BAND_LIVE_ID) || BAND_LIVE_ID;
-  try {
-    const headers = {
-      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-      "Referer": `https://beyond.spalla.io/player/?live=${liveId}`
-    };
-    const res = await fetch(`https://beyond.spalla.io/cache/config/${liveId}`, { headers });
-    if (res.ok) {
-      const cfg = await res.json();
-      const cdnUrl = cfg?.lm_live_cdns?.[0]?.URL;
-      const token = cfg?.lm_live_jwt_token;
-      if (cdnUrl && token) {
-        const streamUrl = `${cdnUrl}${liveId}/s1/playlist_nova-a.m3u8?sjwt=${token}`;
-        console.log("[BAND WORKER] Sucesso ao obter stream Spalla!");
-        return streamUrl;
-      }
-    } else {
-      console.log(`[BAND WORKER ERRO ${res.status}]`);
+export async function fetchGloboStream(env, forceFresh = false) {
+  return getCachedStream("globo", 14400, forceFresh, async () => {
+    const token = (env && env.GLOBO_AUTH_TOKEN) || GLOBO_AUTH_TOKEN;
+    if (!token) {
+      console.log("[GLOBO WORKER] GLOBO_AUTH_TOKEN não configurado.");
+      return null;
     }
-  } catch (e) {
-    console.log(`[BAND WORKER EXCEPTION]:`, e.message);
-  }
-  return null;
+
+    const url = "https://playback.video.globo.com/v5/video-session";
+    const headers = {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:157.0) Gecko/20100101 Firefox/157.0",
+      "Accept": "*/*",
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`,
+      "Origin": "https://globoplay.globo.com",
+      "Referer": "https://globoplay.globo.com/"
+    };
+
+    const payload = {
+      player_type: "desktop",
+      video_id: "4452349",
+      quality: "max",
+      content_protection: "widevine",
+      vsid: crypto.randomUUID(),
+      tz: "-03:00",
+      capabilities: { low_latency: true, smart_mosaic: true, max_frame_rate: "60", dvr: true },
+      consumption: "streaming",
+      metadata: { name: "web", device: { type: "desktop", os: {} } },
+      version: 2
+    };
+
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        headers,
+        body: JSON.stringify(payload)
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        const sources = data.sources || [];
+        for (const s of sources) {
+          if (s.type === "hls" || (s.url && s.url.includes("m3u8"))) {
+            console.log("[GLOBO WORKER] Sucesso ao obter stream!");
+            return s.url;
+          }
+        }
+        if (sources.length > 0 && sources[0].url) {
+          return sources[0].url;
+        }
+      } else {
+        console.log(`[GLOBO WORKER ERRO ${res.status}]:`, await res.text());
+      }
+    } catch (e) {
+      console.log(`[GLOBO WORKER EXCEPTION]:`, e.message);
+    }
+    return null;
+  });
+}
+
+/**
+ * 2. BAND MINAS (Spalla CDN API com Cache de 4 horas)
+ */
+export async function fetchBandStream(env, forceFresh = false) {
+  return getCachedStream("band", 14400, forceFresh, async () => {
+    const liveId = (env && env.BAND_LIVE_ID) || BAND_LIVE_ID;
+    try {
+      const headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Referer": `https://beyond.spalla.io/player/?live=${liveId}`
+      };
+      const res = await fetch(`https://beyond.spalla.io/cache/config/${liveId}`, { headers });
+      if (res.ok) {
+        const cfg = await res.json();
+        const cdnUrl = cfg?.lm_live_cdns?.[0]?.URL;
+        const token = cfg?.lm_live_jwt_token;
+        if (cdnUrl && token) {
+          const streamUrl = `${cdnUrl}${liveId}/s1/playlist_nova-a.m3u8?sjwt=${token}`;
+          console.log("[BAND WORKER] Sucesso ao obter stream Spalla!");
+          return streamUrl;
+        }
+      } else {
+        console.log(`[BAND WORKER ERRO ${res.status}]`);
+      }
+    } catch (e) {
+      console.log(`[BAND WORKER EXCEPTION]:`, e.message);
+    }
+    return null;
+  });
 }
 
 /**
@@ -109,83 +181,85 @@ export function fetchRedeMinasStream(env) {
 }
 
 /**
- * 4. RECORD MINAS (RecordPlus API com Refresh Token)
+ * 4. RECORD MINAS (RecordPlus API com Refresh Token e Cache de 3 horas)
  */
-export async function fetchRecordStream(env) {
-  const refreshToken = (env && env.RECORD_REFRESH_TOKEN) || RECORD_REFRESH_TOKEN;
-  const channelId = (env && env.RECORD_CHANNEL_ID) || RECORD_CHANNEL_ID;
+export async function fetchRecordStream(env, forceFresh = false) {
+  return getCachedStream("record", 10800, forceFresh, async () => {
+    const refreshToken = (env && env.RECORD_REFRESH_TOKEN) || RECORD_REFRESH_TOKEN;
+    const channelId = (env && env.RECORD_CHANNEL_ID) || RECORD_CHANNEL_ID;
 
-  if (refreshToken) {
-    try {
-      const r = await fetch("https://api-idp.recordplus.com/v1/user/refresh", {
-        method: "POST",
-        headers: {
-          "Authorization": refreshToken,
-          "User-Agent": "Mozilla/5.0"
+    if (refreshToken) {
+      try {
+        const r = await fetch("https://api-idp.recordplus.com/v1/user/refresh", {
+          method: "POST",
+          headers: {
+            "Authorization": refreshToken,
+            "User-Agent": "Mozilla/5.0"
+          }
+        });
+
+        if (r.ok) {
+          const data = await r.json();
+          const newToken = data?.bearer?.auth?.token;
+          if (newToken) {
+            RECORD_AUTH_TOKEN = newToken;
+            console.log("[RECORD WORKER] Token renovado com sucesso!");
+          }
+        } else {
+          console.log(`[RECORD WORKER REFRESH ERRO ${r.status}]:`, await r.text());
         }
+      } catch (e) {
+        console.log(`[RECORD WORKER REFRESH EXCEPTION]:`, e.message);
+      }
+    }
+
+    if (!RECORD_AUTH_TOKEN) {
+      console.log("[RECORD WORKER] Nenhum token de autenticação disponível.");
+      return null;
+    }
+
+    try {
+      const url = `https://api-playback.recordplus.com/v1/playback/${channelId}`;
+      const headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Authorization": `Bearer ${RECORD_AUTH_TOKEN}`,
+        "Content-Type": "application/json",
+        "Origin": "https://www.recordplus.com",
+        "Referer": "https://www.recordplus.com/"
+      };
+      const payload = {
+        eventType: "play",
+        assetId: channelId,
+        assetType: "channel",
+        source: "live",
+        platform: "web",
+        appName: "RecordPlus",
+        appVersion: "1.0.0",
+        device: { deviceId: crypto.randomUUID() }
+      };
+
+      const res = await fetch(url, {
+        method: "POST",
+        headers,
+        body: JSON.stringify(payload)
       });
 
-      if (r.ok) {
-        const data = await r.json();
-        const newToken = data?.bearer?.auth?.token;
-        if (newToken) {
-          RECORD_AUTH_TOKEN = newToken;
-          console.log("[RECORD WORKER] Token renovado com sucesso!");
+      if (res.ok) {
+        const data = await res.json();
+        const contents = data.contents || [];
+        if (contents.length > 0 && contents[0].url) {
+          console.log("[RECORD WORKER] Sucesso ao obter stream da Akamai!");
+          return contents[0].url;
         }
+        return data.streamUrl || data.url || null;
       } else {
-        console.log(`[RECORD WORKER REFRESH ERRO ${r.status}]:`, await r.text());
+        console.log(`[RECORD WORKER PLAYBACK ERRO ${res.status}]:`, await res.text());
       }
     } catch (e) {
-      console.log(`[RECORD WORKER REFRESH EXCEPTION]:`, e.message);
+      console.log(`[RECORD WORKER PLAYBACK EXCEPTION]:`, e.message);
     }
-  }
-
-  if (!RECORD_AUTH_TOKEN) {
-    console.log("[RECORD WORKER] Nenhum token de autenticação disponível.");
     return null;
-  }
-
-  try {
-    const url = `https://api-playback.recordplus.com/v1/playback/${channelId}`;
-    const headers = {
-      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-      "Authorization": `Bearer ${RECORD_AUTH_TOKEN}`,
-      "Content-Type": "application/json",
-      "Origin": "https://www.recordplus.com",
-      "Referer": "https://www.recordplus.com/"
-    };
-    const payload = {
-      eventType: "play",
-      assetId: channelId,
-      assetType: "channel",
-      source: "live",
-      platform: "web",
-      appName: "RecordPlus",
-      appVersion: "1.0.0",
-      device: { deviceId: crypto.randomUUID() }
-    };
-
-    const res = await fetch(url, {
-      method: "POST",
-      headers,
-      body: JSON.stringify(payload)
-    });
-
-    if (res.ok) {
-      const data = await res.json();
-      const contents = data.contents || [];
-      if (contents.length > 0 && contents[0].url) {
-        console.log("[RECORD WORKER] Sucesso ao obter stream da Akamai!");
-        return contents[0].url;
-      }
-      return data.streamUrl || data.url || null;
-    } else {
-      console.log(`[RECORD WORKER PLAYBACK ERRO ${res.status}]:`, await res.text());
-    }
-  } catch (e) {
-    console.log(`[RECORD WORKER PLAYBACK EXCEPTION]:`, e.message);
-  }
-  return null;
+  });
 }
 
 /**

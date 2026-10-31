@@ -46,27 +46,37 @@ ${scheme}//${host}/play/Record%20MG|User-Agent=okhttp/4.9.2
     // ==========================================
     // 2. ATALHOS DIRETOS .M3U8 (COMPATÍVEL HOMELAB)
     // ==========================================
+    const forceFresh = url.searchParams.get('force') === '1' || url.searchParams.get('nocache') === '1';
+
+    const redirectWithCache = (targetUrl) => new Response(null, {
+      status: 302,
+      headers: {
+        "Location": targetUrl,
+        "Cache-Control": "private, max-age=1800"
+      }
+    });
+
     if (path === '/globo-mg.m3u8') {
-      const stream = await fetchGloboStream(env);
-      if (stream) return Response.redirect(stream, 302);
+      const stream = await fetchGloboStream(env, forceFresh);
+      if (stream) return redirectWithCache(stream);
       return new Response("Erro ao obter stream da Globo MG via Worker", { status: 502 });
     }
     if (path === '/band-minas.m3u8') {
-      const stream = await fetchBandStream(env);
-      if (stream) return Response.redirect(stream, 302);
+      const stream = await fetchBandStream(env, forceFresh);
+      if (stream) return redirectWithCache(stream);
       return new Response("Erro ao obter stream da Band Minas via Worker", { status: 502 });
     }
     if (path === '/rede-minas.m3u8') {
-      return Response.redirect(fetchRedeMinasStream(env), 302);
+      return redirectWithCache(fetchRedeMinasStream(env));
     }
     if (path === '/record-minas.m3u8') {
-      const stream = await fetchRecordStream(env);
-      if (stream) return Response.redirect(stream, 302);
+      const stream = await fetchRecordStream(env, forceFresh);
+      if (stream) return redirectWithCache(stream);
       return new Response("Erro ao obter stream da Record Minas via Worker", { status: 502 });
     }
     if (path === '/sbt.m3u8') {
       const stream = await fetchSbtStream(env);
-      if (stream) return Response.redirect(stream, 302);
+      if (stream) return redirectWithCache(stream);
       return new Response("Erro ao obter stream do SBT via Worker", { status: 502 });
     }
 
@@ -84,30 +94,30 @@ ${scheme}//${host}/play/Record%20MG|User-Agent=okhttp/4.9.2
     // ==========================================
     if (channelNorm === 'globo mg' || channelNorm === 'globo minas') {
       console.log(`[🏠 CANAL LOCAL] Acionando motor nativo da Globo MG`);
-      const stream = await fetchGloboStream(env);
-      if (stream) return Response.redirect(stream, 302);
+      const stream = await fetchGloboStream(env, forceFresh);
+      if (stream) return redirectWithCache(stream);
       return new Response("Erro ao obter stream da Globo MG via Worker (Geobloqueio ou token expirado)", { status: 502 });
     }
     if (channelNorm === 'band mg' || channelNorm === 'band minas') {
       console.log(`[🏠 CANAL LOCAL] Acionando motor nativo da Band Minas (Spalla)`);
-      const stream = await fetchBandStream(env);
-      if (stream) return Response.redirect(stream, 302);
+      const stream = await fetchBandStream(env, forceFresh);
+      if (stream) return redirectWithCache(stream);
       return new Response("Erro ao obter stream da Band Minas via Worker", { status: 502 });
     }
     if (channelNorm === 'rede minas') {
       console.log(`[🏠 CANAL LOCAL] Acionando motor nativo da Rede Minas (ZoeWeb)`);
-      return Response.redirect(fetchRedeMinasStream(env), 302);
+      return redirectWithCache(fetchRedeMinasStream(env));
     }
     if (channelNorm === 'record mg' || channelNorm === 'record minas') {
       console.log(`[🏠 CANAL LOCAL] Acionando motor nativo da Record Minas (RecordPlus)`);
-      const stream = await fetchRecordStream(env);
-      if (stream) return Response.redirect(stream, 302);
+      const stream = await fetchRecordStream(env, forceFresh);
+      if (stream) return redirectWithCache(stream);
       return new Response("Erro ao obter stream da Record Minas via Worker", { status: 502 });
     }
     if ((channelNorm === 'sbt' || channelNorm === 'sbt ao vivo') && rotaForcada === 'local') {
       console.log(`[🏠 CANAL LOCAL] Acionando motor nativo do SBT Local`);
       const stream = await fetchSbtStream(env);
-      if (stream) return Response.redirect(stream, 302);
+      if (stream) return redirectWithCache(stream);
       return new Response("Erro ao obter stream do SBT via Worker", { status: 502 });
     }
 
