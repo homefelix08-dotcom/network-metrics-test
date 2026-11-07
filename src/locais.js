@@ -7,7 +7,7 @@ const RECORD_REFRESH_TOKEN = "eyJhbGciOiJIUzUxMiJ9.eyJ1dWlkIjoiOGQ3NjA5MWMtMDgyN
 let RECORD_AUTH_TOKEN = "eyJhbGciOiJIUzUxMiJ9.eyJ1dWlkIjoiOGQ3NjA5MWMtMDgyNi00YTViLTgxMTgtZGVlYjY1YmI4YTQ0IiwiZG4iOiJob21lZmVsaXgwOEBnbWFpbC5jb20iLCJ1biI6ImhvbWVmZWxpeDA4QGdtYWlsLmNvbSIsImRhdGUiOiIxNzkyNDUwMTgzODQ4IiwiaWF0IjoxNzkyNDUwMzM0LCJleHAiOjE3OTI0NTEyMzQsImp0aSI6IjU2ZjNjODIyLTQ0OGUtNDY1Zi04NDQ2LWRmN2U0YmRiNTAwZiJ9.0DKWOqd-Gq72P1rC84m7KT7IbHrJfgmzRo8pciyZcUYbjDUqCbsY3O2AzVhwmrixP5ccsKGOO-Srk11w_wP_Zg";
 const RECORD_CHANNEL_ID = "Y2hhbm5lbCNyNy5jb20jbWc";
 
-const BAND_LIVE_ID = "0195cdf3-d8d8-74b6-9516-6c79c06bcec8";
+const BAND_LIVE_ID = "019a797e-eeb8-7eda-9518-132403ccb160";
 const REDE_MINAS_URL = "https://8hzcavccys.zoeweb.tv/redeminas/ngrp:redeminas_all/playlist.m3u8";
 const SBT_URL = "https://6836041ea1117.streamlock.net/cverde/cverde/playlist.m3u8";
 
@@ -23,6 +23,7 @@ const memoryCache = {
 // Validador inteligente de expiração de tokens JWT ou parâmetros exp= na URL
 function isUrlExpired(streamUrl) {
   if (!streamUrl) return true;
+  if (streamUrl.includes("0195cdf3-d8d8-74b6-9516-6c79c06bcec8")) return true;
   try {
     const jwtMatch = streamUrl.match(/\/j\/[^.]+\.([^.]+)\.[^/]+/);
     if (jwtMatch) {
@@ -200,7 +201,44 @@ export async function fetchGloboStream(env, forceFresh = false) {
  */
 export async function fetchBandStream(env, forceFresh = false) {
   return getCachedStream("band", 14400, forceFresh, async () => {
-    const liveId = (env && env.BAND_LIVE_ID) || BAND_LIVE_ID;
+    // 1. Prioridade: Bridge com Homelab (já dinâmico e testado)
+    const homelabUrl = "https://canais.flxcloud.dev/band-minas.m3u8";
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 3000);
+      const resBridge = await fetch(homelabUrl, {
+        method: "GET",
+        headers: { "User-Agent": "okhttp/4.9.2" },
+        redirect: "manual",
+        signal: controller.signal
+      });
+      clearTimeout(timeoutId);
+
+      const location = resBridge.headers.get("Location") || resBridge.headers.get("location");
+      if (location && location.includes(".m3u8")) {
+        console.log("[BAND WORKER] Sucesso ao obter Band via Homelab Bridge!");
+        return location;
+      }
+    } catch (e) {
+      console.log(`[BAND WORKER] Homelab Bridge indisponível (${e.message}). Acionando fallback direto...`);
+    }
+
+    // 2. Fallback direto: Descoberta dinâmica de liveId ou Spalla API
+    let liveId = (env && env.BAND_LIVE_ID) || BAND_LIVE_ID;
+    try {
+      const pageRes = await fetch("https://www.band.com.br/ao-vivo", {
+        headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" }
+      });
+      if (pageRes.ok) {
+        const html = await pageRes.text();
+        const m = html.match(/live=([0-9a-fA-F-]+)/);
+        if (m && m[1]) {
+          liveId = m[1];
+        }
+      }
+    } catch (e) {
+      console.log(`[BAND WORKER SCRAPER AVISO]: ${e.message}`);
+    }
     try {
       const headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
