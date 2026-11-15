@@ -42,6 +42,7 @@ export default [
     {
         "nome": "Record MG",
         "tvg_id": "Record MG",
+        "url": `${siteBaseUrl}recordmg/`,
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png",
         "categoria": "Abertos",
         "provedor": "site",

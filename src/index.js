@@ -33,7 +33,7 @@ ${scheme}//${host}/play/Band%20MG|User-Agent=okhttp/4.9.2
 ${scheme}//${host}/play/SBT|User-Agent=okhttp/4.9.2
 
 #EXTINF:-1 tvg-id="Record MG" tvg-name="Record MG FHD" tvg-logo="https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png" group-title="Abertos", Record MG FHD
-${scheme}//${host}/play/Record%20MG|User-Agent=okhttp/4.9.2
+${scheme}//${host}/play/Record%20MG?rota=site|Referer=https://playerembedcanais.site/recordmg/
 `;
       return new Response(m3u, {
         headers: {
@@ -71,9 +71,7 @@ ${scheme}//${host}/play/Record%20MG|User-Agent=okhttp/4.9.2
       return redirectWithCache(fetchRedeMinasStream(env));
     }
     if (path === '/record-minas.m3u8') {
-      const stream = await fetchRecordStream(env, forceFresh);
-      if (stream) return redirectWithCache(stream);
-      return new Response("Erro ao obter stream da Record Minas via Worker", { status: 502 });
+      return Response.redirect(`${url.origin}/play/Record%20MG?rota=site`, 302);
     }
     if (path === '/sbt.m3u8') {
       const stream = fetchSbtStream(env);
@@ -112,12 +110,6 @@ ${scheme}//${host}/play/Record%20MG|User-Agent=okhttp/4.9.2
     if (channelNorm === 'rede minas') {
       console.log(`[🏠 CANAL LOCAL] Acionando motor nativo da Rede Minas (ZoeWeb)`);
       return redirectWithCache(fetchRedeMinasStream(env));
-    }
-    if (channelNorm === 'record mg' || channelNorm === 'record minas') {
-      console.log(`[🏠 CANAL LOCAL] Acionando motor nativo da Record Minas (RecordPlus)`);
-      const stream = await fetchRecordStream(env, forceFresh);
-      if (stream) return redirectWithCache(stream);
-      return new Response("Erro ao obter stream da Record Minas via Worker", { status: 502 });
     }
     if (channelNorm === 'sbt' || channelNorm === 'sbt ao vivo' || channelNorm === 'sbt sp' || channelNorm === 'sbt são paulo' || channelNorm === 'sbt sao paulo' || channelNorm === 'sbt nacional') {
       console.log(`[🏠 CANAL LOCAL] Acionando motor nativo do SBT (Streamlock Wowza)`);
