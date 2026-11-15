@@ -40,6 +40,14 @@ export default [
         "provedor_fixo": true
     },
     {
+        "nome": "Record MG",
+        "tvg_id": "Record MG",
+        "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/record_mg.png",
+        "categoria": "Abertos",
+        "provedor": "site",
+        "provedor_fixo": true
+    },
+    {
         "nome": "Futura",
         "tvg_id": "FUTURA HD",
         "logo": "https://raw.githubusercontent.com/homefelix08-dotcom/network-metrics-test/main/assets/futura.png",
