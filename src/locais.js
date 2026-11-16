@@ -3,10 +3,6 @@
 // =========================================================================
 
 const GLOBO_AUTH_TOKEN = "REDACTED_GLOBO_TOKEN";
-const RECORD_REFRESH_TOKEN = "REDACTED_RECORD_JWT";
-let RECORD_AUTH_TOKEN = "REDACTED_RECORD_JWT";
-const RECORD_CHANNEL_ID = "Y2hhbm5lbCNyNy5jb20jbWc";
-
 const BAND_LIVE_ID = "019a797e-eeb8-7eda-9518-132403ccb160";
 const REDE_MINAS_URL = "https://8hzcavccys.zoeweb.tv/redeminas/ngrp:redeminas_all/playlist.m3u8";
 const SBT_URL = "https://6836041ea1117.streamlock.net/cverde/cverde/playlist.m3u8";
@@ -16,8 +12,7 @@ const SBT_URL = "https://6836041ea1117.streamlock.net/cverde/cverde/playlist.m3u
 // =========================================================================
 const memoryCache = {
   globo: { url: null, expires: 0 },
-  band: { url: null, expires: 0 },
-  record: { url: null, expires: 0 }
+  band: { url: null, expires: 0 }
 };
 
 // Validador inteligente de expiração de tokens JWT ou parâmetros exp= na URL
@@ -269,88 +264,6 @@ export async function fetchBandStream(env, forceFresh = false) {
  */
 export function fetchRedeMinasStream(env) {
   return (env && env.REDE_MINAS_URL) || REDE_MINAS_URL;
-}
-
-/**
- * 4. RECORD MINAS (RecordPlus API com Refresh Token e Cache de 3 horas)
- */
-export async function fetchRecordStream(env, forceFresh = false) {
-  return getCachedStream("record", 10800, forceFresh, async () => {
-    const refreshToken = (env && env.RECORD_REFRESH_TOKEN) || RECORD_REFRESH_TOKEN;
-    const channelId = (env && env.RECORD_CHANNEL_ID) || RECORD_CHANNEL_ID;
-
-    if (refreshToken) {
-      try {
-        const r = await fetch("https://api-idp.recordplus.com/v1/user/refresh", {
-          method: "POST",
-          headers: {
-            "Authorization": refreshToken,
-            "User-Agent": "Mozilla/5.0"
-          }
-        });
-
-        if (r.ok) {
-          const data = await r.json();
-          const newToken = data?.bearer?.auth?.token;
-          if (newToken) {
-            RECORD_AUTH_TOKEN = newToken;
-            console.log("[RECORD WORKER] Token renovado com sucesso!");
-          }
-        } else {
-          console.log(`[RECORD WORKER REFRESH ERRO ${r.status}]:`, await r.text());
-        }
-      } catch (e) {
-        console.log(`[RECORD WORKER REFRESH EXCEPTION]:`, e.message);
-      }
-    }
-
-    if (!RECORD_AUTH_TOKEN) {
-      console.log("[RECORD WORKER] Nenhum token de autenticação disponível.");
-      return null;
-    }
-
-    try {
-      const url = `https://api-playback.recordplus.com/v1/playback/${channelId}`;
-      const headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        "Authorization": `Bearer ${RECORD_AUTH_TOKEN}`,
-        "Content-Type": "application/json",
-        "Origin": "https://www.recordplus.com",
-        "Referer": "https://www.recordplus.com/"
-      };
-      const payload = {
-        eventType: "play",
-        assetId: channelId,
-        assetType: "channel",
-        source: "live",
-        platform: "web",
-        appName: "RecordPlus",
-        appVersion: "1.0.0",
-        device: { deviceId: crypto.randomUUID() }
-      };
-
-      const res = await fetch(url, {
-        method: "POST",
-        headers,
-        body: JSON.stringify(payload)
-      });
-
-      if (res.ok) {
-        const data = await res.json();
-        const contents = data.contents || [];
-        if (contents.length > 0 && contents[0].url) {
-          console.log("[RECORD WORKER] Sucesso ao obter stream da Akamai!");
-          return contents[0].url;
-        }
-        return data.streamUrl || data.url || null;
-      } else {
-        console.log(`[RECORD WORKER PLAYBACK ERRO ${res.status}]:`, await res.text());
-      }
-    } catch (e) {
-      console.log(`[RECORD WORKER PLAYBACK EXCEPTION]:`, e.message);
-    }
-    return null;
-  });
 }
 
 /**

@@ -3,7 +3,6 @@ import {
   fetchGloboStream,
   fetchBandStream,
   fetchRedeMinasStream,
-  fetchRecordStream,
   fetchSbtStream
 } from './locais.js';
 
