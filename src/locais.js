@@ -2,10 +2,8 @@
 // MÓDULO DE CANAIS LOCAIS - WORKER COM CACHE DE BORDA
 // =========================================================================
 
-const GLOBO_AUTH_TOKEN = "REDACTED_GLOBO_TOKEN";
-const BAND_LIVE_ID = "019a797e-eeb8-7eda-9518-132403ccb160";
-const REDE_MINAS_URL = "https://8hzcavccys.zoeweb.tv/redeminas/ngrp:redeminas_all/playlist.m3u8";
-const SBT_URL = "https://6836041ea1117.streamlock.net/cverde/cverde/playlist.m3u8";
+// Variáveis sensíveis (HOMELAB_BRIDGE_URL, HOMELAB_BRIDGE_SECRET, GLOBO_AUTH_TOKEN,
+// BAND_LIVE_ID, REDE_MINAS_URL, SBT_URL) são lidas exclusivamente via env / Secrets.
 
 // =========================================================================
 // CAMADA DE CACHE INTELIGENTE (MEMÓRIA DO ISOLATE + CACHE API DA CLOUDFLARE)
@@ -111,29 +109,36 @@ async function getCachedStream(key, ttlSeconds, forceFresh, fetchFn) {
 export async function fetchGloboStream(env, forceFresh = false) {
   return getCachedStream("globo", 14400, forceFresh, async () => {
     // 1. Prioridade Máxima: Obter a sessão via Homelab em Minas Gerais (garante sinal regional globo-bh)
-    const homelabUrl = "https://redacted-bridge.invalid/globo-mg.m3u8";
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 4000);
-      const resBridge = await fetch(homelabUrl, {
-        method: "GET",
-        headers: { "User-Agent": "okhttp/4.9.2" },
-        redirect: "manual",
-        signal: controller.signal
-      });
-      clearTimeout(timeoutId);
+    const bridgeBase = (env?.HOMELAB_BRIDGE_URL || "").replace(/\/+$/, "");
+    const bridgeSecret = env?.HOMELAB_BRIDGE_SECRET || "";
+    if (bridgeBase && bridgeSecret) {
+      const homelabUrl = `${bridgeBase}/globo-mg.m3u8`;
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 4000);
+        const resBridge = await fetch(homelabUrl, {
+          method: "GET",
+          headers: {
+            "User-Agent": "okhttp/4.9.2",
+            "X-Bridge-Secret": bridgeSecret
+          },
+          redirect: "manual",
+          signal: controller.signal
+        });
+        clearTimeout(timeoutId);
 
-      const location = resBridge.headers.get("Location") || resBridge.headers.get("location");
-      if (location && location.includes(".m3u8")) {
-        console.log("[GLOBO WORKER] Sucesso ao obter sinal regional Globo Minas (BH) via Homelab Bridge!");
-        return location;
+        const location = resBridge.headers.get("Location") || resBridge.headers.get("location");
+        if (location && location.includes(".m3u8")) {
+          console.log("[GLOBO WORKER] Sucesso ao obter sinal regional Globo Minas (BH) via Homelab Bridge!");
+          return location;
+        }
+      } catch (e) {
+        console.log(`[GLOBO WORKER] Homelab Bridge indisponível (${e.message}). Acionando fallback nativo...`);
       }
-    } catch (e) {
-      console.log(`[GLOBO WORKER] Homelab Bridge indisponível (${e.message}). Acionando fallback nativo...`);
     }
 
     // 2. Fallback de Contingência: Chamada direta pelo Worker à API da Globo
-    const token = (env && env.GLOBO_AUTH_TOKEN) || GLOBO_AUTH_TOKEN;
+    const token = env?.GLOBO_AUTH_TOKEN;
     if (!token) {
       console.log("[GLOBO WORKER] GLOBO_AUTH_TOKEN não configurado.");
       return null;
@@ -197,29 +202,36 @@ export async function fetchGloboStream(env, forceFresh = false) {
 export async function fetchBandStream(env, forceFresh = false) {
   return getCachedStream("band", 14400, forceFresh, async () => {
     // 1. Prioridade: Bridge com Homelab (já dinâmico e testado)
-    const homelabUrl = "https://redacted-bridge.invalid/band-minas.m3u8";
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 3000);
-      const resBridge = await fetch(homelabUrl, {
-        method: "GET",
-        headers: { "User-Agent": "okhttp/4.9.2" },
-        redirect: "manual",
-        signal: controller.signal
-      });
-      clearTimeout(timeoutId);
+    const bridgeBase = (env?.HOMELAB_BRIDGE_URL || "").replace(/\/+$/, "");
+    const bridgeSecret = env?.HOMELAB_BRIDGE_SECRET || "";
+    if (bridgeBase && bridgeSecret) {
+      const homelabUrl = `${bridgeBase}/band-minas.m3u8`;
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 3000);
+        const resBridge = await fetch(homelabUrl, {
+          method: "GET",
+          headers: {
+            "User-Agent": "okhttp/4.9.2",
+            "X-Bridge-Secret": bridgeSecret
+          },
+          redirect: "manual",
+          signal: controller.signal
+        });
+        clearTimeout(timeoutId);
 
-      const location = resBridge.headers.get("Location") || resBridge.headers.get("location");
-      if (location && location.includes(".m3u8")) {
-        console.log("[BAND WORKER] Sucesso ao obter Band via Homelab Bridge!");
-        return location;
+        const location = resBridge.headers.get("Location") || resBridge.headers.get("location");
+        if (location && location.includes(".m3u8")) {
+          console.log("[BAND WORKER] Sucesso ao obter Band via Homelab Bridge!");
+          return location;
+        }
+      } catch (e) {
+        console.log(`[BAND WORKER] Homelab Bridge indisponível (${e.message}). Acionando fallback direto...`);
       }
-    } catch (e) {
-      console.log(`[BAND WORKER] Homelab Bridge indisponível (${e.message}). Acionando fallback direto...`);
     }
 
     // 2. Fallback direto: Descoberta dinâmica de liveId ou Spalla API
-    let liveId = (env && env.BAND_LIVE_ID) || BAND_LIVE_ID;
+    let liveId = env?.BAND_LIVE_ID || "";
     try {
       const pageRes = await fetch("https://www.band.com.br/ao-vivo", {
         headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" }
@@ -263,12 +275,12 @@ export async function fetchBandStream(env, forceFresh = false) {
  * 3. REDE MINAS (ZoeWeb Direct Stream)
  */
 export function fetchRedeMinasStream(env) {
-  return (env && env.REDE_MINAS_URL) || REDE_MINAS_URL;
+  return env?.REDE_MINAS_URL || null;
 }
 
 /**
  * 5. SBT AO VIVO (SBT Satélite / Nacional - Wowza 1080p)
  */
 export function fetchSbtStream(env) {
-  return (env && env.SBT_URL) || SBT_URL;
+  return env?.SBT_URL || null;
 }
